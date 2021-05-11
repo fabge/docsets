@@ -1,0 +1,1614 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DynamoDBStreams — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="ebs.html" rel="next" title="EBS"/>
+<link href="dynamodb.html" rel="prev" title="DynamoDB"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="ebs.html" title="EBS">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="dynamodb.html" title="DynamoDB">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">DynamoDBStreams</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessanalyzer.html">AccessAnalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm.html">ACM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm-pca.html">ACMPCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alexaforbusiness.html">AlexaForBusiness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amp.html">PrometheusService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplify.html">Amplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplifybackend.html">AmplifyBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigateway.html">APIGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewaymanagementapi.html">ApiGatewayManagementApi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewayv2.html">ApiGatewayV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appconfig.html">AppConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appflow.html">Appflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appintegrations.html">AppIntegrationsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-autoscaling.html">ApplicationAutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">ApplicationInsights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appmesh.html">AppMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appstream.html">AppStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appsync.html">AppSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="athena.html">Athena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auditmanager.html">AuditManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling.html">AutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling-plans.html">AutoScalingPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch.html">Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="braket.html">Braket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ce.html">CostExplorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chime.html">Chime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud9.html">Cloud9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clouddirectory.html">CloudDirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudformation.html">CloudFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudfront.html">CloudFront</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsm.html">CloudHSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsmv2.html">CloudHSMV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearch.html">CloudSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearchdomain.html">CloudSearchDomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudtrail.html">CloudTrail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudwatch.html">CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeartifact.html">CodeArtifact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codebuild.html">CodeBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codecommit.html">CodeCommit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codedeploy.html">CodeDeploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguru-reviewer.html">CodeGuruReviewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguruprofiler.html">CodeGuruProfiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codepipeline.html">CodePipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar.html">CodeStar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-connections.html">CodeStarconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-notifications.html">CodeStarNotifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-identity.html">CognitoIdentity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-idp.html">CognitoIdentityProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-sync.html">CognitoSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehend.html">Comprehend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehendmedical.html">ComprehendMedical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute-optimizer.html">ComputeOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect-contact-lens.html">ConnectContactLens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectparticipant.html">ConnectParticipant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cur.html">CostandUsageReportService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customer-profiles.html">CustomerProfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databrew.html">GlueDataBrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataexchange.html">DataExchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datapipeline.html">DataPipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasync.html">DataSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dax.html">DAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detective.html">Detective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devicefarm.html">DeviceFarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devops-guru.html">DevOpsGuru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directconnect.html">DirectConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html">ApplicationDiscoveryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dlm.html">DLM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dms.html">DatabaseMigrationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docdb.html">DocDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ds.html">DirectoryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodb.html">DynamoDB</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DynamoDBStreams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paginators">Paginators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ebs.html">EBS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2.html">EC2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2-instance-connect.html">EC2InstanceConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr.html">ECR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr-public.html">ECRPublic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecs.html">ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efs.html">EFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eks.html">EKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-inference.html">ElasticInference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticache.html">ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticbeanstalk.html">ElasticBeanstalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastictranscoder.html">ElasticTranscoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elb.html">ElasticLoadBalancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elbv2.html">ElasticLoadBalancingv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr.html">EMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr-containers.html">EMRContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html">ElasticsearchService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">EventBridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace.html">finspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace-data.html">FinSpaceData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firehose.html">Firehose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fis.html">FIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fms.html">FMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecast.html">ForecastService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecastquery.html">ForecastQueryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frauddetector.html">FraudDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fsx.html">FSx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamelift.html">GameLift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glacier.html">Glacier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globalaccelerator.html">GlobalAccelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glue.html">Glue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrass.html">Greengrass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrassv2.html">GreengrassV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundstation.html">GroundStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guardduty.html">GuardDuty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="healthlake.html">HealthLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="honeycode.html">Honeycode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iam.html">IAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identitystore.html">IdentityStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagebuilder.html">imagebuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexport.html">ImportExport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot.html">IoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-data.html">IoTDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-jobs-data.html">IoTJobsDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-devices.html">IoT1ClickDevicesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-projects.html">IoT1ClickProjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotanalytics.html">IoTAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotdeviceadvisor.html">IoTDeviceAdvisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents.html">IoTEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents-data.html">IoTEventsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotfleethub.html">IoTFleetHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsecuretunneling.html">IoTSecureTunneling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsitewise.html">IoTSiteWise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotthingsgraph.html">IoTThingsGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotwireless.html">IoTWireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivs.html">IVS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kafka.html">Kafka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendra.html">kendra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis.html">Kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-archived-media.html">KinesisVideoArchivedMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-media.html">KinesisVideoMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-signaling.html">KinesisVideoSignalingChannels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalytics.html">KinesisAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalyticsv2.html">KinesisAnalyticsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisvideo.html">KinesisVideo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kms.html">KMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lakeformation.html">LakeFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda.html">Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-models.html">LexModelBuildingService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-runtime.html">LexRuntimeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-models.html">LexModelsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-runtime.html">LexRuntimeV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license-manager.html">LicenseManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lightsail.html">Lightsail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location.html">LocationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">CloudWatchLogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutequipment.html">LookoutEquipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutmetrics.html">LookoutMetrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutvision.html">LookoutforVision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html">MachineLearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie.html">Macie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie2.html">Macie2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managedblockchain.html">ManagedBlockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-catalog.html">MarketplaceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-entitlement.html">MarketplaceEntitlementService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplacecommerceanalytics.html">MarketplaceCommerceAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconnect.html">MediaConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconvert.html">MediaConvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medialive.html">MediaLive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage.html">MediaPackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage-vod.html">MediaPackageVod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore.html">MediaStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore-data.html">MediaStoreData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatailor.html">MediaTailor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteringmarketplace.html">MarketplaceMetering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgh.html">MigrationHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgn.html">mgn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrationhub-config.html">MigrationHubConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mq.html">MQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mturk.html">MTurk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mwaa.html">MWAA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neptune.html">Neptune</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network-firewall.html">NetworkFirewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkmanager.html">NetworkManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html">NimbleStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworks.html">OpsWorks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworkscm.html">OpsWorksCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizations.html">Organizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outposts.html">Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">Personalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-events.html">PersonalizeEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-runtime.html">PersonalizeRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pi.html">PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint.html">Pinpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-email.html">PinpointEmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polly.html">Polly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing.html">Pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb.html">QLDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb-session.html">QLDBSession</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quicksight.html">QuickSight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ram.html">RAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds.html">RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds-data.html">RDSDataService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift.html">Redshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift-data.html">RedshiftDataAPIService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rekognition.html">Rekognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resource-groups.html">ResourceGroups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resourcegroupstaggingapi.html">ResourceGroupsTaggingAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomaker.html">RoboMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53.html">Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53domains.html">Route53Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53resolver.html">Route53Resolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3.html">S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3control.html">S3Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3outposts.html">S3Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker.html">SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-a2i-runtime.html">AugmentedAIRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-edge.html">SagemakerEdgeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-featurestore-runtime.html">SageMakerFeatureStoreRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-runtime.html">SageMakerRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savingsplans.html">SavingsPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html">Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdb.html">SimpleDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secretsmanager.html">SecretsManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityhub.html">SecurityHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverlessrepo.html">ServerlessApplicationRepository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-quotas.html">ServiceQuotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog.html">ServiceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog-appregistry.html">AppRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicediscovery.html">ServiceDiscovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ses.html">SES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sesv2.html">SESV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signer.html">signer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html">SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snowball.html">Snowball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sns.html">SNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqs.html">SQS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssm.html">SSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso.html">SSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-admin.html">SSOAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-oidc.html">SSOOIDC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepfunctions.html">SFN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storagegateway.html">StorageGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sts.html">STS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swf.html">SWF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetics.html">Synthetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textract.html">Textract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-query.html">TimestreamQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-write.html">TimestreamWrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transcribe.html">TranscribeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer.html">Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">Translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf.html">WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf-regional.html">WAFRegional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wafv2.html">WAFV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wellarchitected.html">WellArchitected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workdocs.html">WorkDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worklink.html">WorkLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmail.html">WorkMail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmailmessageflow.html">WorkMailMessageFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workspaces.html">WorkSpaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xray.html">XRay</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Available services</a></li>
+<li>DynamoDBStreams</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="dynamodbstreams">
+<h1><a class="toc-backref" href="#id4">DynamoDBStreams</a><a class="headerlink" href="#dynamodbstreams" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#dynamodbstreams" id="id4">DynamoDBStreams</a></p>
+<ul>
+<li><p><a class="reference internal" href="#client" id="id5">Client</a></p></li>
+<li><p><a class="reference internal" href="#paginators" id="id6">Paginators</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="client">
+<h2><a class="toc-backref" href="#id5">Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="DynamoDBStreams.Client"><a name="//apple_ref/cpp/Class/DynamoDBStreams.Client"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">DynamoDBStreams.</span></code><code class="sig-name descname"><span class="pre">Client</span></code><a class="headerlink" href="#DynamoDBStreams.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>A low-level client representing Amazon DynamoDB Streams</p>
+<p>Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records. To learn more about application development with Streams, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">'dynamodbstreams'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These are the available methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#DynamoDBStreams.Client.can_paginate" title="DynamoDBStreams.Client.can_paginate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">can_paginate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#DynamoDBStreams.Client.describe_stream" title="DynamoDBStreams.Client.describe_stream"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_stream()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#DynamoDBStreams.Client.generate_presigned_url" title="DynamoDBStreams.Client.generate_presigned_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate_presigned_url()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#DynamoDBStreams.Client.get_paginator" title="DynamoDBStreams.Client.get_paginator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_paginator()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#DynamoDBStreams.Client.get_records" title="DynamoDBStreams.Client.get_records"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_records()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#DynamoDBStreams.Client.get_shard_iterator" title="DynamoDBStreams.Client.get_shard_iterator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_shard_iterator()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#DynamoDBStreams.Client.get_waiter" title="DynamoDBStreams.Client.get_waiter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_waiter()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#DynamoDBStreams.Client.list_streams" title="DynamoDBStreams.Client.list_streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_streams()</span></code></a></p></li>
+</ul>
+<dl class="py method">
+<dt id="DynamoDBStreams.Client.can_paginate"><a name="//apple_ref/cpp/Method/DynamoDBStreams.Client.can_paginate"></a>
+<code class="sig-name descname"><span class="pre">can_paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DynamoDBStreams.Client.can_paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an operation can be paginated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the operation can be paginated,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="DynamoDBStreams.Client.describe_stream"><a name="//apple_ref/cpp/Method/DynamoDBStreams.Client.describe_stream"></a>
+<code class="sig-name descname"><span class="pre">describe_stream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DynamoDBStreams.Client.describe_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can call <code class="docutils literal notranslate"><span class="pre">DescribeStream</span></code> at a maximum rate of 10 times per second.</p>
+</div>
+<p>Each shard in the stream has a <code class="docutils literal notranslate"><span class="pre">SequenceNumberRange</span></code> associated with it. If the <code class="docutils literal notranslate"><span class="pre">SequenceNumberRange</span></code> has a <code class="docutils literal notranslate"><span class="pre">StartingSequenceNumber</span></code> but no <code class="docutils literal notranslate"><span class="pre">EndingSequenceNumber</span></code> , then the shard is still open (able to receive more stream records). If both <code class="docutils literal notranslate"><span class="pre">StartingSequenceNumber</span></code> and <code class="docutils literal notranslate"><span class="pre">EndingSequenceNumber</span></code> are present, then that shard is closed and can no longer receive more data.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_stream</span><span class="p">(</span>
+    <span class="n">StreamArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">Limit</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">ExclusiveStartShardId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>StreamArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The Amazon Resource Name (ARN) for the stream.</p>
+</p></li>
+<li><p><strong>Limit</strong> (<em>integer</em>) – The maximum number of shard objects to return. The upper limit is 100.</p></li>
+<li><p><strong>ExclusiveStartShardId</strong> (<em>string</em>) – The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code class="docutils literal notranslate"><span class="pre">LastEvaluatedShardId</span></code> in the previous operation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'StreamDescription'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'StreamArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'StreamLabel'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'StreamStatus'</span><span class="p">:</span> <span class="s1">'ENABLING'</span><span class="o">|</span><span class="s1">'ENABLED'</span><span class="o">|</span><span class="s1">'DISABLING'</span><span class="o">|</span><span class="s1">'DISABLED'</span><span class="p">,</span>
+        <span class="s1">'StreamViewType'</span><span class="p">:</span> <span class="s1">'NEW_IMAGE'</span><span class="o">|</span><span class="s1">'OLD_IMAGE'</span><span class="o">|</span><span class="s1">'NEW_AND_OLD_IMAGES'</span><span class="o">|</span><span class="s1">'KEYS_ONLY'</span><span class="p">,</span>
+        <span class="s1">'CreationRequestDateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'TableName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'KeySchema'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">'AttributeName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'KeyType'</span><span class="p">:</span> <span class="s1">'HASH'</span><span class="o">|</span><span class="s1">'RANGE'</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s1">'Shards'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">'ShardId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'SequenceNumberRange'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'StartingSequenceNumber'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                    <span class="s1">'EndingSequenceNumber'</span><span class="p">:</span> <span class="s1">'string'</span>
+                <span class="p">},</span>
+                <span class="s1">'ParentShardId'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s1">'LastEvaluatedShardId'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the output of a <code class="docutils literal notranslate"><span class="pre">DescribeStream</span></code> operation.</p>
+<ul>
+<li><p><strong>StreamDescription</strong> <em>(dict) –</em></p>
+<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
+<ul>
+<li><p><strong>StreamArn</strong> <em>(string) –</em></p>
+<p>The Amazon Resource Name (ARN) for the stream.</p>
+</li>
+<li><p><strong>StreamLabel</strong> <em>(string) –</em></p>
+<p>A timestamp, in ISO 8601 format, for this stream.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">LatestStreamLabel</span></code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+<ul class="simple">
+<li><p>the AWS customer ID.</p></li>
+<li><p>the table name</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">StreamLabel</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>StreamStatus</strong> <em>(string) –</em></p>
+<p>Indicates the current status of the stream:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ENABLING</span></code> - Streams is currently being enabled on the DynamoDB table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENABLED</span></code> - the stream is enabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DISABLING</span></code> - Streams is currently being disabled on the DynamoDB table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DISABLED</span></code> - the stream is disabled.</p></li>
+</ul>
+</li>
+<li><p><strong>StreamViewType</strong> <em>(string) –</em></p>
+<p>Indicates the format of the records within this stream:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">KEYS_ONLY</span></code> - only the key attributes of items that were modified in the DynamoDB table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NEW_IMAGE</span></code> - entire items from the table, as they appeared after they were modified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OLD_IMAGE</span></code> - entire items from the table, as they appeared before they were modified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NEW_AND_OLD_IMAGES</span></code> - both the new and the old images of the items from the table.</p></li>
+</ul>
+</li>
+<li><p><strong>CreationRequestDateTime</strong> <em>(datetime) –</em></p>
+<p>The date and time when the request to create this stream was issued.</p>
+</li>
+<li><p><strong>TableName</strong> <em>(string) –</em></p>
+<p>The DynamoDB table with which the stream is associated.</p>
+</li>
+<li><p><strong>KeySchema</strong> <em>(list) –</em></p>
+<p>The key attribute(s) of the stream’s DynamoDB table.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents <em>a single element</em> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">KeySchemaElement</span></code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code class="docutils literal notranslate"><span class="pre">KeySchemaElement</span></code> (for the partition key). A composite primary key would require one <code class="docutils literal notranslate"><span class="pre">KeySchemaElement</span></code> for the partition key, and another <code class="docutils literal notranslate"><span class="pre">KeySchemaElement</span></code> for the sort key.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">KeySchemaElement</span></code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
+<ul>
+<li><p><strong>AttributeName</strong> <em>(string) –</em></p>
+<p>The name of a key attribute.</p>
+</li>
+<li><p><strong>KeyType</strong> <em>(string) –</em></p>
+<p>The role that this key attribute will assume:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HASH</span></code> - partition key</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RANGE</span></code> - sort key</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The partition key of an item is also known as its <em>hash attribute</em> . The term “hash attribute” derives from DynamoDB’s usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+<p>The sort key of an item is also known as its <em>range attribute</em> . The term “range attribute” derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Shards</strong> <em>(list) –</em></p>
+<p>The shards that comprise the stream.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A uniquely identified group of stream records within a stream.</p>
+<ul>
+<li><p><strong>ShardId</strong> <em>(string) –</em></p>
+<p>The system-generated identifier for this shard.</p>
+</li>
+<li><p><strong>SequenceNumberRange</strong> <em>(dict) –</em></p>
+<p>The range of possible sequence numbers for the shard.</p>
+<ul>
+<li><p><strong>StartingSequenceNumber</strong> <em>(string) –</em></p>
+<p>The first sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
+</li>
+<li><p><strong>EndingSequenceNumber</strong> <em>(string) –</em></p>
+<p>The last sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>ParentShardId</strong> <em>(string) –</em></p>
+<p>The shard ID of the current shard’s parent.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>LastEvaluatedShardId</strong> <em>(string) –</em></p>
+<p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">LastEvaluatedShardId</span></code> is empty, then the “last page” of results has been processed and there is currently no more data to be retrieved.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">LastEvaluatedShardId</span></code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code class="docutils literal notranslate"><span class="pre">LastEvaluatedShardId</span></code> is empty.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+<p><strong>Examples</strong></p>
+<p>The following example describes a stream with a given stream ARN.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_stream</span><span class="p">(</span>
+    <span class="n">StreamArn</span><span class="o">=</span><span class="s1">'arn:aws:dynamodb:us-west-2:111122223333:table/Forum/stream/2015-05-20T20:51:10.252'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Expected Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'StreamDescription'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'CreationRequestDateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'KeySchema'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">'AttributeName'</span><span class="p">:</span> <span class="s1">'ForumName'</span><span class="p">,</span>
+                <span class="s1">'KeyType'</span><span class="p">:</span> <span class="s1">'HASH'</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s1">'AttributeName'</span><span class="p">:</span> <span class="s1">'Subject'</span><span class="p">,</span>
+                <span class="s1">'KeyType'</span><span class="p">:</span> <span class="s1">'RANGE'</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s1">'Shards'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">'SequenceNumberRange'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'EndingSequenceNumber'</span><span class="p">:</span> <span class="s1">'20500000000000000910398'</span><span class="p">,</span>
+                    <span class="s1">'StartingSequenceNumber'</span><span class="p">:</span> <span class="s1">'20500000000000000910398'</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s1">'ShardId'</span><span class="p">:</span> <span class="s1">'shardId-00000001414562045508-2bac9cd2'</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s1">'ParentShardId'</span><span class="p">:</span> <span class="s1">'shardId-00000001414562045508-2bac9cd2'</span><span class="p">,</span>
+                <span class="s1">'SequenceNumberRange'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'EndingSequenceNumber'</span><span class="p">:</span> <span class="s1">'820400000000000001192334'</span><span class="p">,</span>
+                    <span class="s1">'StartingSequenceNumber'</span><span class="p">:</span> <span class="s1">'820400000000000001192334'</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s1">'ShardId'</span><span class="p">:</span> <span class="s1">'shardId-00000001414576573621-f55eea83'</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s1">'ParentShardId'</span><span class="p">:</span> <span class="s1">'shardId-00000001414576573621-f55eea83'</span><span class="p">,</span>
+                <span class="s1">'SequenceNumberRange'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'EndingSequenceNumber'</span><span class="p">:</span> <span class="s1">'1683700000000000001135967'</span><span class="p">,</span>
+                    <span class="s1">'StartingSequenceNumber'</span><span class="p">:</span> <span class="s1">'1683700000000000001135967'</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s1">'ShardId'</span><span class="p">:</span> <span class="s1">'shardId-00000001414592258131-674fd923'</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s1">'ParentShardId'</span><span class="p">:</span> <span class="s1">'shardId-00000001414592258131-674fd923'</span><span class="p">,</span>
+                <span class="s1">'SequenceNumberRange'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'StartingSequenceNumber'</span><span class="p">:</span> <span class="s1">'2574600000000000000935255'</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s1">'ShardId'</span><span class="p">:</span> <span class="s1">'shardId-00000001414608446368-3a1afbaf'</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s1">'StreamArn'</span><span class="p">:</span> <span class="s1">'arn:aws:dynamodb:us-west-2:111122223333:table/Forum/stream/2015-05-20T20:51:10.252'</span><span class="p">,</span>
+        <span class="s1">'StreamLabel'</span><span class="p">:</span> <span class="s1">'2015-05-20T20:51:10.252'</span><span class="p">,</span>
+        <span class="s1">'StreamStatus'</span><span class="p">:</span> <span class="s1">'ENABLED'</span><span class="p">,</span>
+        <span class="s1">'StreamViewType'</span><span class="p">:</span> <span class="s1">'NEW_AND_OLD_IMAGES'</span><span class="p">,</span>
+        <span class="s1">'TableName'</span><span class="p">:</span> <span class="s1">'Forum'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">'ResponseMetadata'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'...'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt id="DynamoDBStreams.Client.generate_presigned_url"><a name="//apple_ref/cpp/Method/DynamoDBStreams.Client.generate_presigned_url"></a>
+<code class="sig-name descname"><span class="pre">generate_presigned_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExpiresIn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HttpMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DynamoDBStreams.Client.generate_presigned_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a presigned url given a client, its method, and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ClientMethod</strong> (<em>string</em>) – The client method to presign for</p></li>
+<li><p><strong>Params</strong> (<em>dict</em>) – The parameters normally passed to
+<code class="docutils literal notranslate"><span class="pre">ClientMethod</span></code>.</p></li>
+<li><p><strong>ExpiresIn</strong> (<em>int</em>) – The number of seconds the presigned url is valid
+for. By default it expires in an hour (3600 seconds)</p></li>
+<li><p><strong>HttpMethod</strong> (<em>string</em>) – The http method to use on the generated url. By
+default, the http method is whatever is used in the method’s model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The presigned url</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="DynamoDBStreams.Client.get_paginator"><a name="//apple_ref/cpp/Method/DynamoDBStreams.Client.get_paginator"></a>
+<code class="sig-name descname"><span class="pre">get_paginator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DynamoDBStreams.Client.get_paginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a paginator for an operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>OperationNotPageableError</strong> – Raised if the operation is not
+pageable.  You can use the <code class="docutils literal notranslate"><span class="pre">client.can_paginate</span></code> method to
+check if an operation is pageable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>L{botocore.paginate.Paginator}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A paginator object.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="DynamoDBStreams.Client.get_records"><a name="//apple_ref/cpp/Method/DynamoDBStreams.Client.get_records"></a>
+<code class="sig-name descname"><span class="pre">get_records</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DynamoDBStreams.Client.get_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the stream records from a given shard.</p>
+<p>Specify a shard iterator using the <code class="docutils literal notranslate"><span class="pre">ShardIterator</span></code> parameter. The shard iterator specifies the position in the shard from which you want to start reading stream records sequentially. If there are no stream records available in the portion of the shard that the iterator points to, <code class="docutils literal notranslate"><span class="pre">GetRecords</span></code> returns an empty list. Note that it might take multiple calls to get to a portion of the shard that contains stream records.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">GetRecords</span></code> can retrieve a maximum of 1 MB of data or 1000 stream records, whichever comes first.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_records</span><span class="p">(</span>
+    <span class="n">ShardIterator</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">Limit</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ShardIterator</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
+</p></li>
+<li><p><strong>Limit</strong> (<em>integer</em>) – The maximum number of records to return from the shard. The upper limit is 1000.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Records'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'eventID'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'eventName'</span><span class="p">:</span> <span class="s1">'INSERT'</span><span class="o">|</span><span class="s1">'MODIFY'</span><span class="o">|</span><span class="s1">'REMOVE'</span><span class="p">,</span>
+            <span class="s1">'eventVersion'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'eventSource'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'awsRegion'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'dynamodb'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'ApproximateCreationDateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+                <span class="s1">'Keys'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'string'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'N'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'B'</span><span class="p">:</span> <span class="sa">b</span><span class="s1">'bytes'</span><span class="p">,</span>
+                        <span class="s1">'SS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'NS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'BS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="sa">b</span><span class="s1">'bytes'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'M'</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">'string'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'... recursive ...'</span><span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="s1">'L'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s1">'... recursive ...'</span><span class="p">},</span>
+                        <span class="p">],</span>
+                        <span class="s1">'NULL'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="s1">'BOOL'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s1">'NewImage'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'string'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'N'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'B'</span><span class="p">:</span> <span class="sa">b</span><span class="s1">'bytes'</span><span class="p">,</span>
+                        <span class="s1">'SS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'NS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'BS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="sa">b</span><span class="s1">'bytes'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'M'</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">'string'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'... recursive ...'</span><span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="s1">'L'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s1">'... recursive ...'</span><span class="p">},</span>
+                        <span class="p">],</span>
+                        <span class="s1">'NULL'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="s1">'BOOL'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s1">'OldImage'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'string'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'N'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'B'</span><span class="p">:</span> <span class="sa">b</span><span class="s1">'bytes'</span><span class="p">,</span>
+                        <span class="s1">'SS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'NS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'BS'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="sa">b</span><span class="s1">'bytes'</span><span class="p">,</span>
+                        <span class="p">],</span>
+                        <span class="s1">'M'</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">'string'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'... recursive ...'</span><span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="s1">'L'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s1">'... recursive ...'</span><span class="p">},</span>
+                        <span class="p">],</span>
+                        <span class="s1">'NULL'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="s1">'BOOL'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s1">'SequenceNumber'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'SizeBytes'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'StreamViewType'</span><span class="p">:</span> <span class="s1">'NEW_IMAGE'</span><span class="o">|</span><span class="s1">'OLD_IMAGE'</span><span class="o">|</span><span class="s1">'NEW_AND_OLD_IMAGES'</span><span class="o">|</span><span class="s1">'KEYS_ONLY'</span>
+            <span class="p">},</span>
+            <span class="s1">'userIdentity'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'PrincipalId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'Type'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextShardIterator'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the output of a <code class="docutils literal notranslate"><span class="pre">GetRecords</span></code> operation.</p>
+<ul>
+<li><p><strong>Records</strong> <em>(list) –</em></p>
+<p>The stream records from the shard, which were retrieved using the shard iterator.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A description of a unique event within a stream.</p>
+<ul>
+<li><p><strong>eventID</strong> <em>(string) –</em></p>
+<p>A globally unique identifier for the event that was recorded in this stream record.</p>
+</li>
+<li><p><strong>eventName</strong> <em>(string) –</em></p>
+<p>The type of data modification that was performed on the DynamoDB table:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INSERT</span></code> - a new item was added to the table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MODIFY</span></code> - one or more of an existing item’s attributes were modified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REMOVE</span></code> - the item was deleted from the table</p></li>
+</ul>
+</li>
+<li><p><strong>eventVersion</strong> <em>(string) –</em></p>
+<p>The version number of the stream record format. This number is updated whenever the structure of <code class="docutils literal notranslate"><span class="pre">Record</span></code> is modified.</p>
+<p>Client applications must not assume that <code class="docutils literal notranslate"><span class="pre">eventVersion</span></code> will remain at a particular value, as this number is subject to change at any time. In general, <code class="docutils literal notranslate"><span class="pre">eventVersion</span></code> will only increase as the low-level DynamoDB Streams API evolves.</p>
+</li>
+<li><p><strong>eventSource</strong> <em>(string) –</em></p>
+<p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code class="docutils literal notranslate"><span class="pre">aws:dynamodb</span></code> .</p>
+</li>
+<li><p><strong>awsRegion</strong> <em>(string) –</em></p>
+<p>The region in which the <code class="docutils literal notranslate"><span class="pre">GetRecords</span></code> request was received.</p>
+</li>
+<li><p><strong>dynamodb</strong> <em>(dict) –</em></p>
+<p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
+<ul>
+<li><p><strong>ApproximateCreationDateTime</strong> <em>(datetime) –</em></p>
+<p>The approximate date and time when the stream record was created, in <a class="reference external" href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+</li>
+<li><p><strong>Keys</strong> <em>(dict) –</em></p>
+<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<ul>
+<li><p><strong>S</strong> <em>(string) –</em></p>
+<p>An attribute of type String. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"S":</span> <span class="pre">"Hello"</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>N</strong> <em>(string) –</em></p>
+<p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"N":</span> <span class="pre">"123.45"</span></code></p>
+</div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</li>
+<li><p><strong>B</strong> <em>(bytes) –</em></p>
+<p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>SS</strong> <em>(list) –</em></p>
+<p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>NS</strong> <em>(list) –</em></p>
+<p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></code></p>
+</div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>BS</strong> <em>(list) –</em></p>
+<p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>(bytes) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>M</strong> <em>(dict) –</em></p>
+<p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></code></p>
+</div></blockquote>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>L</strong> <em>(list) –</em></p>
+<p>An attribute of type List. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"L":</span> <span class="pre">[</span> <span class="pre">{"S":</span> <span class="pre">"Cookies"}</span> <span class="pre">,</span> <span class="pre">{"S":</span> <span class="pre">"Coffee"},</span> <span class="pre">{"N",</span> <span class="pre">"3.14159"}]</span></code></p>
+</div></blockquote>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</li>
+</ul>
+</li>
+<li><p><strong>NULL</strong> <em>(boolean) –</em></p>
+<p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"NULL":</span> <span class="pre">true</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>BOOL</strong> <em>(boolean) –</em></p>
+<p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"BOOL":</span> <span class="pre">true</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NewImage</strong> <em>(dict) –</em></p>
+<p>The item in the DynamoDB table as it appeared after it was modified.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<ul>
+<li><p><strong>S</strong> <em>(string) –</em></p>
+<p>An attribute of type String. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"S":</span> <span class="pre">"Hello"</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>N</strong> <em>(string) –</em></p>
+<p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"N":</span> <span class="pre">"123.45"</span></code></p>
+</div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</li>
+<li><p><strong>B</strong> <em>(bytes) –</em></p>
+<p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>SS</strong> <em>(list) –</em></p>
+<p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>NS</strong> <em>(list) –</em></p>
+<p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></code></p>
+</div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>BS</strong> <em>(list) –</em></p>
+<p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>(bytes) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>M</strong> <em>(dict) –</em></p>
+<p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></code></p>
+</div></blockquote>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>L</strong> <em>(list) –</em></p>
+<p>An attribute of type List. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"L":</span> <span class="pre">[</span> <span class="pre">{"S":</span> <span class="pre">"Cookies"}</span> <span class="pre">,</span> <span class="pre">{"S":</span> <span class="pre">"Coffee"},</span> <span class="pre">{"N",</span> <span class="pre">"3.14159"}]</span></code></p>
+</div></blockquote>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</li>
+</ul>
+</li>
+<li><p><strong>NULL</strong> <em>(boolean) –</em></p>
+<p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"NULL":</span> <span class="pre">true</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>BOOL</strong> <em>(boolean) –</em></p>
+<p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"BOOL":</span> <span class="pre">true</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>OldImage</strong> <em>(dict) –</em></p>
+<p>The item in the DynamoDB table as it appeared before it was modified.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<ul>
+<li><p><strong>S</strong> <em>(string) –</em></p>
+<p>An attribute of type String. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"S":</span> <span class="pre">"Hello"</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>N</strong> <em>(string) –</em></p>
+<p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"N":</span> <span class="pre">"123.45"</span></code></p>
+</div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</li>
+<li><p><strong>B</strong> <em>(bytes) –</em></p>
+<p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>SS</strong> <em>(list) –</em></p>
+<p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>NS</strong> <em>(list) –</em></p>
+<p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></code></p>
+</div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>BS</strong> <em>(list) –</em></p>
+<p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>(bytes) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>M</strong> <em>(dict) –</em></p>
+<p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></code></p>
+</div></blockquote>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>L</strong> <em>(list) –</em></p>
+<p>An attribute of type List. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"L":</span> <span class="pre">[</span> <span class="pre">{"S":</span> <span class="pre">"Cookies"}</span> <span class="pre">,</span> <span class="pre">{"S":</span> <span class="pre">"Coffee"},</span> <span class="pre">{"N",</span> <span class="pre">"3.14159"}]</span></code></p>
+</div></blockquote>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</li>
+</ul>
+</li>
+<li><p><strong>NULL</strong> <em>(boolean) –</em></p>
+<p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"NULL":</span> <span class="pre">true</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>BOOL</strong> <em>(boolean) –</em></p>
+<p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">"BOOL":</span> <span class="pre">true</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>SequenceNumber</strong> <em>(string) –</em></p>
+<p>The sequence number of the stream record.</p>
+</li>
+<li><p><strong>SizeBytes</strong> <em>(integer) –</em></p>
+<p>The size of the stream record, in bytes.</p>
+</li>
+<li><p><strong>StreamViewType</strong> <em>(string) –</em></p>
+<p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">KEYS_ONLY</span></code> - only the key attributes of the modified item.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NEW_IMAGE</span></code> - the entire item, as it appeared after it was modified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OLD_IMAGE</span></code> - the entire item, as it appeared before it was modified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NEW_AND_OLD_IMAGES</span></code> - both the new and the old item images of the item.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>userIdentity</strong> <em>(dict) –</em></p>
+<p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
+<ul class="simple">
+<li><p>Records[].userIdentity.type “Service”</p></li>
+<li><p>Records[].userIdentity.principalId “dynamodb.amazonaws.com”</p></li>
+</ul>
+<ul>
+<li><p><strong>PrincipalId</strong> <em>(string) –</em></p>
+<p>A unique identifier for the entity that made the call. For Time To Live, the principalId is “dynamodb.amazonaws.com”.</p>
+</li>
+<li><p><strong>Type</strong> <em>(string) –</em></p>
+<p>The type of the identity. For Time To Live, the type is “Service”.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextShardIterator</strong> <em>(string) –</em></p>
+<p>The next position in the shard from which to start sequentially reading stream records. If set to <code class="docutils literal notranslate"><span class="pre">null</span></code> , the shard has been closed and the requested iterator will not return any more data.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.LimitExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.ExpiredIteratorException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.TrimmedDataAccessException</span></code></p></li>
+</ul>
+<p><strong>Examples</strong></p>
+<p>The following example retrieves all the stream records from a shard.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_records</span><span class="p">(</span>
+    <span class="n">ShardIterator</span><span class="o">=</span><span class="s1">'arn:aws:dynamodb:us-west-2:111122223333:table/Forum/stream/2015-05-20T20:51:10.252|1|AAAAAAAAAAEvJp6D+zaQ...  &lt;remaining characters omitted&gt; ...'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Expected Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'NextShardIterator'</span><span class="p">:</span> <span class="s1">'arn:aws:dynamodb:us-west-2:111122223333:table/Forum/stream/2015-05-20T20:51:10.252|1|AAAAAAAAAAGQBYshYDEe ... &lt;remaining characters omitted&gt; ...'</span><span class="p">,</span>
+    <span class="s1">'Records'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'awsRegion'</span><span class="p">:</span> <span class="s1">'us-west-2'</span><span class="p">,</span>
+            <span class="s1">'dynamodb'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'ApproximateCreationDateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="s1">'Keys'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'ForumName'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'DynamoDB'</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="s1">'Subject'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'DynamoDB Thread 3'</span><span class="p">,</span>
+                    <span class="p">},</span>
+                <span class="p">},</span>
+                <span class="s1">'SequenceNumber'</span><span class="p">:</span> <span class="s1">'300000000000000499659'</span><span class="p">,</span>
+                <span class="s1">'SizeBytes'</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+                <span class="s1">'StreamViewType'</span><span class="p">:</span> <span class="s1">'KEYS_ONLY'</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s1">'eventID'</span><span class="p">:</span> <span class="s1">'e2fd9c34eff2d779b297b26f5fef4206'</span><span class="p">,</span>
+            <span class="s1">'eventName'</span><span class="p">:</span> <span class="s1">'INSERT'</span><span class="p">,</span>
+            <span class="s1">'eventSource'</span><span class="p">:</span> <span class="s1">'aws:dynamodb'</span><span class="p">,</span>
+            <span class="s1">'eventVersion'</span><span class="p">:</span> <span class="s1">'1.0'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s1">'awsRegion'</span><span class="p">:</span> <span class="s1">'us-west-2'</span><span class="p">,</span>
+            <span class="s1">'dynamodb'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'ApproximateCreationDateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="s1">'Keys'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'ForumName'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'DynamoDB'</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="s1">'Subject'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'DynamoDB Thread 1'</span><span class="p">,</span>
+                    <span class="p">},</span>
+                <span class="p">},</span>
+                <span class="s1">'SequenceNumber'</span><span class="p">:</span> <span class="s1">'400000000000000499660'</span><span class="p">,</span>
+                <span class="s1">'SizeBytes'</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+                <span class="s1">'StreamViewType'</span><span class="p">:</span> <span class="s1">'KEYS_ONLY'</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s1">'eventID'</span><span class="p">:</span> <span class="s1">'4b25bd0da9a181a155114127e4837252'</span><span class="p">,</span>
+            <span class="s1">'eventName'</span><span class="p">:</span> <span class="s1">'MODIFY'</span><span class="p">,</span>
+            <span class="s1">'eventSource'</span><span class="p">:</span> <span class="s1">'aws:dynamodb'</span><span class="p">,</span>
+            <span class="s1">'eventVersion'</span><span class="p">:</span> <span class="s1">'1.0'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s1">'awsRegion'</span><span class="p">:</span> <span class="s1">'us-west-2'</span><span class="p">,</span>
+            <span class="s1">'dynamodb'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'ApproximateCreationDateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="s1">'Keys'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'ForumName'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'DynamoDB'</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="s1">'Subject'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'S'</span><span class="p">:</span> <span class="s1">'DynamoDB Thread 2'</span><span class="p">,</span>
+                    <span class="p">},</span>
+                <span class="p">},</span>
+                <span class="s1">'SequenceNumber'</span><span class="p">:</span> <span class="s1">'500000000000000499661'</span><span class="p">,</span>
+                <span class="s1">'SizeBytes'</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+                <span class="s1">'StreamViewType'</span><span class="p">:</span> <span class="s1">'KEYS_ONLY'</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s1">'eventID'</span><span class="p">:</span> <span class="s1">'740280c73a3df7842edab3548a1b08ad'</span><span class="p">,</span>
+            <span class="s1">'eventName'</span><span class="p">:</span> <span class="s1">'REMOVE'</span><span class="p">,</span>
+            <span class="s1">'eventSource'</span><span class="p">:</span> <span class="s1">'aws:dynamodb'</span><span class="p">,</span>
+            <span class="s1">'eventVersion'</span><span class="p">:</span> <span class="s1">'1.0'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'ResponseMetadata'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'...'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt id="DynamoDBStreams.Client.get_shard_iterator"><a name="//apple_ref/cpp/Method/DynamoDBStreams.Client.get_shard_iterator"></a>
+<code class="sig-name descname"><span class="pre">get_shard_iterator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DynamoDBStreams.Client.get_shard_iterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a shard iterator. A shard iterator provides information about how to retrieve the stream records from within a shard. Use the shard iterator in a subsequent <code class="docutils literal notranslate"><span class="pre">GetRecords</span></code> request to read the stream records from the shard.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A shard iterator expires 15 minutes after it is returned to the requester.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_shard_iterator</span><span class="p">(</span>
+    <span class="n">StreamArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ShardId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ShardIteratorType</span><span class="o">=</span><span class="s1">'TRIM_HORIZON'</span><span class="o">|</span><span class="s1">'LATEST'</span><span class="o">|</span><span class="s1">'AT_SEQUENCE_NUMBER'</span><span class="o">|</span><span class="s1">'AFTER_SEQUENCE_NUMBER'</span><span class="p">,</span>
+    <span class="n">SequenceNumber</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>StreamArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The Amazon Resource Name (ARN) for the stream.</p>
+</p></li>
+<li><p><strong>ShardId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
+</p></li>
+<li><p><strong>ShardIteratorType</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">AT_SEQUENCE_NUMBER</span></code> - Start reading exactly from the position denoted by a specific sequence number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AFTER_SEQUENCE_NUMBER</span></code> - Start reading right after the position denoted by a specific sequence number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIM_HORIZON</span></code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LATEST</span></code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li>
+</ul>
+</p></li>
+<li><p><strong>SequenceNumber</strong> (<em>string</em>) – The sequence number of a stream record in the shard from which to start reading.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'ShardIterator'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the output of a <code class="docutils literal notranslate"><span class="pre">GetShardIterator</span></code> operation.</p>
+<ul>
+<li><p><strong>ShardIterator</strong> <em>(string) –</em></p>
+<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.TrimmedDataAccessException</span></code></p></li>
+</ul>
+<p><strong>Examples</strong></p>
+<p>The following example returns a shard iterator for the provided stream ARN and shard ID.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_shard_iterator</span><span class="p">(</span>
+    <span class="n">ShardId</span><span class="o">=</span><span class="s1">'00000001414576573621-f55eea83'</span><span class="p">,</span>
+    <span class="n">ShardIteratorType</span><span class="o">=</span><span class="s1">'TRIM_HORIZON'</span><span class="p">,</span>
+    <span class="n">StreamArn</span><span class="o">=</span><span class="s1">'arn:aws:dynamodb:us-west-2:111122223333:table/Forum/stream/2015-05-20T20:51:10.252'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Expected Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'ShardIterator'</span><span class="p">:</span> <span class="s1">'arn:aws:dynamodb:us-west-2:111122223333:table/Forum/stream/2015-05-20T20:51:10.252|1|AAAAAAAAAAEvJp6D+zaQ...  &lt;remaining characters omitted&gt; ...'</span><span class="p">,</span>
+    <span class="s1">'ResponseMetadata'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'...'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt id="DynamoDBStreams.Client.get_waiter"><a name="//apple_ref/cpp/Method/DynamoDBStreams.Client.get_waiter"></a>
+<code class="sig-name descname"><span class="pre">get_waiter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waiter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DynamoDBStreams.Client.get_waiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object that can wait for some condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waiter_name</strong> (<em>str</em>) – The name of the waiter to get. See the waiters
+section of the service docs for a list of available waiters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified waiter object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>botocore.waiter.Waiter</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="DynamoDBStreams.Client.list_streams"><a name="//apple_ref/cpp/Method/DynamoDBStreams.Client.list_streams"></a>
+<code class="sig-name descname"><span class="pre">list_streams</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DynamoDBStreams.Client.list_streams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an array of stream ARNs associated with the current account and endpoint. If the <code class="docutils literal notranslate"><span class="pre">TableName</span></code> parameter is present, then <code class="docutils literal notranslate"><span class="pre">ListStreams</span></code> will return only the streams ARNs for that table.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can call <code class="docutils literal notranslate"><span class="pre">ListStreams</span></code> at a maximum rate of 5 times per second.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_streams</span><span class="p">(</span>
+    <span class="n">TableName</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">Limit</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">ExclusiveStartStreamArn</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TableName</strong> (<em>string</em>) – If this parameter is provided, then only the streams associated with this table name are returned.</p></li>
+<li><p><strong>Limit</strong> (<em>integer</em>) – The maximum number of streams to return. The upper limit is 100.</p></li>
+<li><p><strong>ExclusiveStartStreamArn</strong> (<em>string</em>) – The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code class="docutils literal notranslate"><span class="pre">LastEvaluatedStreamArn</span></code> in the previous operation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Streams'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'StreamArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'TableName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'StreamLabel'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'LastEvaluatedStreamArn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents the output of a <code class="docutils literal notranslate"><span class="pre">ListStreams</span></code> operation.</p>
+<ul>
+<li><p><strong>Streams</strong> <em>(list) –</em></p>
+<p>A list of stream descriptors associated with the current account and endpoint.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents all of the data describing a particular stream.</p>
+<ul>
+<li><p><strong>StreamArn</strong> <em>(string) –</em></p>
+<p>The Amazon Resource Name (ARN) for the stream.</p>
+</li>
+<li><p><strong>TableName</strong> <em>(string) –</em></p>
+<p>The DynamoDB table with which the stream is associated.</p>
+</li>
+<li><p><strong>StreamLabel</strong> <em>(string) –</em></p>
+<p>A timestamp, in ISO 8601 format, for this stream.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">LatestStreamLabel</span></code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+<ul class="simple">
+<li><p>the AWS customer ID.</p></li>
+<li><p>the table name</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">StreamLabel</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>LastEvaluatedStreamArn</strong> <em>(string) –</em></p>
+<p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">LastEvaluatedStreamArn</span></code> is empty, then the “last page” of results has been processed and there is no more data to be retrieved.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">LastEvaluatedStreamArn</span></code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code class="docutils literal notranslate"><span class="pre">LastEvaluatedStreamArn</span></code> is empty.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DynamoDBStreams.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+<p><strong>Examples</strong></p>
+<p>The following example lists all of the stream ARNs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_streams</span><span class="p">(</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Expected Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Streams'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'StreamArn'</span><span class="p">:</span> <span class="s1">'arn:aws:dynamodb:us-wesst-2:111122223333:table/Forum/stream/2015-05-20T20:51:10.252'</span><span class="p">,</span>
+            <span class="s1">'StreamLabel'</span><span class="p">:</span> <span class="s1">'2015-05-20T20:51:10.252'</span><span class="p">,</span>
+            <span class="s1">'TableName'</span><span class="p">:</span> <span class="s1">'Forum'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s1">'StreamArn'</span><span class="p">:</span> <span class="s1">'arn:aws:dynamodb:us-west-2:111122223333:table/Forum/stream/2015-05-20T20:50:02.714'</span><span class="p">,</span>
+            <span class="s1">'StreamLabel'</span><span class="p">:</span> <span class="s1">'2015-05-20T20:50:02.714'</span><span class="p">,</span>
+            <span class="s1">'TableName'</span><span class="p">:</span> <span class="s1">'Forum'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s1">'StreamArn'</span><span class="p">:</span> <span class="s1">'arn:aws:dynamodb:us-west-2:111122223333:table/Forum/stream/2015-05-19T23:03:50.641'</span><span class="p">,</span>
+            <span class="s1">'StreamLabel'</span><span class="p">:</span> <span class="s1">'2015-05-19T23:03:50.641'</span><span class="p">,</span>
+            <span class="s1">'TableName'</span><span class="p">:</span> <span class="s1">'Forum'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'ResponseMetadata'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'...'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="paginators">
+<h2><a class="toc-backref" href="#id6">Paginators</a><a class="headerlink" href="#paginators" title="Permalink to this headline">¶</a></h2>
+<p>The available paginators are:</p>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="dynamodb.html" title="previous chapter (use the left arrow)">DynamoDB</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="ebs.html" title="next chapter (use the right arrow)">EBS</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="ebs.html" title="EBS">next</a> |</li>
+<li class="right">
+<a href="dynamodb.html" title="DynamoDB">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">DynamoDBStreams</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

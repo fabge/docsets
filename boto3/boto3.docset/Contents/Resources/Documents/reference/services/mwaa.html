@@ -1,0 +1,1797 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MWAA — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="neptune.html" rel="next" title="Neptune"/>
+<link href="mturk.html" rel="prev" title="MTurk"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="neptune.html" title="Neptune">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="mturk.html" title="MTurk">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">MWAA</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessanalyzer.html">AccessAnalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm.html">ACM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm-pca.html">ACMPCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alexaforbusiness.html">AlexaForBusiness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amp.html">PrometheusService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplify.html">Amplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplifybackend.html">AmplifyBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigateway.html">APIGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewaymanagementapi.html">ApiGatewayManagementApi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewayv2.html">ApiGatewayV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appconfig.html">AppConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appflow.html">Appflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appintegrations.html">AppIntegrationsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-autoscaling.html">ApplicationAutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">ApplicationInsights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appmesh.html">AppMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appstream.html">AppStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appsync.html">AppSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="athena.html">Athena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auditmanager.html">AuditManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling.html">AutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling-plans.html">AutoScalingPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch.html">Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="braket.html">Braket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ce.html">CostExplorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chime.html">Chime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud9.html">Cloud9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clouddirectory.html">CloudDirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudformation.html">CloudFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudfront.html">CloudFront</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsm.html">CloudHSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsmv2.html">CloudHSMV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearch.html">CloudSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearchdomain.html">CloudSearchDomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudtrail.html">CloudTrail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudwatch.html">CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeartifact.html">CodeArtifact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codebuild.html">CodeBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codecommit.html">CodeCommit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codedeploy.html">CodeDeploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguru-reviewer.html">CodeGuruReviewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguruprofiler.html">CodeGuruProfiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codepipeline.html">CodePipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar.html">CodeStar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-connections.html">CodeStarconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-notifications.html">CodeStarNotifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-identity.html">CognitoIdentity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-idp.html">CognitoIdentityProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-sync.html">CognitoSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehend.html">Comprehend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehendmedical.html">ComprehendMedical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute-optimizer.html">ComputeOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect-contact-lens.html">ConnectContactLens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectparticipant.html">ConnectParticipant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cur.html">CostandUsageReportService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customer-profiles.html">CustomerProfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databrew.html">GlueDataBrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataexchange.html">DataExchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datapipeline.html">DataPipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasync.html">DataSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dax.html">DAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detective.html">Detective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devicefarm.html">DeviceFarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devops-guru.html">DevOpsGuru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directconnect.html">DirectConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html">ApplicationDiscoveryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dlm.html">DLM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dms.html">DatabaseMigrationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docdb.html">DocDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ds.html">DirectoryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodb.html">DynamoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodbstreams.html">DynamoDBStreams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ebs.html">EBS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2.html">EC2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2-instance-connect.html">EC2InstanceConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr.html">ECR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr-public.html">ECRPublic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecs.html">ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efs.html">EFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eks.html">EKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-inference.html">ElasticInference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticache.html">ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticbeanstalk.html">ElasticBeanstalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastictranscoder.html">ElasticTranscoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elb.html">ElasticLoadBalancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elbv2.html">ElasticLoadBalancingv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr.html">EMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr-containers.html">EMRContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html">ElasticsearchService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">EventBridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace.html">finspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace-data.html">FinSpaceData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firehose.html">Firehose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fis.html">FIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fms.html">FMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecast.html">ForecastService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecastquery.html">ForecastQueryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frauddetector.html">FraudDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fsx.html">FSx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamelift.html">GameLift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glacier.html">Glacier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globalaccelerator.html">GlobalAccelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glue.html">Glue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrass.html">Greengrass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrassv2.html">GreengrassV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundstation.html">GroundStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guardduty.html">GuardDuty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="healthlake.html">HealthLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="honeycode.html">Honeycode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iam.html">IAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identitystore.html">IdentityStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagebuilder.html">imagebuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexport.html">ImportExport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot.html">IoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-data.html">IoTDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-jobs-data.html">IoTJobsDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-devices.html">IoT1ClickDevicesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-projects.html">IoT1ClickProjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotanalytics.html">IoTAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotdeviceadvisor.html">IoTDeviceAdvisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents.html">IoTEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents-data.html">IoTEventsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotfleethub.html">IoTFleetHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsecuretunneling.html">IoTSecureTunneling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsitewise.html">IoTSiteWise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotthingsgraph.html">IoTThingsGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotwireless.html">IoTWireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivs.html">IVS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kafka.html">Kafka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendra.html">kendra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis.html">Kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-archived-media.html">KinesisVideoArchivedMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-media.html">KinesisVideoMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-signaling.html">KinesisVideoSignalingChannels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalytics.html">KinesisAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalyticsv2.html">KinesisAnalyticsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisvideo.html">KinesisVideo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kms.html">KMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lakeformation.html">LakeFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda.html">Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-models.html">LexModelBuildingService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-runtime.html">LexRuntimeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-models.html">LexModelsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-runtime.html">LexRuntimeV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license-manager.html">LicenseManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lightsail.html">Lightsail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location.html">LocationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">CloudWatchLogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutequipment.html">LookoutEquipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutmetrics.html">LookoutMetrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutvision.html">LookoutforVision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html">MachineLearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie.html">Macie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie2.html">Macie2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managedblockchain.html">ManagedBlockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-catalog.html">MarketplaceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-entitlement.html">MarketplaceEntitlementService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplacecommerceanalytics.html">MarketplaceCommerceAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconnect.html">MediaConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconvert.html">MediaConvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medialive.html">MediaLive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage.html">MediaPackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage-vod.html">MediaPackageVod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore.html">MediaStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore-data.html">MediaStoreData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatailor.html">MediaTailor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteringmarketplace.html">MarketplaceMetering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgh.html">MigrationHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgn.html">mgn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrationhub-config.html">MigrationHubConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mq.html">MQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mturk.html">MTurk</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MWAA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paginators">Paginators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neptune.html">Neptune</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network-firewall.html">NetworkFirewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkmanager.html">NetworkManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html">NimbleStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworks.html">OpsWorks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworkscm.html">OpsWorksCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizations.html">Organizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outposts.html">Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">Personalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-events.html">PersonalizeEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-runtime.html">PersonalizeRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pi.html">PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint.html">Pinpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-email.html">PinpointEmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polly.html">Polly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing.html">Pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb.html">QLDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb-session.html">QLDBSession</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quicksight.html">QuickSight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ram.html">RAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds.html">RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds-data.html">RDSDataService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift.html">Redshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift-data.html">RedshiftDataAPIService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rekognition.html">Rekognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resource-groups.html">ResourceGroups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resourcegroupstaggingapi.html">ResourceGroupsTaggingAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomaker.html">RoboMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53.html">Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53domains.html">Route53Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53resolver.html">Route53Resolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3.html">S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3control.html">S3Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3outposts.html">S3Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker.html">SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-a2i-runtime.html">AugmentedAIRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-edge.html">SagemakerEdgeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-featurestore-runtime.html">SageMakerFeatureStoreRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-runtime.html">SageMakerRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savingsplans.html">SavingsPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html">Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdb.html">SimpleDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secretsmanager.html">SecretsManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityhub.html">SecurityHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverlessrepo.html">ServerlessApplicationRepository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-quotas.html">ServiceQuotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog.html">ServiceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog-appregistry.html">AppRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicediscovery.html">ServiceDiscovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ses.html">SES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sesv2.html">SESV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signer.html">signer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html">SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snowball.html">Snowball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sns.html">SNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqs.html">SQS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssm.html">SSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso.html">SSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-admin.html">SSOAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-oidc.html">SSOOIDC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepfunctions.html">SFN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storagegateway.html">StorageGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sts.html">STS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swf.html">SWF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetics.html">Synthetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textract.html">Textract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-query.html">TimestreamQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-write.html">TimestreamWrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transcribe.html">TranscribeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer.html">Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">Translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf.html">WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf-regional.html">WAFRegional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wafv2.html">WAFV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wellarchitected.html">WellArchitected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workdocs.html">WorkDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worklink.html">WorkLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmail.html">WorkMail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmailmessageflow.html">WorkMailMessageFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workspaces.html">WorkSpaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xray.html">XRay</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Available services</a></li>
+<li>MWAA</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="mwaa">
+<h1><a class="toc-backref" href="#id12">MWAA</a><a class="headerlink" href="#mwaa" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#mwaa" id="id12">MWAA</a></p>
+<ul>
+<li><p><a class="reference internal" href="#client" id="id13">Client</a></p></li>
+<li><p><a class="reference internal" href="#paginators" id="id14">Paginators</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="client">
+<h2><a class="toc-backref" href="#id13">Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="MWAA.Client"><a name="//apple_ref/cpp/Class/MWAA.Client"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">MWAA.</span></code><code class="sig-name descname"><span class="pre">Client</span></code><a class="headerlink" href="#MWAA.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>A low-level client representing AmazonMWAA</p>
+<p>This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html">What Is Amazon MWAA?</a> .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">'mwaa'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These are the available methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#MWAA.Client.can_paginate" title="MWAA.Client.can_paginate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">can_paginate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.create_cli_token" title="MWAA.Client.create_cli_token"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_cli_token()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.create_environment" title="MWAA.Client.create_environment"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_environment()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.create_web_login_token" title="MWAA.Client.create_web_login_token"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_web_login_token()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.delete_environment" title="MWAA.Client.delete_environment"><code class="xref py py-meth docutils literal notranslate"><span class="pre">delete_environment()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.generate_presigned_url" title="MWAA.Client.generate_presigned_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate_presigned_url()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.get_environment" title="MWAA.Client.get_environment"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_environment()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.get_paginator" title="MWAA.Client.get_paginator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_paginator()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.get_waiter" title="MWAA.Client.get_waiter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_waiter()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.list_environments" title="MWAA.Client.list_environments"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_environments()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.list_tags_for_resource" title="MWAA.Client.list_tags_for_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_tags_for_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.publish_metrics" title="MWAA.Client.publish_metrics"><code class="xref py py-meth docutils literal notranslate"><span class="pre">publish_metrics()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.tag_resource" title="MWAA.Client.tag_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tag_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.untag_resource" title="MWAA.Client.untag_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">untag_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MWAA.Client.update_environment" title="MWAA.Client.update_environment"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update_environment()</span></code></a></p></li>
+</ul>
+<dl class="py method">
+<dt id="MWAA.Client.can_paginate"><a name="//apple_ref/cpp/Method/MWAA.Client.can_paginate"></a>
+<code class="sig-name descname"><span class="pre">can_paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.can_paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an operation can be paginated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the operation can be paginated,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.create_cli_token"><a name="//apple_ref/cpp/Method/MWAA.Client.create_cli_token"></a>
+<code class="sig-name descname"><span class="pre">create_cli_token</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.create_cli_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a CLI token to use Airflow CLI.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateCliToken">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_cli_token</span><span class="p">(</span>
+    <span class="n">Name</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Name</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Create a CLI token request for a MWAA environment.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'CliToken'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'WebServerHostname'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>CliToken</strong> <em>(string) –</em></p>
+<p>Create an Airflow CLI login token response for the provided JWT token.</p>
+</li>
+<li><p><strong>WebServerHostname</strong> <em>(string) –</em></p>
+<p>Create an Airflow CLI login token response for the provided webserver hostname.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.create_environment"><a name="//apple_ref/cpp/Method/MWAA.Client.create_environment"></a>
+<code class="sig-name descname"><span class="pre">create_environment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.create_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>JSON blob that describes the environment to create.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateEnvironment">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_environment</span><span class="p">(</span>
+    <span class="n">AirflowConfigurationOptions</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="n">AirflowVersion</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">DagS3Path</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">EnvironmentClass</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ExecutionRoleArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">KmsKey</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">LoggingConfiguration</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'DagProcessingLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">},</span>
+        <span class="s1">'SchedulerLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">},</span>
+        <span class="s1">'TaskLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">},</span>
+        <span class="s1">'WebserverLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">},</span>
+        <span class="s1">'WorkerLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="n">MaxWorkers</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">MinWorkers</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">Name</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">NetworkConfiguration</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'SecurityGroupIds'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">'string'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">'SubnetIds'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">'string'</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="n">PluginsS3ObjectVersion</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">PluginsS3Path</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">RequirementsS3ObjectVersion</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">RequirementsS3Path</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">SourceBucketArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">Tags</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="n">WebserverAccessMode</span><span class="o">=</span><span class="s1">'PRIVATE_ONLY'</span><span class="o">|</span><span class="s1">'PUBLIC_ONLY'</span><span class="p">,</span>
+    <span class="n">WeeklyMaintenanceWindowStart</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AirflowConfigurationOptions</strong> (<em>dict</em>) – <p>The Apache Airflow configuration setting you want to override in your environment. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Environment configuration</a> .</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>AirflowVersion</strong> (<em>string</em>) – The Apache Airflow version you want to use for your environment.</p></li>
+<li><p><strong>DagS3Path</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The relative path to the DAG folder on your Amazon S3 storage bucket. For example, <code class="docutils literal notranslate"><span class="pre">dags</span></code> . For more information, see <a class="reference external" href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import.html">Importing DAGs on Amazon MWAA</a> .</p>
+</p></li>
+<li><p><strong>EnvironmentClass</strong> (<em>string</em>) – The environment class you want to use for your environment. The environment class determines the size of the containers and database used for your Apache Airflow services.</p></li>
+<li><p><strong>ExecutionRoleArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an AWS Identity and Access Management (IAM) role that grants MWAA permission to access AWS services and resources used by your environment. For example, <code class="docutils literal notranslate"><span class="pre">arn:aws:iam::123456789:role/my-execution-role</span></code> . For more information, see <a class="reference external" href="https://docs.aws.amazon.com/mwaa/latest/userguide/manage-access.html">Managing access to Amazon Managed Workflows for Apache Airflow</a> .</p>
+</p></li>
+<li><p><strong>KmsKey</strong> (<em>string</em>) – The AWS Key Management Service (KMS) key to encrypt and decrypt the data in your environment. You can use an AWS KMS key managed by MWAA, or a custom KMS key (advanced). For more information, see <a class="reference external" href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html?icmpid=docs_console_unmapped#master_keys">Customer master keys (CMKs)</a> in the AWS KMS developer guide.</p></li>
+<li><p><strong>LoggingConfiguration</strong> (<em>dict</em>) – <p>The Apache Airflow logs you want to send to Amazon CloudWatch Logs.</p>
+<ul>
+<li><p><strong>DagProcessingLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>SchedulerLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>TaskLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>WebserverLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>WorkerLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>MaxWorkers</strong> (<em>integer</em>) – The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers and the Fargate containers that run your tasks up to the number you specify in this field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra containers leaving the one worker that is included with your environment.</p></li>
+<li><p><strong>MinWorkers</strong> (<em>integer</em>) – The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers and the Fargate containers that run your tasks up to the number you specify in the <code class="docutils literal notranslate"><span class="pre">MaxWorkers</span></code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra containers leaving the worker count you specify in the <code class="docutils literal notranslate"><span class="pre">MinWorkers</span></code> field.</p></li>
+<li><p><strong>Name</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of your MWAA environment.</p>
+</p></li>
+<li><p><strong>NetworkConfiguration</strong> (<em>dict</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The VPC networking components you want to use for your environment. At least two private subnet identifiers and one VPC security group identifier are required to create an environment. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-mwaa.html">Creating the VPC network for a MWAA environment</a> .</p>
+<ul>
+<li><p><strong>SecurityGroupIds</strong> <em>(list) –</em></p>
+<p>A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>SubnetIds</strong> <em>(list) –</em></p>
+<p>Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different availability zones.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>PluginsS3ObjectVersion</strong> (<em>string</em>) – The <code class="docutils literal notranslate"><span class="pre">plugins.zip</span></code> file version you want to use.</p></li>
+<li><p><strong>PluginsS3Path</strong> (<em>string</em>) – The relative path to the <code class="docutils literal notranslate"><span class="pre">plugins.zip</span></code> file on your Amazon S3 storage bucket. For example, <code class="docutils literal notranslate"><span class="pre">plugins.zip</span></code> . If a relative path is provided in the request, then <code class="docutils literal notranslate"><span class="pre">PluginsS3ObjectVersion</span></code> is required. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import.html">Importing DAGs on Amazon MWAA</a> .</p></li>
+<li><p><strong>RequirementsS3ObjectVersion</strong> (<em>string</em>) – The <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file version you want to use.</p></li>
+<li><p><strong>RequirementsS3Path</strong> (<em>string</em>) – The relative path to the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file on your Amazon S3 storage bucket. For example, <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> . If a relative path is provided in the request, then <code class="docutils literal notranslate"><span class="pre">RequirementsS3ObjectVersion</span></code> is required. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import.html">Importing DAGs on Amazon MWAA</a> .</p></li>
+<li><p><strong>SourceBucketArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The Amazon Resource Name (ARN) of your Amazon S3 storage bucket. For example, <code class="docutils literal notranslate"><span class="pre">arn:aws:s3:::airflow-mybucketname</span></code> .</p>
+</p></li>
+<li><p><strong>Tags</strong> (<em>dict</em>) – <p>The metadata tags you want to attach to your environment. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> .</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>WebserverAccessMode</strong> (<em>string</em>) – The networking access of your Apache Airflow web server. A public network allows your Airflow UI to be accessed over the Internet by users granted access in your IAM policy. A private network limits access of your Airflow UI to users within your VPC. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-mwaa.html">Creating the VPC network for a MWAA environment</a> .</p></li>
+<li><p><strong>WeeklyMaintenanceWindowStart</strong> (<em>string</em>) – The day and time you want MWAA to start weekly maintenance updates on your environment.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Arn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>Arn</strong> <em>(string) –</em></p>
+<p>The resulting Amazon MWAA envirnonment ARN.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.create_web_login_token"><a name="//apple_ref/cpp/Method/MWAA.Client.create_web_login_token"></a>
+<code class="sig-name descname"><span class="pre">create_web_login_token</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.create_web_login_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a JWT token to be used to login to Airflow Web UI with claims based Authentication.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateWebLoginToken">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_web_login_token</span><span class="p">(</span>
+    <span class="n">Name</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Name</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'WebServerHostname'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'WebToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>WebServerHostname</strong> <em>(string) –</em></p>
+<p>Create an Airflow Web UI login token response for the provided webserver hostname.</p>
+</li>
+<li><p><strong>WebToken</strong> <em>(string) –</em></p>
+<p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.AccessDeniedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.delete_environment"><a name="//apple_ref/cpp/Method/MWAA.Client.delete_environment"></a>
+<code class="sig-name descname"><span class="pre">delete_environment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.delete_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an existing environment.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/DeleteEnvironment">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">delete_environment</span><span class="p">(</span>
+    <span class="n">Name</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Name</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the environment to delete.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul class="simple">
+<li><p><em>(dict) –</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.generate_presigned_url"><a name="//apple_ref/cpp/Method/MWAA.Client.generate_presigned_url"></a>
+<code class="sig-name descname"><span class="pre">generate_presigned_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExpiresIn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HttpMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.generate_presigned_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a presigned url given a client, its method, and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ClientMethod</strong> (<em>string</em>) – The client method to presign for</p></li>
+<li><p><strong>Params</strong> (<em>dict</em>) – The parameters normally passed to
+<code class="docutils literal notranslate"><span class="pre">ClientMethod</span></code>.</p></li>
+<li><p><strong>ExpiresIn</strong> (<em>int</em>) – The number of seconds the presigned url is valid
+for. By default it expires in an hour (3600 seconds)</p></li>
+<li><p><strong>HttpMethod</strong> (<em>string</em>) – The http method to use on the generated url. By
+default, the http method is whatever is used in the method’s model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The presigned url</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.get_environment"><a name="//apple_ref/cpp/Method/MWAA.Client.get_environment"></a>
+<code class="sig-name descname"><span class="pre">get_environment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.get_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get details of an existing environment.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/GetEnvironment">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_environment</span><span class="p">(</span>
+    <span class="n">Name</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Name</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the environment to retrieve.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Environment'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'AirflowConfigurationOptions'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+        <span class="s1">'AirflowVersion'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'Arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'CreatedAt'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'DagS3Path'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'EnvironmentClass'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'ExecutionRoleArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'KmsKey'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'LastUpdate'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'CreatedAt'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="s1">'Error'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'ErrorCode'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'ErrorMessage'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">},</span>
+            <span class="s1">'Status'</span><span class="p">:</span> <span class="s1">'SUCCESS'</span><span class="o">|</span><span class="s1">'PENDING'</span><span class="o">|</span><span class="s1">'FAILED'</span>
+        <span class="p">},</span>
+        <span class="s1">'LoggingConfiguration'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'DagProcessingLogs'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'CloudWatchLogGroupArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+            <span class="p">},</span>
+            <span class="s1">'SchedulerLogs'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'CloudWatchLogGroupArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+            <span class="p">},</span>
+            <span class="s1">'TaskLogs'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'CloudWatchLogGroupArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+            <span class="p">},</span>
+            <span class="s1">'WebserverLogs'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'CloudWatchLogGroupArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+            <span class="p">},</span>
+            <span class="s1">'WorkerLogs'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'CloudWatchLogGroupArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s1">'MaxWorkers'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'MinWorkers'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'Name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'NetworkConfiguration'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'SecurityGroupIds'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="s1">'SubnetIds'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s1">'PluginsS3ObjectVersion'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'PluginsS3Path'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'RequirementsS3ObjectVersion'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'RequirementsS3Path'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'ServiceRoleArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'SourceBucketArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'Status'</span><span class="p">:</span> <span class="s1">'CREATING'</span><span class="o">|</span><span class="s1">'CREATE_FAILED'</span><span class="o">|</span><span class="s1">'AVAILABLE'</span><span class="o">|</span><span class="s1">'UPDATING'</span><span class="o">|</span><span class="s1">'DELETING'</span><span class="o">|</span><span class="s1">'DELETED'</span><span class="o">|</span><span class="s1">'UNAVAILABLE'</span><span class="o">|</span><span class="s1">'UPDATE_FAILED'</span><span class="p">,</span>
+        <span class="s1">'Tags'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+        <span class="s1">'WebserverAccessMode'</span><span class="p">:</span> <span class="s1">'PRIVATE_ONLY'</span><span class="o">|</span><span class="s1">'PUBLIC_ONLY'</span><span class="p">,</span>
+        <span class="s1">'WebserverUrl'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'WeeklyMaintenanceWindowStart'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>Environment</strong> <em>(dict) –</em></p>
+<p>A JSON blob with environment details.</p>
+<ul>
+<li><p><strong>AirflowConfigurationOptions</strong> <em>(dict) –</em></p>
+<p>The Airflow Configuration Options of the Amazon MWAA Environment.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>AirflowVersion</strong> <em>(string) –</em></p>
+<p>The AirflowV ersion of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>Arn</strong> <em>(string) –</em></p>
+<p>The ARN of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>CreatedAt</strong> <em>(datetime) –</em></p>
+<p>The Created At date of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>DagS3Path</strong> <em>(string) –</em></p>
+<p>The Dags S3 Path of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>EnvironmentClass</strong> <em>(string) –</em></p>
+<p>The Environment Class (size) of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>ExecutionRoleArn</strong> <em>(string) –</em></p>
+<p>The Execution Role ARN of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>KmsKey</strong> <em>(string) –</em></p>
+<p>The Kms Key of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>LastUpdate</strong> <em>(dict) –</em></p>
+<p>Last update information for the environment.</p>
+<ul>
+<li><p><strong>CreatedAt</strong> <em>(datetime) –</em></p>
+<p>Time that last update occurred.</p>
+</li>
+<li><p><strong>Error</strong> <em>(dict) –</em></p>
+<p>Error string of last update, if applicable.</p>
+<ul>
+<li><p><strong>ErrorCode</strong> <em>(string) –</em></p>
+<p>Error code of update.</p>
+</li>
+<li><p><strong>ErrorMessage</strong> <em>(string) –</em></p>
+<p>Error message of update.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Status</strong> <em>(string) –</em></p>
+<p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>LoggingConfiguration</strong> <em>(dict) –</em></p>
+<p>The Logging Configuration of the Amazon MWAA Environment.</p>
+<ul>
+<li><p><strong>DagProcessingLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>CloudWatchLogGroupArn</strong> <em>(string) –</em></p>
+<p>Provides the ARN for the CloudWatch group where the logs will be published.</p>
+</li>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>SchedulerLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>CloudWatchLogGroupArn</strong> <em>(string) –</em></p>
+<p>Provides the ARN for the CloudWatch group where the logs will be published.</p>
+</li>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>TaskLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>CloudWatchLogGroupArn</strong> <em>(string) –</em></p>
+<p>Provides the ARN for the CloudWatch group where the logs will be published.</p>
+</li>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>WebserverLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>CloudWatchLogGroupArn</strong> <em>(string) –</em></p>
+<p>Provides the ARN for the CloudWatch group where the logs will be published.</p>
+</li>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>WorkerLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>CloudWatchLogGroupArn</strong> <em>(string) –</em></p>
+<p>Provides the ARN for the CloudWatch group where the logs will be published.</p>
+</li>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>MaxWorkers</strong> <em>(integer) –</em></p>
+<p>The maximum number of workers to run in your Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>MinWorkers</strong> <em>(integer) –</em></p>
+<p>The minimum number of workers to run in your Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>Name</strong> <em>(string) –</em></p>
+<p>The name of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>NetworkConfiguration</strong> <em>(dict) –</em></p>
+<p>Provide the security group and subnet IDs for the workers and scheduler.</p>
+<ul>
+<li><p><strong>SecurityGroupIds</strong> <em>(list) –</em></p>
+<p>A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>SubnetIds</strong> <em>(list) –</em></p>
+<p>Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different availability zones.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>PluginsS3ObjectVersion</strong> <em>(string) –</em></p>
+<p>The Plugins.zip S3 Object Version of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>PluginsS3Path</strong> <em>(string) –</em></p>
+<p>The Plugins.zip S3 Path of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>RequirementsS3ObjectVersion</strong> <em>(string) –</em></p>
+<p>The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>RequirementsS3Path</strong> <em>(string) –</em></p>
+<p>The Requirement.txt S3 Path of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>ServiceRoleArn</strong> <em>(string) –</em></p>
+<p>The Service Role ARN of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>SourceBucketArn</strong> <em>(string) –</em></p>
+<p>The Source S3 Bucket ARN of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>Status</strong> <em>(string) –</em></p>
+<p>The status of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>Tags</strong> <em>(dict) –</em></p>
+<p>The Tags of the Amazon MWAA Environment.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>WebserverAccessMode</strong> <em>(string) –</em></p>
+<p>The Webserver Access Mode of the Amazon MWAA Environment (public or private only).</p>
+</li>
+<li><p><strong>WebserverUrl</strong> <em>(string) –</em></p>
+<p>The Webserver URL of the Amazon MWAA Environment.</p>
+</li>
+<li><p><strong>WeeklyMaintenanceWindowStart</strong> <em>(string) –</em></p>
+<p>The Weekly Maintenance Window Start of the Amazon MWAA Environment.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.get_paginator"><a name="//apple_ref/cpp/Method/MWAA.Client.get_paginator"></a>
+<code class="sig-name descname"><span class="pre">get_paginator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.get_paginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a paginator for an operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>OperationNotPageableError</strong> – Raised if the operation is not
+pageable.  You can use the <code class="docutils literal notranslate"><span class="pre">client.can_paginate</span></code> method to
+check if an operation is pageable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>L{botocore.paginate.Paginator}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A paginator object.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.get_waiter"><a name="//apple_ref/cpp/Method/MWAA.Client.get_waiter"></a>
+<code class="sig-name descname"><span class="pre">get_waiter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waiter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.get_waiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object that can wait for some condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waiter_name</strong> (<em>str</em>) – The name of the waiter to get. See the waiters
+section of the service docs for a list of available waiters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified waiter object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>botocore.waiter.Waiter</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.list_environments"><a name="//apple_ref/cpp/Method/MWAA.Client.list_environments"></a>
+<code class="sig-name descname"><span class="pre">list_environments</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.list_environments" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Amazon MWAA Environments.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListEnvironments">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_environments</span><span class="p">(</span>
+    <span class="n">MaxResults</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">NextToken</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>MaxResults</strong> (<em>integer</em>) – The maximum results when listing MWAA environments.</p></li>
+<li><p><strong>NextToken</strong> (<em>string</em>) – The Next Token when listing MWAA environments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Environments'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>Environments</strong> <em>(list) –</em></p>
+<p>The list of Amazon MWAA Environments.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>The Next Token when listing MWAA environments.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.list_tags_for_resource"><a name="//apple_ref/cpp/Method/MWAA.Client.list_tags_for_resource"></a>
+<code class="sig-name descname"><span class="pre">list_tags_for_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.list_tags_for_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the tags for MWAA environments.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListTagsForResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_tags_for_resource</span><span class="p">(</span>
+    <span class="n">ResourceArn</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ResourceArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The ARN of the MWAA environment.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Tags'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>Tags</strong> <em>(dict) –</em></p>
+<p>The tags of the MWAA environments.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.publish_metrics"><a name="//apple_ref/cpp/Method/MWAA.Client.publish_metrics"></a>
+<code class="sig-name descname"><span class="pre">publish_metrics</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.publish_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>An operation for publishing metrics from the customers to the Ops plane.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/PublishMetrics">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publish_metrics</span><span class="p">(</span>
+    <span class="n">EnvironmentName</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">MetricData</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'Dimensions'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">'Name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                    <span class="s1">'Value'</span><span class="p">:</span> <span class="s1">'string'</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s1">'MetricName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'StatisticValues'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'Maximum'</span><span class="p">:</span> <span class="mf">123.0</span><span class="p">,</span>
+                <span class="s1">'Minimum'</span><span class="p">:</span> <span class="mf">123.0</span><span class="p">,</span>
+                <span class="s1">'SampleCount'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'Sum'</span><span class="p">:</span> <span class="mf">123.0</span>
+            <span class="p">},</span>
+            <span class="s1">'Timestamp'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="s1">'Unit'</span><span class="p">:</span> <span class="s1">'Seconds'</span><span class="o">|</span><span class="s1">'Microseconds'</span><span class="o">|</span><span class="s1">'Milliseconds'</span><span class="o">|</span><span class="s1">'Bytes'</span><span class="o">|</span><span class="s1">'Kilobytes'</span><span class="o">|</span><span class="s1">'Megabytes'</span><span class="o">|</span><span class="s1">'Gigabytes'</span><span class="o">|</span><span class="s1">'Terabytes'</span><span class="o">|</span><span class="s1">'Bits'</span><span class="o">|</span><span class="s1">'Kilobits'</span><span class="o">|</span><span class="s1">'Megabits'</span><span class="o">|</span><span class="s1">'Gigabits'</span><span class="o">|</span><span class="s1">'Terabits'</span><span class="o">|</span><span class="s1">'Percent'</span><span class="o">|</span><span class="s1">'Count'</span><span class="o">|</span><span class="s1">'Bytes/Second'</span><span class="o">|</span><span class="s1">'Kilobytes/Second'</span><span class="o">|</span><span class="s1">'Megabytes/Second'</span><span class="o">|</span><span class="s1">'Gigabytes/Second'</span><span class="o">|</span><span class="s1">'Terabytes/Second'</span><span class="o">|</span><span class="s1">'Bits/Second'</span><span class="o">|</span><span class="s1">'Kilobits/Second'</span><span class="o">|</span><span class="s1">'Megabits/Second'</span><span class="o">|</span><span class="s1">'Gigabits/Second'</span><span class="o">|</span><span class="s1">'Terabits/Second'</span><span class="o">|</span><span class="s1">'Count/Second'</span><span class="o">|</span><span class="s1">'None'</span><span class="p">,</span>
+            <span class="s1">'Value'</span><span class="p">:</span> <span class="mf">123.0</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>EnvironmentName</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Publishes environment metric data to Amazon CloudWatch.</p>
+</p></li>
+<li><p><strong>MetricData</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metrica.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Internal only API.</p>
+<ul>
+<li><p><strong>Dimensions</strong> <em>(list) –</em></p>
+<p>Internal only API.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Internal only API.</p>
+<ul>
+<li><p><strong>Name</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Internal only API.</p>
+</li>
+<li><p><strong>Value</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Internal only API.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>MetricName</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Internal only API.</p>
+</li>
+<li><p><strong>StatisticValues</strong> <em>(dict) –</em></p>
+<p>Internal only API.</p>
+<ul>
+<li><p><strong>Maximum</strong> <em>(float) –</em></p>
+<p>Internal only API.</p>
+</li>
+<li><p><strong>Minimum</strong> <em>(float) –</em></p>
+<p>Internal only API.</p>
+</li>
+<li><p><strong>SampleCount</strong> <em>(integer) –</em></p>
+<p>Internal only API.</p>
+</li>
+<li><p><strong>Sum</strong> <em>(float) –</em></p>
+<p>Internal only API.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Timestamp</strong> <em>(datetime) –</em> <strong>[REQUIRED]</strong></p>
+<p>Internal only API.</p>
+</li>
+<li><p><strong>Unit</strong> <em>(string) –</em></p>
+<p>Unit</p>
+</li>
+<li><p><strong>Value</strong> <em>(float) –</em></p>
+<p>Internal only API.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul class="simple">
+<li><p><em>(dict) –</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.tag_resource"><a name="//apple_ref/cpp/Method/MWAA.Client.tag_resource"></a>
+<code class="sig-name descname"><span class="pre">tag_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.tag_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add tag to the MWAA environments.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/TagResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tag_resource</span><span class="p">(</span>
+    <span class="n">ResourceArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">Tags</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ResourceArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The tag resource ARN of the MWAA environments.</p>
+</p></li>
+<li><p><strong>Tags</strong> (<em>dict</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The tag resource tag of the MWAA environments.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul class="simple">
+<li><p><em>(dict) –</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.untag_resource"><a name="//apple_ref/cpp/Method/MWAA.Client.untag_resource"></a>
+<code class="sig-name descname"><span class="pre">untag_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.untag_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a tag from the MWAA environments.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UntagResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">untag_resource</span><span class="p">(</span>
+    <span class="n">ResourceArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">tagKeys</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ResourceArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The tag resource ARN of the MWAA environments.</p>
+</p></li>
+<li><p><strong>tagKeys</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The tag resource key of the MWAA environments.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul class="simple">
+<li><p><em>(dict) –</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MWAA.Client.update_environment"><a name="//apple_ref/cpp/Method/MWAA.Client.update_environment"></a>
+<code class="sig-name descname"><span class="pre">update_environment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Client.update_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update an MWAA environment.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateEnvironment">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">update_environment</span><span class="p">(</span>
+    <span class="n">AirflowConfigurationOptions</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="n">AirflowVersion</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">DagS3Path</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">EnvironmentClass</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ExecutionRoleArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">LoggingConfiguration</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'DagProcessingLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">},</span>
+        <span class="s1">'SchedulerLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">},</span>
+        <span class="s1">'TaskLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">},</span>
+        <span class="s1">'WebserverLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">},</span>
+        <span class="s1">'WorkerLogs'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Enabled'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'LogLevel'</span><span class="p">:</span> <span class="s1">'CRITICAL'</span><span class="o">|</span><span class="s1">'ERROR'</span><span class="o">|</span><span class="s1">'WARNING'</span><span class="o">|</span><span class="s1">'INFO'</span><span class="o">|</span><span class="s1">'DEBUG'</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="n">MaxWorkers</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">MinWorkers</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">Name</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">NetworkConfiguration</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'SecurityGroupIds'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">'string'</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="n">PluginsS3ObjectVersion</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">PluginsS3Path</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">RequirementsS3ObjectVersion</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">RequirementsS3Path</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">SourceBucketArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">WebserverAccessMode</span><span class="o">=</span><span class="s1">'PRIVATE_ONLY'</span><span class="o">|</span><span class="s1">'PUBLIC_ONLY'</span><span class="p">,</span>
+    <span class="n">WeeklyMaintenanceWindowStart</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AirflowConfigurationOptions</strong> (<em>dict</em>) – <p>The Airflow Configuration Options to update of your Amazon MWAA environment.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>AirflowVersion</strong> (<em>string</em>) – The Airflow Version to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>DagS3Path</strong> (<em>string</em>) – The Dags folder S3 Path to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>EnvironmentClass</strong> (<em>string</em>) – The Environment Class to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>ExecutionRoleArn</strong> (<em>string</em>) – The Executio Role ARN to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>LoggingConfiguration</strong> (<em>dict</em>) – <p>The Logging Configuration to update of your Amazon MWAA environment.</p>
+<ul>
+<li><p><strong>DagProcessingLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>SchedulerLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>TaskLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>WebserverLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>WorkerLogs</strong> <em>(dict) –</em></p>
+<p>A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.</p>
+<ul>
+<li><p><strong>Enabled</strong> <em>(boolean) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines that the logging module is enabled.</p>
+</li>
+<li><p><strong>LogLevel</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>MaxWorkers</strong> (<em>integer</em>) – The maximum number of workers to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>MinWorkers</strong> (<em>integer</em>) – The minimum number of workers to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>Name</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of your Amazon MWAA environment that you wish to update.</p>
+</p></li>
+<li><p><strong>NetworkConfiguration</strong> (<em>dict</em>) – <p>The Network Configuration to update of your Amazon MWAA environment.</p>
+<ul>
+<li><p><strong>SecurityGroupIds</strong> <em>(list) –</em> <strong>[REQUIRED]</strong></p>
+<p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>PluginsS3ObjectVersion</strong> (<em>string</em>) – The Plugins.zip S3 Object Version to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>PluginsS3Path</strong> (<em>string</em>) – The Plugins.zip S3 Path to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>RequirementsS3ObjectVersion</strong> (<em>string</em>) – The Requirements.txt S3 ObjectV ersion to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>RequirementsS3Path</strong> (<em>string</em>) – The Requirements.txt S3 Path to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>SourceBucketArn</strong> (<em>string</em>) – The S3 Source Bucket ARN to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>WebserverAccessMode</strong> (<em>string</em>) – The Webserver Access Mode to update of your Amazon MWAA environment.</p></li>
+<li><p><strong>WeeklyMaintenanceWindowStart</strong> (<em>string</em>) – The Weekly Maintenance Window Start to update of your Amazon MWAA environment.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Arn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>Arn</strong> <em>(string) –</em></p>
+<p>The ARN to update of your Amazon MWAA environment.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="paginators">
+<h2><a class="toc-backref" href="#id14">Paginators</a><a class="headerlink" href="#paginators" title="Permalink to this headline">¶</a></h2>
+<p>The available paginators are:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#MWAA.Paginator.ListEnvironments" title="MWAA.Paginator.ListEnvironments"><code class="xref py py-class docutils literal notranslate"><span class="pre">MWAA.Paginator.ListEnvironments</span></code></a></p></li>
+</ul>
+<dl class="py class">
+<dt id="MWAA.Paginator.ListEnvironments"><a name="//apple_ref/cpp/Class/MWAA.Paginator.ListEnvironments"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">MWAA.Paginator.</span></code><code class="sig-name descname"><span class="pre">ListEnvironments</span></code><a class="headerlink" href="#MWAA.Paginator.ListEnvironments" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'list_environments'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="MWAA.Paginator.ListEnvironments.paginate"><a name="//apple_ref/cpp/Method/MWAA.Paginator.ListEnvironments.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MWAA.Paginator.ListEnvironments.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#MWAA.Client.list_environments" title="MWAA.Client.list_environments"><code class="xref py py-meth docutils literal notranslate"><span class="pre">MWAA.Client.list_environments()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListEnvironments">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Environments'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>Environments</strong> <em>(list) –</em></p>
+<p>The list of Amazon MWAA Environments.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="mturk.html" title="previous chapter (use the left arrow)">MTurk</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="neptune.html" title="next chapter (use the right arrow)">Neptune</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="neptune.html" title="Neptune">next</a> |</li>
+<li class="right">
+<a href="mturk.html" title="MTurk">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">MWAA</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

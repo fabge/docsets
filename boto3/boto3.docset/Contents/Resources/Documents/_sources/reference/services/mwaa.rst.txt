@@ -1,0 +1,2223 @@
+
+
+****
+MWAA
+****
+
+.. contents:: Table of Contents
+   :depth: 2
+
+
+======
+Client
+======
+
+
+
+.. py:class:: MWAA.Client
+
+  A low-level client representing AmazonMWAA
+  
+
+   
+
+  This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more information, see `What Is Amazon MWAA? <https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html>`__ .
+
+  
+
+  ::
+
+    
+    import boto3
+    
+    client = boto3.client('mwaa')
+
+  
+  These are the available methods:
+  
+  *   :py:meth:`~MWAA.Client.can_paginate`
+
+  
+  *   :py:meth:`~MWAA.Client.create_cli_token`
+
+  
+  *   :py:meth:`~MWAA.Client.create_environment`
+
+  
+  *   :py:meth:`~MWAA.Client.create_web_login_token`
+
+  
+  *   :py:meth:`~MWAA.Client.delete_environment`
+
+  
+  *   :py:meth:`~MWAA.Client.generate_presigned_url`
+
+  
+  *   :py:meth:`~MWAA.Client.get_environment`
+
+  
+  *   :py:meth:`~MWAA.Client.get_paginator`
+
+  
+  *   :py:meth:`~MWAA.Client.get_waiter`
+
+  
+  *   :py:meth:`~MWAA.Client.list_environments`
+
+  
+  *   :py:meth:`~MWAA.Client.list_tags_for_resource`
+
+  
+  *   :py:meth:`~MWAA.Client.publish_metrics`
+
+  
+  *   :py:meth:`~MWAA.Client.tag_resource`
+
+  
+  *   :py:meth:`~MWAA.Client.untag_resource`
+
+  
+  *   :py:meth:`~MWAA.Client.update_environment`
+
+  
+
+  .. py:method:: can_paginate(operation_name)
+
+        
+    Check if an operation can be paginated.
+    
+    :type operation_name: string
+    :param operation_name: The operation name.  This is the same name
+        as the method name on the client.  For example, if the
+        method name is ``create_foo``, and you'd normally invoke the
+        operation as ``client.create_foo(**kwargs)``, if the
+        ``create_foo`` operation can be paginated, you can use the
+        call ``client.get_paginator("create_foo")``.
+    
+    :return: ``True`` if the operation can be paginated,
+        ``False`` otherwise.
+
+
+  .. py:method:: create_cli_token(**kwargs)
+
+    
+
+    Create a CLI token to use Airflow CLI.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateCliToken>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.create_cli_token(
+          Name='string'
+      )
+    :type Name: string
+    :param Name: **[REQUIRED]** 
+
+      Create a CLI token request for a MWAA environment.
+
+      
+
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {
+            'CliToken': 'string',
+            'WebServerHostname': 'string'
+        }
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+        
+
+        - **CliToken** *(string) --* 
+
+          Create an Airflow CLI login token response for the provided JWT token.
+
+          
+        
+
+        - **WebServerHostname** *(string) --* 
+
+          Create an Airflow CLI login token response for the provided webserver hostname.
+
+          
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ResourceNotFoundException`
+
+    
+
+  .. py:method:: create_environment(**kwargs)
+
+    
+
+    JSON blob that describes the environment to create.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateEnvironment>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.create_environment(
+          AirflowConfigurationOptions={
+              'string': 'string'
+          },
+          AirflowVersion='string',
+          DagS3Path='string',
+          EnvironmentClass='string',
+          ExecutionRoleArn='string',
+          KmsKey='string',
+          LoggingConfiguration={
+              'DagProcessingLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              },
+              'SchedulerLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              },
+              'TaskLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              },
+              'WebserverLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              },
+              'WorkerLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              }
+          },
+          MaxWorkers=123,
+          MinWorkers=123,
+          Name='string',
+          NetworkConfiguration={
+              'SecurityGroupIds': [
+                  'string',
+              ],
+              'SubnetIds': [
+                  'string',
+              ]
+          },
+          PluginsS3ObjectVersion='string',
+          PluginsS3Path='string',
+          RequirementsS3ObjectVersion='string',
+          RequirementsS3Path='string',
+          SourceBucketArn='string',
+          Tags={
+              'string': 'string'
+          },
+          WebserverAccessMode='PRIVATE_ONLY'|'PUBLIC_ONLY',
+          WeeklyMaintenanceWindowStart='string'
+      )
+    :type AirflowConfigurationOptions: dict
+    :param AirflowConfigurationOptions: 
+
+      The Apache Airflow configuration setting you want to override in your environment. For more information, see `Environment configuration <https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html>`__ .
+
+      
+
+    
+      - *(string) --* 
+
+      
+        - *(string) --* 
+
+        
+  
+
+    :type AirflowVersion: string
+    :param AirflowVersion: 
+
+      The Apache Airflow version you want to use for your environment.
+
+      
+
+    
+    :type DagS3Path: string
+    :param DagS3Path: **[REQUIRED]** 
+
+      The relative path to the DAG folder on your Amazon S3 storage bucket. For example, ``dags`` . For more information, see `Importing DAGs on Amazon MWAA <https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import.html>`__ .
+
+      
+
+    
+    :type EnvironmentClass: string
+    :param EnvironmentClass: 
+
+      The environment class you want to use for your environment. The environment class determines the size of the containers and database used for your Apache Airflow services.
+
+      
+
+    
+    :type ExecutionRoleArn: string
+    :param ExecutionRoleArn: **[REQUIRED]** 
+
+      The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an AWS Identity and Access Management (IAM) role that grants MWAA permission to access AWS services and resources used by your environment. For example, ``arn:aws:iam::123456789:role/my-execution-role`` . For more information, see `Managing access to Amazon Managed Workflows for Apache Airflow <https://docs.aws.amazon.com/mwaa/latest/userguide/manage-access.html>`__ .
+
+      
+
+    
+    :type KmsKey: string
+    :param KmsKey: 
+
+      The AWS Key Management Service (KMS) key to encrypt and decrypt the data in your environment. You can use an AWS KMS key managed by MWAA, or a custom KMS key (advanced). For more information, see `Customer master keys (CMKs) <https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html?icmpid=docs_console_unmapped#master_keys>`__ in the AWS KMS developer guide.
+
+      
+
+    
+    :type LoggingConfiguration: dict
+    :param LoggingConfiguration: 
+
+      The Apache Airflow logs you want to send to Amazon CloudWatch Logs.
+
+      
+
+    
+      - **DagProcessingLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+      - **SchedulerLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+      - **TaskLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+      - **WebserverLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+      - **WorkerLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+    
+    :type MaxWorkers: integer
+    :param MaxWorkers: 
+
+      The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers and the Fargate containers that run your tasks up to the number you specify in this field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra containers leaving the one worker that is included with your environment.
+
+      
+
+    
+    :type MinWorkers: integer
+    :param MinWorkers: 
+
+      The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers and the Fargate containers that run your tasks up to the number you specify in the ``MaxWorkers`` field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra containers leaving the worker count you specify in the ``MinWorkers`` field.
+
+      
+
+    
+    :type Name: string
+    :param Name: **[REQUIRED]** 
+
+      The name of your MWAA environment.
+
+      
+
+    
+    :type NetworkConfiguration: dict
+    :param NetworkConfiguration: **[REQUIRED]** 
+
+      The VPC networking components you want to use for your environment. At least two private subnet identifiers and one VPC security group identifier are required to create an environment. For more information, see `Creating the VPC network for a MWAA environment <https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-mwaa.html>`__ .
+
+      
+
+    
+      - **SecurityGroupIds** *(list) --* 
+
+        A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+
+        
+
+      
+        - *(string) --* 
+
+        
+    
+      - **SubnetIds** *(list) --* 
+
+        Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different availability zones.
+
+        
+
+      
+        - *(string) --* 
+
+        
+    
+    
+    :type PluginsS3ObjectVersion: string
+    :param PluginsS3ObjectVersion: 
+
+      The ``plugins.zip`` file version you want to use.
+
+      
+
+    
+    :type PluginsS3Path: string
+    :param PluginsS3Path: 
+
+      The relative path to the ``plugins.zip`` file on your Amazon S3 storage bucket. For example, ``plugins.zip`` . If a relative path is provided in the request, then ``PluginsS3ObjectVersion`` is required. For more information, see `Importing DAGs on Amazon MWAA <https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import.html>`__ .
+
+      
+
+    
+    :type RequirementsS3ObjectVersion: string
+    :param RequirementsS3ObjectVersion: 
+
+      The ``requirements.txt`` file version you want to use.
+
+      
+
+    
+    :type RequirementsS3Path: string
+    :param RequirementsS3Path: 
+
+      The relative path to the ``requirements.txt`` file on your Amazon S3 storage bucket. For example, ``requirements.txt`` . If a relative path is provided in the request, then ``RequirementsS3ObjectVersion`` is required. For more information, see `Importing DAGs on Amazon MWAA <https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import.html>`__ .
+
+      
+
+    
+    :type SourceBucketArn: string
+    :param SourceBucketArn: **[REQUIRED]** 
+
+      The Amazon Resource Name (ARN) of your Amazon S3 storage bucket. For example, ``arn:aws:s3:::airflow-mybucketname`` .
+
+      
+
+    
+    :type Tags: dict
+    :param Tags: 
+
+      The metadata tags you want to attach to your environment. For more information, see `Tagging AWS resources <https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html>`__ .
+
+      
+
+    
+      - *(string) --* 
+
+      
+        - *(string) --* 
+
+        
+  
+
+    :type WebserverAccessMode: string
+    :param WebserverAccessMode: 
+
+      The networking access of your Apache Airflow web server. A public network allows your Airflow UI to be accessed over the Internet by users granted access in your IAM policy. A private network limits access of your Airflow UI to users within your VPC. For more information, see `Creating the VPC network for a MWAA environment <https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-mwaa.html>`__ .
+
+      
+
+    
+    :type WeeklyMaintenanceWindowStart: string
+    :param WeeklyMaintenanceWindowStart: 
+
+      The day and time you want MWAA to start weekly maintenance updates on your environment.
+
+      
+
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {
+            'Arn': 'string'
+        }
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+        
+
+        - **Arn** *(string) --* 
+
+          The resulting Amazon MWAA envirnonment ARN.
+
+          
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: create_web_login_token(**kwargs)
+
+    
+
+    Create a JWT token to be used to login to Airflow Web UI with claims based Authentication.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateWebLoginToken>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.create_web_login_token(
+          Name='string'
+      )
+    :type Name: string
+    :param Name: **[REQUIRED]** 
+
+      Create an Airflow Web UI login token request for a MWAA environment.
+
+      
+
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {
+            'WebServerHostname': 'string',
+            'WebToken': 'string'
+        }
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+        
+
+        - **WebServerHostname** *(string) --* 
+
+          Create an Airflow Web UI login token response for the provided webserver hostname.
+
+          
+        
+
+        - **WebToken** *(string) --* 
+
+          Create an Airflow Web UI login token response for the provided JWT token.
+
+          
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.AccessDeniedException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.ResourceNotFoundException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: delete_environment(**kwargs)
+
+    
+
+    Delete an existing environment.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/DeleteEnvironment>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.delete_environment(
+          Name='string'
+      )
+    :type Name: string
+    :param Name: **[REQUIRED]** 
+
+      The name of the environment to delete.
+
+      
+
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {}
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ResourceNotFoundException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: generate_presigned_url(ClientMethod, Params=None, ExpiresIn=3600, HttpMethod=None)
+
+        
+    Generate a presigned url given a client, its method, and arguments
+    
+    :type ClientMethod: string
+    :param ClientMethod: The client method to presign for
+    
+    :type Params: dict
+    :param Params: The parameters normally passed to
+        ``ClientMethod``.
+    
+    :type ExpiresIn: int
+    :param ExpiresIn: The number of seconds the presigned url is valid
+        for. By default it expires in an hour (3600 seconds)
+    
+    :type HttpMethod: string
+    :param HttpMethod: The http method to use on the generated url. By
+        default, the http method is whatever is used in the method's model.
+    
+    :returns: The presigned url
+
+
+  .. py:method:: get_environment(**kwargs)
+
+    
+
+    Get details of an existing environment.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/GetEnvironment>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.get_environment(
+          Name='string'
+      )
+    :type Name: string
+    :param Name: **[REQUIRED]** 
+
+      The name of the environment to retrieve.
+
+      
+
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {
+            'Environment': {
+                'AirflowConfigurationOptions': {
+                    'string': 'string'
+                },
+                'AirflowVersion': 'string',
+                'Arn': 'string',
+                'CreatedAt': datetime(2015, 1, 1),
+                'DagS3Path': 'string',
+                'EnvironmentClass': 'string',
+                'ExecutionRoleArn': 'string',
+                'KmsKey': 'string',
+                'LastUpdate': {
+                    'CreatedAt': datetime(2015, 1, 1),
+                    'Error': {
+                        'ErrorCode': 'string',
+                        'ErrorMessage': 'string'
+                    },
+                    'Status': 'SUCCESS'|'PENDING'|'FAILED'
+                },
+                'LoggingConfiguration': {
+                    'DagProcessingLogs': {
+                        'CloudWatchLogGroupArn': 'string',
+                        'Enabled': True|False,
+                        'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+                    },
+                    'SchedulerLogs': {
+                        'CloudWatchLogGroupArn': 'string',
+                        'Enabled': True|False,
+                        'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+                    },
+                    'TaskLogs': {
+                        'CloudWatchLogGroupArn': 'string',
+                        'Enabled': True|False,
+                        'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+                    },
+                    'WebserverLogs': {
+                        'CloudWatchLogGroupArn': 'string',
+                        'Enabled': True|False,
+                        'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+                    },
+                    'WorkerLogs': {
+                        'CloudWatchLogGroupArn': 'string',
+                        'Enabled': True|False,
+                        'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+                    }
+                },
+                'MaxWorkers': 123,
+                'MinWorkers': 123,
+                'Name': 'string',
+                'NetworkConfiguration': {
+                    'SecurityGroupIds': [
+                        'string',
+                    ],
+                    'SubnetIds': [
+                        'string',
+                    ]
+                },
+                'PluginsS3ObjectVersion': 'string',
+                'PluginsS3Path': 'string',
+                'RequirementsS3ObjectVersion': 'string',
+                'RequirementsS3Path': 'string',
+                'ServiceRoleArn': 'string',
+                'SourceBucketArn': 'string',
+                'Status': 'CREATING'|'CREATE_FAILED'|'AVAILABLE'|'UPDATING'|'DELETING'|'DELETED'|'UNAVAILABLE'|'UPDATE_FAILED',
+                'Tags': {
+                    'string': 'string'
+                },
+                'WebserverAccessMode': 'PRIVATE_ONLY'|'PUBLIC_ONLY',
+                'WebserverUrl': 'string',
+                'WeeklyMaintenanceWindowStart': 'string'
+            }
+        }
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+        
+
+        - **Environment** *(dict) --* 
+
+          A JSON blob with environment details.
+
+          
+          
+
+          - **AirflowConfigurationOptions** *(dict) --* 
+
+            The Airflow Configuration Options of the Amazon MWAA Environment.
+
+            
+            
+
+            - *(string) --* 
+              
+
+              - *(string) --* 
+        
+      
+          
+
+          - **AirflowVersion** *(string) --* 
+
+            The AirflowV ersion of the Amazon MWAA Environment.
+
+            
+          
+
+          - **Arn** *(string) --* 
+
+            The ARN of the Amazon MWAA Environment.
+
+            
+          
+
+          - **CreatedAt** *(datetime) --* 
+
+            The Created At date of the Amazon MWAA Environment.
+
+            
+          
+
+          - **DagS3Path** *(string) --* 
+
+            The Dags S3 Path of the Amazon MWAA Environment.
+
+            
+          
+
+          - **EnvironmentClass** *(string) --* 
+
+            The Environment Class (size) of the Amazon MWAA Environment.
+
+            
+          
+
+          - **ExecutionRoleArn** *(string) --* 
+
+            The Execution Role ARN of the Amazon MWAA Environment.
+
+            
+          
+
+          - **KmsKey** *(string) --* 
+
+            The Kms Key of the Amazon MWAA Environment.
+
+            
+          
+
+          - **LastUpdate** *(dict) --* 
+
+            Last update information for the environment.
+
+            
+            
+
+            - **CreatedAt** *(datetime) --* 
+
+              Time that last update occurred.
+
+              
+            
+
+            - **Error** *(dict) --* 
+
+              Error string of last update, if applicable.
+
+              
+              
+
+              - **ErrorCode** *(string) --* 
+
+                Error code of update.
+
+                
+              
+
+              - **ErrorMessage** *(string) --* 
+
+                Error message of update.
+
+                
+          
+            
+
+            - **Status** *(string) --* 
+
+              Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+
+              
+        
+          
+
+          - **LoggingConfiguration** *(dict) --* 
+
+            The Logging Configuration of the Amazon MWAA Environment.
+
+            
+            
+
+            - **DagProcessingLogs** *(dict) --* 
+
+              A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+              
+              
+
+              - **CloudWatchLogGroupArn** *(string) --* 
+
+                Provides the ARN for the CloudWatch group where the logs will be published.
+
+                
+              
+
+              - **Enabled** *(boolean) --* 
+
+                Defines that the logging module is enabled.
+
+                
+              
+
+              - **LogLevel** *(string) --* 
+
+                Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+                
+          
+            
+
+            - **SchedulerLogs** *(dict) --* 
+
+              A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+              
+              
+
+              - **CloudWatchLogGroupArn** *(string) --* 
+
+                Provides the ARN for the CloudWatch group where the logs will be published.
+
+                
+              
+
+              - **Enabled** *(boolean) --* 
+
+                Defines that the logging module is enabled.
+
+                
+              
+
+              - **LogLevel** *(string) --* 
+
+                Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+                
+          
+            
+
+            - **TaskLogs** *(dict) --* 
+
+              A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+              
+              
+
+              - **CloudWatchLogGroupArn** *(string) --* 
+
+                Provides the ARN for the CloudWatch group where the logs will be published.
+
+                
+              
+
+              - **Enabled** *(boolean) --* 
+
+                Defines that the logging module is enabled.
+
+                
+              
+
+              - **LogLevel** *(string) --* 
+
+                Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+                
+          
+            
+
+            - **WebserverLogs** *(dict) --* 
+
+              A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+              
+              
+
+              - **CloudWatchLogGroupArn** *(string) --* 
+
+                Provides the ARN for the CloudWatch group where the logs will be published.
+
+                
+              
+
+              - **Enabled** *(boolean) --* 
+
+                Defines that the logging module is enabled.
+
+                
+              
+
+              - **LogLevel** *(string) --* 
+
+                Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+                
+          
+            
+
+            - **WorkerLogs** *(dict) --* 
+
+              A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+              
+              
+
+              - **CloudWatchLogGroupArn** *(string) --* 
+
+                Provides the ARN for the CloudWatch group where the logs will be published.
+
+                
+              
+
+              - **Enabled** *(boolean) --* 
+
+                Defines that the logging module is enabled.
+
+                
+              
+
+              - **LogLevel** *(string) --* 
+
+                Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+                
+          
+        
+          
+
+          - **MaxWorkers** *(integer) --* 
+
+            The maximum number of workers to run in your Amazon MWAA Environment.
+
+            
+          
+
+          - **MinWorkers** *(integer) --* 
+
+            The minimum number of workers to run in your Amazon MWAA Environment.
+
+            
+          
+
+          - **Name** *(string) --* 
+
+            The name of the Amazon MWAA Environment.
+
+            
+          
+
+          - **NetworkConfiguration** *(dict) --* 
+
+            Provide the security group and subnet IDs for the workers and scheduler.
+
+            
+            
+
+            - **SecurityGroupIds** *(list) --* 
+
+              A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+
+              
+              
+
+              - *(string) --* 
+          
+            
+
+            - **SubnetIds** *(list) --* 
+
+              Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different availability zones.
+
+              
+              
+
+              - *(string) --* 
+          
+        
+          
+
+          - **PluginsS3ObjectVersion** *(string) --* 
+
+            The Plugins.zip S3 Object Version of the Amazon MWAA Environment.
+
+            
+          
+
+          - **PluginsS3Path** *(string) --* 
+
+            The Plugins.zip S3 Path of the Amazon MWAA Environment.
+
+            
+          
+
+          - **RequirementsS3ObjectVersion** *(string) --* 
+
+            The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.
+
+            
+          
+
+          - **RequirementsS3Path** *(string) --* 
+
+            The Requirement.txt S3 Path of the Amazon MWAA Environment.
+
+            
+          
+
+          - **ServiceRoleArn** *(string) --* 
+
+            The Service Role ARN of the Amazon MWAA Environment.
+
+            
+          
+
+          - **SourceBucketArn** *(string) --* 
+
+            The Source S3 Bucket ARN of the Amazon MWAA Environment.
+
+            
+          
+
+          - **Status** *(string) --* 
+
+            The status of the Amazon MWAA Environment.
+
+            
+          
+
+          - **Tags** *(dict) --* 
+
+            The Tags of the Amazon MWAA Environment.
+
+            
+            
+
+            - *(string) --* 
+              
+
+              - *(string) --* 
+        
+      
+          
+
+          - **WebserverAccessMode** *(string) --* 
+
+            The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+
+            
+          
+
+          - **WebserverUrl** *(string) --* 
+
+            The Webserver URL of the Amazon MWAA Environment.
+
+            
+          
+
+          - **WeeklyMaintenanceWindowStart** *(string) --* 
+
+            The Weekly Maintenance Window Start of the Amazon MWAA Environment.
+
+            
+      
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ResourceNotFoundException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: get_paginator(operation_name)
+
+        
+    Create a paginator for an operation.
+    
+    :type operation_name: string
+    :param operation_name: The operation name.  This is the same name
+        as the method name on the client.  For example, if the
+        method name is ``create_foo``, and you'd normally invoke the
+        operation as ``client.create_foo(**kwargs)``, if the
+        ``create_foo`` operation can be paginated, you can use the
+        call ``client.get_paginator("create_foo")``.
+    
+    :raise OperationNotPageableError: Raised if the operation is not
+        pageable.  You can use the ``client.can_paginate`` method to
+        check if an operation is pageable.
+    
+    :rtype: L{botocore.paginate.Paginator}
+    :return: A paginator object.
+
+
+  .. py:method:: get_waiter(waiter_name)
+
+        
+    Returns an object that can wait for some condition.
+    
+    :type waiter_name: str
+    :param waiter_name: The name of the waiter to get. See the waiters
+        section of the service docs for a list of available waiters.
+    
+    :returns: The specified waiter object.
+    :rtype: botocore.waiter.Waiter
+
+
+  .. py:method:: list_environments(**kwargs)
+
+    
+
+    List Amazon MWAA Environments.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListEnvironments>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.list_environments(
+          MaxResults=123,
+          NextToken='string'
+      )
+    :type MaxResults: integer
+    :param MaxResults: 
+
+      The maximum results when listing MWAA environments.
+
+      
+
+    
+    :type NextToken: string
+    :param NextToken: 
+
+      The Next Token when listing MWAA environments.
+
+      
+
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {
+            'Environments': [
+                'string',
+            ],
+            'NextToken': 'string'
+        }
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+        
+
+        - **Environments** *(list) --* 
+
+          The list of Amazon MWAA Environments.
+
+          
+          
+
+          - *(string) --* 
+      
+        
+
+        - **NextToken** *(string) --* 
+
+          The Next Token when listing MWAA environments.
+
+          
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: list_tags_for_resource(**kwargs)
+
+    
+
+    List the tags for MWAA environments.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListTagsForResource>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.list_tags_for_resource(
+          ResourceArn='string'
+      )
+    :type ResourceArn: string
+    :param ResourceArn: **[REQUIRED]** 
+
+      The ARN of the MWAA environment.
+
+      
+
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {
+            'Tags': {
+                'string': 'string'
+            }
+        }
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+        
+
+        - **Tags** *(dict) --* 
+
+          The tags of the MWAA environments.
+
+          
+          
+
+          - *(string) --* 
+            
+
+            - *(string) --* 
+      
+    
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ResourceNotFoundException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: publish_metrics(**kwargs)
+
+    
+
+    An operation for publishing metrics from the customers to the Ops plane.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/PublishMetrics>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.publish_metrics(
+          EnvironmentName='string',
+          MetricData=[
+              {
+                  'Dimensions': [
+                      {
+                          'Name': 'string',
+                          'Value': 'string'
+                      },
+                  ],
+                  'MetricName': 'string',
+                  'StatisticValues': {
+                      'Maximum': 123.0,
+                      'Minimum': 123.0,
+                      'SampleCount': 123,
+                      'Sum': 123.0
+                  },
+                  'Timestamp': datetime(2015, 1, 1),
+                  'Unit': 'Seconds'|'Microseconds'|'Milliseconds'|'Bytes'|'Kilobytes'|'Megabytes'|'Gigabytes'|'Terabytes'|'Bits'|'Kilobits'|'Megabits'|'Gigabits'|'Terabits'|'Percent'|'Count'|'Bytes/Second'|'Kilobytes/Second'|'Megabytes/Second'|'Gigabytes/Second'|'Terabytes/Second'|'Bits/Second'|'Kilobits/Second'|'Megabits/Second'|'Gigabits/Second'|'Terabits/Second'|'Count/Second'|'None',
+                  'Value': 123.0
+              },
+          ]
+      )
+    :type EnvironmentName: string
+    :param EnvironmentName: **[REQUIRED]** 
+
+      Publishes environment metric data to Amazon CloudWatch.
+
+      
+
+    
+    :type MetricData: list
+    :param MetricData: **[REQUIRED]** 
+
+      Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metrica.
+
+      
+
+    
+      - *(dict) --* 
+
+        Internal only API.
+
+        
+
+      
+        - **Dimensions** *(list) --* 
+
+          Internal only API.
+
+          
+
+        
+          - *(dict) --* 
+
+            Internal only API.
+
+            
+
+          
+            - **Name** *(string) --* **[REQUIRED]** 
+
+              Internal only API.
+
+              
+
+            
+            - **Value** *(string) --* **[REQUIRED]** 
+
+              Internal only API.
+
+              
+
+            
+          
+      
+        - **MetricName** *(string) --* **[REQUIRED]** 
+
+          Internal only API.
+
+          
+
+        
+        - **StatisticValues** *(dict) --* 
+
+          Internal only API.
+
+          
+
+        
+          - **Maximum** *(float) --* 
+
+            Internal only API.
+
+            
+
+          
+          - **Minimum** *(float) --* 
+
+            Internal only API.
+
+            
+
+          
+          - **SampleCount** *(integer) --* 
+
+            Internal only API.
+
+            
+
+          
+          - **Sum** *(float) --* 
+
+            Internal only API.
+
+            
+
+          
+        
+        - **Timestamp** *(datetime) --* **[REQUIRED]** 
+
+          Internal only API.
+
+          
+
+        
+        - **Unit** *(string) --* 
+
+          Unit
+
+          
+
+        
+        - **Value** *(float) --* 
+
+          Internal only API.
+
+          
+
+        
+      
+  
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {}
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: tag_resource(**kwargs)
+
+    
+
+    Add tag to the MWAA environments.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/TagResource>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.tag_resource(
+          ResourceArn='string',
+          Tags={
+              'string': 'string'
+          }
+      )
+    :type ResourceArn: string
+    :param ResourceArn: **[REQUIRED]** 
+
+      The tag resource ARN of the MWAA environments.
+
+      
+
+    
+    :type Tags: dict
+    :param Tags: **[REQUIRED]** 
+
+      The tag resource tag of the MWAA environments.
+
+      
+
+    
+      - *(string) --* 
+
+      
+        - *(string) --* 
+
+        
+  
+
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {}
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ResourceNotFoundException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: untag_resource(**kwargs)
+
+    
+
+    Remove a tag from the MWAA environments.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UntagResource>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.untag_resource(
+          ResourceArn='string',
+          tagKeys=[
+              'string',
+          ]
+      )
+    :type ResourceArn: string
+    :param ResourceArn: **[REQUIRED]** 
+
+      The tag resource ARN of the MWAA environments.
+
+      
+
+    
+    :type tagKeys: list
+    :param tagKeys: **[REQUIRED]** 
+
+      The tag resource key of the MWAA environments.
+
+      
+
+    
+      - *(string) --* 
+
+      
+  
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {}
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ResourceNotFoundException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+  .. py:method:: update_environment(**kwargs)
+
+    
+
+    Update an MWAA environment.
+
+    
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateEnvironment>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response = client.update_environment(
+          AirflowConfigurationOptions={
+              'string': 'string'
+          },
+          AirflowVersion='string',
+          DagS3Path='string',
+          EnvironmentClass='string',
+          ExecutionRoleArn='string',
+          LoggingConfiguration={
+              'DagProcessingLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              },
+              'SchedulerLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              },
+              'TaskLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              },
+              'WebserverLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              },
+              'WorkerLogs': {
+                  'Enabled': True|False,
+                  'LogLevel': 'CRITICAL'|'ERROR'|'WARNING'|'INFO'|'DEBUG'
+              }
+          },
+          MaxWorkers=123,
+          MinWorkers=123,
+          Name='string',
+          NetworkConfiguration={
+              'SecurityGroupIds': [
+                  'string',
+              ]
+          },
+          PluginsS3ObjectVersion='string',
+          PluginsS3Path='string',
+          RequirementsS3ObjectVersion='string',
+          RequirementsS3Path='string',
+          SourceBucketArn='string',
+          WebserverAccessMode='PRIVATE_ONLY'|'PUBLIC_ONLY',
+          WeeklyMaintenanceWindowStart='string'
+      )
+    :type AirflowConfigurationOptions: dict
+    :param AirflowConfigurationOptions: 
+
+      The Airflow Configuration Options to update of your Amazon MWAA environment.
+
+      
+
+    
+      - *(string) --* 
+
+      
+        - *(string) --* 
+
+        
+  
+
+    :type AirflowVersion: string
+    :param AirflowVersion: 
+
+      The Airflow Version to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type DagS3Path: string
+    :param DagS3Path: 
+
+      The Dags folder S3 Path to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type EnvironmentClass: string
+    :param EnvironmentClass: 
+
+      The Environment Class to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type ExecutionRoleArn: string
+    :param ExecutionRoleArn: 
+
+      The Executio Role ARN to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type LoggingConfiguration: dict
+    :param LoggingConfiguration: 
+
+      The Logging Configuration to update of your Amazon MWAA environment.
+
+      
+
+    
+      - **DagProcessingLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+      - **SchedulerLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+      - **TaskLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+      - **WebserverLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+      - **WorkerLogs** *(dict) --* 
+
+        A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+
+        
+
+      
+        - **Enabled** *(boolean) --* **[REQUIRED]** 
+
+          Defines that the logging module is enabled.
+
+          
+
+        
+        - **LogLevel** *(string) --* **[REQUIRED]** 
+
+          Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+
+          
+
+        
+      
+    
+    :type MaxWorkers: integer
+    :param MaxWorkers: 
+
+      The maximum number of workers to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type MinWorkers: integer
+    :param MinWorkers: 
+
+      The minimum number of workers to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type Name: string
+    :param Name: **[REQUIRED]** 
+
+      The name of your Amazon MWAA environment that you wish to update.
+
+      
+
+    
+    :type NetworkConfiguration: dict
+    :param NetworkConfiguration: 
+
+      The Network Configuration to update of your Amazon MWAA environment.
+
+      
+
+    
+      - **SecurityGroupIds** *(list) --* **[REQUIRED]** 
+
+        Provide a JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+
+        
+
+      
+        - *(string) --* 
+
+        
+    
+    
+    :type PluginsS3ObjectVersion: string
+    :param PluginsS3ObjectVersion: 
+
+      The Plugins.zip S3 Object Version to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type PluginsS3Path: string
+    :param PluginsS3Path: 
+
+      The Plugins.zip S3 Path to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type RequirementsS3ObjectVersion: string
+    :param RequirementsS3ObjectVersion: 
+
+      The Requirements.txt S3 ObjectV ersion to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type RequirementsS3Path: string
+    :param RequirementsS3Path: 
+
+      The Requirements.txt S3 Path to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type SourceBucketArn: string
+    :param SourceBucketArn: 
+
+      The S3 Source Bucket ARN to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type WebserverAccessMode: string
+    :param WebserverAccessMode: 
+
+      The Webserver Access Mode to update of your Amazon MWAA environment.
+
+      
+
+    
+    :type WeeklyMaintenanceWindowStart: string
+    :param WeeklyMaintenanceWindowStart: 
+
+      The Weekly Maintenance Window Start to update of your Amazon MWAA environment.
+
+      
+
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {
+            'Arn': 'string'
+        }
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+        
+
+        - **Arn** *(string) --* 
+
+          The ARN to update of your Amazon MWAA environment.
+
+          
+    
+    **Exceptions** 
+    
+    *     :py:class:`MWAA.Client.exceptions.ResourceNotFoundException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.ValidationException`
+
+    
+    *     :py:class:`MWAA.Client.exceptions.InternalServerException`
+
+    
+
+==========
+Paginators
+==========
+
+
+The available paginators are:
+
+* :py:class:`MWAA.Paginator.ListEnvironments`
+
+
+
+.. py:class:: MWAA.Paginator.ListEnvironments
+
+  ::
+
+    
+    paginator = client.get_paginator('list_environments')
+
+  
+  
+
+  .. py:method:: paginate(**kwargs)
+
+    Creates an iterator that will paginate through responses from :py:meth:`MWAA.Client.list_environments`.
+
+    See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListEnvironments>`_    
+
+
+    **Request Syntax** 
+    ::
+
+      response_iterator = paginator.paginate(
+          PaginationConfig={
+              'MaxItems': 123,
+              'PageSize': 123,
+              'StartingToken': 'string'
+          }
+      )
+    :type PaginationConfig: dict
+    :param PaginationConfig: 
+
+      A dictionary that provides parameters to control pagination.
+
+      
+
+    
+      - **MaxItems** *(integer) --* 
+
+        The total number of items to return. If the total number of items available is more than the value specified in max-items then a ``NextToken`` will be provided in the output that you can use to resume pagination.
+
+        
+
+      
+      - **PageSize** *(integer) --* 
+
+        The size of each page.
+
+        
+
+        
+
+        
+
+      
+      - **StartingToken** *(string) --* 
+
+        A token to specify where to start paginating. This is the ``NextToken`` from a previous response.
+
+        
+
+      
+    
+    
+    :rtype: dict
+    :returns: 
+      
+      **Response Syntax** 
+
+      
+      ::
+
+        {
+            'Environments': [
+                'string',
+            ],
+            
+        }
+      **Response Structure** 
+
+      
+
+      - *(dict) --* 
+        
+
+        - **Environments** *(list) --* 
+
+          The list of Amazon MWAA Environments.
+
+          
+          
+
+          - *(string) --* 
+      
+    

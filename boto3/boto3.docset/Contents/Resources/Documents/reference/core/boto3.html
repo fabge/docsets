@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Boto3 reference — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="collections.html" rel="next" title="Collections reference"/>
+<link href="index.html" rel="prev" title="Core references"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="collections.html" title="Collections reference">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="index.html" title="Core references">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Core references</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Boto3 reference</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../services/index.html">Available services</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Core references</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Boto3 reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html">Collections reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session reference</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Core references</a></li>
+<li>Boto3 reference</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="module-boto3">
+<span id="boto3-reference"></span><span id="ref-core-init"></span><h1><a name="//apple_ref/cpp/Module/boto3"></a>Boto3 reference<a class="headerlink" href="#module-boto3" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="boto3.NullHandler"><a name="//apple_ref/cpp/Class/boto3.NullHandler"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.</span></code><code class="sig-name descname"><span class="pre">NullHandler</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3.html#NullHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.NullHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the instance - basically setting the formatter to None
+and the filter list to empty.</p>
+<dl class="py method">
+<dt id="boto3.NullHandler.emit"><a name="//apple_ref/cpp/Method/boto3.NullHandler.emit"></a>
+<code class="sig-name descname"><span class="pre">emit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3.html#NullHandler.emit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.NullHandler.emit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do whatever it takes to actually log the specified logging record.</p>
+<p>This version is intended to be implemented by subclasses and so
+raises a NotImplementedError.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.client"><a name="//apple_ref/cpp/Function/boto3.client"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.</span></code><code class="sig-name descname"><span class="pre">client</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3.html#client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a low-level service client by name using the default session.</p>
+<p>See <a class="reference internal" href="session.html#boto3.session.Session.client" title="boto3.session.Session.client"><code class="xref py py-meth docutils literal notranslate"><span class="pre">boto3.session.Session.client()</span></code></a>.</p>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.resource"><a name="//apple_ref/cpp/Function/boto3.resource"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.</span></code><code class="sig-name descname"><span class="pre">resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3.html#resource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a resource service client by name using the default session.</p>
+<p>See <a class="reference internal" href="session.html#boto3.session.Session.resource" title="boto3.session.Session.resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">boto3.session.Session.resource()</span></code></a>.</p>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.set_stream_logger"><a name="//apple_ref/cpp/Function/boto3.set_stream_logger"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.</span></code><code class="sig-name descname"><span class="pre">set_stream_logger</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'boto3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3.html#set_stream_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.set_stream_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a stream handler for the given name and level to the logging module.
+By default, this logs all boto3 messages to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">boto3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">boto3</span><span class="o">.</span><span class="n">set_stream_logger</span><span class="p">(</span><span class="s1">'boto3.resources'</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For debugging purposes a good choice is to set the stream logger to <code class="docutils literal notranslate"><span class="pre">''</span></code>
+which is equivalent to saying “log everything”.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be aware that when logging anything from <code class="docutils literal notranslate"><span class="pre">'botocore'</span></code> the full wire
+trace will appear in your logs. If your payloads contain sensitive data
+this should not be used in production.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – Log name</p></li>
+<li><p><strong>level</strong> (<em>int</em>) – Logging level, e.g. <code class="docutils literal notranslate"><span class="pre">logging.INFO</span></code></p></li>
+<li><p><strong>format_string</strong> (<em>str</em>) – Log message format</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.setup_default_session"><a name="//apple_ref/cpp/Function/boto3.setup_default_session"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.</span></code><code class="sig-name descname"><span class="pre">setup_default_session</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3.html#setup_default_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.setup_default_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up a default session, passing through any parameters to the session
+constructor. There is no need to call this unless you wish to pass custom
+parameters, because a default session will be created for you.</p>
+</dd></dl>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="index.html" title="previous chapter (use the left arrow)">Core references</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="collections.html" title="next chapter (use the right arrow)">Collections reference</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="collections.html" title="Collections reference">next</a> |</li>
+<li class="right">
+<a href="index.html" title="Core references">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Core references</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Boto3 reference</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

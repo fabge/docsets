@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>S3 customization reference — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="dynamodb.html" rel="prev" title="DynamoDB customization reference"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="P" href="dynamodb.html" title="DynamoDB customization reference">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Customization references</a> »</li>
+<li class="nav-item nav-item-this"><a href="">S3 customization reference</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../services/index.html">Available services</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core references</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Customization references</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dynamodb.html">DynamoDB customization reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">S3 customization reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#s3-transfers">S3 transfers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Customization references</a></li>
+<li>S3 customization reference</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="s3-customization-reference">
+<span id="ref-custom-s3"></span><h1>S3 customization reference<a class="headerlink" href="#s3-customization-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="s3-transfers">
+<h2>S3 transfers<a class="headerlink" href="#s3-transfers" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All classes documented below are considered public and thus will not be
+exposed to breaking changes. If a class from the <code class="docutils literal notranslate"><span class="pre">boto3.s3.transfer</span></code>
+module is not documented below, it is considered internal and users
+should be very cautious in directly using them because breaking changes may
+be introduced from version to version of the library. It is recommended to
+use the variants of the transfer functions injected into the S3 client
+instead.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../services/s3.html#S3.Client.upload_file" title="S3.Client.upload_file"><code class="xref py py-meth docutils literal notranslate"><span class="pre">S3.Client.upload_file()</span></code></a>
+<a class="reference internal" href="../services/s3.html#S3.Client.upload_fileobj" title="S3.Client.upload_fileobj"><code class="xref py py-meth docutils literal notranslate"><span class="pre">S3.Client.upload_fileobj()</span></code></a>
+<a class="reference internal" href="../services/s3.html#S3.Client.download_file" title="S3.Client.download_file"><code class="xref py py-meth docutils literal notranslate"><span class="pre">S3.Client.download_file()</span></code></a>
+<a class="reference internal" href="../services/s3.html#S3.Client.download_fileobj" title="S3.Client.download_fileobj"><code class="xref py py-meth docutils literal notranslate"><span class="pre">S3.Client.download_fileobj()</span></code></a></p>
+</div>
+</div>
+<dl class="py class">
+<dt id="boto3.s3.transfer.TransferConfig"><a name="//apple_ref/cpp/Class/boto3.s3.transfer.TransferConfig"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.s3.transfer.</span></code><code class="sig-name descname"><span class="pre">TransferConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multipart_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8388608</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multipart_chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8388608</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_download_attempts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_io_queue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">io_chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">262144</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/s3/transfer.html#TransferConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.s3.transfer.TransferConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configuration object for managed S3 transfers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>multipart_threshold</strong> – The transfer size threshold for which
+multipart uploads, downloads, and copies will automatically be
+triggered.</p></li>
+<li><p><strong>max_concurrency</strong> – The maximum number of threads that will be
+making requests to perform a transfer. If <code class="docutils literal notranslate"><span class="pre">use_threads</span></code> is
+set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, the value provided is ignored as the transfer
+will only ever use the main thread.</p></li>
+<li><p><strong>multipart_chunksize</strong> – The partition size of each part for a
+multipart transfer.</p></li>
+<li><p><strong>num_download_attempts</strong> – The number of download attempts that
+will be retried upon errors with downloading an object in S3.
+Note that these retries account for errors that occur when
+streaming  down the data from s3 (i.e. socket errors and read
+timeouts that occur after receiving an OK response from s3).
+Other retryable exceptions such as throttling errors and 5xx
+errors are already retried by botocore (this default is 5). This
+does not take into account the number of exceptions retried by
+botocore.</p></li>
+<li><p><strong>max_io_queue</strong> – The maximum amount of read parts that can be
+queued in memory to be written for a download. The size of each
+of these read parts is at most the size of <code class="docutils literal notranslate"><span class="pre">io_chunksize</span></code>.</p></li>
+<li><p><strong>io_chunksize</strong> – The max size of each chunk in the io queue.
+Currently, this is size used when <code class="docutils literal notranslate"><span class="pre">read</span></code> is called on the
+downloaded stream as well.</p></li>
+<li><p><strong>use_threads</strong> – If True, threads will be used when performing
+S3 transfers. If False, no threads will be used in
+performing transfers: all logic will be ran in the main thread.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="boto3.s3.transfer.TransferConfig.ALIAS"><a name="//apple_ref/cpp/Attribute/boto3.s3.transfer.TransferConfig.ALIAS"></a>
+<code class="sig-name descname"><span class="pre">ALIAS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'max_concurrency':</span> <span class="pre">'max_request_concurrency',</span> <span class="pre">'max_io_queue':</span> <span class="pre">'max_io_queue_size'}</span></em><a class="headerlink" href="#boto3.s3.transfer.TransferConfig.ALIAS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.s3.transfer.S3Transfer"><a name="//apple_ref/cpp/Class/boto3.s3.transfer.S3Transfer"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.s3.transfer.</span></code><code class="sig-name descname"><span class="pre">S3Transfer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">osutil</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manager</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/s3/transfer.html#S3Transfer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.s3.transfer.S3Transfer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="boto3.s3.transfer.S3Transfer.ALLOWED_DOWNLOAD_ARGS"><a name="//apple_ref/cpp/Attribute/boto3.s3.transfer.S3Transfer.ALLOWED_DOWNLOAD_ARGS"></a>
+<code class="sig-name descname"><span class="pre">ALLOWED_DOWNLOAD_ARGS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">['VersionId',</span> <span class="pre">'SSECustomerAlgorithm',</span> <span class="pre">'SSECustomerKey',</span> <span class="pre">'SSECustomerKeyMD5',</span> <span class="pre">'RequestPayer',</span> <span class="pre">'ExpectedBucketOwner']</span></em><a class="headerlink" href="#boto3.s3.transfer.S3Transfer.ALLOWED_DOWNLOAD_ARGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt id="boto3.s3.transfer.S3Transfer.ALLOWED_UPLOAD_ARGS"><a name="//apple_ref/cpp/Attribute/boto3.s3.transfer.S3Transfer.ALLOWED_UPLOAD_ARGS"></a>
+<code class="sig-name descname"><span class="pre">ALLOWED_UPLOAD_ARGS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">['ACL',</span> <span class="pre">'CacheControl',</span> <span class="pre">'ContentDisposition',</span> <span class="pre">'ContentEncoding',</span> <span class="pre">'ContentLanguage',</span> <span class="pre">'ContentType',</span> <span class="pre">'ExpectedBucketOwner',</span> <span class="pre">'Expires',</span> <span class="pre">'GrantFullControl',</span> <span class="pre">'GrantRead',</span> <span class="pre">'GrantReadACP',</span> <span class="pre">'GrantWriteACP',</span> <span class="pre">'Metadata',</span> <span class="pre">'RequestPayer',</span> <span class="pre">'ServerSideEncryption',</span> <span class="pre">'StorageClass',</span> <span class="pre">'SSECustomerAlgorithm',</span> <span class="pre">'SSECustomerKey',</span> <span class="pre">'SSECustomerKeyMD5',</span> <span class="pre">'SSEKMSKeyId',</span> <span class="pre">'SSEKMSEncryptionContext',</span> <span class="pre">'Tagging',</span> <span class="pre">'WebsiteRedirectLocation']</span></em><a class="headerlink" href="#boto3.s3.transfer.S3Transfer.ALLOWED_UPLOAD_ARGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt id="boto3.s3.transfer.S3Transfer.download_file"><a name="//apple_ref/cpp/Method/boto3.s3.transfer.S3Transfer.download_file"></a>
+<code class="sig-name descname"><span class="pre">download_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/s3/transfer.html#S3Transfer.download_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.s3.transfer.S3Transfer.download_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download an S3 object to a file.</p>
+<p>Variants have also been injected into S3 client, Bucket and Object.
+You don’t have to use S3Transfer.download_file() directly.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../services/s3.html#S3.Client.download_file" title="S3.Client.download_file"><code class="xref py py-meth docutils literal notranslate"><span class="pre">S3.Client.download_file()</span></code></a>
+<a class="reference internal" href="../services/s3.html#S3.Client.download_fileobj" title="S3.Client.download_fileobj"><code class="xref py py-meth docutils literal notranslate"><span class="pre">S3.Client.download_fileobj()</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.s3.transfer.S3Transfer.upload_file"><a name="//apple_ref/cpp/Method/boto3.s3.transfer.S3Transfer.upload_file"></a>
+<code class="sig-name descname"><span class="pre">upload_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bucket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/s3/transfer.html#S3Transfer.upload_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.s3.transfer.S3Transfer.upload_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload a file to an S3 object.</p>
+<p>Variants have also been injected into S3 client, Bucket and Object.
+You don’t have to use S3Transfer.upload_file() directly.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../services/s3.html#S3.Client.upload_file" title="S3.Client.upload_file"><code class="xref py py-meth docutils literal notranslate"><span class="pre">S3.Client.upload_file()</span></code></a>
+<a class="reference internal" href="../services/s3.html#S3.Client.upload_fileobj" title="S3.Client.upload_fileobj"><code class="xref py py-meth docutils literal notranslate"><span class="pre">S3.Client.upload_fileobj()</span></code></a></p>
+</div>
+</dd></dl>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="dynamodb.html" title="previous chapter (use the left arrow)">DynamoDB customization reference</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="dynamodb.html" title="DynamoDB customization reference">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Customization references</a> »</li>
+<li class="nav-item nav-item-this"><a href="">S3 customization reference</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

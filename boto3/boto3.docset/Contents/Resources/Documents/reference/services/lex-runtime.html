@@ -1,0 +1,1868 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LexRuntimeService — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="lexv2-models.html" rel="next" title="LexModelsV2"/>
+<link href="lex-models.html" rel="prev" title="LexModelBuildingService"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="lexv2-models.html" title="LexModelsV2">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="lex-models.html" title="LexModelBuildingService">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">LexRuntimeService</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessanalyzer.html">AccessAnalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm.html">ACM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm-pca.html">ACMPCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alexaforbusiness.html">AlexaForBusiness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amp.html">PrometheusService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplify.html">Amplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplifybackend.html">AmplifyBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigateway.html">APIGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewaymanagementapi.html">ApiGatewayManagementApi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewayv2.html">ApiGatewayV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appconfig.html">AppConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appflow.html">Appflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appintegrations.html">AppIntegrationsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-autoscaling.html">ApplicationAutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">ApplicationInsights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appmesh.html">AppMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appstream.html">AppStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appsync.html">AppSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="athena.html">Athena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auditmanager.html">AuditManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling.html">AutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling-plans.html">AutoScalingPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch.html">Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="braket.html">Braket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ce.html">CostExplorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chime.html">Chime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud9.html">Cloud9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clouddirectory.html">CloudDirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudformation.html">CloudFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudfront.html">CloudFront</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsm.html">CloudHSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsmv2.html">CloudHSMV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearch.html">CloudSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearchdomain.html">CloudSearchDomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudtrail.html">CloudTrail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudwatch.html">CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeartifact.html">CodeArtifact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codebuild.html">CodeBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codecommit.html">CodeCommit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codedeploy.html">CodeDeploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguru-reviewer.html">CodeGuruReviewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguruprofiler.html">CodeGuruProfiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codepipeline.html">CodePipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar.html">CodeStar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-connections.html">CodeStarconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-notifications.html">CodeStarNotifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-identity.html">CognitoIdentity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-idp.html">CognitoIdentityProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-sync.html">CognitoSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehend.html">Comprehend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehendmedical.html">ComprehendMedical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute-optimizer.html">ComputeOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect-contact-lens.html">ConnectContactLens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectparticipant.html">ConnectParticipant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cur.html">CostandUsageReportService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customer-profiles.html">CustomerProfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databrew.html">GlueDataBrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataexchange.html">DataExchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datapipeline.html">DataPipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasync.html">DataSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dax.html">DAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detective.html">Detective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devicefarm.html">DeviceFarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devops-guru.html">DevOpsGuru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directconnect.html">DirectConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html">ApplicationDiscoveryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dlm.html">DLM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dms.html">DatabaseMigrationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docdb.html">DocDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ds.html">DirectoryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodb.html">DynamoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodbstreams.html">DynamoDBStreams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ebs.html">EBS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2.html">EC2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2-instance-connect.html">EC2InstanceConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr.html">ECR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr-public.html">ECRPublic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecs.html">ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efs.html">EFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eks.html">EKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-inference.html">ElasticInference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticache.html">ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticbeanstalk.html">ElasticBeanstalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastictranscoder.html">ElasticTranscoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elb.html">ElasticLoadBalancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elbv2.html">ElasticLoadBalancingv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr.html">EMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr-containers.html">EMRContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html">ElasticsearchService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">EventBridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace.html">finspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace-data.html">FinSpaceData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firehose.html">Firehose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fis.html">FIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fms.html">FMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecast.html">ForecastService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecastquery.html">ForecastQueryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frauddetector.html">FraudDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fsx.html">FSx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamelift.html">GameLift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glacier.html">Glacier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globalaccelerator.html">GlobalAccelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glue.html">Glue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrass.html">Greengrass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrassv2.html">GreengrassV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundstation.html">GroundStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guardduty.html">GuardDuty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="healthlake.html">HealthLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="honeycode.html">Honeycode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iam.html">IAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identitystore.html">IdentityStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagebuilder.html">imagebuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexport.html">ImportExport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot.html">IoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-data.html">IoTDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-jobs-data.html">IoTJobsDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-devices.html">IoT1ClickDevicesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-projects.html">IoT1ClickProjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotanalytics.html">IoTAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotdeviceadvisor.html">IoTDeviceAdvisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents.html">IoTEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents-data.html">IoTEventsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotfleethub.html">IoTFleetHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsecuretunneling.html">IoTSecureTunneling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsitewise.html">IoTSiteWise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotthingsgraph.html">IoTThingsGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotwireless.html">IoTWireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivs.html">IVS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kafka.html">Kafka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendra.html">kendra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis.html">Kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-archived-media.html">KinesisVideoArchivedMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-media.html">KinesisVideoMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-signaling.html">KinesisVideoSignalingChannels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalytics.html">KinesisAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalyticsv2.html">KinesisAnalyticsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisvideo.html">KinesisVideo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kms.html">KMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lakeformation.html">LakeFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda.html">Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-models.html">LexModelBuildingService</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">LexRuntimeService</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paginators">Paginators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-models.html">LexModelsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-runtime.html">LexRuntimeV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license-manager.html">LicenseManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lightsail.html">Lightsail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location.html">LocationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">CloudWatchLogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutequipment.html">LookoutEquipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutmetrics.html">LookoutMetrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutvision.html">LookoutforVision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html">MachineLearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie.html">Macie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie2.html">Macie2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managedblockchain.html">ManagedBlockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-catalog.html">MarketplaceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-entitlement.html">MarketplaceEntitlementService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplacecommerceanalytics.html">MarketplaceCommerceAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconnect.html">MediaConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconvert.html">MediaConvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medialive.html">MediaLive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage.html">MediaPackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage-vod.html">MediaPackageVod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore.html">MediaStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore-data.html">MediaStoreData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatailor.html">MediaTailor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteringmarketplace.html">MarketplaceMetering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgh.html">MigrationHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgn.html">mgn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrationhub-config.html">MigrationHubConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mq.html">MQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mturk.html">MTurk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mwaa.html">MWAA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neptune.html">Neptune</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network-firewall.html">NetworkFirewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkmanager.html">NetworkManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html">NimbleStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworks.html">OpsWorks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworkscm.html">OpsWorksCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizations.html">Organizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outposts.html">Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">Personalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-events.html">PersonalizeEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-runtime.html">PersonalizeRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pi.html">PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint.html">Pinpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-email.html">PinpointEmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polly.html">Polly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing.html">Pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb.html">QLDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb-session.html">QLDBSession</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quicksight.html">QuickSight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ram.html">RAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds.html">RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds-data.html">RDSDataService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift.html">Redshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift-data.html">RedshiftDataAPIService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rekognition.html">Rekognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resource-groups.html">ResourceGroups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resourcegroupstaggingapi.html">ResourceGroupsTaggingAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomaker.html">RoboMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53.html">Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53domains.html">Route53Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53resolver.html">Route53Resolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3.html">S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3control.html">S3Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3outposts.html">S3Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker.html">SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-a2i-runtime.html">AugmentedAIRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-edge.html">SagemakerEdgeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-featurestore-runtime.html">SageMakerFeatureStoreRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-runtime.html">SageMakerRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savingsplans.html">SavingsPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html">Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdb.html">SimpleDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secretsmanager.html">SecretsManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityhub.html">SecurityHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverlessrepo.html">ServerlessApplicationRepository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-quotas.html">ServiceQuotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog.html">ServiceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog-appregistry.html">AppRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicediscovery.html">ServiceDiscovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ses.html">SES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sesv2.html">SESV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signer.html">signer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html">SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snowball.html">Snowball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sns.html">SNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqs.html">SQS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssm.html">SSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso.html">SSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-admin.html">SSOAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-oidc.html">SSOOIDC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepfunctions.html">SFN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storagegateway.html">StorageGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sts.html">STS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swf.html">SWF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetics.html">Synthetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textract.html">Textract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-query.html">TimestreamQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-write.html">TimestreamWrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transcribe.html">TranscribeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer.html">Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">Translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf.html">WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf-regional.html">WAFRegional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wafv2.html">WAFV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wellarchitected.html">WellArchitected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workdocs.html">WorkDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worklink.html">WorkLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmail.html">WorkMail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmailmessageflow.html">WorkMailMessageFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workspaces.html">WorkSpaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xray.html">XRay</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Available services</a></li>
+<li>LexRuntimeService</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="lexruntimeservice">
+<h1><a class="toc-backref" href="#id5">LexRuntimeService</a><a class="headerlink" href="#lexruntimeservice" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#lexruntimeservice" id="id5">LexRuntimeService</a></p>
+<ul>
+<li><p><a class="reference internal" href="#client" id="id6">Client</a></p></li>
+<li><p><a class="reference internal" href="#paginators" id="id7">Paginators</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="client">
+<h2><a class="toc-backref" href="#id6">Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="LexRuntimeService.Client"><a name="//apple_ref/cpp/Class/LexRuntimeService.Client"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">LexRuntimeService.</span></code><code class="sig-name descname"><span class="pre">Client</span></code><a class="headerlink" href="#LexRuntimeService.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>A low-level client representing Amazon Lex Runtime Service</p>
+<p>Amazon Lex provides both build and runtime endpoints. Each endpoint provides a set of operations (API). Your conversational bot uses the runtime API to understand user utterances (user input text or voice). For example, suppose a user says “I want pizza”, your bot sends this input to Amazon Lex using the runtime API. Amazon Lex recognizes that the user request is for the OrderPizza intent (one of the intents defined in the bot). Then Amazon Lex engages in user conversation on behalf of the bot to elicit required information (slot values, such as pizza size and crust type), and then performs fulfillment activity (that you configured when you created the bot). You use the build-time API to create and manage your Amazon Lex bot. For a list of build-time operations, see the build-time API, .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">'lex-runtime'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These are the available methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.can_paginate" title="LexRuntimeService.Client.can_paginate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">can_paginate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.delete_session" title="LexRuntimeService.Client.delete_session"><code class="xref py py-meth docutils literal notranslate"><span class="pre">delete_session()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.generate_presigned_url" title="LexRuntimeService.Client.generate_presigned_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate_presigned_url()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.get_paginator" title="LexRuntimeService.Client.get_paginator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_paginator()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.get_session" title="LexRuntimeService.Client.get_session"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_session()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.get_waiter" title="LexRuntimeService.Client.get_waiter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_waiter()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.post_content" title="LexRuntimeService.Client.post_content"><code class="xref py py-meth docutils literal notranslate"><span class="pre">post_content()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.post_text" title="LexRuntimeService.Client.post_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">post_text()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#LexRuntimeService.Client.put_session" title="LexRuntimeService.Client.put_session"><code class="xref py py-meth docutils literal notranslate"><span class="pre">put_session()</span></code></a></p></li>
+</ul>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.can_paginate"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.can_paginate"></a>
+<code class="sig-name descname"><span class="pre">can_paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.can_paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an operation can be paginated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the operation can be paginated,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.delete_session"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.delete_session"></a>
+<code class="sig-name descname"><span class="pre">delete_session</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.delete_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes session information for a specified bot, alias, and user ID.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">delete_session</span><span class="p">(</span>
+    <span class="n">botName</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">botAlias</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">userId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>botName</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the bot that contains the session data.</p>
+</p></li>
+<li><p><strong>botAlias</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The alias in use for the bot that contains the session data.</p>
+</p></li>
+<li><p><strong>userId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The identifier of the user associated with the session data.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'botName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'botAlias'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'userId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'sessionId'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>botName</strong> <em>(string) –</em></p>
+<p>The name of the bot associated with the session data.</p>
+</li>
+<li><p><strong>botAlias</strong> <em>(string) –</em></p>
+<p>The alias in use for the bot associated with the session data.</p>
+</li>
+<li><p><strong>userId</strong> <em>(string) –</em></p>
+<p>The ID of the client application user.</p>
+</li>
+<li><p><strong>sessionId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the session.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.NotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.BadRequestException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.LimitExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.InternalFailureException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.ConflictException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.generate_presigned_url"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.generate_presigned_url"></a>
+<code class="sig-name descname"><span class="pre">generate_presigned_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExpiresIn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HttpMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.generate_presigned_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a presigned url given a client, its method, and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ClientMethod</strong> (<em>string</em>) – The client method to presign for</p></li>
+<li><p><strong>Params</strong> (<em>dict</em>) – The parameters normally passed to
+<code class="docutils literal notranslate"><span class="pre">ClientMethod</span></code>.</p></li>
+<li><p><strong>ExpiresIn</strong> (<em>int</em>) – The number of seconds the presigned url is valid
+for. By default it expires in an hour (3600 seconds)</p></li>
+<li><p><strong>HttpMethod</strong> (<em>string</em>) – The http method to use on the generated url. By
+default, the http method is whatever is used in the method’s model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The presigned url</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.get_paginator"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.get_paginator"></a>
+<code class="sig-name descname"><span class="pre">get_paginator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.get_paginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a paginator for an operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>OperationNotPageableError</strong> – Raised if the operation is not
+pageable.  You can use the <code class="docutils literal notranslate"><span class="pre">client.can_paginate</span></code> method to
+check if an operation is pageable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>L{botocore.paginate.Paginator}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A paginator object.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.get_session"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.get_session"></a>
+<code class="sig-name descname"><span class="pre">get_session</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.get_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns session information for a specified bot, alias, and user ID.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span>
+    <span class="n">botName</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">botAlias</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">userId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">checkpointLabelFilter</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>botName</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the bot that contains the session data.</p>
+</p></li>
+<li><p><strong>botAlias</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The alias in use for the bot that contains the session data.</p>
+</p></li>
+<li><p><strong>userId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The ID of the client application user. Amazon Lex uses this to identify a user’s conversation with your bot.</p>
+</p></li>
+<li><p><strong>checkpointLabelFilter</strong> (<em>string</em>) – <p>A string used to filter the intents returned in the <code class="docutils literal notranslate"><span class="pre">recentIntentSummaryView</span></code> structure.</p>
+<p>When you specify a filter, only intents with their <code class="docutils literal notranslate"><span class="pre">checkpointLabel</span></code> field set to that string are returned.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'recentIntentSummaryView'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'intentName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'checkpointLabel'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'slots'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">},</span>
+            <span class="s1">'confirmationStatus'</span><span class="p">:</span> <span class="s1">'None'</span><span class="o">|</span><span class="s1">'Confirmed'</span><span class="o">|</span><span class="s1">'Denied'</span><span class="p">,</span>
+            <span class="s1">'dialogActionType'</span><span class="p">:</span> <span class="s1">'ElicitIntent'</span><span class="o">|</span><span class="s1">'ConfirmIntent'</span><span class="o">|</span><span class="s1">'ElicitSlot'</span><span class="o">|</span><span class="s1">'Close'</span><span class="o">|</span><span class="s1">'Delegate'</span><span class="p">,</span>
+            <span class="s1">'fulfillmentState'</span><span class="p">:</span> <span class="s1">'Fulfilled'</span><span class="o">|</span><span class="s1">'Failed'</span><span class="o">|</span><span class="s1">'ReadyForFulfillment'</span><span class="p">,</span>
+            <span class="s1">'slotToElicit'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'sessionAttributes'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="s1">'sessionId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'dialogAction'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'ElicitIntent'</span><span class="o">|</span><span class="s1">'ConfirmIntent'</span><span class="o">|</span><span class="s1">'ElicitSlot'</span><span class="o">|</span><span class="s1">'Close'</span><span class="o">|</span><span class="s1">'Delegate'</span><span class="p">,</span>
+        <span class="s1">'intentName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'slots'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+        <span class="s1">'slotToElicit'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'fulfillmentState'</span><span class="p">:</span> <span class="s1">'Fulfilled'</span><span class="o">|</span><span class="s1">'Failed'</span><span class="o">|</span><span class="s1">'ReadyForFulfillment'</span><span class="p">,</span>
+        <span class="s1">'message'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'messageFormat'</span><span class="p">:</span> <span class="s1">'PlainText'</span><span class="o">|</span><span class="s1">'CustomPayload'</span><span class="o">|</span><span class="s1">'SSML'</span><span class="o">|</span><span class="s1">'Composite'</span>
+    <span class="p">},</span>
+    <span class="s1">'activeContexts'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timeToLive'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'timeToLiveInSeconds'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'turnsToLive'</span><span class="p">:</span> <span class="mi">123</span>
+            <span class="p">},</span>
+            <span class="s1">'parameters'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>recentIntentSummaryView</strong> <em>(list) –</em></p>
+<p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code class="docutils literal notranslate"><span class="pre">recentIntentSummaryView</span></code> operation contains information about the last three intents used.</p>
+<p>If you set the <code class="docutils literal notranslate"><span class="pre">checkpointLabelFilter</span></code> parameter in the request, the array contains only the intents with the specified label.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state.</p>
+<ul>
+<li><p><strong>intentName</strong> <em>(string) –</em></p>
+<p>The name of the intent.</p>
+</li>
+<li><p><strong>checkpointLabel</strong> <em>(string) –</em></p>
+<p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">checkpointLabelFilter</span></code> parameter of the <code class="docutils literal notranslate"><span class="pre">GetSessionRequest</span></code> operation to filter the intents returned by the operation to those with only the specified label.</p>
+</li>
+<li><p><strong>slots</strong> <em>(dict) –</em></p>
+<p>Map of the slots that have been gathered and their values.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>confirmationStatus</strong> <em>(string) –</em></p>
+<p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code class="docutils literal notranslate"><span class="pre">Confirmed</span></code> . If the user denies the intent, Amazon Lex sets this value to <code class="docutils literal notranslate"><span class="pre">Denied</span></code> . The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Confirmed</span></code> - The user has responded “Yes” to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Denied</span></code> - The user has responded “No” to the confirmation prompt.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p></li>
+</ul>
+</li>
+<li><p><strong>dialogActionType</strong> <em>(string) –</em></p>
+<p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfirmIntent</span></code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as “Place the order?”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Close</span></code> - Indicates that the there will not be a response from the user. For example, the statement “Your order has been placed” does not require a response.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitIntent</span></code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> - The next action is to elicit a slot value from the user.</p></li>
+</ul>
+</li>
+<li><p><strong>fulfillmentState</strong> <em>(string) –</em></p>
+<p>The fulfillment state of the intent. The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Failed</span></code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fulfilled</span></code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReadyForFulfillment</span></code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+</ul>
+</li>
+<li><p><strong>slotToElicit</strong> <em>(string) –</em></p>
+<p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>sessionAttributes</strong> <em>(dict) –</em></p>
+<p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>sessionId</strong> <em>(string) –</em></p>
+<p>A unique identifier for the session.</p>
+</li>
+<li><p><strong>dialogAction</strong> <em>(dict) –</em></p>
+<p>Describes the current state of the bot.</p>
+<ul>
+<li><p><strong>type</strong> <em>(string) –</em></p>
+<p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfirmIntent</span></code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as “Place the order?”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Close</span></code> - Indicates that the there will not be a response from the user. For example, the statement “Your order has been placed” does not require a response.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Delegate</span></code> - The next action is determined by Amazon Lex.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitIntent</span></code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> - The next action is to elicit a slot value from the user.</p></li>
+</ul>
+</li>
+<li><p><strong>intentName</strong> <em>(string) –</em></p>
+<p>The name of the intent.</p>
+</li>
+<li><p><strong>slots</strong> <em>(dict) –</em></p>
+<p>Map of the slots that have been gathered and their values.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>slotToElicit</strong> <em>(string) –</em></p>
+<p>The name of the slot that should be elicited from the user.</p>
+</li>
+<li><p><strong>fulfillmentState</strong> <em>(string) –</em></p>
+<p>The fulfillment state of the intent. The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Failed</span></code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fulfilled</span></code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReadyForFulfillment</span></code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+</ul>
+</li>
+<li><p><strong>message</strong> <em>(string) –</em></p>
+<p>The message that should be shown to the user. If you don’t specify a message, Amazon Lex will use the message configured for the intent.</p>
+</li>
+<li><p><strong>messageFormat</strong> <em>(string) –</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PlainText</span></code> - The message contains plain UTF-8 text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CustomPayload</span></code> - The message is a custom format for the client.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSML</span></code> - The message contains text formatted for voice output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Composite</span></code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a> .</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>activeContexts</strong> <em>(list) –</em></p>
+<p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> , <code class="docutils literal notranslate"><span class="pre">PostText</span></code> , or <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> operation.</p>
+<p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code class="docutils literal notranslate"><span class="pre">PutContent</span></code> , <code class="docutils literal notranslate"><span class="pre">PutText</span></code> , or <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> operation.</p>
+<ul>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the context.</p>
+</li>
+<li><p><strong>timeToLive</strong> <em>(dict) –</em></p>
+<p>The length of time or number of turns that a context remains active.</p>
+<ul>
+<li><p><strong>timeToLiveInSeconds</strong> <em>(integer) –</em></p>
+<p>The number of seconds that the context should be active after it is first sent in a <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> or <code class="docutils literal notranslate"><span class="pre">PostText</span></code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
+</li>
+<li><p><strong>turnsToLive</strong> <em>(integer) –</em></p>
+<p>The number of conversation turns that the context should be active. A conversation turn is one <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> or <code class="docutils literal notranslate"><span class="pre">PostText</span></code> request and the corresponding response from Amazon Lex.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>parameters</strong> <em>(dict) –</em></p>
+<p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.NotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.BadRequestException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.LimitExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.InternalFailureException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.get_waiter"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.get_waiter"></a>
+<code class="sig-name descname"><span class="pre">get_waiter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waiter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.get_waiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object that can wait for some condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waiter_name</strong> (<em>str</em>) – The name of the waiter to get. See the waiters
+section of the service docs for a list of available waiters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified waiter object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>botocore.waiter.Waiter</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.post_content"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.post_content"></a>
+<code class="sig-name descname"><span class="pre">post_content</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.post_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends user input (text or speech) to Amazon Lex. Clients use this API to send text and audio requests to Amazon Lex at runtime. Amazon Lex interprets the user input using the machine learning model that it built for the bot.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> operation supports audio input at 8kHz and 16kHz. You can use 8kHz audio to achieve higher speech recognition accuracy in telephone audio applications.</p>
+<p>In response, Amazon Lex returns the next message to convey to the user. Consider the following example messages:</p>
+<ul class="simple">
+<li><p>For a user input “I would like a pizza,” Amazon Lex might return a response with a message eliciting slot data (for example, <code class="docutils literal notranslate"><span class="pre">PizzaSize</span></code> ): “What size pizza would you like?”.</p></li>
+<li><p>After the user provides all of the pizza order information, Amazon Lex might return a response with a message to get user confirmation: “Order the pizza?”.</p></li>
+<li><p>After the user replies “Yes” to the confirmation prompt, Amazon Lex might return a conclusion statement: “Thank you, your cheese pizza has been ordered.”.</p></li>
+</ul>
+<p>Not all Amazon Lex messages require a response from the user. For example, conclusion statements do not require a response. Some messages require only a yes or no response. In addition to the <code class="docutils literal notranslate"><span class="pre">message</span></code> , Amazon Lex provides additional context about the message in the response that you can use to enhance client behavior, such as displaying the appropriate client user interface. Consider the following examples:</p>
+<ul class="simple">
+<li><p>If the message is to elicit slot data, Amazon Lex returns the following context information:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x-amz-lex-dialog-state</span></code> header set to <code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x-amz-lex-intent-name</span></code> header set to the intent name in the current context</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x-amz-lex-slot-to-elicit</span></code> header set to the slot name for which the <code class="docutils literal notranslate"><span class="pre">message</span></code> is eliciting information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x-amz-lex-slots</span></code> header set to a map of slots configured for the intent with their current values</p></li>
+</ul>
+</li>
+<li><p>If the message is a confirmation prompt, the <code class="docutils literal notranslate"><span class="pre">x-amz-lex-dialog-state</span></code> header is set to <code class="docutils literal notranslate"><span class="pre">Confirmation</span></code> and the <code class="docutils literal notranslate"><span class="pre">x-amz-lex-slot-to-elicit</span></code> header is omitted.</p></li>
+<li><p>If the message is a clarification prompt configured for the intent, indicating that the user intent is not understood, the <code class="docutils literal notranslate"><span class="pre">x-amz-dialog-state</span></code> header is set to <code class="docutils literal notranslate"><span class="pre">ElicitIntent</span></code> and the <code class="docutils literal notranslate"><span class="pre">x-amz-slot-to-elicit</span></code> header is omitted.</p></li>
+</ul>
+<p>In addition, Amazon Lex also returns your application-specific <code class="docutils literal notranslate"><span class="pre">sessionAttributes</span></code> . For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation Context</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post_content</span><span class="p">(</span>
+    <span class="n">botName</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">botAlias</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">userId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">sessionAttributes</span><span class="o">=</span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">requestAttributes</span><span class="o">=</span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">contentType</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">accept</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">inputStream</span><span class="o">=</span><span class="sa">b</span><span class="s1">'bytes'</span><span class="o">|</span><span class="n">file</span><span class="p">,</span>
+    <span class="n">activeContexts</span><span class="o">=</span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>botName</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Name of the Amazon Lex bot.</p>
+</p></li>
+<li><p><strong>botAlias</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Alias of the Amazon Lex bot.</p>
+</p></li>
+<li><p><strong>userId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The ID of the client application user. Amazon Lex uses this to identify a user’s conversation with your bot. At runtime, each request must contain the <code class="docutils literal notranslate"><span class="pre">userID</span></code> field.</p>
+<p>To decide the user ID to use for your application, consider the following factors.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">userID</span></code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+<li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+<li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+<li><p>A user can’t have two independent conversations with two different versions of the same bot. For example, a user can’t have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+</ul>
+</p></li>
+<li><p><strong>sessionAttributes</strong> (<em>JSON serializable</em>) – <p>You pass this value as the <code class="docutils literal notranslate"><span class="pre">x-amz-lex-session-attributes</span></code> HTTP header.</p>
+<p>Application-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code class="docutils literal notranslate"><span class="pre">sessionAttributes</span></code> and <code class="docutils literal notranslate"><span class="pre">requestAttributes</span></code> headers is limited to 12 KB.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a> .</p>
+</p></li>
+<li><p><strong>requestAttributes</strong> (<em>JSON serializable</em>) – <p>You pass this value as the <code class="docutils literal notranslate"><span class="pre">x-amz-lex-request-attributes</span></code> HTTP header.</p>
+<p>Request-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code class="docutils literal notranslate"><span class="pre">requestAttributes</span></code> and <code class="docutils literal notranslate"><span class="pre">sessionAttributes</span></code> headers is limited to 12 KB.</p>
+<p>The namespace <code class="docutils literal notranslate"><span class="pre">x-amz-lex:</span></code> is reserved for special attributes. Don’t create any request attributes with the prefix <code class="docutils literal notranslate"><span class="pre">x-amz-lex:</span></code> .</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a> .</p>
+</p></li>
+<li><p><strong>contentType</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>You pass this value as the <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> HTTP header.</p>
+<p>Indicates the audio format or text. The header value must start with one of the following prefixes:</p>
+<ul>
+<li><p>PCM format, audio data must be in little-endian byte order.</p>
+<ul>
+<li><p>audio/l16; rate=16000; channels=1</p></li>
+<li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+<li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+</ul>
+</li>
+<li><p>Opus format</p>
+<ul>
+<li><p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
+</ul>
+</li>
+<li><p>Text format</p>
+<ul>
+<li><p>text/plain; charset=utf-8</p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>accept</strong> (<em>string</em>) – <p>You pass this value as the <code class="docutils literal notranslate"><span class="pre">Accept</span></code> HTTP header.</p>
+<p>The message Amazon Lex returns in the response can be either text or speech based on the <code class="docutils literal notranslate"><span class="pre">Accept</span></code> HTTP header value in the request.</p>
+<ul>
+<li><p>If the value is <code class="docutils literal notranslate"><span class="pre">text/plain;</span> <span class="pre">charset=utf-8</span></code> , Amazon Lex returns text in the response.</p></li>
+<li><p>If the value begins with <code class="docutils literal notranslate"><span class="pre">audio/</span></code> , Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code class="docutils literal notranslate"><span class="pre">Accept</span></code> header). For example, if you specify <code class="docutils literal notranslate"><span class="pre">audio/mpeg</span></code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+<li><p>If the value is <code class="docutils literal notranslate"><span class="pre">audio/pcm</span></code> , the speech returned is <code class="docutils literal notranslate"><span class="pre">audio/pcm</span></code> in 16-bit, little endian format.</p></li>
+<li><p>The following are the accepted values:</p>
+<ul>
+<li><p>audio/mpeg</p></li>
+<li><p>audio/ogg</p></li>
+<li><p>audio/pcm</p></li>
+<li><p>text/plain; charset=utf-8</p></li>
+<li><p>audio/* (defaults to mpeg)</p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>inputStream</strong> (<em>bytes</em><em> or </em><em>seekable file-like object</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>User input in PCM or Opus audio format or text format as described in the <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> HTTP header.</p>
+<p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
+</p></li>
+<li><p><strong>activeContexts</strong> (<em>JSON serializable</em>) – <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+<p>If you don’t specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'contentType'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'intentName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'nluIntentConfidence'</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span>
+    <span class="s1">'alternativeIntents'</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span>
+    <span class="s1">'slots'</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span>
+    <span class="s1">'sessionAttributes'</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span>
+    <span class="s1">'sentimentResponse'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'message'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'encodedMessage'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'messageFormat'</span><span class="p">:</span> <span class="s1">'PlainText'</span><span class="o">|</span><span class="s1">'CustomPayload'</span><span class="o">|</span><span class="s1">'SSML'</span><span class="o">|</span><span class="s1">'Composite'</span><span class="p">,</span>
+    <span class="s1">'dialogState'</span><span class="p">:</span> <span class="s1">'ElicitIntent'</span><span class="o">|</span><span class="s1">'ConfirmIntent'</span><span class="o">|</span><span class="s1">'ElicitSlot'</span><span class="o">|</span><span class="s1">'Fulfilled'</span><span class="o">|</span><span class="s1">'ReadyForFulfillment'</span><span class="o">|</span><span class="s1">'Failed'</span><span class="p">,</span>
+    <span class="s1">'slotToElicit'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'inputTranscript'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'encodedInputTranscript'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'audioStream'</span><span class="p">:</span> <span class="n">StreamingBody</span><span class="p">(),</span>
+    <span class="s1">'botVersion'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'sessionId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'activeContexts'</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>contentType</strong> <em>(string) –</em></p>
+<p>Content type as specified in the <code class="docutils literal notranslate"><span class="pre">Accept</span></code> HTTP header in the request.</p>
+</li>
+<li><p><strong>intentName</strong> <em>(string) –</em></p>
+<p>Current user intent that Amazon Lex is aware of.</p>
+</li>
+<li><p><strong>nluIntentConfidence</strong> (JSON serializable) –</p>
+<p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user’s intent. The score is between 0.0 and 1.0.</p>
+<p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>
+</li>
+<li><p><strong>alternativeIntents</strong> (JSON serializable) –</p>
+<p>One to four alternative intents that may be applicable to the user’s intent.</p>
+<p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user’s intent. The intents are sorted by the confidence score.</p>
+</li>
+<li><p><strong>slots</strong> (JSON serializable) –</p>
+<p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the conversation. The field is base-64 encoded.</p>
+<p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> selected when the slot type was created or updated. If <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> is set to <code class="docutils literal notranslate"><span class="pre">ORIGINAL_VALUE</span></code> , the value provided by the user is returned, if the user value is similar to the slot values. If <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> is set to <code class="docutils literal notranslate"><span class="pre">TOP_RESOLUTION</span></code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don’t specify a <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> , the default is <code class="docutils literal notranslate"><span class="pre">ORIGINAL_VALUE</span></code> .</p>
+</li>
+<li><p><strong>sessionAttributes</strong> (JSON serializable) –</p>
+<p>Map of key/value pairs representing the session-specific context information.</p>
+</li>
+<li><p><strong>sentimentResponse</strong> <em>(string) –</em></p>
+<p>The sentiment expressed in an utterance.</p>
+<p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
+</li>
+<li><p><strong>message</strong> <em>(string) –</em></p>
+<p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code class="docutils literal notranslate"><span class="pre">message</span></code> field is null. You should use the <code class="docutils literal notranslate"><span class="pre">encodedMessage</span></code> field instead.</p>
+<p>The message to convey to the user. The message can come from the bot’s configuration or from a Lambda function.</p>
+<p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code class="docutils literal notranslate"><span class="pre">Delegate</span></code> as the <code class="docutils literal notranslate"><span class="pre">dialogAction.type</span></code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot’s configuration based on the current interaction context. For example, if Amazon Lex isn’t able to understand user input, it uses a clarification prompt message.</p>
+<p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see  msg-prompts-formats .</p>
+<p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+</li>
+<li><p><strong>encodedMessage</strong> <em>(string) –</em></p>
+<p>The message to convey to the user. The message can come from the bot’s configuration or from a Lambda function.</p>
+<p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code class="docutils literal notranslate"><span class="pre">Delegate</span></code> as the <code class="docutils literal notranslate"><span class="pre">dialogAction.type</span></code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot’s configuration based on the current interaction context. For example, if Amazon Lex isn’t able to understand user input, it uses a clarification prompt message.</p>
+<p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see  msg-prompts-formats .</p>
+<p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">encodedMessage</span></code> field is base-64 encoded. You must decode the field before you can use the value.</p>
+</li>
+<li><p><strong>messageFormat</strong> <em>(string) –</em></p>
+<p>The format of the response message. One of the following values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PlainText</span></code> - The message contains plain UTF-8 text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CustomPayload</span></code> - The message is a custom format for the client.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSML</span></code> - The message contains text formatted for voice output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Composite</span></code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
+</ul>
+</li>
+<li><p><strong>dialogState</strong> <em>(string) –</em></p>
+<p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code class="docutils literal notranslate"><span class="pre">dialogState</span></code> . The client can optionally use this information to customize the user interface.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitIntent</span></code> - Amazon Lex wants to elicit the user’s intent. Consider the following examples:  For example, a user might utter an intent (“I want to order a pizza”). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialog state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfirmIntent</span></code> - Amazon Lex is expecting a “yes” or “no” response.  For example, Amazon Lex wants user confirmation before fulfilling an intent. Instead of a simple “yes” or “no” response, a user might respond with additional information. For example, “yes, but make it a thick crust pizza” or “no, I want to order a drink.” Amazon Lex can process such additional information (in these examples, update the crust type slot or change the intent from OrderPizza to OrderDrink).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> - Amazon Lex is expecting the value of a slot for the current intent.  For example, suppose that in the response Amazon Lex sends this message: “What size pizza would you like?”. A user might reply with the slot value (e.g., “medium”). The user might also provide additional information in the response (e.g., “medium thick crust pizza”). Amazon Lex can process such additional information appropriately.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fulfilled</span></code> - Conveys that the Lambda function has successfully fulfilled the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReadyForFulfillment</span></code> - Conveys that the client has to fulfill the request.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Failed</span></code> - Conveys that the conversation with the user failed.  This can happen for various reasons, including that the user does not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or if the Lambda function fails to fulfill the intent.</p></li>
+</ul>
+</li>
+<li><p><strong>slotToElicit</strong> <em>(string) –</em></p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">dialogState</span></code> value is <code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> , returns the name of the slot for which Amazon Lex is eliciting a value.</p>
+</li>
+<li><p><strong>inputTranscript</strong> <em>(string) –</em></p>
+<p>The text used to process the request.</p>
+<p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code class="docutils literal notranslate"><span class="pre">inputTranscript</span></code> field is null. You should use the <code class="docutils literal notranslate"><span class="pre">encodedInputTranscript</span></code> field instead.</p>
+<p>If the input was an audio stream, the <code class="docutils literal notranslate"><span class="pre">inputTranscript</span></code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+</li>
+<li><p><strong>encodedInputTranscript</strong> <em>(string) –</em></p>
+<p>The text used to process the request.</p>
+<p>If the input was an audio stream, the <code class="docutils literal notranslate"><span class="pre">encodedInputTranscript</span></code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">encodedInputTranscript</span></code> field is base-64 encoded. You must decode the field before you can use the value.</p>
+</li>
+<li><p><strong>audioStream</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">StreamingBody</span></code>) –</p>
+<p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code class="docutils literal notranslate"><span class="pre">clarificationPrompt</span></code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code class="docutils literal notranslate"><span class="pre">confirmationPrompt</span></code> . Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response.</p>
+</li>
+<li><p><strong>botVersion</strong> <em>(string) –</em></p>
+<p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
+</li>
+<li><p><strong>sessionId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the session.</p>
+</li>
+<li><p><strong>activeContexts</strong> (JSON serializable) –</p>
+<p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> , <code class="docutils literal notranslate"><span class="pre">PostText</span></code> , or <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> operation.</p>
+<p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.NotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.BadRequestException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.LimitExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.InternalFailureException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.ConflictException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.UnsupportedMediaTypeException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.NotAcceptableException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.RequestTimeoutException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.DependencyFailedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.BadGatewayException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.LoopDetectedException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.post_text"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.post_text"></a>
+<code class="sig-name descname"><span class="pre">post_text</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.post_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends user input to Amazon Lex. Client applications can use this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot.</p>
+<p>In response, Amazon Lex returns the next <code class="docutils literal notranslate"><span class="pre">message</span></code> to convey to the user an optional <code class="docutils literal notranslate"><span class="pre">responseCard</span></code> to display. Consider the following example messages:</p>
+<ul class="simple">
+<li><p>For a user input “I would like a pizza”, Amazon Lex might return a response with a message eliciting slot data (for example, PizzaSize): “What size pizza would you like?”</p></li>
+<li><p>After the user provides all of the pizza order information, Amazon Lex might return a response with a message to obtain user confirmation “Proceed with the pizza order?”.</p></li>
+<li><p>After the user replies to a confirmation prompt with a “yes”, Amazon Lex might return a conclusion statement: “Thank you, your cheese pizza has been ordered.”.</p></li>
+</ul>
+<p>Not all Amazon Lex messages require a user response. For example, a conclusion statement does not require a response. Some messages require only a “yes” or “no” user response. In addition to the <code class="docutils literal notranslate"><span class="pre">message</span></code> , Amazon Lex provides additional context about the message in the response that you might use to enhance client behavior, for example, to display the appropriate client user interface. These are the <code class="docutils literal notranslate"><span class="pre">slotToElicit</span></code> , <code class="docutils literal notranslate"><span class="pre">dialogState</span></code> , <code class="docutils literal notranslate"><span class="pre">intentName</span></code> , and <code class="docutils literal notranslate"><span class="pre">slots</span></code> fields in the response. Consider the following examples:</p>
+<ul class="simple">
+<li><p>If the message is to elicit slot data, Amazon Lex returns the following context information:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dialogState</span></code> set to ElicitSlot</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intentName</span></code> set to the intent name in the current context</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slotToElicit</span></code> set to the slot name for which the <code class="docutils literal notranslate"><span class="pre">message</span></code> is eliciting information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slots</span></code> set to a map of slots, configured for the intent, with currently known values</p></li>
+</ul>
+</li>
+<li><p>If the message is a confirmation prompt, the <code class="docutils literal notranslate"><span class="pre">dialogState</span></code> is set to ConfirmIntent and <code class="docutils literal notranslate"><span class="pre">SlotToElicit</span></code> is set to null.</p></li>
+<li><p>If the message is a clarification prompt (configured for the intent) that indicates that user intent is not understood, the <code class="docutils literal notranslate"><span class="pre">dialogState</span></code> is set to ElicitIntent and <code class="docutils literal notranslate"><span class="pre">slotToElicit</span></code> is set to null.</p></li>
+</ul>
+<p>In addition, Amazon Lex also returns your application-specific <code class="docutils literal notranslate"><span class="pre">sessionAttributes</span></code> . For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation Context</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post_text</span><span class="p">(</span>
+    <span class="n">botName</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">botAlias</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">userId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">sessionAttributes</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="n">requestAttributes</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="n">inputText</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">activeContexts</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timeToLive'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'timeToLiveInSeconds'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'turnsToLive'</span><span class="p">:</span> <span class="mi">123</span>
+            <span class="p">},</span>
+            <span class="s1">'parameters'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>botName</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the Amazon Lex bot.</p>
+</p></li>
+<li><p><strong>botAlias</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The alias of the Amazon Lex bot.</p>
+</p></li>
+<li><p><strong>userId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The ID of the client application user. Amazon Lex uses this to identify a user’s conversation with your bot. At runtime, each request must contain the <code class="docutils literal notranslate"><span class="pre">userID</span></code> field.</p>
+<p>To decide the user ID to use for your application, consider the following factors.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">userID</span></code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+<li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+<li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+<li><p>A user can’t have two independent conversations with two different versions of the same bot. For example, a user can’t have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+</ul>
+</p></li>
+<li><p><strong>sessionAttributes</strong> (<em>dict</em>) – <p>Application-specific information passed between Amazon Lex and a client application.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a> .</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>requestAttributes</strong> (<em>dict</em>) – <p>Request-specific information passed between Amazon Lex and a client application.</p>
+<p>The namespace <code class="docutils literal notranslate"><span class="pre">x-amz-lex:</span></code> is reserved for special attributes. Don’t create any request attributes with the prefix <code class="docutils literal notranslate"><span class="pre">x-amz-lex:</span></code> .</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a> .</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>inputText</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The text that the user entered (Amazon Lex interprets this text).</p>
+</p></li>
+<li><p><strong>activeContexts</strong> (<em>list</em>) – <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+<p>If you don’t specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code class="docutils literal notranslate"><span class="pre">PutContent</span></code> , <code class="docutils literal notranslate"><span class="pre">PutText</span></code> , or <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> operation.</p>
+<ul>
+<li><p><strong>name</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>The name of the context.</p>
+</li>
+<li><p><strong>timeToLive</strong> <em>(dict) –</em> <strong>[REQUIRED]</strong></p>
+<p>The length of time or number of turns that a context remains active.</p>
+<ul>
+<li><p><strong>timeToLiveInSeconds</strong> <em>(integer) –</em></p>
+<p>The number of seconds that the context should be active after it is first sent in a <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> or <code class="docutils literal notranslate"><span class="pre">PostText</span></code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
+</li>
+<li><p><strong>turnsToLive</strong> <em>(integer) –</em></p>
+<p>The number of conversation turns that the context should be active. A conversation turn is one <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> or <code class="docutils literal notranslate"><span class="pre">PostText</span></code> request and the corresponding response from Amazon Lex.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>parameters</strong> <em>(dict) –</em> <strong>[REQUIRED]</strong></p>
+<p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'intentName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'nluIntentConfidence'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'score'</span><span class="p">:</span> <span class="mf">123.0</span>
+    <span class="p">},</span>
+    <span class="s1">'alternativeIntents'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'intentName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'nluIntentConfidence'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'score'</span><span class="p">:</span> <span class="mf">123.0</span>
+            <span class="p">},</span>
+            <span class="s1">'slots'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'slots'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="s1">'sessionAttributes'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="s1">'message'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'sentimentResponse'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'sentimentLabel'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'sentimentScore'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="s1">'messageFormat'</span><span class="p">:</span> <span class="s1">'PlainText'</span><span class="o">|</span><span class="s1">'CustomPayload'</span><span class="o">|</span><span class="s1">'SSML'</span><span class="o">|</span><span class="s1">'Composite'</span><span class="p">,</span>
+    <span class="s1">'dialogState'</span><span class="p">:</span> <span class="s1">'ElicitIntent'</span><span class="o">|</span><span class="s1">'ConfirmIntent'</span><span class="o">|</span><span class="s1">'ElicitSlot'</span><span class="o">|</span><span class="s1">'Fulfilled'</span><span class="o">|</span><span class="s1">'ReadyForFulfillment'</span><span class="o">|</span><span class="s1">'Failed'</span><span class="p">,</span>
+    <span class="s1">'slotToElicit'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'responseCard'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'contentType'</span><span class="p">:</span> <span class="s1">'application/vnd.amazonaws.card.generic'</span><span class="p">,</span>
+        <span class="s1">'genericAttachments'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">'title'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'subTitle'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'attachmentLinkUrl'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'imageUrl'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'buttons'</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s1">'text'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'value'</span><span class="p">:</span> <span class="s1">'string'</span>
+                    <span class="p">},</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s1">'sessionId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'botVersion'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'activeContexts'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timeToLive'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'timeToLiveInSeconds'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'turnsToLive'</span><span class="p">:</span> <span class="mi">123</span>
+            <span class="p">},</span>
+            <span class="s1">'parameters'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>intentName</strong> <em>(string) –</em></p>
+<p>The current user intent that Amazon Lex is aware of.</p>
+</li>
+<li><p><strong>nluIntentConfidence</strong> <em>(dict) –</em></p>
+<p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user’s intent. The score is between 0.0 and 1.0. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a> .</p>
+<p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>
+<ul>
+<li><p><strong>score</strong> <em>(float) –</em></p>
+<p>A score that indicates how confident Amazon Lex is that an intent satisfies the user’s intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>alternativeIntents</strong> <em>(list) –</em></p>
+<p>One to four alternative intents that may be applicable to the user’s intent.</p>
+<p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user’s intent. The intents are sorted by the confidence score.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>An intent that Amazon Lex suggests satisfies the user’s intent. Includes the name of the intent, the confidence that Amazon Lex has that the user’s intent is satisfied, and the slots defined for the intent.</p>
+<ul>
+<li><p><strong>intentName</strong> <em>(string) –</em></p>
+<p>The name of the intent that Amazon Lex suggests satisfies the user’s intent.</p>
+</li>
+<li><p><strong>nluIntentConfidence</strong> <em>(dict) –</em></p>
+<p>Indicates how confident Amazon Lex is that an intent satisfies the user’s intent.</p>
+<ul>
+<li><p><strong>score</strong> <em>(float) –</em></p>
+<p>A score that indicates how confident Amazon Lex is that an intent satisfies the user’s intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>slots</strong> <em>(dict) –</em></p>
+<p>The slot and slot values associated with the predicted intent.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>slots</strong> <em>(dict) –</em></p>
+<p>The intent slots that Amazon Lex detected from the user input in the conversation.</p>
+<p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> selected when the slot type was created or updated. If <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> is set to <code class="docutils literal notranslate"><span class="pre">ORIGINAL_VALUE</span></code> , the value provided by the user is returned, if the user value is similar to the slot values. If <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> is set to <code class="docutils literal notranslate"><span class="pre">TOP_RESOLUTION</span></code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don’t specify a <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> , the default is <code class="docutils literal notranslate"><span class="pre">ORIGINAL_VALUE</span></code> .</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>sessionAttributes</strong> <em>(dict) –</em></p>
+<p>A map of key-value pairs representing the session-specific context information.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>message</strong> <em>(string) –</em></p>
+<p>The message to convey to the user. The message can come from the bot’s configuration or from a Lambda function.</p>
+<p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code class="docutils literal notranslate"><span class="pre">Delegate</span></code> as the <code class="docutils literal notranslate"><span class="pre">dialogAction.type</span></code> its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot’s configuration based on the current interaction context. For example, if Amazon Lex isn’t able to understand user input, it uses a clarification prompt message.</p>
+<p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see  msg-prompts-formats .</p>
+<p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+</li>
+<li><p><strong>sentimentResponse</strong> <em>(dict) –</em></p>
+<p>The sentiment expressed in and utterance.</p>
+<p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
+<ul>
+<li><p><strong>sentimentLabel</strong> <em>(string) –</em></p>
+<p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
+</li>
+<li><p><strong>sentimentScore</strong> <em>(string) –</em></p>
+<p>The likelihood that the sentiment was correctly inferred.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>messageFormat</strong> <em>(string) –</em></p>
+<p>The format of the response message. One of the following values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PlainText</span></code> - The message contains plain UTF-8 text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CustomPayload</span></code> - The message is a custom format defined by the Lambda function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSML</span></code> - The message contains text formatted for voice output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Composite</span></code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
+</ul>
+</li>
+<li><p><strong>dialogState</strong> <em>(string) –</em></p>
+<p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code class="docutils literal notranslate"><span class="pre">dialogState</span></code> . The client can optionally use this information to customize the user interface.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitIntent</span></code> - Amazon Lex wants to elicit user intent.  For example, a user might utter an intent (“I want to order a pizza”). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfirmIntent</span></code> - Amazon Lex is expecting a “yes” or “no” response.  For example, Amazon Lex wants user confirmation before fulfilling an intent.  Instead of a simple “yes” or “no,” a user might respond with additional information. For example, “yes, but make it thick crust pizza” or “no, I want to order a drink”. Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> - Amazon Lex is expecting a slot value for the current intent.  For example, suppose that in the response Amazon Lex sends this message: “What size pizza would you like?”. A user might reply with the slot value (e.g., “medium”). The user might also provide additional information in the response (e.g., “medium thick crust pizza”). Amazon Lex can process such additional information appropriately.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fulfilled</span></code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReadyForFulfillment</span></code> - Conveys that the client has to fulfill the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Failed</span></code> - Conveys that the conversation with the user failed.  This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent.</p></li>
+</ul>
+</li>
+<li><p><strong>slotToElicit</strong> <em>(string) –</em></p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">dialogState</span></code> value is <code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> , returns the name of the slot for which Amazon Lex is eliciting a value.</p>
+</li>
+<li><p><strong>responseCard</strong> <em>(dict) –</em></p>
+<p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function).</p>
+<ul>
+<li><p><strong>version</strong> <em>(string) –</em></p>
+<p>The version of the response card format.</p>
+</li>
+<li><p><strong>contentType</strong> <em>(string) –</em></p>
+<p>The content type of the response.</p>
+</li>
+<li><p><strong>genericAttachments</strong> <em>(list) –</em></p>
+<p>An array of attachment objects representing options.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.</p>
+<ul>
+<li><p><strong>title</strong> <em>(string) –</em></p>
+<p>The title of the option.</p>
+</li>
+<li><p><strong>subTitle</strong> <em>(string) –</em></p>
+<p>The subtitle shown below the title.</p>
+</li>
+<li><p><strong>attachmentLinkUrl</strong> <em>(string) –</em></p>
+<p>The URL of an attachment to the response card.</p>
+</li>
+<li><p><strong>imageUrl</strong> <em>(string) –</em></p>
+<p>The URL of an image that is displayed to the user.</p>
+</li>
+<li><p><strong>buttons</strong> <em>(list) –</em></p>
+<p>The list of options to show to the user.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Represents an option to be shown on the client platform (Facebook, Slack, etc.)</p>
+<ul>
+<li><p><strong>text</strong> <em>(string) –</em></p>
+<p>Text that is visible to the user on the button.</p>
+</li>
+<li><p><strong>value</strong> <em>(string) –</em></p>
+<p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text “NYC.” When the user chooses the button, the value sent can be “New York City.”</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>sessionId</strong> <em>(string) –</em></p>
+<p>A unique identifier for the session.</p>
+</li>
+<li><p><strong>botVersion</strong> <em>(string) –</em></p>
+<p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
+</li>
+<li><p><strong>activeContexts</strong> <em>(list) –</em></p>
+<p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> , <code class="docutils literal notranslate"><span class="pre">PostText</span></code> , or <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> operation.</p>
+<p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code class="docutils literal notranslate"><span class="pre">PutContent</span></code> , <code class="docutils literal notranslate"><span class="pre">PutText</span></code> , or <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> operation.</p>
+<ul>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the context.</p>
+</li>
+<li><p><strong>timeToLive</strong> <em>(dict) –</em></p>
+<p>The length of time or number of turns that a context remains active.</p>
+<ul>
+<li><p><strong>timeToLiveInSeconds</strong> <em>(integer) –</em></p>
+<p>The number of seconds that the context should be active after it is first sent in a <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> or <code class="docutils literal notranslate"><span class="pre">PostText</span></code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
+</li>
+<li><p><strong>turnsToLive</strong> <em>(integer) –</em></p>
+<p>The number of conversation turns that the context should be active. A conversation turn is one <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> or <code class="docutils literal notranslate"><span class="pre">PostText</span></code> request and the corresponding response from Amazon Lex.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>parameters</strong> <em>(dict) –</em></p>
+<p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.NotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.BadRequestException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.LimitExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.InternalFailureException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.ConflictException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.DependencyFailedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.BadGatewayException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.LoopDetectedException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="LexRuntimeService.Client.put_session"><a name="//apple_ref/cpp/Method/LexRuntimeService.Client.put_session"></a>
+<code class="sig-name descname"><span class="pre">put_session</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#LexRuntimeService.Client.put_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new session or modifies an existing session with an Amazon Lex bot. Use this operation to enable your application to set the state of the bot.</p>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing Sessions</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">put_session</span><span class="p">(</span>
+    <span class="n">botName</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">botAlias</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">userId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">sessionAttributes</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="n">dialogAction</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'ElicitIntent'</span><span class="o">|</span><span class="s1">'ConfirmIntent'</span><span class="o">|</span><span class="s1">'ElicitSlot'</span><span class="o">|</span><span class="s1">'Close'</span><span class="o">|</span><span class="s1">'Delegate'</span><span class="p">,</span>
+        <span class="s1">'intentName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'slots'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+        <span class="s1">'slotToElicit'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'fulfillmentState'</span><span class="p">:</span> <span class="s1">'Fulfilled'</span><span class="o">|</span><span class="s1">'Failed'</span><span class="o">|</span><span class="s1">'ReadyForFulfillment'</span><span class="p">,</span>
+        <span class="s1">'message'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'messageFormat'</span><span class="p">:</span> <span class="s1">'PlainText'</span><span class="o">|</span><span class="s1">'CustomPayload'</span><span class="o">|</span><span class="s1">'SSML'</span><span class="o">|</span><span class="s1">'Composite'</span>
+    <span class="p">},</span>
+    <span class="n">recentIntentSummaryView</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'intentName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'checkpointLabel'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'slots'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">},</span>
+            <span class="s1">'confirmationStatus'</span><span class="p">:</span> <span class="s1">'None'</span><span class="o">|</span><span class="s1">'Confirmed'</span><span class="o">|</span><span class="s1">'Denied'</span><span class="p">,</span>
+            <span class="s1">'dialogActionType'</span><span class="p">:</span> <span class="s1">'ElicitIntent'</span><span class="o">|</span><span class="s1">'ConfirmIntent'</span><span class="o">|</span><span class="s1">'ElicitSlot'</span><span class="o">|</span><span class="s1">'Close'</span><span class="o">|</span><span class="s1">'Delegate'</span><span class="p">,</span>
+            <span class="s1">'fulfillmentState'</span><span class="p">:</span> <span class="s1">'Fulfilled'</span><span class="o">|</span><span class="s1">'Failed'</span><span class="o">|</span><span class="s1">'ReadyForFulfillment'</span><span class="p">,</span>
+            <span class="s1">'slotToElicit'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">accept</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">activeContexts</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timeToLive'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'timeToLiveInSeconds'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'turnsToLive'</span><span class="p">:</span> <span class="mi">123</span>
+            <span class="p">},</span>
+            <span class="s1">'parameters'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>botName</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the bot that contains the session data.</p>
+</p></li>
+<li><p><strong>botAlias</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The alias in use for the bot that contains the session data.</p>
+</p></li>
+<li><p><strong>userId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The ID of the client application user. Amazon Lex uses this to identify a user’s conversation with your bot.</p>
+</p></li>
+<li><p><strong>sessionAttributes</strong> (<em>dict</em>) – <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>dialogAction</strong> (<em>dict</em>) – <p>Sets the next action that the bot should take to fulfill the conversation.</p>
+<ul>
+<li><p><strong>type</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfirmIntent</span></code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as “Place the order?”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Close</span></code> - Indicates that the there will not be a response from the user. For example, the statement “Your order has been placed” does not require a response.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Delegate</span></code> - The next action is determined by Amazon Lex.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitIntent</span></code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> - The next action is to elicit a slot value from the user.</p></li>
+</ul>
+</li>
+<li><p><strong>intentName</strong> <em>(string) –</em></p>
+<p>The name of the intent.</p>
+</li>
+<li><p><strong>slots</strong> <em>(dict) –</em></p>
+<p>Map of the slots that have been gathered and their values.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>slotToElicit</strong> <em>(string) –</em></p>
+<p>The name of the slot that should be elicited from the user.</p>
+</li>
+<li><p><strong>fulfillmentState</strong> <em>(string) –</em></p>
+<p>The fulfillment state of the intent. The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Failed</span></code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fulfilled</span></code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReadyForFulfillment</span></code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+</ul>
+</li>
+<li><p><strong>message</strong> <em>(string) –</em></p>
+<p>The message that should be shown to the user. If you don’t specify a message, Amazon Lex will use the message configured for the intent.</p>
+</li>
+<li><p><strong>messageFormat</strong> <em>(string) –</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PlainText</span></code> - The message contains plain UTF-8 text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CustomPayload</span></code> - The message is a custom format for the client.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSML</span></code> - The message contains text formatted for voice output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Composite</span></code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a> .</p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>recentIntentSummaryView</strong> (<em>list</em>) – <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
+<p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">intentName</span></code></p></li>
+<li><p>slot names</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slotToElict</span></code></p></li>
+</ul>
+<p>If you send the <code class="docutils literal notranslate"><span class="pre">recentIntentSummaryView</span></code> parameter in a <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> request, the contents of the new summary view replaces the old summary view. For example, if a <code class="docutils literal notranslate"><span class="pre">GetSession</span></code> request returns three intents in the summary view and you call <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> with one intent in the summary view, the next call to <code class="docutils literal notranslate"><span class="pre">GetSession</span></code> will only return one intent.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state.</p>
+<ul>
+<li><p><strong>intentName</strong> <em>(string) –</em></p>
+<p>The name of the intent.</p>
+</li>
+<li><p><strong>checkpointLabel</strong> <em>(string) –</em></p>
+<p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">checkpointLabelFilter</span></code> parameter of the <code class="docutils literal notranslate"><span class="pre">GetSessionRequest</span></code> operation to filter the intents returned by the operation to those with only the specified label.</p>
+</li>
+<li><p><strong>slots</strong> <em>(dict) –</em></p>
+<p>Map of the slots that have been gathered and their values.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>confirmationStatus</strong> <em>(string) –</em></p>
+<p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code class="docutils literal notranslate"><span class="pre">Confirmed</span></code> . If the user denies the intent, Amazon Lex sets this value to <code class="docutils literal notranslate"><span class="pre">Denied</span></code> . The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Confirmed</span></code> - The user has responded “Yes” to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Denied</span></code> - The user has responded “No” to the confirmation prompt.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p></li>
+</ul>
+</li>
+<li><p><strong>dialogActionType</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfirmIntent</span></code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as “Place the order?”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Close</span></code> - Indicates that the there will not be a response from the user. For example, the statement “Your order has been placed” does not require a response.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitIntent</span></code> - The next action is to determine the intent that the user wants to fulfill.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> - The next action is to elicit a slot value from the user.</p></li>
+</ul>
+</li>
+<li><p><strong>fulfillmentState</strong> <em>(string) –</em></p>
+<p>The fulfillment state of the intent. The possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Failed</span></code> - The Lambda function associated with the intent failed to fulfill the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fulfilled</span></code> - The intent has fulfilled by the Lambda function associated with the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReadyForFulfillment</span></code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p></li>
+</ul>
+</li>
+<li><p><strong>slotToElicit</strong> <em>(string) –</em></p>
+<p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>accept</strong> (<em>string</em>) – <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
+<ul>
+<li><p>If the value is <code class="docutils literal notranslate"><span class="pre">text/plain;</span> <span class="pre">charset=utf-8</span></code> , Amazon Lex returns text in the response.</p></li>
+<li><p>If the value begins with <code class="docutils literal notranslate"><span class="pre">audio/</span></code> , Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code class="docutils literal notranslate"><span class="pre">audio/mpeg</span></code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+<li><p>If the value is <code class="docutils literal notranslate"><span class="pre">audio/pcm</span></code> , the speech is returned as <code class="docutils literal notranslate"><span class="pre">audio/pcm</span></code> in 16-bit, little endian format.</p></li>
+<li><p>The following are the accepted values:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">audio/mpeg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">audio/ogg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">audio/pcm</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">audio/*</span></code> (defaults to mpeg)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text/plain;</span> <span class="pre">charset=utf-8</span></code></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>activeContexts</strong> (<em>list</em>) – <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+<p>If you don’t specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code class="docutils literal notranslate"><span class="pre">PutContent</span></code> , <code class="docutils literal notranslate"><span class="pre">PutText</span></code> , or <code class="docutils literal notranslate"><span class="pre">PutSession</span></code> operation.</p>
+<ul>
+<li><p><strong>name</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>The name of the context.</p>
+</li>
+<li><p><strong>timeToLive</strong> <em>(dict) –</em> <strong>[REQUIRED]</strong></p>
+<p>The length of time or number of turns that a context remains active.</p>
+<ul>
+<li><p><strong>timeToLiveInSeconds</strong> <em>(integer) –</em></p>
+<p>The number of seconds that the context should be active after it is first sent in a <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> or <code class="docutils literal notranslate"><span class="pre">PostText</span></code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
+</li>
+<li><p><strong>turnsToLive</strong> <em>(integer) –</em></p>
+<p>The number of conversation turns that the context should be active. A conversation turn is one <code class="docutils literal notranslate"><span class="pre">PostContent</span></code> or <code class="docutils literal notranslate"><span class="pre">PostText</span></code> request and the corresponding response from Amazon Lex.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>parameters</strong> <em>(dict) –</em> <strong>[REQUIRED]</strong></p>
+<p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'contentType'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'intentName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'slots'</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span>
+    <span class="s1">'sessionAttributes'</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span>
+    <span class="s1">'message'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'encodedMessage'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'messageFormat'</span><span class="p">:</span> <span class="s1">'PlainText'</span><span class="o">|</span><span class="s1">'CustomPayload'</span><span class="o">|</span><span class="s1">'SSML'</span><span class="o">|</span><span class="s1">'Composite'</span><span class="p">,</span>
+    <span class="s1">'dialogState'</span><span class="p">:</span> <span class="s1">'ElicitIntent'</span><span class="o">|</span><span class="s1">'ConfirmIntent'</span><span class="o">|</span><span class="s1">'ElicitSlot'</span><span class="o">|</span><span class="s1">'Fulfilled'</span><span class="o">|</span><span class="s1">'ReadyForFulfillment'</span><span class="o">|</span><span class="s1">'Failed'</span><span class="p">,</span>
+    <span class="s1">'slotToElicit'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'audioStream'</span><span class="p">:</span> <span class="n">StreamingBody</span><span class="p">(),</span>
+    <span class="s1">'sessionId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'activeContexts'</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="o">|</span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">|</span><span class="mi">123</span><span class="o">|</span><span class="mf">123.4</span><span class="o">|</span><span class="s1">'string'</span><span class="o">|</span><span class="kc">True</span><span class="o">|</span><span class="kc">None</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>contentType</strong> <em>(string) –</em></p>
+<p>Content type as specified in the <code class="docutils literal notranslate"><span class="pre">Accept</span></code> HTTP header in the request.</p>
+</li>
+<li><p><strong>intentName</strong> <em>(string) –</em></p>
+<p>The name of the current intent.</p>
+</li>
+<li><p><strong>slots</strong> (JSON serializable) –</p>
+<p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
+<p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> selected when the slot type was created or updated. If <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> is set to <code class="docutils literal notranslate"><span class="pre">ORIGINAL_VALUE</span></code> , the value provided by the user is returned, if the user value is similar to the slot values. If <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> is set to <code class="docutils literal notranslate"><span class="pre">TOP_RESOLUTION</span></code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don’t specify a <code class="docutils literal notranslate"><span class="pre">valueSelectionStrategy</span></code> the default is <code class="docutils literal notranslate"><span class="pre">ORIGINAL_VALUE</span></code> .</p>
+</li>
+<li><p><strong>sessionAttributes</strong> (JSON serializable) –</p>
+<p>Map of key/value pairs representing session-specific context information.</p>
+</li>
+<li><p><strong>message</strong> <em>(string) –</em></p>
+<p>The next message that should be presented to the user.</p>
+<p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code class="docutils literal notranslate"><span class="pre">message</span></code> field is null. You should use the <code class="docutils literal notranslate"><span class="pre">encodedMessage</span></code> field instead.</p>
+</li>
+<li><p><strong>encodedMessage</strong> <em>(string) –</em></p>
+<p>The next message that should be presented to the user.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">encodedMessage</span></code> field is base-64 encoded. You must decode the field before you can use the value.</p>
+</li>
+<li><p><strong>messageFormat</strong> <em>(string) –</em></p>
+<p>The format of the response message. One of the following values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PlainText</span></code> - The message contains plain UTF-8 text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CustomPayload</span></code> - The message is a custom format for the client.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSML</span></code> - The message contains text formatted for voice output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Composite</span></code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
+</ul>
+</li>
+<li><p><strong>dialogState</strong> <em>(string) –</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfirmIntent</span></code> - Amazon Lex is expecting a “yes” or “no” response to confirm the intent before fulfilling an intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitIntent</span></code> - Amazon Lex wants to elicit the user’s intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Failed</span></code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fulfilled</span></code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReadyForFulfillment</span></code> - Conveys that the client has to fulfill the intent.</p></li>
+</ul>
+</li>
+<li><p><strong>slotToElicit</strong> <em>(string) –</em></p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">dialogState</span></code> is <code class="docutils literal notranslate"><span class="pre">ElicitSlot</span></code> , returns the name of the slot for which Amazon Lex is eliciting a value.</p>
+</li>
+<li><p><strong>audioStream</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">StreamingBody</span></code>) –</p>
+<p>The audio version of the message to convey to the user.</p>
+</li>
+<li><p><strong>sessionId</strong> <em>(string) –</em></p>
+<p>A unique identifier for the session.</p>
+</li>
+<li><p><strong>activeContexts</strong> (JSON serializable) –</p>
+<p>A list of active contexts for the session.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.NotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.BadRequestException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.LimitExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.InternalFailureException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.ConflictException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.NotAcceptableException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.DependencyFailedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LexRuntimeService.Client.exceptions.BadGatewayException</span></code></p></li>
+</ul>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="paginators">
+<h2><a class="toc-backref" href="#id7">Paginators</a><a class="headerlink" href="#paginators" title="Permalink to this headline">¶</a></h2>
+<p>The available paginators are:</p>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="lex-models.html" title="previous chapter (use the left arrow)">LexModelBuildingService</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="lexv2-models.html" title="next chapter (use the right arrow)">LexModelsV2</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="lexv2-models.html" title="LexModelsV2">next</a> |</li>
+<li class="right">
+<a href="lex-models.html" title="LexModelBuildingService">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">LexRuntimeService</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

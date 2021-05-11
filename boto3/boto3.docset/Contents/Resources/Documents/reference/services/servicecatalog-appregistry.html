@@ -1,0 +1,2424 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AppRegistry — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="servicediscovery.html" rel="next" title="ServiceDiscovery"/>
+<link href="servicecatalog.html" rel="prev" title="ServiceCatalog"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="servicediscovery.html" title="ServiceDiscovery">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="servicecatalog.html" title="ServiceCatalog">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">AppRegistry</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessanalyzer.html">AccessAnalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm.html">ACM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm-pca.html">ACMPCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alexaforbusiness.html">AlexaForBusiness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amp.html">PrometheusService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplify.html">Amplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplifybackend.html">AmplifyBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigateway.html">APIGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewaymanagementapi.html">ApiGatewayManagementApi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewayv2.html">ApiGatewayV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appconfig.html">AppConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appflow.html">Appflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appintegrations.html">AppIntegrationsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-autoscaling.html">ApplicationAutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">ApplicationInsights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appmesh.html">AppMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appstream.html">AppStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appsync.html">AppSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="athena.html">Athena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auditmanager.html">AuditManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling.html">AutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling-plans.html">AutoScalingPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch.html">Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="braket.html">Braket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ce.html">CostExplorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chime.html">Chime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud9.html">Cloud9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clouddirectory.html">CloudDirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudformation.html">CloudFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudfront.html">CloudFront</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsm.html">CloudHSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsmv2.html">CloudHSMV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearch.html">CloudSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearchdomain.html">CloudSearchDomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudtrail.html">CloudTrail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudwatch.html">CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeartifact.html">CodeArtifact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codebuild.html">CodeBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codecommit.html">CodeCommit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codedeploy.html">CodeDeploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguru-reviewer.html">CodeGuruReviewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguruprofiler.html">CodeGuruProfiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codepipeline.html">CodePipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar.html">CodeStar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-connections.html">CodeStarconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-notifications.html">CodeStarNotifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-identity.html">CognitoIdentity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-idp.html">CognitoIdentityProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-sync.html">CognitoSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehend.html">Comprehend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehendmedical.html">ComprehendMedical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute-optimizer.html">ComputeOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect-contact-lens.html">ConnectContactLens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectparticipant.html">ConnectParticipant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cur.html">CostandUsageReportService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customer-profiles.html">CustomerProfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databrew.html">GlueDataBrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataexchange.html">DataExchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datapipeline.html">DataPipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasync.html">DataSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dax.html">DAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detective.html">Detective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devicefarm.html">DeviceFarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devops-guru.html">DevOpsGuru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directconnect.html">DirectConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html">ApplicationDiscoveryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dlm.html">DLM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dms.html">DatabaseMigrationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docdb.html">DocDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ds.html">DirectoryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodb.html">DynamoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodbstreams.html">DynamoDBStreams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ebs.html">EBS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2.html">EC2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2-instance-connect.html">EC2InstanceConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr.html">ECR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr-public.html">ECRPublic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecs.html">ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efs.html">EFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eks.html">EKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-inference.html">ElasticInference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticache.html">ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticbeanstalk.html">ElasticBeanstalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastictranscoder.html">ElasticTranscoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elb.html">ElasticLoadBalancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elbv2.html">ElasticLoadBalancingv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr.html">EMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr-containers.html">EMRContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html">ElasticsearchService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">EventBridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace.html">finspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace-data.html">FinSpaceData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firehose.html">Firehose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fis.html">FIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fms.html">FMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecast.html">ForecastService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecastquery.html">ForecastQueryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frauddetector.html">FraudDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fsx.html">FSx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamelift.html">GameLift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glacier.html">Glacier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globalaccelerator.html">GlobalAccelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glue.html">Glue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrass.html">Greengrass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrassv2.html">GreengrassV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundstation.html">GroundStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guardduty.html">GuardDuty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="healthlake.html">HealthLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="honeycode.html">Honeycode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iam.html">IAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identitystore.html">IdentityStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagebuilder.html">imagebuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexport.html">ImportExport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot.html">IoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-data.html">IoTDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-jobs-data.html">IoTJobsDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-devices.html">IoT1ClickDevicesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-projects.html">IoT1ClickProjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotanalytics.html">IoTAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotdeviceadvisor.html">IoTDeviceAdvisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents.html">IoTEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents-data.html">IoTEventsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotfleethub.html">IoTFleetHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsecuretunneling.html">IoTSecureTunneling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsitewise.html">IoTSiteWise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotthingsgraph.html">IoTThingsGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotwireless.html">IoTWireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivs.html">IVS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kafka.html">Kafka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendra.html">kendra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis.html">Kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-archived-media.html">KinesisVideoArchivedMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-media.html">KinesisVideoMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-signaling.html">KinesisVideoSignalingChannels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalytics.html">KinesisAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalyticsv2.html">KinesisAnalyticsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisvideo.html">KinesisVideo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kms.html">KMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lakeformation.html">LakeFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda.html">Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-models.html">LexModelBuildingService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-runtime.html">LexRuntimeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-models.html">LexModelsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-runtime.html">LexRuntimeV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license-manager.html">LicenseManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lightsail.html">Lightsail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location.html">LocationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">CloudWatchLogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutequipment.html">LookoutEquipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutmetrics.html">LookoutMetrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutvision.html">LookoutforVision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html">MachineLearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie.html">Macie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie2.html">Macie2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managedblockchain.html">ManagedBlockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-catalog.html">MarketplaceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-entitlement.html">MarketplaceEntitlementService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplacecommerceanalytics.html">MarketplaceCommerceAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconnect.html">MediaConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconvert.html">MediaConvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medialive.html">MediaLive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage.html">MediaPackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage-vod.html">MediaPackageVod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore.html">MediaStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore-data.html">MediaStoreData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatailor.html">MediaTailor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteringmarketplace.html">MarketplaceMetering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgh.html">MigrationHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgn.html">mgn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrationhub-config.html">MigrationHubConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mq.html">MQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mturk.html">MTurk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mwaa.html">MWAA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neptune.html">Neptune</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network-firewall.html">NetworkFirewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkmanager.html">NetworkManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html">NimbleStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworks.html">OpsWorks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworkscm.html">OpsWorksCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizations.html">Organizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outposts.html">Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">Personalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-events.html">PersonalizeEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-runtime.html">PersonalizeRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pi.html">PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint.html">Pinpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-email.html">PinpointEmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polly.html">Polly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing.html">Pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb.html">QLDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb-session.html">QLDBSession</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quicksight.html">QuickSight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ram.html">RAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds.html">RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds-data.html">RDSDataService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift.html">Redshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift-data.html">RedshiftDataAPIService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rekognition.html">Rekognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resource-groups.html">ResourceGroups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resourcegroupstaggingapi.html">ResourceGroupsTaggingAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomaker.html">RoboMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53.html">Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53domains.html">Route53Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53resolver.html">Route53Resolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3.html">S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3control.html">S3Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3outposts.html">S3Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker.html">SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-a2i-runtime.html">AugmentedAIRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-edge.html">SagemakerEdgeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-featurestore-runtime.html">SageMakerFeatureStoreRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-runtime.html">SageMakerRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savingsplans.html">SavingsPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html">Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdb.html">SimpleDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secretsmanager.html">SecretsManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityhub.html">SecurityHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverlessrepo.html">ServerlessApplicationRepository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-quotas.html">ServiceQuotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog.html">ServiceCatalog</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AppRegistry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paginators">Paginators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="servicediscovery.html">ServiceDiscovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ses.html">SES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sesv2.html">SESV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signer.html">signer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html">SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snowball.html">Snowball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sns.html">SNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqs.html">SQS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssm.html">SSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso.html">SSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-admin.html">SSOAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-oidc.html">SSOOIDC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepfunctions.html">SFN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storagegateway.html">StorageGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sts.html">STS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swf.html">SWF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetics.html">Synthetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textract.html">Textract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-query.html">TimestreamQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-write.html">TimestreamWrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transcribe.html">TranscribeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer.html">Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">Translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf.html">WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf-regional.html">WAFRegional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wafv2.html">WAFV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wellarchitected.html">WellArchitected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workdocs.html">WorkDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worklink.html">WorkLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmail.html">WorkMail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmailmessageflow.html">WorkMailMessageFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workspaces.html">WorkSpaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xray.html">XRay</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Available services</a></li>
+<li>AppRegistry</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="appregistry">
+<h1><a class="toc-backref" href="#id24">AppRegistry</a><a class="headerlink" href="#appregistry" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#appregistry" id="id24">AppRegistry</a></p>
+<ul>
+<li><p><a class="reference internal" href="#client" id="id25">Client</a></p></li>
+<li><p><a class="reference internal" href="#paginators" id="id26">Paginators</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="client">
+<h2><a class="toc-backref" href="#id25">Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="AppRegistry.Client"><a name="//apple_ref/cpp/Class/AppRegistry.Client"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">AppRegistry.</span></code><code class="sig-name descname"><span class="pre">Client</span></code><a class="headerlink" href="#AppRegistry.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>A low-level client representing AWS Service Catalog App Registry (AppRegistry)</p>
+<p>AWS Service Catalog AppRegistry enables organizations to understand the application context of their AWS resources. AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">'servicecatalog-appregistry'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These are the available methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#AppRegistry.Client.associate_attribute_group" title="AppRegistry.Client.associate_attribute_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">associate_attribute_group()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.associate_resource" title="AppRegistry.Client.associate_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">associate_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.can_paginate" title="AppRegistry.Client.can_paginate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">can_paginate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.create_application" title="AppRegistry.Client.create_application"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_application()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.create_attribute_group" title="AppRegistry.Client.create_attribute_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_attribute_group()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.delete_application" title="AppRegistry.Client.delete_application"><code class="xref py py-meth docutils literal notranslate"><span class="pre">delete_application()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.delete_attribute_group" title="AppRegistry.Client.delete_attribute_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">delete_attribute_group()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.disassociate_attribute_group" title="AppRegistry.Client.disassociate_attribute_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">disassociate_attribute_group()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.disassociate_resource" title="AppRegistry.Client.disassociate_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">disassociate_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.generate_presigned_url" title="AppRegistry.Client.generate_presigned_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate_presigned_url()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.get_application" title="AppRegistry.Client.get_application"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_application()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.get_attribute_group" title="AppRegistry.Client.get_attribute_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute_group()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.get_paginator" title="AppRegistry.Client.get_paginator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_paginator()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.get_waiter" title="AppRegistry.Client.get_waiter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_waiter()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.list_applications" title="AppRegistry.Client.list_applications"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_applications()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.list_associated_attribute_groups" title="AppRegistry.Client.list_associated_attribute_groups"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_associated_attribute_groups()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.list_associated_resources" title="AppRegistry.Client.list_associated_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_associated_resources()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.list_attribute_groups" title="AppRegistry.Client.list_attribute_groups"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_attribute_groups()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.list_tags_for_resource" title="AppRegistry.Client.list_tags_for_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_tags_for_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.sync_resource" title="AppRegistry.Client.sync_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sync_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.tag_resource" title="AppRegistry.Client.tag_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tag_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.untag_resource" title="AppRegistry.Client.untag_resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">untag_resource()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.update_application" title="AppRegistry.Client.update_application"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update_application()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Client.update_attribute_group" title="AppRegistry.Client.update_attribute_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update_attribute_group()</span></code></a></p></li>
+</ul>
+<dl class="py method">
+<dt id="AppRegistry.Client.associate_attribute_group"><a name="//apple_ref/cpp/Method/AppRegistry.Client.associate_attribute_group"></a>
+<code class="sig-name descname"><span class="pre">associate_attribute_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.associate_attribute_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associates an attribute group with an application to augment the application’s metadata with the group’s attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">associate_attribute_group</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">attributeGroup</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p></li>
+<li><p><strong>attributeGroup</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'applicationArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'attributeGroupArn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>applicationArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
+</li>
+<li><p><strong>attributeGroupArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) of the attribute group that contains the application’s new attributes.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ServiceQuotaExceededException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.associate_resource"><a name="//apple_ref/cpp/Method/AppRegistry.Client.associate_resource"></a>
+<code class="sig-name descname"><span class="pre">associate_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.associate_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associates a resource with an application. Both the resource and the application can be specified either by ID or name.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">associate_resource</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">resourceType</span><span class="o">=</span><span class="s1">'CFN_STACK'</span><span class="p">,</span>
+    <span class="n">resource</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p></li>
+<li><p><strong>resourceType</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The type of resource of which the application will be associated.</p>
+</p></li>
+<li><p><strong>resource</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the resource of which the application will be associated.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'applicationArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'resourceArn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>applicationArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
+</li>
+<li><p><strong>resourceArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the resource.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ServiceQuotaExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ConflictException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.can_paginate"><a name="//apple_ref/cpp/Method/AppRegistry.Client.can_paginate"></a>
+<code class="sig-name descname"><span class="pre">can_paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.can_paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an operation can be paginated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the operation can be paginated,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.create_application"><a name="//apple_ref/cpp/Method/AppRegistry.Client.create_application"></a>
+<code class="sig-name descname"><span class="pre">create_application</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.create_application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_application</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">tags</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="n">clientToken</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+</p></li>
+<li><p><strong>description</strong> (<em>string</em>) – The description of the application.</p></li>
+<li><p><strong>tags</strong> (<em>dict</em>) – <p>Key-value pairs you can use to associate with the application.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>clientToken</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+<p>This field is autopopulated if not provided.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'application'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'tags'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>application</strong> <em>(dict) –</em></p>
+<p>Information about the application.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The identifier of the application.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the application.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+</li>
+<li><p><strong>tags</strong> <em>(dict) –</em></p>
+<p>Key-value pairs you can use to associate with the application.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ServiceQuotaExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ConflictException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.create_attribute_group"><a name="//apple_ref/cpp/Method/AppRegistry.Client.create_attribute_group"></a>
+<code class="sig-name descname"><span class="pre">create_attribute_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.create_attribute_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new attribute group as a container for user-defined attributes. This feature enables users to have full control over their cloud application’s metadata in a rich machine-readable format to facilitate integration with automated workflows and third-party tools.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_attribute_group</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">attributes</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">tags</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">},</span>
+    <span class="n">clientToken</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the attribute group.</p>
+</p></li>
+<li><p><strong>description</strong> (<em>string</em>) – The description of the attribute group that the user provides.</p></li>
+<li><p><strong>attributes</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+</p></li>
+<li><p><strong>tags</strong> (<em>dict</em>) – <p>Key-value pairs you can use to associate with the attribute group.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>clientToken</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+<p>This field is autopopulated if not provided.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attributeGroup'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'tags'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>attributeGroup</strong> <em>(dict) –</em></p>
+<p>Information about the attribute group.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The globally unique attribute group identifier of the attribute group.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the attribute group.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the attribute group that the user provides.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+</li>
+<li><p><strong>tags</strong> <em>(dict) –</em></p>
+<p>Key-value pairs you can use to associate with the attribute group.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ServiceQuotaExceededException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ConflictException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.delete_application"><a name="//apple_ref/cpp/Method/AppRegistry.Client.delete_application"></a>
+<code class="sig-name descname"><span class="pre">delete_application</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.delete_application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an application that is specified either by its application ID or name. All associated attribute groups and resources must be disassociated from it before deleting an application.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">delete_application</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'application'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>application</strong> <em>(dict) –</em></p>
+<p>Information about the deleted application.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The identifier of the application.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the application.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.delete_attribute_group"><a name="//apple_ref/cpp/Method/AppRegistry.Client.delete_attribute_group"></a>
+<code class="sig-name descname"><span class="pre">delete_attribute_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.delete_attribute_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an attribute group, specified either by its attribute group ID or name.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">delete_attribute_group</span><span class="p">(</span>
+    <span class="n">attributeGroup</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attributeGroup</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attributeGroup'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>attributeGroup</strong> <em>(dict) –</em></p>
+<p>Information about the deleted attribute group.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The globally unique attribute group identifier of the attribute group.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the attribute group.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the attribute group that the user provides.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.disassociate_attribute_group"><a name="//apple_ref/cpp/Method/AppRegistry.Client.disassociate_attribute_group"></a>
+<code class="sig-name descname"><span class="pre">disassociate_attribute_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.disassociate_attribute_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application’s metadata. This operation reverts <code class="docutils literal notranslate"><span class="pre">AssociateAttributeGroup</span></code> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">disassociate_attribute_group</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">attributeGroup</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p></li>
+<li><p><strong>attributeGroup</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'applicationArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'attributeGroupArn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>applicationArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application.</p>
+</li>
+<li><p><strong>attributeGroupArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.disassociate_resource"><a name="//apple_ref/cpp/Method/AppRegistry.Client.disassociate_resource"></a>
+<code class="sig-name descname"><span class="pre">disassociate_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.disassociate_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disassociates a resource from application. Both the resource and the application can be specified either by ID or name.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">disassociate_resource</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">resourceType</span><span class="o">=</span><span class="s1">'CFN_STACK'</span><span class="p">,</span>
+    <span class="n">resource</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p></li>
+<li><p><strong>resourceType</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The type of the resource that is being disassociated.</p>
+</p></li>
+<li><p><strong>resource</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the resource.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'applicationArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'resourceArn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>applicationArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application.</p>
+</li>
+<li><p><strong>resourceArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the resource.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.generate_presigned_url"><a name="//apple_ref/cpp/Method/AppRegistry.Client.generate_presigned_url"></a>
+<code class="sig-name descname"><span class="pre">generate_presigned_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExpiresIn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HttpMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.generate_presigned_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a presigned url given a client, its method, and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ClientMethod</strong> (<em>string</em>) – The client method to presign for</p></li>
+<li><p><strong>Params</strong> (<em>dict</em>) – The parameters normally passed to
+<code class="docutils literal notranslate"><span class="pre">ClientMethod</span></code>.</p></li>
+<li><p><strong>ExpiresIn</strong> (<em>int</em>) – The number of seconds the presigned url is valid
+for. By default it expires in an hour (3600 seconds)</p></li>
+<li><p><strong>HttpMethod</strong> (<em>string</em>) – The http method to use on the generated url. By
+default, the http method is whatever is used in the method’s model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The presigned url</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.get_application"><a name="//apple_ref/cpp/Method/AppRegistry.Client.get_application"></a>
+<code class="sig-name descname"><span class="pre">get_application</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.get_application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves metadata information about one of your applications. The application can be specified either by its unique ID or by its name (which is unique within one account in one region at a given point in time). Specify by ID in automated workflows if you want to make sure that the exact same application is returned or a <code class="docutils literal notranslate"><span class="pre">ResourceNotFoundException</span></code> is thrown, avoiding the ABA addressing problem.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_application</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">'associatedResourceCount'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s1">'tags'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The identifier of the application.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the application.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+</li>
+<li><p><strong>associatedResourceCount</strong> <em>(integer) –</em></p>
+<p>The number of top-level resources that were registered as part of this application.</p>
+</li>
+<li><p><strong>tags</strong> <em>(dict) –</em></p>
+<p>Key-value pairs associated with the application.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.get_attribute_group"><a name="//apple_ref/cpp/Method/AppRegistry.Client.get_attribute_group"></a>
+<code class="sig-name descname"><span class="pre">get_attribute_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.get_attribute_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its unique ID or by its name.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_attribute_group</span><span class="p">(</span>
+    <span class="n">attributeGroup</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attributeGroup</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'attributes'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">'tags'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The identifier of the attribute group.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the attribute group.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the attribute group that the user provides.</p>
+</li>
+<li><p><strong>attributes</strong> <em>(string) –</em></p>
+<p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+</li>
+<li><p><strong>tags</strong> <em>(dict) –</em></p>
+<p>Key-value pairs associated with the attribute group.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.get_paginator"><a name="//apple_ref/cpp/Method/AppRegistry.Client.get_paginator"></a>
+<code class="sig-name descname"><span class="pre">get_paginator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.get_paginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a paginator for an operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>OperationNotPageableError</strong> – Raised if the operation is not
+pageable.  You can use the <code class="docutils literal notranslate"><span class="pre">client.can_paginate</span></code> method to
+check if an operation is pageable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>L{botocore.paginate.Paginator}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A paginator object.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.get_waiter"><a name="//apple_ref/cpp/Method/AppRegistry.Client.get_waiter"></a>
+<code class="sig-name descname"><span class="pre">get_waiter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waiter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.get_waiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object that can wait for some condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waiter_name</strong> (<em>str</em>) – The name of the waiter to get. See the waiters
+section of the service docs for a list of available waiters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified waiter object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>botocore.waiter.Waiter</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.list_applications"><a name="//apple_ref/cpp/Method/AppRegistry.Client.list_applications"></a>
+<code class="sig-name descname"><span class="pre">list_applications</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.list_applications" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a list of all of your applications. Results are paginated.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_applications</span><span class="p">(</span>
+    <span class="n">nextToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">maxResults</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nextToken</strong> (<em>string</em>) – The token to use to get the next page of results after a previous API call.</p></li>
+<li><p><strong>maxResults</strong> (<em>integer</em>) – The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'applications'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'nextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>applications</strong> <em>(list) –</em></p>
+<p>This list of applications.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Summary of a Service Catalog AppRegistry application.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The identifier of the application.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the application.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>nextToken</strong> <em>(string) –</em></p>
+<p>The token to use to get the next page of results after a previous API call.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.list_associated_attribute_groups"><a name="//apple_ref/cpp/Method/AppRegistry.Client.list_associated_attribute_groups"></a>
+<code class="sig-name descname"><span class="pre">list_associated_attribute_groups</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.list_associated_attribute_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all attribute groups that are associated with specified application. Results are paginated.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_associated_attribute_groups</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">nextToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">maxResults</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p></li>
+<li><p><strong>nextToken</strong> (<em>string</em>) – The token to use to get the next page of results after a previous API call.</p></li>
+<li><p><strong>maxResults</strong> (<em>integer</em>) – The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attributeGroups'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'nextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>attributeGroups</strong> <em>(list) –</em></p>
+<p>A list of attribute group IDs.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>nextToken</strong> <em>(string) –</em></p>
+<p>The token to use to get the next page of results after a previous API call.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.list_associated_resources"><a name="//apple_ref/cpp/Method/AppRegistry.Client.list_associated_resources"></a>
+<code class="sig-name descname"><span class="pre">list_associated_resources</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.list_associated_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all resources that are associated with specified application. Results are paginated.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_associated_resources</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">nextToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">maxResults</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p></li>
+<li><p><strong>nextToken</strong> (<em>string</em>) – The token to use to get the next page of results after a previous API call.</p></li>
+<li><p><strong>maxResults</strong> (<em>integer</em>) – The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'resources'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'nextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>resources</strong> <em>(list) –</em></p>
+<p>Information about the resources.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Information about the resource.</p>
+<ul>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the resource.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the resource across services.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>nextToken</strong> <em>(string) –</em></p>
+<p>The token to use to get the next page of results after a previous API call.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.list_attribute_groups"><a name="//apple_ref/cpp/Method/AppRegistry.Client.list_attribute_groups"></a>
+<code class="sig-name descname"><span class="pre">list_attribute_groups</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.list_attribute_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all attribute groups which you have access to. Results are paginated.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_attribute_groups</span><span class="p">(</span>
+    <span class="n">nextToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">maxResults</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nextToken</strong> (<em>string</em>) – The token to use to get the next page of results after a previous API call.</p></li>
+<li><p><strong>maxResults</strong> (<em>integer</em>) – The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attributeGroups'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'nextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>attributeGroups</strong> <em>(list) –</em></p>
+<p>This list of attribute groups.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Summary of a Service Catalog AppRegistry attribute group.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The globally unique attribute group identifier of the attribute group.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the attribute group.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the attribute group that the user provides.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>nextToken</strong> <em>(string) –</em></p>
+<p>The token to use to get the next page of results after a previous API call.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.list_tags_for_resource"><a name="//apple_ref/cpp/Method/AppRegistry.Client.list_tags_for_resource"></a>
+<code class="sig-name descname"><span class="pre">list_tags_for_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.list_tags_for_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all of the tags on the resource.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_tags_for_resource</span><span class="p">(</span>
+    <span class="n">resourceArn</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>resourceArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The Amazon resource name (ARN) that specifies the resource.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'tags'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>tags</strong> <em>(dict) –</em></p>
+<p>The tags on the resource.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.sync_resource"><a name="//apple_ref/cpp/Method/AppRegistry.Client.sync_resource"></a>
+<code class="sig-name descname"><span class="pre">sync_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.sync_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Syncs the resource with what is currently recorded in App registry. Specifically, the resource’s App registry system tags are synced with its associated application. The resource is removed if it is not associated with the application. The caller must have permissions to read and update the resource.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sync_resource</span><span class="p">(</span>
+    <span class="n">resourceType</span><span class="o">=</span><span class="s1">'CFN_STACK'</span><span class="p">,</span>
+    <span class="n">resource</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resourceType</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The type of resource of which the application will be associated.</p>
+</p></li>
+<li><p><strong>resource</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'applicationArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'resourceArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'actionTaken'</span><span class="p">:</span> <span class="s1">'START_SYNC'</span><span class="o">|</span><span class="s1">'NO_ACTION'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>applicationArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application.</p>
+</li>
+<li><p><strong>resourceArn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the resource.</p>
+</li>
+<li><p><strong>actionTaken</strong> <em>(string) –</em></p>
+<p>The results of the output if an application is associated with an ARN value, which could be <code class="docutils literal notranslate"><span class="pre">syncStarted</span></code> or None.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ConflictException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.tag_resource"><a name="//apple_ref/cpp/Method/AppRegistry.Client.tag_resource"></a>
+<code class="sig-name descname"><span class="pre">tag_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.tag_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns one or more tags (key-value pairs) to the specified resource.</p>
+<p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the resource, this action updates its value.</p>
+<p>This operation returns an empty response if the call was successful.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tag_resource</span><span class="p">(</span>
+    <span class="n">resourceArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">tags</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resourceArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The Amazon resource name (ARN) that specifies the resource.</p>
+</p></li>
+<li><p><strong>tags</strong> (<em>dict</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The new or modified tags for the resource.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul class="simple">
+<li><p><em>(dict) –</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.untag_resource"><a name="//apple_ref/cpp/Method/AppRegistry.Client.untag_resource"></a>
+<code class="sig-name descname"><span class="pre">untag_resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.untag_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes tags from a resource.</p>
+<p>This operation returns an empty response if the call was successful.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">untag_resource</span><span class="p">(</span>
+    <span class="n">resourceArn</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">tagKeys</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resourceArn</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The Amazon resource name (ARN) that specifies the resource.</p>
+</p></li>
+<li><p><strong>tagKeys</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>A list of the tag keys to remove from the specified resource.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul class="simple">
+<li><p><em>(dict) –</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.update_application"><a name="//apple_ref/cpp/Method/AppRegistry.Client.update_application"></a>
+<code class="sig-name descname"><span class="pre">update_application</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.update_application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an existing application with new attributes.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">update_application</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application that will be updated.</p>
+</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – The new name of the application. The name must be unique in the region in which you are updating the application.</p></li>
+<li><p><strong>description</strong> (<em>string</em>) – The new description of the application.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'application'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'tags'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>application</strong> <em>(dict) –</em></p>
+<p>The updated information of the application.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The identifier of the application.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the application.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+</li>
+<li><p><strong>tags</strong> <em>(dict) –</em></p>
+<p>Key-value pairs you can use to associate with the application.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ConflictException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="AppRegistry.Client.update_attribute_group"><a name="//apple_ref/cpp/Method/AppRegistry.Client.update_attribute_group"></a>
+<code class="sig-name descname"><span class="pre">update_attribute_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Client.update_attribute_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an existing attribute group with new details.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">update_attribute_group</span><span class="p">(</span>
+    <span class="n">attributeGroup</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">attributes</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attributeGroup</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p></li>
+<li><p><strong>description</strong> (<em>string</em>) – The description of the attribute group that the user provides.</p></li>
+<li><p><strong>attributes</strong> (<em>string</em>) – A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attributeGroup'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'tags'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>attributeGroup</strong> <em>(dict) –</em></p>
+<p>The updated information of the attribute group.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The globally unique attribute group identifier of the attribute group.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the attribute group.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the attribute group that the user provides.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+</li>
+<li><p><strong>tags</strong> <em>(dict) –</em></p>
+<p>Key-value pairs you can use to associate with the attribute group.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.ConflictException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Client.exceptions.InternalServerException</span></code></p></li>
+</ul>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="paginators">
+<h2><a class="toc-backref" href="#id26">Paginators</a><a class="headerlink" href="#paginators" title="Permalink to this headline">¶</a></h2>
+<p>The available paginators are:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#AppRegistry.Paginator.ListApplications" title="AppRegistry.Paginator.ListApplications"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Paginator.ListApplications</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Paginator.ListAssociatedAttributeGroups" title="AppRegistry.Paginator.ListAssociatedAttributeGroups"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Paginator.ListAssociatedAttributeGroups</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Paginator.ListAssociatedResources" title="AppRegistry.Paginator.ListAssociatedResources"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Paginator.ListAssociatedResources</span></code></a></p></li>
+<li><p><a class="reference internal" href="#AppRegistry.Paginator.ListAttributeGroups" title="AppRegistry.Paginator.ListAttributeGroups"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppRegistry.Paginator.ListAttributeGroups</span></code></a></p></li>
+</ul>
+<dl class="py class">
+<dt id="AppRegistry.Paginator.ListApplications"><a name="//apple_ref/cpp/Class/AppRegistry.Paginator.ListApplications"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">AppRegistry.Paginator.</span></code><code class="sig-name descname"><span class="pre">ListApplications</span></code><a class="headerlink" href="#AppRegistry.Paginator.ListApplications" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'list_applications'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="AppRegistry.Paginator.ListApplications.paginate"><a name="//apple_ref/cpp/Method/AppRegistry.Paginator.ListApplications.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Paginator.ListApplications.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#AppRegistry.Client.list_applications" title="AppRegistry.Client.list_applications"><code class="xref py py-meth docutils literal notranslate"><span class="pre">AppRegistry.Client.list_applications()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'applications'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>applications</strong> <em>(list) –</em></p>
+<p>This list of applications.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Summary of a Service Catalog AppRegistry application.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The identifier of the application.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the application across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the application.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="AppRegistry.Paginator.ListAssociatedAttributeGroups"><a name="//apple_ref/cpp/Class/AppRegistry.Paginator.ListAssociatedAttributeGroups"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">AppRegistry.Paginator.</span></code><code class="sig-name descname"><span class="pre">ListAssociatedAttributeGroups</span></code><a class="headerlink" href="#AppRegistry.Paginator.ListAssociatedAttributeGroups" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'list_associated_attribute_groups'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="AppRegistry.Paginator.ListAssociatedAttributeGroups.paginate"><a name="//apple_ref/cpp/Method/AppRegistry.Paginator.ListAssociatedAttributeGroups.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Paginator.ListAssociatedAttributeGroups.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#AppRegistry.Client.list_associated_attribute_groups" title="AppRegistry.Client.list_associated_attribute_groups"><code class="xref py py-meth docutils literal notranslate"><span class="pre">AppRegistry.Client.list_associated_attribute_groups()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p></li>
+<li><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attributeGroups'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>attributeGroups</strong> <em>(list) –</em></p>
+<p>A list of attribute group IDs.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="AppRegistry.Paginator.ListAssociatedResources"><a name="//apple_ref/cpp/Class/AppRegistry.Paginator.ListAssociatedResources"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">AppRegistry.Paginator.</span></code><code class="sig-name descname"><span class="pre">ListAssociatedResources</span></code><a class="headerlink" href="#AppRegistry.Paginator.ListAssociatedResources" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'list_associated_resources'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="AppRegistry.Paginator.ListAssociatedResources.paginate"><a name="//apple_ref/cpp/Method/AppRegistry.Paginator.ListAssociatedResources.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Paginator.ListAssociatedResources.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#AppRegistry.Client.list_associated_resources" title="AppRegistry.Client.list_associated_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">AppRegistry.Client.list_associated_resources()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">application</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name or ID of the application.</p>
+</p></li>
+<li><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'resources'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>resources</strong> <em>(list) –</em></p>
+<p>Information about the resources.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Information about the resource.</p>
+<ul>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the resource.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the resource across services.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="AppRegistry.Paginator.ListAttributeGroups"><a name="//apple_ref/cpp/Class/AppRegistry.Paginator.ListAttributeGroups"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">AppRegistry.Paginator.</span></code><code class="sig-name descname"><span class="pre">ListAttributeGroups</span></code><a class="headerlink" href="#AppRegistry.Paginator.ListAttributeGroups" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'list_attribute_groups'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="AppRegistry.Paginator.ListAttributeGroups.paginate"><a name="//apple_ref/cpp/Method/AppRegistry.Paginator.ListAttributeGroups.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AppRegistry.Paginator.ListAttributeGroups.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#AppRegistry.Client.list_attribute_groups" title="AppRegistry.Client.list_attribute_groups"><code class="xref py py-meth docutils literal notranslate"><span class="pre">AppRegistry.Client.list_attribute_groups()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attributeGroups'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'arn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'creationTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="s1">'lastUpdateTime'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>attributeGroups</strong> <em>(list) –</em></p>
+<p>This list of attribute groups.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Summary of a Service Catalog AppRegistry attribute group.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The globally unique attribute group identifier of the attribute group.</p>
+</li>
+<li><p><strong>arn</strong> <em>(string) –</em></p>
+<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the attribute group.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the attribute group that the user provides.</p>
+</li>
+<li><p><strong>creationTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+</li>
+<li><p><strong>lastUpdateTime</strong> <em>(datetime) –</em></p>
+<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="servicecatalog.html" title="previous chapter (use the left arrow)">ServiceCatalog</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="servicediscovery.html" title="next chapter (use the right arrow)">ServiceDiscovery</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="servicediscovery.html" title="ServiceDiscovery">next</a> |</li>
+<li class="right">
+<a href="servicecatalog.html" title="ServiceCatalog">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">AppRegistry</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

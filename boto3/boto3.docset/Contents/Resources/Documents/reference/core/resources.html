@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resources reference — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="session.html" rel="next" title="Session reference"/>
+<link href="collections.html" rel="prev" title="Collections reference"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="session.html" title="Session reference">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="collections.html" title="Collections reference">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Core references</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Resources reference</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../services/index.html">Available services</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Core references</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boto3.html">Boto3 reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html">Collections reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Resources reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-boto3.resources.model">Resource model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-boto3.resources.params">Request parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-boto3.resources.response">Response handlers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-boto3.resources.action">Resource actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-boto3.resources.base">Resource base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-boto3.resources.factory">Resource factory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session reference</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Core references</a></li>
+<li>Resources reference</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="resources-reference">
+<span id="ref-core-resources"></span><h1>Resources reference<a class="headerlink" href="#resources-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-boto3.resources.model">
+<span id="resource-model"></span><h2><a name="//apple_ref/cpp/Module/boto3.resources.model"></a>Resource model<a class="headerlink" href="#module-boto3.resources.model" title="Permalink to this headline">¶</a></h2>
+<p>The models defined in this file represent the resource JSON description
+format and provide a layer of abstraction from the raw JSON. The advantages
+of this are:</p>
+<ul class="simple">
+<li><p>Pythonic interface (e.g. <code class="docutils literal notranslate"><span class="pre">action.request.operation</span></code>)</p></li>
+<li><p>Consumers need not change for minor JSON changes (e.g. renamed field)</p></li>
+</ul>
+<p>These models are used both by the resource factory to generate resource
+classes as well as by the documentation generator.</p>
+<dl class="py class">
+<dt id="boto3.resources.model.Action"><a name="//apple_ref/cpp/Class/boto3.resources.model.Action"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">Action</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_defs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#Action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>A service operation action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – The name of the action</p></li>
+<li><p><strong>definition</strong> (<em>dict</em>) – The JSON definition</p></li>
+<li><p><strong>resource_defs</strong> (<em>dict</em>) – All resources defined in the service</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Action.name"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Action.name"></a>
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#boto3.resources.model.Action.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of the action</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Action.path"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Action.path"></a>
+<code class="sig-name descname"><span class="pre">path</span></code><a class="headerlink" href="#boto3.resources.model.Action.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The JMESPath search path or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Action.request"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Action.request"></a>
+<code class="sig-name descname"><span class="pre">request</span></code><a class="headerlink" href="#boto3.resources.model.Action.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<a class="reference internal" href="#boto3.resources.model.Request" title="boto3.resources.model.Request"><code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code></a>) This action’s request or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Action.resource"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Action.resource"></a>
+<code class="sig-name descname"><span class="pre">resource</span></code><a class="headerlink" href="#boto3.resources.model.Action.resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<a class="reference internal" href="#boto3.resources.model.ResponseResource" title="boto3.resources.model.ResponseResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseResource</span></code></a>) This action’s resource or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.model.Collection"><a name="//apple_ref/cpp/Class/boto3.resources.model.Collection"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">Collection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_defs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#Collection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.Collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>A group of resources. See <a class="reference internal" href="#boto3.resources.model.Action" title="boto3.resources.model.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Action</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – The name of the collection</p></li>
+<li><p><strong>definition</strong> (<em>dict</em>) – The JSON definition</p></li>
+<li><p><strong>resource_defs</strong> (<em>dict</em>) – All resources defined in the service</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="boto3.resources.model.Collection.batch_actions"><a name="//apple_ref/cpp/Method/boto3.resources.model.Collection.batch_actions"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">batch_actions</span></code><a class="headerlink" href="#boto3.resources.model.Collection.batch_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of batch actions supported by the resource type
+contained in this action. This is a shortcut for accessing
+the same information through the resource model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Action" title="boto3.resources.model.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Action</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Collection.name"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Collection.name"></a>
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#boto3.resources.model.Collection.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of the action</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Collection.path"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Collection.path"></a>
+<code class="sig-name descname"><span class="pre">path</span></code><a class="headerlink" href="#boto3.resources.model.Collection.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The JMESPath search path or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Collection.request"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Collection.request"></a>
+<code class="sig-name descname"><span class="pre">request</span></code><a class="headerlink" href="#boto3.resources.model.Collection.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<a class="reference internal" href="#boto3.resources.model.Request" title="boto3.resources.model.Request"><code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code></a>) This action’s request or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Collection.resource"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Collection.resource"></a>
+<code class="sig-name descname"><span class="pre">resource</span></code><a class="headerlink" href="#boto3.resources.model.Collection.resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<a class="reference internal" href="#boto3.resources.model.ResponseResource" title="boto3.resources.model.ResponseResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseResource</span></code></a>) This action’s resource or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.model.DefinitionWithParams"><a name="//apple_ref/cpp/Class/boto3.resources.model.DefinitionWithParams"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">DefinitionWithParams</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#DefinitionWithParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.DefinitionWithParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>An item which has parameters exposed via the <code class="docutils literal notranslate"><span class="pre">params</span></code> property.
+A request has an operation and parameters, while a waiter has
+a name, a low-level waiter name and parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>definition</strong> (<em>dict</em>) – The JSON definition</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="boto3.resources.model.DefinitionWithParams.params"><a name="//apple_ref/cpp/Method/boto3.resources.model.DefinitionWithParams.params"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">params</span></code><a class="headerlink" href="#boto3.resources.model.DefinitionWithParams.params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of auto-filled parameters for this request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Parameter" title="boto3.resources.model.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.model.Identifier"><a name="//apple_ref/cpp/Class/boto3.resources.model.Identifier"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">Identifier</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#Identifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.Identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>A resource identifier, given by its name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>string</em>) – The name of the identifier</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Identifier.name"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Identifier.name"></a>
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#boto3.resources.model.Identifier.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of the identifier</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.model.Parameter"><a name="//apple_ref/cpp/Class/boto3.resources.model.Parameter"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">Parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#Parameter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.Parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>An auto-filled parameter which has a source and target. For example,
+the <code class="docutils literal notranslate"><span class="pre">QueueUrl</span></code> may be auto-filled from a resource’s <code class="docutils literal notranslate"><span class="pre">url</span></code> identifier
+when making calls to <code class="docutils literal notranslate"><span class="pre">queue.receive_messages</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<em>string</em>) – The destination parameter name, e.g. <code class="docutils literal notranslate"><span class="pre">QueueUrl</span></code></p></li>
+<li><p><strong>source_type</strong> (<em>string</em>) – Where the source is defined.</p></li>
+<li><p><strong>source</strong> (<em>string</em>) – The source name, e.g. <code class="docutils literal notranslate"><span class="pre">Url</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Parameter.name"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Parameter.name"></a>
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#boto3.resources.model.Parameter.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of the source, if given</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Parameter.path"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Parameter.path"></a>
+<code class="sig-name descname"><span class="pre">path</span></code><a class="headerlink" href="#boto3.resources.model.Parameter.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The JMESPath query of the source</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Parameter.source"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Parameter.source"></a>
+<code class="sig-name descname"><span class="pre">source</span></code><a class="headerlink" href="#boto3.resources.model.Parameter.source" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) Where the source is defined</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Parameter.target"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Parameter.target"></a>
+<code class="sig-name descname"><span class="pre">target</span></code><a class="headerlink" href="#boto3.resources.model.Parameter.target" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The destination parameter name</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Parameter.value"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Parameter.value"></a>
+<code class="sig-name descname"><span class="pre">value</span></code><a class="headerlink" href="#boto3.resources.model.Parameter.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string|int|float|bool</span></code>) The source constant value</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.model.Request"><a name="//apple_ref/cpp/Class/boto3.resources.model.Request"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">Request</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#Request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.Request" title="Permalink to this definition">¶</a></dt>
+<dd><p>A service operation action request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>definition</strong> (<em>dict</em>) – The JSON definition</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Request.operation"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Request.operation"></a>
+<code class="sig-name descname"><span class="pre">operation</span></code><a class="headerlink" href="#boto3.resources.model.Request.operation" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of the low-level service operation</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.Request.params"><a name="//apple_ref/cpp/Method/boto3.resources.model.Request.params"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">params</span></code><a class="headerlink" href="#boto3.resources.model.Request.params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of auto-filled parameters for this request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Parameter" title="boto3.resources.model.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.model.ResourceModel"><a name="//apple_ref/cpp/Class/boto3.resources.model.ResourceModel"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">ResourceModel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_defs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#ResourceModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.ResourceModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A model representing a resource, defined via a JSON description
+format. A resource has identifiers, attributes, actions,
+sub-resources, references and collections. For more information
+on resources, see <a class="reference internal" href="../../guide/resources.html#guide-resources"><span class="std std-ref">Resources</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – The name of this resource, e.g. <code class="docutils literal notranslate"><span class="pre">sqs</span></code> or <code class="docutils literal notranslate"><span class="pre">Queue</span></code></p></li>
+<li><p><strong>definition</strong> (<em>dict</em>) – The JSON definition</p></li>
+<li><p><strong>resource_defs</strong> (<em>dict</em>) – All resources defined in the service</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.actions"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.actions"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">actions</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of actions for this resource.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Action" title="boto3.resources.model.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Action</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.batch_actions"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.batch_actions"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">batch_actions</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.batch_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of batch actions for this resource.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Action" title="boto3.resources.model.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Action</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.collections"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.collections"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">collections</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.collections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of collections for this resource.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Collection" title="boto3.resources.model.Collection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.get_attributes"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.get_attributes"></a>
+<code class="sig-name descname"><span class="pre">get_attributes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#ResourceModel.get_attributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.ResourceModel.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dictionary of attribute names to original name and shape
+models that represent the attributes of this resource. Looks
+like the following:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>‘some_name’: (‘SomeName’, &lt;Shape…&gt;)</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shape</strong> (<em>botocore.model.Shape</em>) – The underlying shape for this resource.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Mapping of resource attributes.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.identifiers"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.identifiers"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">identifiers</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of resource identifiers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Identifier" title="boto3.resources.model.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Identifier</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.load"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.load"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">load</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the load action for this resource, if it is defined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#boto3.resources.model.Action" title="boto3.resources.model.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Action</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.load_rename_map"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.load_rename_map"></a>
+<code class="sig-name descname"><span class="pre">load_rename_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#ResourceModel.load_rename_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.ResourceModel.load_rename_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a name translation map given a shape. This will set
+up renamed values for any collisions, e.g. if the shape,
+an action, and a subresource all are all named <code class="docutils literal notranslate"><span class="pre">foo</span></code>
+then the resource will have an action <code class="docutils literal notranslate"><span class="pre">foo</span></code>, a subresource
+named <code class="docutils literal notranslate"><span class="pre">Foo</span></code> and a property named <code class="docutils literal notranslate"><span class="pre">foo_attribute</span></code>.
+This is the order of precedence, from most important to
+least important:</p>
+<ul class="simple">
+<li><p>Load action (resource.load)</p></li>
+<li><p>Identifiers</p></li>
+<li><p>Actions</p></li>
+<li><p>Subresources</p></li>
+<li><p>References</p></li>
+<li><p>Collections</p></li>
+<li><p>Waiters</p></li>
+<li><p>Attributes (shape members)</p></li>
+</ul>
+<p>Batch actions are only exposed on collections, so do not
+get modified here. Subresources use upper camel casing, so
+are unlikely to collide with anything but other subresources.</p>
+<p>Creates a structure like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">renames</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">(</span><span class="s1">'action'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">):</span> <span class="s1">'id_action'</span><span class="p">,</span>
+    <span class="p">(</span><span class="s1">'collection'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">):</span> <span class="s1">'id_collection'</span><span class="p">,</span>
+    <span class="p">(</span><span class="s1">'attribute'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">):</span> <span class="s1">'id_attribute'</span>
+<span class="p">}</span>
+
+<span class="c1"># Get the final name for an action named 'id'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">renames</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="s1">'action'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">),</span> <span class="s1">'id'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shape</strong> (<em>botocore.model.Shape</em>) – The underlying shape for this resource.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.ResourceModel.name"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.ResourceModel.name"></a>
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of this resource</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.references"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.references"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">references</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.references" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of reference resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.ResponseResource" title="boto3.resources.model.ResponseResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseResource</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.ResourceModel.shape"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.ResourceModel.shape"></a>
+<code class="sig-name descname"><span class="pre">shape</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The service shape name for this resource or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.subresources"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.subresources"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">subresources</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.subresources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of sub-resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.ResponseResource" title="boto3.resources.model.ResponseResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseResource</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResourceModel.waiters"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResourceModel.waiters"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">waiters</span></code><a class="headerlink" href="#boto3.resources.model.ResourceModel.waiters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of waiters for this resource.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Waiter" title="boto3.resources.model.Waiter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Waiter</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.model.ResponseResource"><a name="//apple_ref/cpp/Class/boto3.resources.model.ResponseResource"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">ResponseResource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_defs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#ResponseResource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.ResponseResource" title="Permalink to this definition">¶</a></dt>
+<dd><p>A resource response to create after performing an action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>definition</strong> (<em>dict</em>) – The JSON definition</p></li>
+<li><p><strong>resource_defs</strong> (<em>dict</em>) – All resources defined in the service</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResponseResource.identifiers"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResponseResource.identifiers"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">identifiers</span></code><a class="headerlink" href="#boto3.resources.model.ResponseResource.identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of resource identifiers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Identifier" title="boto3.resources.model.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Identifier</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.ResponseResource.model"><a name="//apple_ref/cpp/Method/boto3.resources.model.ResponseResource.model"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#boto3.resources.model.ResponseResource.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the resource model for the response resource.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#boto3.resources.model.ResourceModel" title="boto3.resources.model.ResourceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceModel</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.ResponseResource.path"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.ResponseResource.path"></a>
+<code class="sig-name descname"><span class="pre">path</span></code><a class="headerlink" href="#boto3.resources.model.ResponseResource.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The JMESPath search query or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.ResponseResource.type"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.ResponseResource.type"></a>
+<code class="sig-name descname"><span class="pre">type</span></code><a class="headerlink" href="#boto3.resources.model.ResponseResource.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of the response resource type</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.model.Waiter"><a name="//apple_ref/cpp/Class/boto3.resources.model.Waiter"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.model.</span></code><code class="sig-name descname"><span class="pre">Waiter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definition</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/model.html#Waiter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.model.Waiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>An event waiter specification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – Name of the waiter</p></li>
+<li><p><strong>definition</strong> (<em>dict</em>) – The JSON definition</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Waiter.PREFIX"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Waiter.PREFIX"></a>
+<code class="sig-name descname"><span class="pre">PREFIX</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'WaitUntil'</span></em><a class="headerlink" href="#boto3.resources.model.Waiter.PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Waiter.name"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Waiter.name"></a>
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#boto3.resources.model.Waiter.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of this waiter</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.model.Waiter.params"><a name="//apple_ref/cpp/Method/boto3.resources.model.Waiter.params"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">params</span></code><a class="headerlink" href="#boto3.resources.model.Waiter.params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of auto-filled parameters for this request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#boto3.resources.model.Parameter" title="boto3.resources.model.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.model.Waiter.waiter_name"><a name="//apple_ref/cpp/Attribute/boto3.resources.model.Waiter.waiter_name"></a>
+<code class="sig-name descname"><span class="pre">waiter_name</span></code><a class="headerlink" href="#boto3.resources.model.Waiter.waiter_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The name of the underlying event waiter</p>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="module-boto3.resources.params">
+<span id="request-parameters"></span><h2><a name="//apple_ref/cpp/Module/boto3.resources.params"></a>Request parameters<a class="headerlink" href="#module-boto3.resources.params" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="boto3.resources.params.build_param_structure"><a name="//apple_ref/cpp/Function/boto3.resources.params.build_param_structure"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.resources.params.</span></code><code class="sig-name descname"><span class="pre">build_param_structure</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/params.html#build_param_structure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.params.build_param_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method provides a basic reverse JMESPath implementation that
+lets you go from a JMESPath-like string to a possibly deeply nested
+object. The <code class="docutils literal notranslate"><span class="pre">params</span></code> are mutated in-place, so subsequent calls
+can modify the same element by its index.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">build_param_structure</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="s1">'test[0]'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="go">{'test': [1]}</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">build_param_structure</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="s1">'foo.bar[0].baz'</span><span class="p">,</span> <span class="s1">'hello world'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="go">{'test': [1], 'foo': {'bar': [{'baz': 'hello, world'}]}}</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.resources.params.create_request_parameters"><a name="//apple_ref/cpp/Function/boto3.resources.params.create_request_parameters"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.resources.params.</span></code><code class="sig-name descname"><span class="pre">create_request_parameters</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/params.html#create_request_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.params.create_request_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle request parameters that can be filled in from identifiers,
+resource data members or constants.</p>
+<p>By passing <code class="docutils literal notranslate"><span class="pre">params</span></code>, you can invoke this method multiple times and
+build up a parameter dict over time, which is particularly useful
+for reverse JMESPath expressions that append to lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource"><em>ServiceResource</em></a>) – The resource instance to which this action is attached.</p></li>
+<li><p><strong>request_model</strong> (<a class="reference internal" href="#boto3.resources.model.Request" title="boto3.resources.model.Request"><code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code></a>) – The action request model.</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – If set, then add to this existing dict. It is both
+edited in-place and returned.</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – The position of an item within a list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Pre-filled parameters to be sent to the request operation.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.resources.params.get_data_member"><a name="//apple_ref/cpp/Function/boto3.resources.params.get_data_member"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.resources.params.</span></code><code class="sig-name descname"><span class="pre">get_data_member</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/params.html#get_data_member"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.params.get_data_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a data member from a parent using a JMESPath search query,
+loading the parent if required. If the parent cannot be loaded
+and no data is present then an exception is raised.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource"><em>ServiceResource</em></a>) – The resource instance to which contains data we
+are interested in.</p></li>
+<li><p><strong>path</strong> (<em>string</em>) – The JMESPath expression to query</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ResourceLoadException</strong> – When no data is present and the
+resource cannot be loaded.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The queried data or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+</div>
+<div class="section" id="module-boto3.resources.response">
+<span id="response-handlers"></span><h2><a name="//apple_ref/cpp/Module/boto3.resources.response"></a>Response handlers<a class="headerlink" href="#module-boto3.resources.response" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="boto3.resources.response.RawHandler"><a name="//apple_ref/cpp/Class/boto3.resources.response.RawHandler"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.response.</span></code><code class="sig-name descname"><span class="pre">RawHandler</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/response.html#RawHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.response.RawHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>A raw action response handler. This passed through the response
+dictionary, optionally after performing a JMESPath search if one
+has been defined for the action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>search_path</strong> (<em>string</em>) – JMESPath expression to search in the response</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Service response</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.response.ResourceHandler"><a name="//apple_ref/cpp/Class/boto3.resources.response.ResourceHandler"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.response.</span></code><code class="sig-name descname"><span class="pre">ResourceHandler</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/response.html#ResourceHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.response.ResourceHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new resource or list of new resources from the low-level
+response based on the given response resource definition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_path</strong> (<em>string</em>) – JMESPath expression to search in the response</p></li>
+<li><p><strong>factory</strong> (<a class="reference internal" href="#boto3.resources.factory.ResourceFactory" title="boto3.resources.factory.ResourceFactory"><em>ResourceFactory</em></a>) – The factory that created the resource class to which
+this action is attached.</p></li>
+<li><p><strong>resource_model</strong> (<a class="reference internal" href="#boto3.resources.model.ResponseResource" title="boto3.resources.model.ResponseResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseResource</span></code></a>) – Response resource model.</p></li>
+<li><p><strong>service_context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ServiceContext</span></code>) – Context about the AWS service</p></li>
+<li><p><strong>operation_name</strong> (<em>string</em>) – Name of the underlying service operation, if it
+exists.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource">ServiceResource</a> or list</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>New resource instance(s).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="boto3.resources.response.ResourceHandler.handle_response_item"><a name="//apple_ref/cpp/Method/boto3.resources.response.ResourceHandler.handle_response_item"></a>
+<code class="sig-name descname"><span class="pre">handle_response_item</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifiers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/response.html#ResourceHandler.handle_response_item"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.response.ResourceHandler.handle_response_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles the creation of a single response item by setting
+parameters and creating the appropriate resource instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_cls</strong> (<em>ServiceResource subclass</em>) – The resource class to instantiate.</p></li>
+<li><p><strong>parent</strong> (<a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource"><em>ServiceResource</em></a>) – The resource instance to which this action is attached.</p></li>
+<li><p><strong>identifiers</strong> (<em>dict</em>) – Map of identifier names to value or values.</p></li>
+<li><p><strong>resource_data</strong> (<em>dict</em><em> or </em><em>None</em>) – Data for resource attributes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource">ServiceResource</a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>New resource instance.</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.resources.response.all_not_none"><a name="//apple_ref/cpp/Function/boto3.resources.response.all_not_none"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.resources.response.</span></code><code class="sig-name descname"><span class="pre">all_not_none</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/response.html#all_not_none"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.response.all_not_none" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if all elements of the iterable are not None (or if the
+iterable is empty). This is like the built-in <code class="docutils literal notranslate"><span class="pre">all</span></code>, except checks
+against None, so 0 and False are allowable values.</p>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.resources.response.build_empty_response"><a name="//apple_ref/cpp/Function/boto3.resources.response.build_empty_response"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.resources.response.</span></code><code class="sig-name descname"><span class="pre">build_empty_response</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/response.html#build_empty_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.response.build_empty_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an appropriate empty response for the type that is expected,
+based on the service model’s shape type. For example, a value that
+is normally a list would then return an empty list. A structure would
+return an empty dict, and a number would return None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_path</strong> (<em>string</em>) – JMESPath expression to search in the response</p></li>
+<li><p><strong>operation_name</strong> (<em>string</em>) – Name of the underlying service operation.</p></li>
+<li><p><strong>service_model</strong> (<span class="xref std std-ref">botocore.model.ServiceModel</span>) – The Botocore service model</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict, list, or None</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An appropriate empty value</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt id="boto3.resources.response.build_identifiers"><a name="//apple_ref/cpp/Function/boto3.resources.response.build_identifiers"></a>
+<code class="sig-prename descclassname"><span class="pre">boto3.resources.response.</span></code><code class="sig-name descname"><span class="pre">build_identifiers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifiers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/response.html#build_identifiers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.response.build_identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a mapping of identifier names to values based on the
+identifier source location, type, and target. Identifier
+values may be scalars or lists depending on the source type
+and location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>identifiers</strong> (<em>list</em>) – List of <a class="reference internal" href="#boto3.resources.model.Parameter" title="boto3.resources.model.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>
+definitions</p></li>
+<li><p><strong>parent</strong> (<a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource"><em>ServiceResource</em></a>) – The resource instance to which this action is attached.</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – Request parameters sent to the service.</p></li>
+<li><p><strong>raw_response</strong> (<em>dict</em>) – Low-level operation response.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An ordered list of <code class="docutils literal notranslate"><span class="pre">(name,</span> <span class="pre">value)</span></code> identifier tuples.</p>
+</dd>
+</dl>
+</dd></dl>
+</div>
+<div class="section" id="module-boto3.resources.action">
+<span id="resource-actions"></span><h2><a name="//apple_ref/cpp/Module/boto3.resources.action"></a>Resource actions<a class="headerlink" href="#module-boto3.resources.action" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="boto3.resources.action.BatchAction"><a name="//apple_ref/cpp/Class/boto3.resources.action.BatchAction"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.action.</span></code><code class="sig-name descname"><span class="pre">BatchAction</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/action.html#BatchAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.action.BatchAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>An action which operates on a batch of items in a collection, typically
+a single page of results from the collection’s underlying service
+operation call. For example, this allows you to delete up to 999
+S3 objects in a single operation rather than calling <code class="docutils literal notranslate"><span class="pre">.delete()</span></code> on
+each one individually.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action_model</strong> (<em>:py:class`~boto3.resources.model.Action`</em>) – The action model.</p></li>
+<li><p><strong>factory</strong> (<a class="reference internal" href="#boto3.resources.factory.ResourceFactory" title="boto3.resources.factory.ResourceFactory"><em>ResourceFactory</em></a>) – The factory that created the resource class to which
+this action is attached.</p></li>
+<li><p><strong>service_context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ServiceContext</span></code>) – Context about the AWS service</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.action.CustomModeledAction"><a name="//apple_ref/cpp/Class/boto3.resources.action.CustomModeledAction"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.action.</span></code><code class="sig-name descname"><span class="pre">CustomModeledAction</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_emitter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/action.html#CustomModeledAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.action.CustomModeledAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>A custom, modeled action to inject into a resource.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action_name</strong> (<em>str</em>) – The name of the action to inject, e.g.
+‘delete_tags’</p></li>
+<li><p><strong>action_model</strong> (<em>dict</em>) – A JSON definition of the action, as if it were
+part of the resource model.</p></li>
+<li><p><strong>function</strong> (<em>function</em>) – The function to perform when the action is called.
+The first argument should be ‘self’, which will be the resource
+the function is to be called on.</p></li>
+<li><p><strong>event_emitter</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">botocore.hooks.BaseEventHooks</span></code>) – The session event emitter.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="boto3.resources.action.CustomModeledAction.inject"><a name="//apple_ref/cpp/Method/boto3.resources.action.CustomModeledAction.inject"></a>
+<code class="sig-name descname"><span class="pre">inject</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/action.html#CustomModeledAction.inject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.action.CustomModeledAction.inject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.action.ServiceAction"><a name="//apple_ref/cpp/Class/boto3.resources.action.ServiceAction"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.action.</span></code><code class="sig-name descname"><span class="pre">ServiceAction</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/action.html#ServiceAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.action.ServiceAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class representing a callable action on a resource, for example
+<code class="docutils literal notranslate"><span class="pre">sqs.get_queue_by_name(...)</span></code> or <code class="docutils literal notranslate"><span class="pre">s3.Bucket('foo').delete()</span></code>.
+The action may construct parameters from existing resource identifiers
+and may return either a raw response or a new resource instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action_model</strong> (<em>:py:class`~boto3.resources.model.Action`</em>) – The action model.</p></li>
+<li><p><strong>factory</strong> (<a class="reference internal" href="#boto3.resources.factory.ResourceFactory" title="boto3.resources.factory.ResourceFactory"><em>ResourceFactory</em></a>) – The factory that created the resource class to which
+this action is attached.</p></li>
+<li><p><strong>service_context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ServiceContext</span></code>) – Context about the AWS service</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.action.WaiterAction"><a name="//apple_ref/cpp/Class/boto3.resources.action.WaiterAction"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.action.</span></code><code class="sig-name descname"><span class="pre">WaiterAction</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waiter_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">waiter_resource_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/action.html#WaiterAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.action.WaiterAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class representing a callable waiter action on a resource, for example
+<code class="docutils literal notranslate"><span class="pre">s3.Bucket('foo').wait_until_bucket_exists()</span></code>.
+The waiter action may construct parameters from existing resource
+identifiers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>waiter_model</strong> (<em>:py:class`~boto3.resources.model.Waiter`</em>) – The action waiter.</p></li>
+<li><p><strong>waiter_resource_name</strong> (<em>string</em>) – The name of the waiter action for the
+resource. It usually begins with a
+<code class="docutils literal notranslate"><span class="pre">wait_until_</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</div>
+<div class="section" id="module-boto3.resources.base">
+<span id="resource-base"></span><h2><a name="//apple_ref/cpp/Module/boto3.resources.base"></a>Resource base<a class="headerlink" href="#module-boto3.resources.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="boto3.resources.base.ResourceMeta"><a name="//apple_ref/cpp/Class/boto3.resources.base.ResourceMeta"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.base.</span></code><code class="sig-name descname"><span class="pre">ResourceMeta</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifiers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/base.html#ResourceMeta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.base.ResourceMeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object containing metadata about a resource.</p>
+<dl class="py attribute">
+<dt id="boto3.resources.base.ResourceMeta.client"><a name="//apple_ref/cpp/Attribute/boto3.resources.base.ResourceMeta.client"></a>
+<code class="sig-name descname"><span class="pre">client</span></code><a class="headerlink" href="#boto3.resources.base.ResourceMeta.client" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">BaseClient</span></code>) Low-level Botocore client</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.resources.base.ResourceMeta.copy"><a name="//apple_ref/cpp/Method/boto3.resources.base.ResourceMeta.copy"></a>
+<code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/base.html#ResourceMeta.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.base.ResourceMeta.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a copy of this metadata object.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.base.ResourceMeta.data"><a name="//apple_ref/cpp/Attribute/boto3.resources.base.ResourceMeta.data"></a>
+<code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#boto3.resources.base.ResourceMeta.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">dict</span></code>) Loaded resource data attributes</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.base.ResourceMeta.identifiers"><a name="//apple_ref/cpp/Attribute/boto3.resources.base.ResourceMeta.identifiers"></a>
+<code class="sig-name descname"><span class="pre">identifiers</span></code><a class="headerlink" href="#boto3.resources.base.ResourceMeta.identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">list</span></code>) List of identifier names</p>
+</dd></dl>
+<dl class="py attribute">
+<dt id="boto3.resources.base.ResourceMeta.service_name"><a name="//apple_ref/cpp/Attribute/boto3.resources.base.ResourceMeta.service_name"></a>
+<code class="sig-name descname"><span class="pre">service_name</span></code><a class="headerlink" href="#boto3.resources.base.ResourceMeta.service_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">string</span></code>) The service name, e.g. ‘s3’</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="boto3.resources.base.ServiceResource"><a name="//apple_ref/cpp/Class/boto3.resources.base.ServiceResource"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.base.</span></code><code class="sig-name descname"><span class="pre">ServiceResource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/base.html#ServiceResource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.base.ServiceResource" title="Permalink to this definition">¶</a></dt>
+<dd><p>A base class for resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client</strong> (<em>botocore.client</em>) – A low-level Botocore client instance</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="boto3.resources.base.ServiceResource.meta"><a name="//apple_ref/cpp/Attribute/boto3.resources.base.ServiceResource.meta"></a>
+<code class="sig-name descname"><span class="pre">meta</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#boto3.resources.base.ServiceResource.meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores metadata about this resource instance, such as the
+<code class="docutils literal notranslate"><span class="pre">service_name</span></code>, the low-level <code class="docutils literal notranslate"><span class="pre">client</span></code> and any cached <code class="docutils literal notranslate"><span class="pre">data</span></code>
+from when the instance was hydrated. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a low-level client from a resource instance</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">resource</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">client</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">operation</span><span class="p">(</span><span class="n">Param</span><span class="o">=</span><span class="s1">'foo'</span><span class="p">)</span>
+
+<span class="c1"># Print the resource instance's service short name</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resource</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">service_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="#boto3.resources.base.ResourceMeta" title="boto3.resources.base.ResourceMeta"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMeta</span></code></a> for more information.</p>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="module-boto3.resources.factory">
+<span id="resource-factory"></span><h2><a name="//apple_ref/cpp/Module/boto3.resources.factory"></a>Resource factory<a class="headerlink" href="#module-boto3.resources.factory" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="boto3.resources.factory.ResourceFactory"><a name="//apple_ref/cpp/Class/boto3.resources.factory.ResourceFactory"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.resources.factory.</span></code><code class="sig-name descname"><span class="pre">ResourceFactory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">emitter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/factory.html#ResourceFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.factory.ResourceFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory to create new <a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ServiceResource</span></code></a>
+classes from a <a class="reference internal" href="#boto3.resources.model.ResourceModel" title="boto3.resources.model.ResourceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceModel</span></code></a>. There are
+two types of lookups that can be done: one on the service itself (e.g. an
+SQS resource) and another on models contained within the service (e.g. an
+SQS Queue resource).</p>
+<dl class="py method">
+<dt id="boto3.resources.factory.ResourceFactory.load_from_definition"><a name="//apple_ref/cpp/Method/boto3.resources.factory.ResourceFactory.load_from_definition"></a>
+<code class="sig-name descname"><span class="pre">load_from_definition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_resource_json_definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_context</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/resources/factory.html#ResourceFactory.load_from_definition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.resources.factory.ResourceFactory.load_from_definition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a resource from a model, creating a new
+<a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ServiceResource</span></code></a> subclass
+with the correct properties and methods, named based on the service
+and resource name, e.g. EC2.Instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_name</strong> (<em>string</em>) – Name of the resource to look up. For services,
+this should match the <code class="docutils literal notranslate"><span class="pre">service_name</span></code>.</p></li>
+<li><p><strong>single_resource_json_definition</strong> (<em>dict</em>) – The loaded json of a single service resource or resource
+definition.</p></li>
+<li><p><strong>service_context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ServiceContext</span></code>) – Context about the AWS service</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Subclass of <a class="reference internal" href="#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ServiceResource</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The service or resource class.</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="collections.html" title="previous chapter (use the left arrow)">Collections reference</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="session.html" title="next chapter (use the right arrow)">Session reference</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="session.html" title="Session reference">next</a> |</li>
+<li class="right">
+<a href="collections.html" title="Collections reference">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Core references</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Resources reference</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

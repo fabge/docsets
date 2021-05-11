@@ -1,0 +1,2418 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="swf.html" rel="next" title="SWF"/>
+<link href="sts.html" rel="prev" title="STS"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="swf.html" title="SWF">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="sts.html" title="STS">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Support</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessanalyzer.html">AccessAnalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm.html">ACM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm-pca.html">ACMPCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alexaforbusiness.html">AlexaForBusiness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amp.html">PrometheusService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplify.html">Amplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplifybackend.html">AmplifyBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigateway.html">APIGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewaymanagementapi.html">ApiGatewayManagementApi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewayv2.html">ApiGatewayV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appconfig.html">AppConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appflow.html">Appflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appintegrations.html">AppIntegrationsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-autoscaling.html">ApplicationAutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">ApplicationInsights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appmesh.html">AppMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appstream.html">AppStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appsync.html">AppSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="athena.html">Athena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auditmanager.html">AuditManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling.html">AutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling-plans.html">AutoScalingPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch.html">Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="braket.html">Braket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ce.html">CostExplorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chime.html">Chime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud9.html">Cloud9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clouddirectory.html">CloudDirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudformation.html">CloudFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudfront.html">CloudFront</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsm.html">CloudHSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsmv2.html">CloudHSMV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearch.html">CloudSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearchdomain.html">CloudSearchDomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudtrail.html">CloudTrail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudwatch.html">CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeartifact.html">CodeArtifact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codebuild.html">CodeBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codecommit.html">CodeCommit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codedeploy.html">CodeDeploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguru-reviewer.html">CodeGuruReviewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguruprofiler.html">CodeGuruProfiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codepipeline.html">CodePipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar.html">CodeStar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-connections.html">CodeStarconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-notifications.html">CodeStarNotifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-identity.html">CognitoIdentity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-idp.html">CognitoIdentityProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-sync.html">CognitoSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehend.html">Comprehend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehendmedical.html">ComprehendMedical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute-optimizer.html">ComputeOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect-contact-lens.html">ConnectContactLens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectparticipant.html">ConnectParticipant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cur.html">CostandUsageReportService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customer-profiles.html">CustomerProfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databrew.html">GlueDataBrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataexchange.html">DataExchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datapipeline.html">DataPipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasync.html">DataSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dax.html">DAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detective.html">Detective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devicefarm.html">DeviceFarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devops-guru.html">DevOpsGuru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directconnect.html">DirectConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html">ApplicationDiscoveryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dlm.html">DLM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dms.html">DatabaseMigrationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docdb.html">DocDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ds.html">DirectoryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodb.html">DynamoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodbstreams.html">DynamoDBStreams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ebs.html">EBS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2.html">EC2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2-instance-connect.html">EC2InstanceConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr.html">ECR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr-public.html">ECRPublic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecs.html">ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efs.html">EFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eks.html">EKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-inference.html">ElasticInference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticache.html">ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticbeanstalk.html">ElasticBeanstalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastictranscoder.html">ElasticTranscoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elb.html">ElasticLoadBalancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elbv2.html">ElasticLoadBalancingv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr.html">EMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr-containers.html">EMRContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html">ElasticsearchService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">EventBridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace.html">finspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace-data.html">FinSpaceData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firehose.html">Firehose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fis.html">FIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fms.html">FMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecast.html">ForecastService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecastquery.html">ForecastQueryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frauddetector.html">FraudDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fsx.html">FSx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamelift.html">GameLift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glacier.html">Glacier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globalaccelerator.html">GlobalAccelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glue.html">Glue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrass.html">Greengrass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrassv2.html">GreengrassV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundstation.html">GroundStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guardduty.html">GuardDuty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="healthlake.html">HealthLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="honeycode.html">Honeycode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iam.html">IAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identitystore.html">IdentityStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagebuilder.html">imagebuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexport.html">ImportExport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot.html">IoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-data.html">IoTDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-jobs-data.html">IoTJobsDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-devices.html">IoT1ClickDevicesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-projects.html">IoT1ClickProjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotanalytics.html">IoTAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotdeviceadvisor.html">IoTDeviceAdvisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents.html">IoTEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents-data.html">IoTEventsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotfleethub.html">IoTFleetHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsecuretunneling.html">IoTSecureTunneling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsitewise.html">IoTSiteWise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotthingsgraph.html">IoTThingsGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotwireless.html">IoTWireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivs.html">IVS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kafka.html">Kafka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendra.html">kendra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis.html">Kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-archived-media.html">KinesisVideoArchivedMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-media.html">KinesisVideoMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-signaling.html">KinesisVideoSignalingChannels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalytics.html">KinesisAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalyticsv2.html">KinesisAnalyticsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisvideo.html">KinesisVideo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kms.html">KMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lakeformation.html">LakeFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda.html">Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-models.html">LexModelBuildingService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-runtime.html">LexRuntimeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-models.html">LexModelsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-runtime.html">LexRuntimeV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license-manager.html">LicenseManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lightsail.html">Lightsail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location.html">LocationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">CloudWatchLogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutequipment.html">LookoutEquipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutmetrics.html">LookoutMetrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutvision.html">LookoutforVision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html">MachineLearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie.html">Macie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie2.html">Macie2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managedblockchain.html">ManagedBlockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-catalog.html">MarketplaceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-entitlement.html">MarketplaceEntitlementService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplacecommerceanalytics.html">MarketplaceCommerceAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconnect.html">MediaConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconvert.html">MediaConvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medialive.html">MediaLive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage.html">MediaPackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage-vod.html">MediaPackageVod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore.html">MediaStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore-data.html">MediaStoreData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatailor.html">MediaTailor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteringmarketplace.html">MarketplaceMetering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgh.html">MigrationHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgn.html">mgn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrationhub-config.html">MigrationHubConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mq.html">MQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mturk.html">MTurk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mwaa.html">MWAA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neptune.html">Neptune</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network-firewall.html">NetworkFirewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkmanager.html">NetworkManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html">NimbleStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworks.html">OpsWorks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworkscm.html">OpsWorksCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizations.html">Organizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outposts.html">Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">Personalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-events.html">PersonalizeEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-runtime.html">PersonalizeRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pi.html">PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint.html">Pinpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-email.html">PinpointEmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polly.html">Polly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing.html">Pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb.html">QLDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb-session.html">QLDBSession</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quicksight.html">QuickSight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ram.html">RAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds.html">RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds-data.html">RDSDataService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift.html">Redshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift-data.html">RedshiftDataAPIService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rekognition.html">Rekognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resource-groups.html">ResourceGroups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resourcegroupstaggingapi.html">ResourceGroupsTaggingAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomaker.html">RoboMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53.html">Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53domains.html">Route53Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53resolver.html">Route53Resolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3.html">S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3control.html">S3Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3outposts.html">S3Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker.html">SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-a2i-runtime.html">AugmentedAIRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-edge.html">SagemakerEdgeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-featurestore-runtime.html">SageMakerFeatureStoreRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-runtime.html">SageMakerRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savingsplans.html">SavingsPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html">Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdb.html">SimpleDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secretsmanager.html">SecretsManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityhub.html">SecurityHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverlessrepo.html">ServerlessApplicationRepository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-quotas.html">ServiceQuotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog.html">ServiceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog-appregistry.html">AppRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicediscovery.html">ServiceDiscovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ses.html">SES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sesv2.html">SESV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signer.html">signer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html">SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snowball.html">Snowball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sns.html">SNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqs.html">SQS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssm.html">SSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso.html">SSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-admin.html">SSOAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-oidc.html">SSOOIDC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepfunctions.html">SFN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storagegateway.html">StorageGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sts.html">STS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paginators">Paginators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="swf.html">SWF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetics.html">Synthetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textract.html">Textract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-query.html">TimestreamQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-write.html">TimestreamWrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transcribe.html">TranscribeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer.html">Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">Translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf.html">WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf-regional.html">WAFRegional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wafv2.html">WAFV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wellarchitected.html">WellArchitected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workdocs.html">WorkDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worklink.html">WorkLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmail.html">WorkMail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmailmessageflow.html">WorkMailMessageFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workspaces.html">WorkSpaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xray.html">XRay</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Available services</a></li>
+<li>Support</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="support">
+<h1><a class="toc-backref" href="#id16">Support</a><a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#support" id="id16">Support</a></p>
+<ul>
+<li><p><a class="reference internal" href="#client" id="id17">Client</a></p></li>
+<li><p><a class="reference internal" href="#paginators" id="id18">Paginators</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="client">
+<h2><a class="toc-backref" href="#id17">Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="Support.Client"><a name="//apple_ref/cpp/Class/Support.Client"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Support.</span></code><code class="sig-name descname"><span class="pre">Client</span></code><a class="headerlink" href="#Support.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>A low-level client representing AWS Support</p>
+<p>The AWS Support API reference is intended for programmers who need detailed information about the AWS Support operations and data types. This service enables you to manage your AWS Support cases programmatically. It uses HTTP methods that return results in JSON format.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>The AWS Support service also exposes a set of <a class="reference external" href="http://aws.amazon.com/premiumsupport/trustedadvisor/">AWS Trusted Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify checks to refresh, and get the refresh status of checks.</p>
+<p>The following list describes the AWS Support case management operations:</p>
+<ul class="simple">
+<li><p><strong>Service names, issue categories, and available severity levels.</strong> The  DescribeServices and  DescribeSeverityLevels operations return AWS service names, service codes, service categories, and problem severity levels. You use these values when you call the  CreateCase operation.</p></li>
+<li><p><strong>Case creation, case details, and case resolution.</strong> The  CreateCase ,  DescribeCases ,  DescribeAttachment , and  ResolveCase operations create AWS Support cases, retrieve information about cases, and resolve cases.</p></li>
+<li><p><strong>Case communication.</strong> The  DescribeCommunications ,  AddCommunicationToCase , and  AddAttachmentsToSet operations retrieve and add communications and attachments to AWS Support cases.</p></li>
+</ul>
+<p>The following list describes the operations available from the AWS Support service for Trusted Advisor:</p>
+<ul class="simple">
+<li><p>DescribeTrustedAdvisorChecks returns the list of checks that run against your AWS resources.</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">checkId</span></code> for a specific check returned by  DescribeTrustedAdvisorChecks , you can call  DescribeTrustedAdvisorCheckResult to obtain the results for the check that you specified.</p></li>
+<li><p>DescribeTrustedAdvisorCheckSummaries returns summarized results for one or more Trusted Advisor checks.</p></li>
+<li><p>RefreshTrustedAdvisorCheck requests that Trusted Advisor rerun a specified check.</p></li>
+<li><p>DescribeTrustedAdvisorCheckRefreshStatuses reports the refresh status of one or more checks.</p></li>
+</ul>
+<p>For authentication of requests, AWS Support uses <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a> .</p>
+<p>See <a class="reference external" href="https://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the AWS Support API</a> in the <em>AWS Support User Guide</em> for information about how to use this service to create and manage your support cases, and how to call Trusted Advisor for results of checks on your resources.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">'support'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These are the available methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#Support.Client.add_attachments_to_set" title="Support.Client.add_attachments_to_set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_attachments_to_set()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.add_communication_to_case" title="Support.Client.add_communication_to_case"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_communication_to_case()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.can_paginate" title="Support.Client.can_paginate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">can_paginate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.create_case" title="Support.Client.create_case"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_case()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_attachment" title="Support.Client.describe_attachment"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_attachment()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_cases" title="Support.Client.describe_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_cases()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_communications" title="Support.Client.describe_communications"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_communications()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_services" title="Support.Client.describe_services"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_services()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_severity_levels" title="Support.Client.describe_severity_levels"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_severity_levels()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_trusted_advisor_check_refresh_statuses" title="Support.Client.describe_trusted_advisor_check_refresh_statuses"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_trusted_advisor_check_refresh_statuses()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_trusted_advisor_check_result" title="Support.Client.describe_trusted_advisor_check_result"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_trusted_advisor_check_result()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_trusted_advisor_check_summaries" title="Support.Client.describe_trusted_advisor_check_summaries"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_trusted_advisor_check_summaries()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.describe_trusted_advisor_checks" title="Support.Client.describe_trusted_advisor_checks"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_trusted_advisor_checks()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.generate_presigned_url" title="Support.Client.generate_presigned_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate_presigned_url()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.get_paginator" title="Support.Client.get_paginator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_paginator()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.get_waiter" title="Support.Client.get_waiter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_waiter()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.refresh_trusted_advisor_check" title="Support.Client.refresh_trusted_advisor_check"><code class="xref py py-meth docutils literal notranslate"><span class="pre">refresh_trusted_advisor_check()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Client.resolve_case" title="Support.Client.resolve_case"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resolve_case()</span></code></a></p></li>
+</ul>
+<dl class="py method">
+<dt id="Support.Client.add_attachments_to_set"><a name="//apple_ref/cpp/Method/Support.Client.add_attachments_to_set"></a>
+<code class="sig-name descname"><span class="pre">add_attachments_to_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.add_attachments_to_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds one or more attachments to an attachment set.</p>
+<p>An attachment set is a temporary container for attachments that you add to a case or case communication. The set is available for 1 hour after it’s created. The <code class="docutils literal notranslate"><span class="pre">expiryTime</span></code> returned in the response is when the set expires.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_attachments_to_set</span><span class="p">(</span>
+    <span class="n">attachmentSetId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">attachments</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'fileName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'data'</span><span class="p">:</span> <span class="sa">b</span><span class="s1">'bytes'</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attachmentSetId</strong> (<em>string</em>) – The ID of the attachment set. If an <code class="docutils literal notranslate"><span class="pre">attachmentSetId</span></code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code class="docutils literal notranslate"><span class="pre">attachmentSetId</span></code> is specified, the attachments are added to the specified set, if it exists.</p></li>
+<li><p><strong>attachments</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Attachment</span></code> object, use the <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code class="docutils literal notranslate"><span class="pre">data</span></code> appear as <code class="docutils literal notranslate"><span class="pre">blob</span></code> , which is represented as a base64-encoded string. The value for <code class="docutils literal notranslate"><span class="pre">fileName</span></code> is the name of the attachment, such as <code class="docutils literal notranslate"><span class="pre">troubleshoot-screenshot.png</span></code> .</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>An attachment to a case communication. The attachment consists of the file name and the content of the file.</p>
+<ul>
+<li><p><strong>fileName</strong> <em>(string) –</em></p>
+<p>The name of the attachment file.</p>
+</li>
+<li><p><strong>data</strong> <em>(bytes) –</em></p>
+<p>The content of the attachment file.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attachmentSetId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'expiryTime'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The ID and expiry time of the attachment set returned by the  AddAttachmentsToSet operation.</p>
+<ul>
+<li><p><strong>attachmentSetId</strong> <em>(string) –</em></p>
+<p>The ID of the attachment set. If an <code class="docutils literal notranslate"><span class="pre">attachmentSetId</span></code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code class="docutils literal notranslate"><span class="pre">attachmentSetId</span></code> was specified, the attachments are added to the specified set, if it exists.</p>
+</li>
+<li><p><strong>expiryTime</strong> <em>(string) –</em></p>
+<p>The time and date when the attachment set expires.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentSetIdNotFound</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentSetExpired</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentSetSizeLimitExceeded</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentLimitExceeded</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.add_communication_to_case"><a name="//apple_ref/cpp/Method/Support.Client.add_communication_to_case"></a>
+<code class="sig-name descname"><span class="pre">add_communication_to_case</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.add_communication_to_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds additional customer communication to an AWS Support case. Use the <code class="docutils literal notranslate"><span class="pre">caseId</span></code> parameter to identify the case to which to add communication. You can list a set of email addresses to copy on the communication by using the <code class="docutils literal notranslate"><span class="pre">ccEmailAddresses</span></code> parameter. The <code class="docutils literal notranslate"><span class="pre">communicationBody</span></code> value contains the text of the communication.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_communication_to_case</span><span class="p">(</span>
+    <span class="n">caseId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">communicationBody</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ccEmailAddresses</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">attachmentSetId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caseId</strong> (<em>string</em>) – The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p></li>
+<li><p><strong>communicationBody</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The body of an email communication to add to the support case.</p>
+</p></li>
+<li><p><strong>ccEmailAddresses</strong> (<em>list</em>) – <p>The email addresses in the CC line of an email to be added to the support case.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>attachmentSetId</strong> (<em>string</em>) – The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling  AddAttachmentsToSet</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'result'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The result of the  AddCommunicationToCase operation.</p>
+<ul>
+<li><p><strong>result</strong> <em>(boolean) –</em></p>
+<p>True if  AddCommunicationToCase succeeds. Otherwise, returns an error.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.CaseIdNotFound</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentSetIdNotFound</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentSetExpired</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.can_paginate"><a name="//apple_ref/cpp/Method/Support.Client.can_paginate"></a>
+<code class="sig-name descname"><span class="pre">can_paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.can_paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an operation can be paginated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the operation can be paginated,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.create_case"><a name="//apple_ref/cpp/Method/Support.Client.create_case"></a>
+<code class="sig-name descname"><span class="pre">create_case</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.create_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a case in the AWS Support Center. This operation is similar to how you create a case in the AWS Support Center <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+<p>The AWS Support API doesn’t support requesting service limit increases. You can submit a service limit increase in the following ways:</p>
+<ul class="simple">
+<li><p>Submit a request from the AWS Support Center <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p></li>
+<li><p>Use the Service Quotas <a class="reference external" href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a> operation.</p></li>
+</ul>
+<p>A successful <code class="docutils literal notranslate"><span class="pre">CreateCase</span></code> request returns an AWS Support case number. You can use the  DescribeCases operation and specify the case number to get existing AWS Support cases. After you create a case, use the  AddCommunicationToCase operation to add additional communication or attachments to an existing case.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">caseId</span></code> is separate from the <code class="docutils literal notranslate"><span class="pre">displayId</span></code> that appears in the <a class="reference external" href="https://console.aws.amazon.com/support">AWS Support Center</a> . Use the  DescribeCases operation to get the <code class="docutils literal notranslate"><span class="pre">displayId</span></code> .</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_case</span><span class="p">(</span>
+    <span class="n">subject</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">serviceCode</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">severityCode</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">categoryCode</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">communicationBody</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ccEmailAddresses</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">language</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">issueType</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">attachmentSetId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subject</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The title of the AWS Support case. The title appears in the <strong>Subject</strong> field on the AWS Support Center <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+</p></li>
+<li><p><strong>serviceCode</strong> (<em>string</em>) – The code for the AWS service. You can use the  DescribeServices operation to get the possible <code class="docutils literal notranslate"><span class="pre">serviceCode</span></code> values.</p></li>
+<li><p><strong>severityCode</strong> (<em>string</em>) – <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with AWS Support. You can use the  DescribeSeverityLevels operation to get the possible values for <code class="docutils literal notranslate"><span class="pre">severityCode</span></code> .</p>
+<p>For more information, see  SeverityLevel and <a class="reference external" href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <em>AWS Support User Guide</em> .</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The availability of severity levels depends on the support plan for the AWS account.</p>
+</div>
+</p></li>
+<li><p><strong>categoryCode</strong> (<em>string</em>) – The category of problem for the AWS Support case. You also use the  DescribeServices operation to get the category code for a service. Each AWS service defines its own set of category codes.</p></li>
+<li><p><strong>communicationBody</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The communication body text that describes the issue. This text appears in the <strong>Description</strong> field on the AWS Support Center <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+</p></li>
+<li><p><strong>ccEmailAddresses</strong> (<em>list</em>) – <p>A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the account that creates the case when you specify your AWS credentials in an HTTP POST method or use the <a class="reference external" href="http://aws.amazon.com/tools/">AWS SDKs</a> .</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>language</strong> (<em>string</em>) – The language in which AWS Support handles the case. You must specify the ISO 639-1 code for the <code class="docutils literal notranslate"><span class="pre">language</span></code> parameter if you want support in that language. Currently, English (“en”) and Japanese (“ja”) are supported.</p></li>
+<li><p><strong>issueType</strong> (<em>string</em>) – The type of issue for the case. You can specify <code class="docutils literal notranslate"><span class="pre">customer-service</span></code> or <code class="docutils literal notranslate"><span class="pre">technical</span></code> . If you don’t specify a value, the default is <code class="docutils literal notranslate"><span class="pre">technical</span></code> .</p></li>
+<li><p><strong>attachmentSetId</strong> (<em>string</em>) – The ID of a set of one or more attachments for the case. Create the set by using the  AddAttachmentsToSet operation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'caseId'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The AWS Support case ID returned by a successful completion of the  CreateCase operation.</p>
+<ul>
+<li><p><strong>caseId</strong> <em>(string) –</em></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.CaseCreationLimitExceeded</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentSetIdNotFound</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentSetExpired</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_attachment"><a name="//apple_ref/cpp/Method/Support.Client.describe_attachment"></a>
+<code class="sig-name descname"><span class="pre">describe_attachment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_attachment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the attachment that has the specified ID. Attachments can include screenshots, error logs, or other files that describe your issue. Attachment IDs are generated by the case management system when you add an attachment to a case or case communication. Attachment IDs are returned in the  AttachmentDetails objects that are returned by the  DescribeCommunications operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_attachment</span><span class="p">(</span>
+    <span class="n">attachmentId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attachmentId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The ID of the attachment to return. Attachment IDs are returned by the  DescribeCommunications operation.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'attachment'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'fileName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'data'</span><span class="p">:</span> <span class="sa">b</span><span class="s1">'bytes'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The content and file name of the attachment returned by the  DescribeAttachment operation.</p>
+<ul>
+<li><p><strong>attachment</strong> <em>(dict) –</em></p>
+<p>This object includes the attachment content and file name.</p>
+<p>In the previous response syntax, the value for the <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter appears as <code class="docutils literal notranslate"><span class="pre">blob</span></code> , which is represented as a base64-encoded string. The value for <code class="docutils literal notranslate"><span class="pre">fileName</span></code> is the name of the attachment, such as <code class="docutils literal notranslate"><span class="pre">troubleshoot-screenshot.png</span></code> .</p>
+<ul>
+<li><p><strong>fileName</strong> <em>(string) –</em></p>
+<p>The name of the attachment file.</p>
+</li>
+<li><p><strong>data</strong> <em>(bytes) –</em></p>
+<p>The content of the attachment file.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.DescribeAttachmentLimitExceeded</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.AttachmentIdNotFound</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_cases"><a name="//apple_ref/cpp/Method/Support.Client.describe_cases"></a>
+<code class="sig-name descname"><span class="pre">describe_cases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of cases that you specify by passing one or more case IDs. You can use the <code class="docutils literal notranslate"><span class="pre">afterTime</span></code> and <code class="docutils literal notranslate"><span class="pre">beforeTime</span></code> parameters to filter the cases by date. You can set values for the <code class="docutils literal notranslate"><span class="pre">includeResolvedCases</span></code> and <code class="docutils literal notranslate"><span class="pre">includeCommunications</span></code> parameters to specify how much information to return.</p>
+<p>The response returns the following in JSON format:</p>
+<ul class="simple">
+<li><p>One or more <a class="reference external" href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> data types.</p></li>
+<li><p>One or more <code class="docutils literal notranslate"><span class="pre">nextToken</span></code> values, which specify where to paginate the returned records represented by the <code class="docutils literal notranslate"><span class="pre">CaseDetails</span></code> objects.</p></li>
+</ul>
+<p>Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request might return an error.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_cases</span><span class="p">(</span>
+    <span class="n">caseIdList</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">displayId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">afterTime</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">beforeTime</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">includeResolvedCases</span><span class="o">=</span><span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">nextToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">maxResults</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">language</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">includeCommunications</span><span class="o">=</span><span class="kc">True</span><span class="o">|</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caseIdList</strong> (<em>list</em>) – <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>displayId</strong> (<em>string</em>) – The ID displayed for a case in the AWS Support Center user interface.</p></li>
+<li><p><strong>afterTime</strong> (<em>string</em>) – The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p></li>
+<li><p><strong>beforeTime</strong> (<em>string</em>) – The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p></li>
+<li><p><strong>includeResolvedCases</strong> (<em>boolean</em>) – Specifies whether to include resolved support cases in the <code class="docutils literal notranslate"><span class="pre">DescribeCases</span></code> response. By default, resolved cases aren’t included.</p></li>
+<li><p><strong>nextToken</strong> (<em>string</em>) – A resumption point for pagination.</p></li>
+<li><p><strong>maxResults</strong> (<em>integer</em>) – The maximum number of results to return before paginating.</p></li>
+<li><p><strong>language</strong> (<em>string</em>) – The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p></li>
+<li><p><strong>includeCommunications</strong> (<em>boolean</em>) – Specifies whether to include communications in the <code class="docutils literal notranslate"><span class="pre">DescribeCases</span></code> response. By default, communications are incuded.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'cases'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'caseId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'displayId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'subject'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'serviceCode'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'categoryCode'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'severityCode'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'submittedBy'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timeCreated'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'recentCommunications'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'communications'</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s1">'caseId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'body'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'submittedBy'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'timeCreated'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'attachmentSet'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span>
+                                <span class="s1">'attachmentId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                                <span class="s1">'fileName'</span><span class="p">:</span> <span class="s1">'string'</span>
+                            <span class="p">},</span>
+                        <span class="p">]</span>
+                    <span class="p">},</span>
+                <span class="p">],</span>
+                <span class="s1">'nextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">},</span>
+            <span class="s1">'ccEmailAddresses'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="s1">'language'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'nextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Returns an array of <a class="reference external" href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> objects and a <code class="docutils literal notranslate"><span class="pre">nextToken</span></code> that defines a point for pagination in the result set.</p>
+<ul>
+<li><p><strong>cases</strong> <em>(list) –</em></p>
+<p>The details for the cases that match the request.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a  DescribeCases request. <strong>CaseDetails</strong> contains the following fields:</p>
+<ul class="simple">
+<li><p><strong>caseId.</strong> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em> .</p></li>
+<li><p><strong>categoryCode.</strong> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to  DescribeServices .</p></li>
+<li><p><strong>displayId.</strong> The identifier for the case on pages in the AWS Support Center.</p></li>
+<li><p><strong>language.</strong> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p></li>
+<li><p><strong>nextToken.</strong> A resumption point for pagination.</p></li>
+<li><p><strong>recentCommunications.</strong> One or more  Communication objects. Fields of these objects are <code class="docutils literal notranslate"><span class="pre">attachments</span></code> , <code class="docutils literal notranslate"><span class="pre">body</span></code> , <code class="docutils literal notranslate"><span class="pre">caseId</span></code> , <code class="docutils literal notranslate"><span class="pre">submittedBy</span></code> , and <code class="docutils literal notranslate"><span class="pre">timeCreated</span></code> .</p></li>
+<li><p><strong>serviceCode.</strong> The identifier for the AWS service that corresponds to the service code defined in the call to  DescribeServices .</p></li>
+<li><p><strong>severityCode.</strong> The severity code assigned to the case. Contains one of the values returned by the call to  DescribeSeverityLevels . The possible values are: <code class="docutils literal notranslate"><span class="pre">low</span></code> , <code class="docutils literal notranslate"><span class="pre">normal</span></code> , <code class="docutils literal notranslate"><span class="pre">high</span></code> , <code class="docutils literal notranslate"><span class="pre">urgent</span></code> , and <code class="docutils literal notranslate"><span class="pre">critical</span></code> .</p></li>
+<li><p><strong>status.</strong> The status of the case in the AWS Support Center. Valid values:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">opened</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pending-customer-action</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reopened</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">resolved</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unassigned</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work-in-progress</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>subject.</strong> The subject line of the case.</p></li>
+<li><p><strong>submittedBy.</strong> The email address of the account that submitted the case.</p></li>
+<li><p><strong>timeCreated.</strong> The time the case was created, in ISO-8601 format.</p></li>
+</ul>
+<ul>
+<li><p><strong>caseId</strong> <em>(string) –</em></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</li>
+<li><p><strong>displayId</strong> <em>(string) –</em></p>
+<p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>
+</li>
+<li><p><strong>subject</strong> <em>(string) –</em></p>
+<p>The subject line for the case in the AWS Support Center.</p>
+</li>
+<li><p><strong>status</strong> <em>(string) –</em></p>
+<p>The status of the case.</p>
+<p>Valid values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">opened</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pending-customer-action</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reopened</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">resolved</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unassigned</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work-in-progress</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>serviceCode</strong> <em>(string) –</em></p>
+<p>The code for the AWS service. You can get a list of codes and the corresponding service names by calling  DescribeServices .</p>
+</li>
+<li><p><strong>categoryCode</strong> <em>(string) –</em></p>
+<p>The category of problem for the AWS Support case.</p>
+</li>
+<li><p><strong>severityCode</strong> <em>(string) –</em></p>
+<p>The code for the severity level returned by the call to  DescribeSeverityLevels .</p>
+</li>
+<li><p><strong>submittedBy</strong> <em>(string) –</em></p>
+<p>The email address of the account that submitted the case.</p>
+</li>
+<li><p><strong>timeCreated</strong> <em>(string) –</em></p>
+<p>The time that the case was created in the AWS Support Center.</p>
+</li>
+<li><p><strong>recentCommunications</strong> <em>(dict) –</em></p>
+<p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code class="docutils literal notranslate"><span class="pre">nextToken</span></code> that you can use to retrieve earlier communications.</p>
+<ul>
+<li><p><strong>communications</strong> <em>(list) –</em></p>
+<p>The five most recent communications associated with the case.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.</p>
+<ul>
+<li><p><strong>caseId</strong> <em>(string) –</em></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</li>
+<li><p><strong>body</strong> <em>(string) –</em></p>
+<p>The text of the communication between the customer and AWS Support.</p>
+</li>
+<li><p><strong>submittedBy</strong> <em>(string) –</em></p>
+<p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, “AdminRole (Role) &lt;<a class="reference external" href="mailto:someone%40example.com">someone<span>@</span>example<span>.</span>com</a>&gt;. Entries from the AWS Support team display “Amazon Web Services,” and do not show an email address.</p>
+</li>
+<li><p><strong>timeCreated</strong> <em>(string) –</em></p>
+<p>The time the communication was created.</p>
+</li>
+<li><p><strong>attachmentSet</strong> <em>(list) –</em></p>
+<p>Information about the attachments to the case communication.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the  DescribeAttachment operation.</p>
+<ul>
+<li><p><strong>attachmentId</strong> <em>(string) –</em></p>
+<p>The ID of the attachment.</p>
+</li>
+<li><p><strong>fileName</strong> <em>(string) –</em></p>
+<p>The file name of the attachment.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>nextToken</strong> <em>(string) –</em></p>
+<p>A resumption point for pagination.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>ccEmailAddresses</strong> <em>(list) –</em></p>
+<p>The email addresses that receive copies of communication about the case.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>language</strong> <em>(string) –</em></p>
+<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>nextToken</strong> <em>(string) –</em></p>
+<p>A resumption point for pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.CaseIdNotFound</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_communications"><a name="//apple_ref/cpp/Method/Support.Client.describe_communications"></a>
+<code class="sig-name descname"><span class="pre">describe_communications</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_communications" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns communications and attachments for one or more support cases. Use the <code class="docutils literal notranslate"><span class="pre">afterTime</span></code> and <code class="docutils literal notranslate"><span class="pre">beforeTime</span></code> parameters to filter by date. You can use the <code class="docutils literal notranslate"><span class="pre">caseId</span></code> parameter to restrict the results to a specific case.</p>
+<p>Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request for data might cause an error.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">maxResults</span></code> and <code class="docutils literal notranslate"><span class="pre">nextToken</span></code> parameters to control the pagination of the results. Set <code class="docutils literal notranslate"><span class="pre">maxResults</span></code> to the number of cases that you want to display on each page, and use <code class="docutils literal notranslate"><span class="pre">nextToken</span></code> to specify the resumption of pagination.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_communications</span><span class="p">(</span>
+    <span class="n">caseId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">beforeTime</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">afterTime</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">nextToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">maxResults</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caseId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</p></li>
+<li><p><strong>beforeTime</strong> (<em>string</em>) – The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p></li>
+<li><p><strong>afterTime</strong> (<em>string</em>) – The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p></li>
+<li><p><strong>nextToken</strong> (<em>string</em>) – A resumption point for pagination.</p></li>
+<li><p><strong>maxResults</strong> (<em>integer</em>) – The maximum number of results to return before paginating.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'communications'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'caseId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'body'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'submittedBy'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timeCreated'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'attachmentSet'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">'attachmentId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                    <span class="s1">'fileName'</span><span class="p">:</span> <span class="s1">'string'</span>
+                <span class="p">},</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'nextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The communications returned by the  DescribeCommunications operation.</p>
+<ul>
+<li><p><strong>communications</strong> <em>(list) –</em></p>
+<p>The communications for the case.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.</p>
+<ul>
+<li><p><strong>caseId</strong> <em>(string) –</em></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</li>
+<li><p><strong>body</strong> <em>(string) –</em></p>
+<p>The text of the communication between the customer and AWS Support.</p>
+</li>
+<li><p><strong>submittedBy</strong> <em>(string) –</em></p>
+<p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, “AdminRole (Role) &lt;<a class="reference external" href="mailto:someone%40example.com">someone<span>@</span>example<span>.</span>com</a>&gt;. Entries from the AWS Support team display “Amazon Web Services,” and do not show an email address.</p>
+</li>
+<li><p><strong>timeCreated</strong> <em>(string) –</em></p>
+<p>The time the communication was created.</p>
+</li>
+<li><p><strong>attachmentSet</strong> <em>(list) –</em></p>
+<p>Information about the attachments to the case communication.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the  DescribeAttachment operation.</p>
+<ul>
+<li><p><strong>attachmentId</strong> <em>(string) –</em></p>
+<p>The ID of the attachment.</p>
+</li>
+<li><p><strong>fileName</strong> <em>(string) –</em></p>
+<p>The file name of the attachment.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>nextToken</strong> <em>(string) –</em></p>
+<p>A resumption point for pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.CaseIdNotFound</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_services"><a name="//apple_ref/cpp/Method/Support.Client.describe_services"></a>
+<code class="sig-name descname"><span class="pre">describe_services</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_services" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current list of AWS services and a list of service categories for each service. You then use service names and categories in your  CreateCase requests. Each AWS service has its own set of categories.</p>
+<p>The service codes and category codes correspond to the values that appear in the <strong>Service</strong> and <strong>Category</strong> lists on the AWS Support Center <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. The values in those fields don’t necessarily match the service codes and categories returned by the <code class="docutils literal notranslate"><span class="pre">DescribeServices</span></code> operation. Always use the service codes and categories that the <code class="docutils literal notranslate"><span class="pre">DescribeServices</span></code> operation returns, so that you have the most recent set of service and category codes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_services</span><span class="p">(</span>
+    <span class="n">serviceCodeList</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">language</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serviceCodeList</strong> (<em>list</em>) – <p>A JSON-formatted list of service codes available for AWS services.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>language</strong> (<em>string</em>) – The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'services'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'code'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'categories'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">'code'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span>
+                <span class="p">},</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The list of AWS services returned by the  DescribeServices operation.</p>
+<ul>
+<li><p><strong>services</strong> <em>(list) –</em></p>
+<p>A JSON-formatted list of AWS services.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Information about an AWS service returned by the  DescribeServices operation.</p>
+<ul>
+<li><p><strong>code</strong> <em>(string) –</em></p>
+<p>The code for an AWS service returned by the  DescribeServices response. The <code class="docutils literal notranslate"><span class="pre">name</span></code> element contains the corresponding friendly name.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The friendly name for an AWS service. The <code class="docutils literal notranslate"><span class="pre">code</span></code> element contains the corresponding code.</p>
+</li>
+<li><p><strong>categories</strong> <em>(list) –</em></p>
+<p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call  CreateCase .</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the  DescribeServices response for each AWS service.</p>
+<ul>
+<li><p><strong>code</strong> <em>(string) –</em></p>
+<p>The category code for the support case.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The category name for the support case.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_severity_levels"><a name="//apple_ref/cpp/Method/Support.Client.describe_severity_levels"></a>
+<code class="sig-name descname"><span class="pre">describe_severity_levels</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_severity_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a field in the  CaseDetails data type that you include for a  CreateCase request.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_severity_levels</span><span class="p">(</span>
+    <span class="n">language</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>language</strong> (<em>string</em>) – The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'severityLevels'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'code'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The list of severity levels returned by the  DescribeSeverityLevels operation.</p>
+<ul>
+<li><p><strong>severityLevels</strong> <em>(list) –</em></p>
+<p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <em>AWS Support User Guide</em> .</p>
+<ul>
+<li><p><strong>code</strong> <em>(string) –</em></p>
+<p>The code for case severity level.</p>
+<p>Valid values: <code class="docutils literal notranslate"><span class="pre">low</span></code> | <code class="docutils literal notranslate"><span class="pre">normal</span></code> | <code class="docutils literal notranslate"><span class="pre">high</span></code> | <code class="docutils literal notranslate"><span class="pre">urgent</span></code> | <code class="docutils literal notranslate"><span class="pre">critical</span></code></p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The name of the severity level that corresponds to the severity level code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The values returned by the API differ from the values that are displayed in the AWS Support Center. For example, for the code “low”, the API name is “Low”, but the name in the Support Center is “General guidance”. These are the Support Center code/name mappings:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">low</span></code> : General guidance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">normal</span></code> : System impaired</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">high</span></code> : Production system impaired</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">urgent</span></code> : Production system down</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">critical</span></code> : Business-critical system down</p></li>
+</ul>
+</div>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <em>AWS Support User Guide</em> .</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_trusted_advisor_check_refresh_statuses"><a name="//apple_ref/cpp/Method/Support.Client.describe_trusted_advisor_check_refresh_statuses"></a>
+<code class="sig-name descname"><span class="pre">describe_trusted_advisor_check_refresh_statuses</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_trusted_advisor_check_refresh_statuses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the refresh status of the AWS Trusted Advisor checks that have the specified check IDs. You can get the check IDs by calling the  DescribeTrustedAdvisorChecks operation.</p>
+<p>Some checks are refreshed automatically, and you can’t return their refresh statuses by using the <code class="docutils literal notranslate"><span class="pre">DescribeTrustedAdvisorCheckRefreshStatuses</span></code> operation. If you call this operation for these checks, you might see an <code class="docutils literal notranslate"><span class="pre">InvalidParameterValue</span></code> error.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_trusted_advisor_check_refresh_statuses</span><span class="p">(</span>
+    <span class="n">checkIds</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>checkIds</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The IDs of the Trusted Advisor checks to get the status of.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you specify the check ID of a check that is automatically refreshed, you might see an <code class="docutils literal notranslate"><span class="pre">InvalidParameterValue</span></code> error.</p>
+</div>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'statuses'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'checkId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'millisUntilNextRefreshable'</span><span class="p">:</span> <span class="mi">123</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The statuses of the Trusted Advisor checks returned by the  DescribeTrustedAdvisorCheckRefreshStatuses operation.</p>
+<ul>
+<li><p><strong>statuses</strong> <em>(list) –</em></p>
+<p>The refresh status of the specified Trusted Advisor checks.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The refresh status of a Trusted Advisor check.</p>
+<ul>
+<li><p><strong>checkId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the Trusted Advisor check.</p>
+</li>
+<li><p><strong>status</strong> <em>(string) –</em></p>
+<p>The status of the Trusted Advisor check for which a refresh has been requested:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">none:</span></code> The check is not refreshed or the non-success status exceeds the timeout</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enqueued:</span></code> The check refresh requests has entered the refresh queue</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processing:</span></code> The check refresh request is picked up by the rule processing engine</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">success:</span></code> The check is successfully refreshed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abandoned:</span></code> The check refresh has failed</p></li>
+</ul>
+</li>
+<li><p><strong>millisUntilNextRefreshable</strong> <em>(integer) –</em></p>
+<p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_trusted_advisor_check_result"><a name="//apple_ref/cpp/Method/Support.Client.describe_trusted_advisor_check_result"></a>
+<code class="sig-name descname"><span class="pre">describe_trusted_advisor_check_result</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_trusted_advisor_check_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the results of the AWS Trusted Advisor check that has the specified check ID. You can get the check IDs by calling the  DescribeTrustedAdvisorChecks operation.</p>
+<p>The response contains a  TrustedAdvisorCheckResult object, which contains these three objects:</p>
+<ul class="simple">
+<li><p>TrustedAdvisorCategorySpecificSummary</p></li>
+<li><p>TrustedAdvisorResourceDetail</p></li>
+<li><p>TrustedAdvisorResourcesSummary</p></li>
+</ul>
+<p>In addition, the response contains these fields:</p>
+<ul class="simple">
+<li><p><strong>status</strong> - The alert status of the check: “ok” (green), “warning” (yellow), “error” (red), or “not_available”.</p></li>
+<li><p><strong>timestamp</strong> - The time of the last refresh of the check.</p></li>
+<li><p><strong>checkId</strong> - The unique identifier for the check.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_trusted_advisor_check_result</span><span class="p">(</span>
+    <span class="n">checkId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">language</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>checkId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The unique identifier for the Trusted Advisor check.</p>
+</p></li>
+<li><p><strong>language</strong> (<em>string</em>) – The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'result'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'checkId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'timestamp'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'resourcesSummary'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'resourcesProcessed'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+            <span class="s1">'resourcesFlagged'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+            <span class="s1">'resourcesIgnored'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+            <span class="s1">'resourcesSuppressed'</span><span class="p">:</span> <span class="mi">123</span>
+        <span class="p">},</span>
+        <span class="s1">'categorySpecificSummary'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'costOptimizing'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'estimatedMonthlySavings'</span><span class="p">:</span> <span class="mf">123.0</span><span class="p">,</span>
+                <span class="s1">'estimatedPercentMonthlySavings'</span><span class="p">:</span> <span class="mf">123.0</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s1">'flaggedResources'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'region'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'resourceId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'isSuppressed'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'metadata'</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">'string'</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The result of the Trusted Advisor check returned by the  DescribeTrustedAdvisorCheckResult operation.</p>
+<ul>
+<li><p><strong>result</strong> <em>(dict) –</em></p>
+<p>The detailed results of the Trusted Advisor check.</p>
+<ul>
+<li><p><strong>checkId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the Trusted Advisor check.</p>
+</li>
+<li><p><strong>timestamp</strong> <em>(string) –</em></p>
+<p>The time of the last refresh of the check.</p>
+</li>
+<li><p><strong>status</strong> <em>(string) –</em></p>
+<p>The alert status of the check: “ok” (green), “warning” (yellow), “error” (red), or “not_available”.</p>
+</li>
+<li><p><strong>resourcesSummary</strong> <em>(dict) –</em></p>
+<p>Details about AWS resources that were analyzed in a call to Trusted Advisor  DescribeTrustedAdvisorCheckSummaries .</p>
+<ul>
+<li><p><strong>resourcesProcessed</strong> <em>(integer) –</em></p>
+<p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>
+</li>
+<li><p><strong>resourcesFlagged</strong> <em>(integer) –</em></p>
+<p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>
+</li>
+<li><p><strong>resourcesIgnored</strong> <em>(integer) –</em></p>
+<p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>
+</li>
+<li><p><strong>resourcesSuppressed</strong> <em>(integer) –</em></p>
+<p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>categorySpecificSummary</strong> <em>(dict) –</em></p>
+<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
+<ul>
+<li><p><strong>costOptimizing</strong> <em>(dict) –</em></p>
+<p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
+<ul>
+<li><p><strong>estimatedMonthlySavings</strong> <em>(float) –</em></p>
+<p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
+</li>
+<li><p><strong>estimatedPercentMonthlySavings</strong> <em>(float) –</em></p>
+<p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>flaggedResources</strong> <em>(list) –</em></p>
+<p>The details about each resource listed in the check result.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Contains information about a resource identified by a Trusted Advisor check.</p>
+<ul>
+<li><p><strong>status</strong> <em>(string) –</em></p>
+<p>The status code for the resource identified in the Trusted Advisor check.</p>
+</li>
+<li><p><strong>region</strong> <em>(string) –</em></p>
+<p>The AWS region in which the identified resource is located.</p>
+</li>
+<li><p><strong>resourceId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the identified resource.</p>
+</li>
+<li><p><strong>isSuppressed</strong> <em>(boolean) –</em></p>
+<p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
+</li>
+<li><p><strong>metadata</strong> <em>(list) –</em></p>
+<p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the  TrustedAdvisorCheckDescription object returned by the call to  DescribeTrustedAdvisorChecks . <strong>Metadata</strong> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_trusted_advisor_check_summaries"><a name="//apple_ref/cpp/Method/Support.Client.describe_trusted_advisor_check_summaries"></a>
+<code class="sig-name descname"><span class="pre">describe_trusted_advisor_check_summaries</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_trusted_advisor_check_summaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the results for the AWS Trusted Advisor check summaries for the check IDs that you specified. You can get the check IDs by calling the  DescribeTrustedAdvisorChecks operation.</p>
+<p>The response contains an array of  TrustedAdvisorCheckSummary objects.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_trusted_advisor_check_summaries</span><span class="p">(</span>
+    <span class="n">checkIds</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>checkIds</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The IDs of the Trusted Advisor checks.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'summaries'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'checkId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timestamp'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'hasFlaggedResources'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'resourcesSummary'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'resourcesProcessed'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'resourcesFlagged'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'resourcesIgnored'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+                <span class="s1">'resourcesSuppressed'</span><span class="p">:</span> <span class="mi">123</span>
+            <span class="p">},</span>
+            <span class="s1">'categorySpecificSummary'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'costOptimizing'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">'estimatedMonthlySavings'</span><span class="p">:</span> <span class="mf">123.0</span><span class="p">,</span>
+                    <span class="s1">'estimatedPercentMonthlySavings'</span><span class="p">:</span> <span class="mf">123.0</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The summaries of the Trusted Advisor checks returned by the  DescribeTrustedAdvisorCheckSummaries operation.</p>
+<ul>
+<li><p><strong>summaries</strong> <em>(list) –</em></p>
+<p>The summary information for the requested Trusted Advisor checks.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.</p>
+<ul>
+<li><p><strong>checkId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the Trusted Advisor check.</p>
+</li>
+<li><p><strong>timestamp</strong> <em>(string) –</em></p>
+<p>The time of the last refresh of the check.</p>
+</li>
+<li><p><strong>status</strong> <em>(string) –</em></p>
+<p>The alert status of the check: “ok” (green), “warning” (yellow), “error” (red), or “not_available”.</p>
+</li>
+<li><p><strong>hasFlaggedResources</strong> <em>(boolean) –</em></p>
+<p>Specifies whether the Trusted Advisor check has flagged resources.</p>
+</li>
+<li><p><strong>resourcesSummary</strong> <em>(dict) –</em></p>
+<p>Details about AWS resources that were analyzed in a call to Trusted Advisor  DescribeTrustedAdvisorCheckSummaries .</p>
+<ul>
+<li><p><strong>resourcesProcessed</strong> <em>(integer) –</em></p>
+<p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>
+</li>
+<li><p><strong>resourcesFlagged</strong> <em>(integer) –</em></p>
+<p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>
+</li>
+<li><p><strong>resourcesIgnored</strong> <em>(integer) –</em></p>
+<p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>
+</li>
+<li><p><strong>resourcesSuppressed</strong> <em>(integer) –</em></p>
+<p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>categorySpecificSummary</strong> <em>(dict) –</em></p>
+<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
+<ul>
+<li><p><strong>costOptimizing</strong> <em>(dict) –</em></p>
+<p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
+<ul>
+<li><p><strong>estimatedMonthlySavings</strong> <em>(float) –</em></p>
+<p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
+</li>
+<li><p><strong>estimatedPercentMonthlySavings</strong> <em>(float) –</em></p>
+<p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.describe_trusted_advisor_checks"><a name="//apple_ref/cpp/Method/Support.Client.describe_trusted_advisor_checks"></a>
+<code class="sig-name descname"><span class="pre">describe_trusted_advisor_checks</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.describe_trusted_advisor_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns information about all available AWS Trusted Advisor checks, including the name, ID, category, description, and metadata. You must specify a language code. The AWS Support API currently supports English (“en”) and Japanese (“ja”). The response contains a  TrustedAdvisorCheckDescription object for each check. You must set the AWS Region to us-east-1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_trusted_advisor_checks</span><span class="p">(</span>
+    <span class="n">language</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>language</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'checks'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'category'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'metadata'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Information about the Trusted Advisor checks returned by the  DescribeTrustedAdvisorChecks operation.</p>
+<ul>
+<li><p><strong>checks</strong> <em>(list) –</em></p>
+<p>Information about all available Trusted Advisor checks.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The description and metadata for a Trusted Advisor check.</p>
+<ul>
+<li><p><strong>id</strong> <em>(string) –</em></p>
+<p>The unique identifier for the Trusted Advisor check.</p>
+</li>
+<li><p><strong>name</strong> <em>(string) –</em></p>
+<p>The display name for the Trusted Advisor check.</p>
+</li>
+<li><p><strong>description</strong> <em>(string) –</em></p>
+<p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
+</li>
+<li><p><strong>category</strong> <em>(string) –</em></p>
+<p>The category of the Trusted Advisor check.</p>
+</li>
+<li><p><strong>metadata</strong> <em>(list) –</em></p>
+<p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <strong>Metadata</strong> element of the  TrustedAdvisorResourceDetail for the check. <strong>Metadata</strong> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.generate_presigned_url"><a name="//apple_ref/cpp/Method/Support.Client.generate_presigned_url"></a>
+<code class="sig-name descname"><span class="pre">generate_presigned_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExpiresIn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HttpMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.generate_presigned_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a presigned url given a client, its method, and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ClientMethod</strong> (<em>string</em>) – The client method to presign for</p></li>
+<li><p><strong>Params</strong> (<em>dict</em>) – The parameters normally passed to
+<code class="docutils literal notranslate"><span class="pre">ClientMethod</span></code>.</p></li>
+<li><p><strong>ExpiresIn</strong> (<em>int</em>) – The number of seconds the presigned url is valid
+for. By default it expires in an hour (3600 seconds)</p></li>
+<li><p><strong>HttpMethod</strong> (<em>string</em>) – The http method to use on the generated url. By
+default, the http method is whatever is used in the method’s model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The presigned url</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.get_paginator"><a name="//apple_ref/cpp/Method/Support.Client.get_paginator"></a>
+<code class="sig-name descname"><span class="pre">get_paginator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.get_paginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a paginator for an operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>OperationNotPageableError</strong> – Raised if the operation is not
+pageable.  You can use the <code class="docutils literal notranslate"><span class="pre">client.can_paginate</span></code> method to
+check if an operation is pageable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>L{botocore.paginate.Paginator}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A paginator object.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.get_waiter"><a name="//apple_ref/cpp/Method/Support.Client.get_waiter"></a>
+<code class="sig-name descname"><span class="pre">get_waiter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waiter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.get_waiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object that can wait for some condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waiter_name</strong> (<em>str</em>) – The name of the waiter to get. See the waiters
+section of the service docs for a list of available waiters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified waiter object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>botocore.waiter.Waiter</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.refresh_trusted_advisor_check"><a name="//apple_ref/cpp/Method/Support.Client.refresh_trusted_advisor_check"></a>
+<code class="sig-name descname"><span class="pre">refresh_trusted_advisor_check</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.refresh_trusted_advisor_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refreshes the AWS Trusted Advisor check that you specify using the check ID. You can get the check IDs by calling the  DescribeTrustedAdvisorChecks operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some checks are refreshed automatically. If you call the <code class="docutils literal notranslate"><span class="pre">RefreshTrustedAdvisorCheck</span></code> operation to refresh them, you might see the <code class="docutils literal notranslate"><span class="pre">InvalidParameterValue</span></code> error.</p>
+</div>
+<p>The response contains a  TrustedAdvisorCheckRefreshStatus object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">refresh_trusted_advisor_check</span><span class="p">(</span>
+    <span class="n">checkId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>checkId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The unique identifier for the Trusted Advisor check to refresh. <strong>Note:</strong> Specifying the check ID of a check that is automatically refreshed causes an <code class="docutils literal notranslate"><span class="pre">InvalidParameterValue</span></code> error.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'status'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'checkId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'millisUntilNextRefreshable'</span><span class="p">:</span> <span class="mi">123</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The current refresh status of a Trusted Advisor check.</p>
+<ul>
+<li><p><strong>status</strong> <em>(dict) –</em></p>
+<p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
+<ul>
+<li><p><strong>checkId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the Trusted Advisor check.</p>
+</li>
+<li><p><strong>status</strong> <em>(string) –</em></p>
+<p>The status of the Trusted Advisor check for which a refresh has been requested:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">none:</span></code> The check is not refreshed or the non-success status exceeds the timeout</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enqueued:</span></code> The check refresh requests has entered the refresh queue</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processing:</span></code> The check refresh request is picked up by the rule processing engine</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">success:</span></code> The check is successfully refreshed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abandoned:</span></code> The check refresh has failed</p></li>
+</ul>
+</li>
+<li><p><strong>millisUntilNextRefreshable</strong> <em>(integer) –</em></p>
+<p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="Support.Client.resolve_case"><a name="//apple_ref/cpp/Method/Support.Client.resolve_case"></a>
+<code class="sig-name descname"><span class="pre">resolve_case</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Client.resolve_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolves a support case. This operation takes a <code class="docutils literal notranslate"><span class="pre">caseId</span></code> and returns the initial and final state of the case.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You must have a Business or Enterprise support plan to use the AWS Support API.</p></li>
+<li><p>If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the <code class="docutils literal notranslate"><span class="pre">SubscriptionRequiredException</span></code> error message appears. For information about changing your support plan, see <a class="reference external" href="http://aws.amazon.com/premiumsupport/">AWS Support</a> .</p></li>
+</ul>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">resolve_case</span><span class="p">(</span>
+    <span class="n">caseId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>caseId</strong> (<em>string</em>) – The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'initialCaseStatus'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'finalCaseStatus'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The status of the case returned by the  ResolveCase operation.</p>
+<ul>
+<li><p><strong>initialCaseStatus</strong> <em>(string) –</em></p>
+<p>The status of the case when the  ResolveCase request was sent.</p>
+</li>
+<li><p><strong>finalCaseStatus</strong> <em>(string) –</em></p>
+<p>The status of the case after the  ResolveCase request was processed.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.InternalServerError</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Client.exceptions.CaseIdNotFound</span></code></p></li>
+</ul>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="paginators">
+<h2><a class="toc-backref" href="#id18">Paginators</a><a class="headerlink" href="#paginators" title="Permalink to this headline">¶</a></h2>
+<p>The available paginators are:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#Support.Paginator.DescribeCases" title="Support.Paginator.DescribeCases"><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Paginator.DescribeCases</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Support.Paginator.DescribeCommunications" title="Support.Paginator.DescribeCommunications"><code class="xref py py-class docutils literal notranslate"><span class="pre">Support.Paginator.DescribeCommunications</span></code></a></p></li>
+</ul>
+<dl class="py class">
+<dt id="Support.Paginator.DescribeCases"><a name="//apple_ref/cpp/Class/Support.Paginator.DescribeCases"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Support.Paginator.</span></code><code class="sig-name descname"><span class="pre">DescribeCases</span></code><a class="headerlink" href="#Support.Paginator.DescribeCases" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'describe_cases'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="Support.Paginator.DescribeCases.paginate"><a name="//apple_ref/cpp/Method/Support.Paginator.DescribeCases.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Paginator.DescribeCases.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#Support.Client.describe_cases" title="Support.Client.describe_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Support.Client.describe_cases()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">caseIdList</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">displayId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">afterTime</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">beforeTime</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">includeResolvedCases</span><span class="o">=</span><span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">language</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">includeCommunications</span><span class="o">=</span><span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caseIdList</strong> (<em>list</em>) – <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>displayId</strong> (<em>string</em>) – The ID displayed for a case in the AWS Support Center user interface.</p></li>
+<li><p><strong>afterTime</strong> (<em>string</em>) – The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p></li>
+<li><p><strong>beforeTime</strong> (<em>string</em>) – The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p></li>
+<li><p><strong>includeResolvedCases</strong> (<em>boolean</em>) – Specifies whether to include resolved support cases in the <code class="docutils literal notranslate"><span class="pre">DescribeCases</span></code> response. By default, resolved cases aren’t included.</p></li>
+<li><p><strong>language</strong> (<em>string</em>) – The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p></li>
+<li><p><strong>includeCommunications</strong> (<em>boolean</em>) – Specifies whether to include communications in the <code class="docutils literal notranslate"><span class="pre">DescribeCases</span></code> response. By default, communications are incuded.</p></li>
+<li><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'cases'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'caseId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'displayId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'subject'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'serviceCode'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'categoryCode'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'severityCode'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'submittedBy'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timeCreated'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'recentCommunications'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'communications'</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s1">'caseId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'body'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'submittedBy'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'timeCreated'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                        <span class="s1">'attachmentSet'</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span>
+                                <span class="s1">'attachmentId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                                <span class="s1">'fileName'</span><span class="p">:</span> <span class="s1">'string'</span>
+                            <span class="p">},</span>
+                        <span class="p">]</span>
+                    <span class="p">},</span>
+                <span class="p">],</span>
+                <span class="s1">'nextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">},</span>
+            <span class="s1">'ccEmailAddresses'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="s1">'language'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Returns an array of <a class="reference external" href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> objects and a <code class="docutils literal notranslate"><span class="pre">nextToken</span></code> that defines a point for pagination in the result set.</p>
+<ul>
+<li><p><strong>cases</strong> <em>(list) –</em></p>
+<p>The details for the cases that match the request.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a  DescribeCases request. <strong>CaseDetails</strong> contains the following fields:</p>
+<ul class="simple">
+<li><p><strong>caseId.</strong> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em> .</p></li>
+<li><p><strong>categoryCode.</strong> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to  DescribeServices .</p></li>
+<li><p><strong>displayId.</strong> The identifier for the case on pages in the AWS Support Center.</p></li>
+<li><p><strong>language.</strong> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p></li>
+<li><p><strong>nextToken.</strong> A resumption point for pagination.</p></li>
+<li><p><strong>recentCommunications.</strong> One or more  Communication objects. Fields of these objects are <code class="docutils literal notranslate"><span class="pre">attachments</span></code> , <code class="docutils literal notranslate"><span class="pre">body</span></code> , <code class="docutils literal notranslate"><span class="pre">caseId</span></code> , <code class="docutils literal notranslate"><span class="pre">submittedBy</span></code> , and <code class="docutils literal notranslate"><span class="pre">timeCreated</span></code> .</p></li>
+<li><p><strong>serviceCode.</strong> The identifier for the AWS service that corresponds to the service code defined in the call to  DescribeServices .</p></li>
+<li><p><strong>severityCode.</strong> The severity code assigned to the case. Contains one of the values returned by the call to  DescribeSeverityLevels . The possible values are: <code class="docutils literal notranslate"><span class="pre">low</span></code> , <code class="docutils literal notranslate"><span class="pre">normal</span></code> , <code class="docutils literal notranslate"><span class="pre">high</span></code> , <code class="docutils literal notranslate"><span class="pre">urgent</span></code> , and <code class="docutils literal notranslate"><span class="pre">critical</span></code> .</p></li>
+<li><p><strong>status.</strong> The status of the case in the AWS Support Center. Valid values:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">opened</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pending-customer-action</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reopened</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">resolved</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unassigned</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work-in-progress</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>subject.</strong> The subject line of the case.</p></li>
+<li><p><strong>submittedBy.</strong> The email address of the account that submitted the case.</p></li>
+<li><p><strong>timeCreated.</strong> The time the case was created, in ISO-8601 format.</p></li>
+</ul>
+<ul>
+<li><p><strong>caseId</strong> <em>(string) –</em></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</li>
+<li><p><strong>displayId</strong> <em>(string) –</em></p>
+<p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>
+</li>
+<li><p><strong>subject</strong> <em>(string) –</em></p>
+<p>The subject line for the case in the AWS Support Center.</p>
+</li>
+<li><p><strong>status</strong> <em>(string) –</em></p>
+<p>The status of the case.</p>
+<p>Valid values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">opened</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pending-customer-action</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reopened</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">resolved</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unassigned</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work-in-progress</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>serviceCode</strong> <em>(string) –</em></p>
+<p>The code for the AWS service. You can get a list of codes and the corresponding service names by calling  DescribeServices .</p>
+</li>
+<li><p><strong>categoryCode</strong> <em>(string) –</em></p>
+<p>The category of problem for the AWS Support case.</p>
+</li>
+<li><p><strong>severityCode</strong> <em>(string) –</em></p>
+<p>The code for the severity level returned by the call to  DescribeSeverityLevels .</p>
+</li>
+<li><p><strong>submittedBy</strong> <em>(string) –</em></p>
+<p>The email address of the account that submitted the case.</p>
+</li>
+<li><p><strong>timeCreated</strong> <em>(string) –</em></p>
+<p>The time that the case was created in the AWS Support Center.</p>
+</li>
+<li><p><strong>recentCommunications</strong> <em>(dict) –</em></p>
+<p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code class="docutils literal notranslate"><span class="pre">nextToken</span></code> that you can use to retrieve earlier communications.</p>
+<ul>
+<li><p><strong>communications</strong> <em>(list) –</em></p>
+<p>The five most recent communications associated with the case.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.</p>
+<ul>
+<li><p><strong>caseId</strong> <em>(string) –</em></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</li>
+<li><p><strong>body</strong> <em>(string) –</em></p>
+<p>The text of the communication between the customer and AWS Support.</p>
+</li>
+<li><p><strong>submittedBy</strong> <em>(string) –</em></p>
+<p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, “AdminRole (Role) &lt;<a class="reference external" href="mailto:someone%40example.com">someone<span>@</span>example<span>.</span>com</a>&gt;. Entries from the AWS Support team display “Amazon Web Services,” and do not show an email address.</p>
+</li>
+<li><p><strong>timeCreated</strong> <em>(string) –</em></p>
+<p>The time the communication was created.</p>
+</li>
+<li><p><strong>attachmentSet</strong> <em>(list) –</em></p>
+<p>Information about the attachments to the case communication.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the  DescribeAttachment operation.</p>
+<ul>
+<li><p><strong>attachmentId</strong> <em>(string) –</em></p>
+<p>The ID of the attachment.</p>
+</li>
+<li><p><strong>fileName</strong> <em>(string) –</em></p>
+<p>The file name of the attachment.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>nextToken</strong> <em>(string) –</em></p>
+<p>A resumption point for pagination.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>ccEmailAddresses</strong> <em>(list) –</em></p>
+<p>The email addresses that receive copies of communication about the case.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>language</strong> <em>(string) –</em></p>
+<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (“en”) and Japanese (“ja”). Language parameters must be passed explicitly for operations that take them.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="Support.Paginator.DescribeCommunications"><a name="//apple_ref/cpp/Class/Support.Paginator.DescribeCommunications"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Support.Paginator.</span></code><code class="sig-name descname"><span class="pre">DescribeCommunications</span></code><a class="headerlink" href="#Support.Paginator.DescribeCommunications" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'describe_communications'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="Support.Paginator.DescribeCommunications.paginate"><a name="//apple_ref/cpp/Method/Support.Paginator.DescribeCommunications.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Support.Paginator.DescribeCommunications.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#Support.Client.describe_communications" title="Support.Client.describe_communications"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Support.Client.describe_communications()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">caseId</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">beforeTime</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">afterTime</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caseId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</p></li>
+<li><p><strong>beforeTime</strong> (<em>string</em>) – The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p></li>
+<li><p><strong>afterTime</strong> (<em>string</em>) – The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p></li>
+<li><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'communications'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'caseId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'body'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'submittedBy'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'timeCreated'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'attachmentSet'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">'attachmentId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                    <span class="s1">'fileName'</span><span class="p">:</span> <span class="s1">'string'</span>
+                <span class="p">},</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The communications returned by the  DescribeCommunications operation.</p>
+<ul>
+<li><p><strong>communications</strong> <em>(list) –</em></p>
+<p>The communications for the case.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.</p>
+<ul>
+<li><p><strong>caseId</strong> <em>(string) –</em></p>
+<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></p>
+</li>
+<li><p><strong>body</strong> <em>(string) –</em></p>
+<p>The text of the communication between the customer and AWS Support.</p>
+</li>
+<li><p><strong>submittedBy</strong> <em>(string) –</em></p>
+<p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, “AdminRole (Role) &lt;<a class="reference external" href="mailto:someone%40example.com">someone<span>@</span>example<span>.</span>com</a>&gt;. Entries from the AWS Support team display “Amazon Web Services,” and do not show an email address.</p>
+</li>
+<li><p><strong>timeCreated</strong> <em>(string) –</em></p>
+<p>The time the communication was created.</p>
+</li>
+<li><p><strong>attachmentSet</strong> <em>(list) –</em></p>
+<p>Information about the attachments to the case communication.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the  DescribeAttachment operation.</p>
+<ul>
+<li><p><strong>attachmentId</strong> <em>(string) –</em></p>
+<p>The ID of the attachment.</p>
+</li>
+<li><p><strong>fileName</strong> <em>(string) –</em></p>
+<p>The file name of the attachment.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="sts.html" title="previous chapter (use the left arrow)">STS</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="swf.html" title="next chapter (use the right arrow)">SWF</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="swf.html" title="SWF">next</a> |</li>
+<li class="right">
+<a href="sts.html" title="STS">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Support</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

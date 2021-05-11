@@ -1,0 +1,1235 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MarketplaceCatalog — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="marketplace-entitlement.html" rel="next" title="MarketplaceEntitlementService"/>
+<link href="managedblockchain.html" rel="prev" title="ManagedBlockchain"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="marketplace-entitlement.html" title="MarketplaceEntitlementService">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="managedblockchain.html" title="ManagedBlockchain">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">MarketplaceCatalog</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessanalyzer.html">AccessAnalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm.html">ACM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm-pca.html">ACMPCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alexaforbusiness.html">AlexaForBusiness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amp.html">PrometheusService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplify.html">Amplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplifybackend.html">AmplifyBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigateway.html">APIGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewaymanagementapi.html">ApiGatewayManagementApi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewayv2.html">ApiGatewayV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appconfig.html">AppConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appflow.html">Appflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appintegrations.html">AppIntegrationsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-autoscaling.html">ApplicationAutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">ApplicationInsights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appmesh.html">AppMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appstream.html">AppStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appsync.html">AppSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="athena.html">Athena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auditmanager.html">AuditManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling.html">AutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling-plans.html">AutoScalingPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch.html">Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="braket.html">Braket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ce.html">CostExplorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chime.html">Chime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud9.html">Cloud9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clouddirectory.html">CloudDirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudformation.html">CloudFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudfront.html">CloudFront</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsm.html">CloudHSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsmv2.html">CloudHSMV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearch.html">CloudSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearchdomain.html">CloudSearchDomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudtrail.html">CloudTrail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudwatch.html">CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeartifact.html">CodeArtifact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codebuild.html">CodeBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codecommit.html">CodeCommit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codedeploy.html">CodeDeploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguru-reviewer.html">CodeGuruReviewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguruprofiler.html">CodeGuruProfiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codepipeline.html">CodePipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar.html">CodeStar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-connections.html">CodeStarconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-notifications.html">CodeStarNotifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-identity.html">CognitoIdentity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-idp.html">CognitoIdentityProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-sync.html">CognitoSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehend.html">Comprehend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehendmedical.html">ComprehendMedical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute-optimizer.html">ComputeOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect-contact-lens.html">ConnectContactLens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectparticipant.html">ConnectParticipant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cur.html">CostandUsageReportService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customer-profiles.html">CustomerProfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databrew.html">GlueDataBrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataexchange.html">DataExchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datapipeline.html">DataPipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasync.html">DataSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dax.html">DAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detective.html">Detective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devicefarm.html">DeviceFarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devops-guru.html">DevOpsGuru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directconnect.html">DirectConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html">ApplicationDiscoveryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dlm.html">DLM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dms.html">DatabaseMigrationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docdb.html">DocDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ds.html">DirectoryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodb.html">DynamoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodbstreams.html">DynamoDBStreams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ebs.html">EBS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2.html">EC2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2-instance-connect.html">EC2InstanceConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr.html">ECR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr-public.html">ECRPublic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecs.html">ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efs.html">EFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eks.html">EKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-inference.html">ElasticInference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticache.html">ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticbeanstalk.html">ElasticBeanstalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastictranscoder.html">ElasticTranscoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elb.html">ElasticLoadBalancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elbv2.html">ElasticLoadBalancingv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr.html">EMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr-containers.html">EMRContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html">ElasticsearchService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">EventBridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace.html">finspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace-data.html">FinSpaceData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firehose.html">Firehose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fis.html">FIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fms.html">FMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecast.html">ForecastService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecastquery.html">ForecastQueryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frauddetector.html">FraudDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fsx.html">FSx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamelift.html">GameLift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glacier.html">Glacier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globalaccelerator.html">GlobalAccelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glue.html">Glue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrass.html">Greengrass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrassv2.html">GreengrassV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundstation.html">GroundStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guardduty.html">GuardDuty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="healthlake.html">HealthLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="honeycode.html">Honeycode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iam.html">IAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identitystore.html">IdentityStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagebuilder.html">imagebuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexport.html">ImportExport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot.html">IoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-data.html">IoTDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-jobs-data.html">IoTJobsDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-devices.html">IoT1ClickDevicesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-projects.html">IoT1ClickProjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotanalytics.html">IoTAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotdeviceadvisor.html">IoTDeviceAdvisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents.html">IoTEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents-data.html">IoTEventsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotfleethub.html">IoTFleetHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsecuretunneling.html">IoTSecureTunneling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsitewise.html">IoTSiteWise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotthingsgraph.html">IoTThingsGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotwireless.html">IoTWireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivs.html">IVS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kafka.html">Kafka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendra.html">kendra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis.html">Kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-archived-media.html">KinesisVideoArchivedMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-media.html">KinesisVideoMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-signaling.html">KinesisVideoSignalingChannels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalytics.html">KinesisAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalyticsv2.html">KinesisAnalyticsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisvideo.html">KinesisVideo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kms.html">KMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lakeformation.html">LakeFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda.html">Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-models.html">LexModelBuildingService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-runtime.html">LexRuntimeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-models.html">LexModelsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-runtime.html">LexRuntimeV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license-manager.html">LicenseManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lightsail.html">Lightsail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location.html">LocationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">CloudWatchLogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutequipment.html">LookoutEquipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutmetrics.html">LookoutMetrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutvision.html">LookoutforVision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html">MachineLearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie.html">Macie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie2.html">Macie2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managedblockchain.html">ManagedBlockchain</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MarketplaceCatalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paginators">Paginators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-entitlement.html">MarketplaceEntitlementService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplacecommerceanalytics.html">MarketplaceCommerceAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconnect.html">MediaConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconvert.html">MediaConvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medialive.html">MediaLive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage.html">MediaPackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage-vod.html">MediaPackageVod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore.html">MediaStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore-data.html">MediaStoreData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatailor.html">MediaTailor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteringmarketplace.html">MarketplaceMetering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgh.html">MigrationHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgn.html">mgn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrationhub-config.html">MigrationHubConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mq.html">MQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mturk.html">MTurk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mwaa.html">MWAA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neptune.html">Neptune</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network-firewall.html">NetworkFirewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkmanager.html">NetworkManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html">NimbleStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworks.html">OpsWorks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworkscm.html">OpsWorksCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizations.html">Organizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outposts.html">Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">Personalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-events.html">PersonalizeEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-runtime.html">PersonalizeRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pi.html">PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint.html">Pinpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-email.html">PinpointEmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polly.html">Polly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing.html">Pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb.html">QLDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb-session.html">QLDBSession</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quicksight.html">QuickSight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ram.html">RAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds.html">RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds-data.html">RDSDataService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift.html">Redshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift-data.html">RedshiftDataAPIService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rekognition.html">Rekognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resource-groups.html">ResourceGroups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resourcegroupstaggingapi.html">ResourceGroupsTaggingAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomaker.html">RoboMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53.html">Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53domains.html">Route53Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53resolver.html">Route53Resolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3.html">S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3control.html">S3Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3outposts.html">S3Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker.html">SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-a2i-runtime.html">AugmentedAIRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-edge.html">SagemakerEdgeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-featurestore-runtime.html">SageMakerFeatureStoreRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-runtime.html">SageMakerRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savingsplans.html">SavingsPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html">Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdb.html">SimpleDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secretsmanager.html">SecretsManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityhub.html">SecurityHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverlessrepo.html">ServerlessApplicationRepository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-quotas.html">ServiceQuotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog.html">ServiceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog-appregistry.html">AppRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicediscovery.html">ServiceDiscovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ses.html">SES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sesv2.html">SESV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signer.html">signer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html">SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snowball.html">Snowball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sns.html">SNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqs.html">SQS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssm.html">SSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso.html">SSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-admin.html">SSOAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-oidc.html">SSOOIDC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepfunctions.html">SFN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storagegateway.html">StorageGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sts.html">STS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swf.html">SWF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetics.html">Synthetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textract.html">Textract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-query.html">TimestreamQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-write.html">TimestreamWrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transcribe.html">TranscribeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer.html">Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">Translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf.html">WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf-regional.html">WAFRegional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wafv2.html">WAFV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wellarchitected.html">WellArchitected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workdocs.html">WorkDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worklink.html">WorkLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmail.html">WorkMail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmailmessageflow.html">WorkMailMessageFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workspaces.html">WorkSpaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xray.html">XRay</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Available services</a></li>
+<li>MarketplaceCatalog</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="marketplacecatalog">
+<h1><a class="toc-backref" href="#id6">MarketplaceCatalog</a><a class="headerlink" href="#marketplacecatalog" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#marketplacecatalog" id="id6">MarketplaceCatalog</a></p>
+<ul>
+<li><p><a class="reference internal" href="#client" id="id7">Client</a></p></li>
+<li><p><a class="reference internal" href="#paginators" id="id8">Paginators</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="client">
+<h2><a class="toc-backref" href="#id7">Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="MarketplaceCatalog.Client"><a name="//apple_ref/cpp/Class/MarketplaceCatalog.Client"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">MarketplaceCatalog.</span></code><code class="sig-name descname"><span class="pre">Client</span></code><a class="headerlink" href="#MarketplaceCatalog.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>A low-level client representing AWS Marketplace Catalog Service</p>
+<p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace.</p>
+<p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">'marketplace-catalog'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These are the available methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.can_paginate" title="MarketplaceCatalog.Client.can_paginate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">can_paginate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.cancel_change_set" title="MarketplaceCatalog.Client.cancel_change_set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cancel_change_set()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.describe_change_set" title="MarketplaceCatalog.Client.describe_change_set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_change_set()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.describe_entity" title="MarketplaceCatalog.Client.describe_entity"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_entity()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.generate_presigned_url" title="MarketplaceCatalog.Client.generate_presigned_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate_presigned_url()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.get_paginator" title="MarketplaceCatalog.Client.get_paginator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_paginator()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.get_waiter" title="MarketplaceCatalog.Client.get_waiter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_waiter()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.list_change_sets" title="MarketplaceCatalog.Client.list_change_sets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_change_sets()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.list_entities" title="MarketplaceCatalog.Client.list_entities"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_entities()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#MarketplaceCatalog.Client.start_change_set" title="MarketplaceCatalog.Client.start_change_set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start_change_set()</span></code></a></p></li>
+</ul>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.can_paginate"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.can_paginate"></a>
+<code class="sig-name descname"><span class="pre">can_paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.can_paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an operation can be paginated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the operation can be paginated,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.cancel_change_set"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.cancel_change_set"></a>
+<code class="sig-name descname"><span class="pre">cancel_change_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.cancel_change_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to cancel an open change request. Must be sent before the status of the request changes to <code class="docutils literal notranslate"><span class="pre">APPLYING</span></code> , the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/CancelChangeSet">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cancel_change_set</span><span class="p">(</span>
+    <span class="n">Catalog</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ChangeSetId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Catalog</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Required. The catalog related to the request. Fixed value: <code class="docutils literal notranslate"><span class="pre">AWSMarketplace</span></code> .</p>
+</p></li>
+<li><p><strong>ChangeSetId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Required. The unique identifier of the <code class="docutils literal notranslate"><span class="pre">StartChangeSet</span></code> request that you want to cancel.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'ChangeSetId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'ChangeSetArn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>ChangeSetId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the change set referenced in this request.</p>
+</li>
+<li><p><strong>ChangeSetArn</strong> <em>(string) –</em></p>
+<p>The ARN associated with the change set referenced in this request.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.AccessDeniedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ResourceInUseException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ThrottlingException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.describe_change_set"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.describe_change_set"></a>
+<code class="sig-name descname"><span class="pre">describe_change_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.describe_change_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides information about a given change set.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeChangeSet">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_change_set</span><span class="p">(</span>
+    <span class="n">Catalog</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ChangeSetId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Catalog</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Required. The catalog related to the request. Fixed value: <code class="docutils literal notranslate"><span class="pre">AWSMarketplace</span></code></p>
+</p></li>
+<li><p><strong>ChangeSetId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Required. The unique identifier for the <code class="docutils literal notranslate"><span class="pre">StartChangeSet</span></code> request that you want to describe the details for.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'ChangeSetId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'ChangeSetArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'ChangeSetName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'StartTime'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'EndTime'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'Status'</span><span class="p">:</span> <span class="s1">'PREPARING'</span><span class="o">|</span><span class="s1">'APPLYING'</span><span class="o">|</span><span class="s1">'SUCCEEDED'</span><span class="o">|</span><span class="s1">'CANCELLED'</span><span class="o">|</span><span class="s1">'FAILED'</span><span class="p">,</span>
+    <span class="s1">'FailureCode'</span><span class="p">:</span> <span class="s1">'CLIENT_ERROR'</span><span class="o">|</span><span class="s1">'SERVER_FAULT'</span><span class="p">,</span>
+    <span class="s1">'FailureDescription'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'ChangeSet'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'ChangeType'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'Entity'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'Type'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'Identifier'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">},</span>
+            <span class="s1">'Details'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'ErrorDetailList'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">'ErrorCode'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                    <span class="s1">'ErrorMessage'</span><span class="p">:</span> <span class="s1">'string'</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s1">'ChangeName'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>ChangeSetId</strong> <em>(string) –</em></p>
+<p>Required. The unique identifier for the change set referenced in this request.</p>
+</li>
+<li><p><strong>ChangeSetArn</strong> <em>(string) –</em></p>
+<p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
+</li>
+<li><p><strong>ChangeSetName</strong> <em>(string) –</em></p>
+<p>The optional name provided in the <code class="docutils literal notranslate"><span class="pre">StartChangeSet</span></code> request. If you do not provide a name, one is set by default.</p>
+</li>
+<li><p><strong>StartTime</strong> <em>(string) –</em></p>
+<p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
+</li>
+<li><p><strong>EndTime</strong> <em>(string) –</em></p>
+<p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.</p>
+</li>
+<li><p><strong>Status</strong> <em>(string) –</em></p>
+<p>The status of the change request.</p>
+</li>
+<li><p><strong>FailureCode</strong> <em>(string) –</em></p>
+<p>Returned if the change set is in <code class="docutils literal notranslate"><span class="pre">FAILED</span></code> status. Can be either <code class="docutils literal notranslate"><span class="pre">CLIENT_ERROR</span></code> , which means that there are issues with the request (see the <code class="docutils literal notranslate"><span class="pre">ErrorDetailList</span></code> ), or <code class="docutils literal notranslate"><span class="pre">SERVER_FAULT</span></code> , which means that there is a problem in the system, and you should retry your request.</p>
+</li>
+<li><p><strong>FailureDescription</strong> <em>(string) –</em></p>
+<p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
+</li>
+<li><p><strong>ChangeSet</strong> <em>(list) –</em></p>
+<p>An array of <code class="docutils literal notranslate"><span class="pre">ChangeSummary</span></code> objects.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>This object is a container for common summary information about the change. The summary doesn’t contain the whole change structure.</p>
+<ul>
+<li><p><strong>ChangeType</strong> <em>(string) –</em></p>
+<p>The type of the change.</p>
+</li>
+<li><p><strong>Entity</strong> <em>(dict) –</em></p>
+<p>The entity to be changed.</p>
+<ul>
+<li><p><strong>Type</strong> <em>(string) –</em></p>
+<p>The type of entity.</p>
+</li>
+<li><p><strong>Identifier</strong> <em>(string) –</em></p>
+<p>The identifier for the entity.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Details</strong> <em>(string) –</em></p>
+<p>This object contains details specific to the change type of the requested change.</p>
+</li>
+<li><p><strong>ErrorDetailList</strong> <em>(list) –</em></p>
+<p>An array of <code class="docutils literal notranslate"><span class="pre">ErrorDetail</span></code> objects associated with the change.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Details about the error.</p>
+<ul>
+<li><p><strong>ErrorCode</strong> <em>(string) –</em></p>
+<p>The error code that identifies the type of error.</p>
+</li>
+<li><p><strong>ErrorMessage</strong> <em>(string) –</em></p>
+<p>The message for the error.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>ChangeName</strong> <em>(string) –</em></p>
+<p>Optional name for the change.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.AccessDeniedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ThrottlingException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.describe_entity"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.describe_entity"></a>
+<code class="sig-name descname"><span class="pre">describe_entity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.describe_entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the metadata and content of the entity.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeEntity">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_entity</span><span class="p">(</span>
+    <span class="n">Catalog</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">EntityId</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Catalog</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Required. The catalog related to the request. Fixed value: <code class="docutils literal notranslate"><span class="pre">AWSMarketplace</span></code></p>
+</p></li>
+<li><p><strong>EntityId</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Required. The unique ID of the entity to describe.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'EntityType'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'EntityIdentifier'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'EntityArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'LastModifiedDate'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'Details'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>EntityType</strong> <em>(string) –</em></p>
+<p>The named type of the entity, in the format of <code class="docutils literal notranslate"><span class="pre">EntityType@Version</span></code> .</p>
+</li>
+<li><p><strong>EntityIdentifier</strong> <em>(string) –</em></p>
+<p>The identifier of the entity, in the format of <code class="docutils literal notranslate"><span class="pre">EntityId@RevisionId</span></code> .</p>
+</li>
+<li><p><strong>EntityArn</strong> <em>(string) –</em></p>
+<p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
+</li>
+<li><p><strong>LastModifiedDate</strong> <em>(string) –</em></p>
+<p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
+</li>
+<li><p><strong>Details</strong> <em>(string) –</em></p>
+<p>This stringified JSON object includes the details of the entity.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.AccessDeniedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ResourceNotSupportedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ThrottlingException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.generate_presigned_url"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.generate_presigned_url"></a>
+<code class="sig-name descname"><span class="pre">generate_presigned_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExpiresIn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HttpMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.generate_presigned_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a presigned url given a client, its method, and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ClientMethod</strong> (<em>string</em>) – The client method to presign for</p></li>
+<li><p><strong>Params</strong> (<em>dict</em>) – The parameters normally passed to
+<code class="docutils literal notranslate"><span class="pre">ClientMethod</span></code>.</p></li>
+<li><p><strong>ExpiresIn</strong> (<em>int</em>) – The number of seconds the presigned url is valid
+for. By default it expires in an hour (3600 seconds)</p></li>
+<li><p><strong>HttpMethod</strong> (<em>string</em>) – The http method to use on the generated url. By
+default, the http method is whatever is used in the method’s model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The presigned url</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.get_paginator"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.get_paginator"></a>
+<code class="sig-name descname"><span class="pre">get_paginator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.get_paginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a paginator for an operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>OperationNotPageableError</strong> – Raised if the operation is not
+pageable.  You can use the <code class="docutils literal notranslate"><span class="pre">client.can_paginate</span></code> method to
+check if an operation is pageable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>L{botocore.paginate.Paginator}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A paginator object.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.get_waiter"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.get_waiter"></a>
+<code class="sig-name descname"><span class="pre">get_waiter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waiter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.get_waiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object that can wait for some condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waiter_name</strong> (<em>str</em>) – The name of the waiter to get. See the waiters
+section of the service docs for a list of available waiters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified waiter object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>botocore.waiter.Waiter</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.list_change_sets"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.list_change_sets"></a>
+<code class="sig-name descname"><span class="pre">list_change_sets</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.list_change_sets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of change sets owned by the account being used to make the call. You can filter this list by providing any combination of <code class="docutils literal notranslate"><span class="pre">entityId</span></code> , <code class="docutils literal notranslate"><span class="pre">ChangeSetName</span></code> , and status. If you provide more than one filter, the API operation applies a logical AND between the filters.</p>
+<p>You can describe a change during the 60-day request history retention period for API calls.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListChangeSets">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_change_sets</span><span class="p">(</span>
+    <span class="n">Catalog</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">FilterList</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'Name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'ValueList'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">Sort</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'SortBy'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'SortOrder'</span><span class="p">:</span> <span class="s1">'ASCENDING'</span><span class="o">|</span><span class="s1">'DESCENDING'</span>
+    <span class="p">},</span>
+    <span class="n">MaxResults</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">NextToken</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Catalog</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The catalog related to the request. Fixed value: <code class="docutils literal notranslate"><span class="pre">AWSMarketplace</span></code></p>
+</p></li>
+<li><p><strong>FilterList</strong> (<em>list</em>) – <p>An array of filter objects.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A filter object, used to optionally filter results from calls to the <code class="docutils literal notranslate"><span class="pre">ListEntities</span></code> and <code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> actions.</p>
+<ul>
+<li><p><strong>Name</strong> <em>(string) –</em></p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ListEntities</span></code> , the supported value for this is an <code class="docutils literal notranslate"><span class="pre">EntityId</span></code> .</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> , the supported values are as follows:</p>
+</li>
+<li><p><strong>ValueList</strong> <em>(list) –</em></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ListEntities</span></code> - This is a list of unique <code class="docutils literal notranslate"><span class="pre">EntityId</span></code> s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> - The supported filter names and associated <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> s is as follows:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ChangeSetName</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of non-unique <code class="docutils literal notranslate"><span class="pre">ChangeSetName</span></code> s. These are defined when you call the <code class="docutils literal notranslate"><span class="pre">StartChangeSet</span></code> action.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Status</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of statuses for all change set requests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EntityId</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of unique <code class="docutils literal notranslate"><span class="pre">EntityId</span></code> s.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BeforeStartTime</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of all change sets that started before the filter value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AfterStartTime</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of all change sets that started after the filter value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BeforeEndTime</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of all change sets that ended before the filter value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AfterEndTime</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of all change sets that ended after the filter value.</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>Sort</strong> (<em>dict</em>) – <p>An object that contains two attributes, <code class="docutils literal notranslate"><span class="pre">SortBy</span></code> and <code class="docutils literal notranslate"><span class="pre">SortOrder</span></code> .</p>
+<ul>
+<li><p><strong>SortBy</strong> <em>(string) –</em></p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ListEntities</span></code> , supported attributes include <code class="docutils literal notranslate"><span class="pre">LastModifiedDate</span></code> (default), <code class="docutils literal notranslate"><span class="pre">Visibility</span></code> , <code class="docutils literal notranslate"><span class="pre">EntityId</span></code> , and <code class="docutils literal notranslate"><span class="pre">Name</span></code> .</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> , supported attributes include <code class="docutils literal notranslate"><span class="pre">StartTime</span></code> and <code class="docutils literal notranslate"><span class="pre">EndTime</span></code> .</p>
+</li>
+<li><p><strong>SortOrder</strong> <em>(string) –</em></p>
+<p>The sorting order. Can be <code class="docutils literal notranslate"><span class="pre">ASCENDING</span></code> or <code class="docutils literal notranslate"><span class="pre">DESCENDING</span></code> . The default value is <code class="docutils literal notranslate"><span class="pre">DESCENDING</span></code> .</p>
+</li>
+</ul>
+</p></li>
+<li><p><strong>MaxResults</strong> (<em>integer</em>) – The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p></li>
+<li><p><strong>NextToken</strong> (<em>string</em>) – The token value retrieved from a previous call to access the next page of results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'ChangeSetSummaryList'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'ChangeSetId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'ChangeSetArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'ChangeSetName'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'StartTime'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'EndTime'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'Status'</span><span class="p">:</span> <span class="s1">'PREPARING'</span><span class="o">|</span><span class="s1">'APPLYING'</span><span class="o">|</span><span class="s1">'SUCCEEDED'</span><span class="o">|</span><span class="s1">'CANCELLED'</span><span class="o">|</span><span class="s1">'FAILED'</span><span class="p">,</span>
+            <span class="s1">'EntityIdList'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="s1">'FailureCode'</span><span class="p">:</span> <span class="s1">'CLIENT_ERROR'</span><span class="o">|</span><span class="s1">'SERVER_FAULT'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>ChangeSetSummaryList</strong> <em>(list) –</em></p>
+<p>Array of <code class="docutils literal notranslate"><span class="pre">ChangeSetSummaryListItem</span></code> objects.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A summary of a change set returned in a list of change sets when the <code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> action is called.</p>
+<ul>
+<li><p><strong>ChangeSetId</strong> <em>(string) –</em></p>
+<p>The unique identifier for a change set.</p>
+</li>
+<li><p><strong>ChangeSetArn</strong> <em>(string) –</em></p>
+<p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
+</li>
+<li><p><strong>ChangeSetName</strong> <em>(string) –</em></p>
+<p>The non-unique name for the change set.</p>
+</li>
+<li><p><strong>StartTime</strong> <em>(string) –</em></p>
+<p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
+</li>
+<li><p><strong>EndTime</strong> <em>(string) –</em></p>
+<p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
+</li>
+<li><p><strong>Status</strong> <em>(string) –</em></p>
+<p>The current status of the change set.</p>
+</li>
+<li><p><strong>EntityIdList</strong> <em>(list) –</em></p>
+<p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>FailureCode</strong> <em>(string) –</em></p>
+<p>Returned if the change set is in <code class="docutils literal notranslate"><span class="pre">FAILED</span></code> status. Can be either <code class="docutils literal notranslate"><span class="pre">CLIENT_ERROR</span></code> , which means that there are issues with the request (see the <code class="docutils literal notranslate"><span class="pre">ErrorDetailList</span></code> of <code class="docutils literal notranslate"><span class="pre">DescribeChangeSet</span></code> ), or <code class="docutils literal notranslate"><span class="pre">SERVER_FAULT</span></code> , which means that there is a problem in the system, and you should retry your request.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>The value of the next token, if it exists. Null if there are no more results.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.AccessDeniedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ThrottlingException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.list_entities"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.list_entities"></a>
+<code class="sig-name descname"><span class="pre">list_entities</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.list_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides the list of entities of a given type.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListEntities">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_entities</span><span class="p">(</span>
+    <span class="n">Catalog</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">EntityType</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">FilterList</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'Name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'ValueList'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">Sort</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'SortBy'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+        <span class="s1">'SortOrder'</span><span class="p">:</span> <span class="s1">'ASCENDING'</span><span class="o">|</span><span class="s1">'DESCENDING'</span>
+    <span class="p">},</span>
+    <span class="n">NextToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">MaxResults</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Catalog</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The catalog related to the request. Fixed value: <code class="docutils literal notranslate"><span class="pre">AWSMarketplace</span></code></p>
+</p></li>
+<li><p><strong>EntityType</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The type of entities to retrieve.</p>
+</p></li>
+<li><p><strong>FilterList</strong> (<em>list</em>) – <p>An array of filter objects. Each filter object contains two attributes, <code class="docutils literal notranslate"><span class="pre">filterName</span></code> and <code class="docutils literal notranslate"><span class="pre">filterValues</span></code> .</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A filter object, used to optionally filter results from calls to the <code class="docutils literal notranslate"><span class="pre">ListEntities</span></code> and <code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> actions.</p>
+<ul>
+<li><p><strong>Name</strong> <em>(string) –</em></p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ListEntities</span></code> , the supported value for this is an <code class="docutils literal notranslate"><span class="pre">EntityId</span></code> .</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> , the supported values are as follows:</p>
+</li>
+<li><p><strong>ValueList</strong> <em>(list) –</em></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ListEntities</span></code> - This is a list of unique <code class="docutils literal notranslate"><span class="pre">EntityId</span></code> s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> - The supported filter names and associated <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> s is as follows:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ChangeSetName</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of non-unique <code class="docutils literal notranslate"><span class="pre">ChangeSetName</span></code> s. These are defined when you call the <code class="docutils literal notranslate"><span class="pre">StartChangeSet</span></code> action.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Status</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of statuses for all change set requests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EntityId</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of unique <code class="docutils literal notranslate"><span class="pre">EntityId</span></code> s.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BeforeStartTime</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of all change sets that started before the filter value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AfterStartTime</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of all change sets that started after the filter value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BeforeEndTime</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of all change sets that ended before the filter value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AfterEndTime</span></code> - The supported <code class="docutils literal notranslate"><span class="pre">ValueList</span></code> is a list of all change sets that ended after the filter value.</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>Sort</strong> (<em>dict</em>) – <p>An object that contains two attributes, <code class="docutils literal notranslate"><span class="pre">SortBy</span></code> and <code class="docutils literal notranslate"><span class="pre">SortOrder</span></code> .</p>
+<ul>
+<li><p><strong>SortBy</strong> <em>(string) –</em></p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ListEntities</span></code> , supported attributes include <code class="docutils literal notranslate"><span class="pre">LastModifiedDate</span></code> (default), <code class="docutils literal notranslate"><span class="pre">Visibility</span></code> , <code class="docutils literal notranslate"><span class="pre">EntityId</span></code> , and <code class="docutils literal notranslate"><span class="pre">Name</span></code> .</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ListChangeSets</span></code> , supported attributes include <code class="docutils literal notranslate"><span class="pre">StartTime</span></code> and <code class="docutils literal notranslate"><span class="pre">EndTime</span></code> .</p>
+</li>
+<li><p><strong>SortOrder</strong> <em>(string) –</em></p>
+<p>The sorting order. Can be <code class="docutils literal notranslate"><span class="pre">ASCENDING</span></code> or <code class="docutils literal notranslate"><span class="pre">DESCENDING</span></code> . The default value is <code class="docutils literal notranslate"><span class="pre">DESCENDING</span></code> .</p>
+</li>
+</ul>
+</p></li>
+<li><p><strong>NextToken</strong> (<em>string</em>) – The value of the next token, if it exists. Null if there are no more results.</p></li>
+<li><p><strong>MaxResults</strong> (<em>integer</em>) – Specifies the upper limit of the elements on a single page. If a value isn’t provided, the default value is 20.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'EntitySummaryList'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'Name'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'EntityType'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'EntityId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'EntityArn'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'LastModifiedDate'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'Visibility'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>EntitySummaryList</strong> <em>(list) –</em></p>
+<p>Array of <code class="docutils literal notranslate"><span class="pre">EntitySummary</span></code> object.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>This object is a container for common summary information about the entity. The summary doesn’t contain the whole entity structure, but it does contain information common across all entities.</p>
+<ul>
+<li><p><strong>Name</strong> <em>(string) –</em></p>
+<p>The name for the entity. This value is not unique. It is defined by the seller.</p>
+</li>
+<li><p><strong>EntityType</strong> <em>(string) –</em></p>
+<p>The type of the entity.</p>
+</li>
+<li><p><strong>EntityId</strong> <em>(string) –</em></p>
+<p>The unique identifier for the entity.</p>
+</li>
+<li><p><strong>EntityArn</strong> <em>(string) –</em></p>
+<p>The ARN associated with the unique identifier for the entity.</p>
+</li>
+<li><p><strong>LastModifiedDate</strong> <em>(string) –</em></p>
+<p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
+</li>
+<li><p><strong>Visibility</strong> <em>(string) –</em></p>
+<p>The visibility status of the entity to buyers. This value can be <code class="docutils literal notranslate"><span class="pre">Public</span></code> (everyone can view the entity), <code class="docutils literal notranslate"><span class="pre">Limited</span></code> (the entity is visible to limited accounts only), or <code class="docutils literal notranslate"><span class="pre">Restricted</span></code> (the entity was published and then unpublished and only existing buyers can view it).</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>The value of the next token if it exists. Null if there is no more result.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.AccessDeniedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ThrottlingException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="MarketplaceCatalog.Client.start_change_set"><a name="//apple_ref/cpp/Method/MarketplaceCatalog.Client.start_change_set"></a>
+<code class="sig-name descname"><span class="pre">start_change_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MarketplaceCatalog.Client.start_change_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded, cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already locked, you will receive a <code class="docutils literal notranslate"><span class="pre">ResourceInUseException</span></code> .</p>
+<p>For example, you cannot start the ChangeSet described in the <a class="reference external" href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a> later in this topic, because it contains two changes to execute the same change type (<code class="docutils literal notranslate"><span class="pre">AddRevisions</span></code> ) against the same entity (<code class="docutils literal notranslate"><span class="pre">entity-id@1)</span></code> .</p>
+<p>For more information about working with change sets, see <a class="reference external" href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">Working with change sets</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">start_change_set</span><span class="p">(</span>
+    <span class="n">Catalog</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ChangeSet</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'ChangeType'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'Entity'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'Type'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                <span class="s1">'Identifier'</span><span class="p">:</span> <span class="s1">'string'</span>
+            <span class="p">},</span>
+            <span class="s1">'Details'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'ChangeName'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">ChangeSetName</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">ClientRequestToken</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Catalog</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The catalog related to the request. Fixed value: <code class="docutils literal notranslate"><span class="pre">AWSMarketplace</span></code></p>
+</p></li>
+<li><p><strong>ChangeSet</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Array of <code class="docutils literal notranslate"><span class="pre">change</span></code> object.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>An object that contains the <code class="docutils literal notranslate"><span class="pre">ChangeType</span></code> , <code class="docutils literal notranslate"><span class="pre">Details</span></code> , and <code class="docutils literal notranslate"><span class="pre">Entity</span></code> .</p>
+<ul>
+<li><p><strong>ChangeType</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code class="docutils literal notranslate"><span class="pre">EntityType</span></code> provided in the change’s scope.</p>
+</li>
+<li><p><strong>Entity</strong> <em>(dict) –</em> <strong>[REQUIRED]</strong></p>
+<p>The entity to be changed.</p>
+<ul>
+<li><p><strong>Type</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>The type of entity.</p>
+</li>
+<li><p><strong>Identifier</strong> <em>(string) –</em></p>
+<p>The identifier for the entity.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Details</strong> <em>(string) –</em> <strong>[REQUIRED]</strong></p>
+<p>This object contains details specific to the change type of the requested change.</p>
+</li>
+<li><p><strong>ChangeName</strong> <em>(string) –</em></p>
+<p>Optional name for the change.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>ChangeSetName</strong> (<em>string</em>) – Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.</p></li>
+<li><p><strong>ClientRequestToken</strong> (<em>string</em>) – A unique token to identify the request to ensure idempotency.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'ChangeSetId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'ChangeSetArn'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>ChangeSetId</strong> <em>(string) –</em></p>
+<p>Unique identifier generated for the request.</p>
+</li>
+<li><p><strong>ChangeSetArn</strong> <em>(string) –</em></p>
+<p>The ARN associated to the unique identifier generated for the request.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.AccessDeniedException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ValidationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ResourceNotFoundException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ResourceInUseException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ThrottlingException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MarketplaceCatalog.Client.exceptions.ServiceQuotaExceededException</span></code></p></li>
+</ul>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="paginators">
+<h2><a class="toc-backref" href="#id8">Paginators</a><a class="headerlink" href="#paginators" title="Permalink to this headline">¶</a></h2>
+<p>The available paginators are:</p>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="managedblockchain.html" title="previous chapter (use the left arrow)">ManagedBlockchain</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="marketplace-entitlement.html" title="next chapter (use the right arrow)">MarketplaceEntitlementService</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="marketplace-entitlement.html" title="MarketplaceEntitlementService">next</a> |</li>
+<li class="right">
+<a href="managedblockchain.html" title="ManagedBlockchain">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">MarketplaceCatalog</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

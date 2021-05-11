@@ -1,0 +1,1818 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResourceGroupsTaggingAPI — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="robomaker.html" rel="next" title="RoboMaker"/>
+<link href="resource-groups.html" rel="prev" title="ResourceGroups"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="robomaker.html" title="RoboMaker">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="resource-groups.html" title="ResourceGroups">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">ResourceGroupsTaggingAPI</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessanalyzer.html">AccessAnalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm.html">ACM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acm-pca.html">ACMPCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alexaforbusiness.html">AlexaForBusiness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amp.html">PrometheusService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplify.html">Amplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amplifybackend.html">AmplifyBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigateway.html">APIGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewaymanagementapi.html">ApiGatewayManagementApi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apigatewayv2.html">ApiGatewayV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appconfig.html">AppConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appflow.html">Appflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appintegrations.html">AppIntegrationsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-autoscaling.html">ApplicationAutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">ApplicationInsights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appmesh.html">AppMesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appstream.html">AppStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appsync.html">AppSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="athena.html">Athena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auditmanager.html">AuditManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling.html">AutoScaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoscaling-plans.html">AutoScalingPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch.html">Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="braket.html">Braket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ce.html">CostExplorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chime.html">Chime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud9.html">Cloud9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clouddirectory.html">CloudDirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudformation.html">CloudFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudfront.html">CloudFront</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsm.html">CloudHSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudhsmv2.html">CloudHSMV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearch.html">CloudSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudsearchdomain.html">CloudSearchDomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudtrail.html">CloudTrail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudwatch.html">CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeartifact.html">CodeArtifact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codebuild.html">CodeBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codecommit.html">CodeCommit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codedeploy.html">CodeDeploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguru-reviewer.html">CodeGuruReviewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeguruprofiler.html">CodeGuruProfiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codepipeline.html">CodePipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar.html">CodeStar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-connections.html">CodeStarconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codestar-notifications.html">CodeStarNotifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-identity.html">CognitoIdentity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-idp.html">CognitoIdentityProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognito-sync.html">CognitoSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehend.html">Comprehend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehendmedical.html">ComprehendMedical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute-optimizer.html">ComputeOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect-contact-lens.html">ConnectContactLens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectparticipant.html">ConnectParticipant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cur.html">CostandUsageReportService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customer-profiles.html">CustomerProfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databrew.html">GlueDataBrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataexchange.html">DataExchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datapipeline.html">DataPipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasync.html">DataSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dax.html">DAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detective.html">Detective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devicefarm.html">DeviceFarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devops-guru.html">DevOpsGuru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directconnect.html">DirectConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html">ApplicationDiscoveryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dlm.html">DLM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dms.html">DatabaseMigrationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docdb.html">DocDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ds.html">DirectoryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodb.html">DynamoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamodbstreams.html">DynamoDBStreams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ebs.html">EBS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2.html">EC2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec2-instance-connect.html">EC2InstanceConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr.html">ECR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecr-public.html">ECRPublic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecs.html">ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="efs.html">EFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eks.html">EKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-inference.html">ElasticInference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticache.html">ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticbeanstalk.html">ElasticBeanstalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastictranscoder.html">ElasticTranscoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elb.html">ElasticLoadBalancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elbv2.html">ElasticLoadBalancingv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr.html">EMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emr-containers.html">EMRContainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="es.html">ElasticsearchService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">EventBridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace.html">finspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finspace-data.html">FinSpaceData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firehose.html">Firehose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fis.html">FIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fms.html">FMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecast.html">ForecastService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forecastquery.html">ForecastQueryService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frauddetector.html">FraudDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fsx.html">FSx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamelift.html">GameLift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glacier.html">Glacier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globalaccelerator.html">GlobalAccelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glue.html">Glue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrass.html">Greengrass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greengrassv2.html">GreengrassV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundstation.html">GroundStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guardduty.html">GuardDuty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="healthlake.html">HealthLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="honeycode.html">Honeycode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iam.html">IAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identitystore.html">IdentityStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagebuilder.html">imagebuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexport.html">ImportExport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot.html">IoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-data.html">IoTDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot-jobs-data.html">IoTJobsDataPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-devices.html">IoT1ClickDevicesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iot1click-projects.html">IoT1ClickProjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotanalytics.html">IoTAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotdeviceadvisor.html">IoTDeviceAdvisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents.html">IoTEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotevents-data.html">IoTEventsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotfleethub.html">IoTFleetHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsecuretunneling.html">IoTSecureTunneling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotsitewise.html">IoTSiteWise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotthingsgraph.html">IoTThingsGraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotwireless.html">IoTWireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivs.html">IVS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kafka.html">Kafka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendra.html">kendra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis.html">Kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-archived-media.html">KinesisVideoArchivedMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-media.html">KinesisVideoMedia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesis-video-signaling.html">KinesisVideoSignalingChannels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalytics.html">KinesisAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisanalyticsv2.html">KinesisAnalyticsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kinesisvideo.html">KinesisVideo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kms.html">KMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lakeformation.html">LakeFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda.html">Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-models.html">LexModelBuildingService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lex-runtime.html">LexRuntimeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-models.html">LexModelsV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexv2-runtime.html">LexRuntimeV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license-manager.html">LicenseManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lightsail.html">Lightsail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location.html">LocationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">CloudWatchLogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutequipment.html">LookoutEquipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutmetrics.html">LookoutMetrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lookoutvision.html">LookoutforVision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html">MachineLearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie.html">Macie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macie2.html">Macie2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managedblockchain.html">ManagedBlockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-catalog.html">MarketplaceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplace-entitlement.html">MarketplaceEntitlementService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketplacecommerceanalytics.html">MarketplaceCommerceAnalytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconnect.html">MediaConnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediaconvert.html">MediaConvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="medialive.html">MediaLive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage.html">MediaPackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediapackage-vod.html">MediaPackageVod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore.html">MediaStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediastore-data.html">MediaStoreData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatailor.html">MediaTailor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteringmarketplace.html">MarketplaceMetering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgh.html">MigrationHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgn.html">mgn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrationhub-config.html">MigrationHubConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mq.html">MQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mturk.html">MTurk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mwaa.html">MWAA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neptune.html">Neptune</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network-firewall.html">NetworkFirewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networkmanager.html">NetworkManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nimble.html">NimbleStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworks.html">OpsWorks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opsworkscm.html">OpsWorksCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizations.html">Organizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outposts.html">Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize.html">Personalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-events.html">PersonalizeEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personalize-runtime.html">PersonalizeRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pi.html">PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint.html">Pinpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-email.html">PinpointEmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinpoint-sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polly.html">Polly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing.html">Pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb.html">QLDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qldb-session.html">QLDBSession</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quicksight.html">QuickSight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ram.html">RAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds.html">RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rds-data.html">RDSDataService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift.html">Redshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redshift-data.html">RedshiftDataAPIService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rekognition.html">Rekognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resource-groups.html">ResourceGroups</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ResourceGroupsTaggingAPI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paginators">Paginators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robomaker.html">RoboMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53.html">Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53domains.html">Route53Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route53resolver.html">Route53Resolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3.html">S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3control.html">S3Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3outposts.html">S3Outposts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker.html">SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-a2i-runtime.html">AugmentedAIRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-edge.html">SagemakerEdgeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-featurestore-runtime.html">SageMakerFeatureStoreRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sagemaker-runtime.html">SageMakerRuntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savingsplans.html">SavingsPlans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html">Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdb.html">SimpleDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secretsmanager.html">SecretsManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="securityhub.html">SecurityHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverlessrepo.html">ServerlessApplicationRepository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-quotas.html">ServiceQuotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog.html">ServiceCatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicecatalog-appregistry.html">AppRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicediscovery.html">ServiceDiscovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ses.html">SES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sesv2.html">SESV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signer.html">signer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms.html">SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sms-voice.html">PinpointSMSVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snowball.html">Snowball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sns.html">SNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqs.html">SQS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssm.html">SSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso.html">SSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-admin.html">SSOAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sso-oidc.html">SSOOIDC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepfunctions.html">SFN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storagegateway.html">StorageGateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sts.html">STS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swf.html">SWF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetics.html">Synthetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textract.html">Textract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-query.html">TimestreamQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestream-write.html">TimestreamWrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transcribe.html">TranscribeService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer.html">Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">Translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf.html">WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waf-regional.html">WAFRegional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wafv2.html">WAFV2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wellarchitected.html">WellArchitected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workdocs.html">WorkDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worklink.html">WorkLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmail.html">WorkMail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workmailmessageflow.html">WorkMailMessageFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workspaces.html">WorkSpaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xray.html">XRay</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Available services</a></li>
+<li>ResourceGroupsTaggingAPI</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="resourcegroupstaggingapi">
+<h1><a class="toc-backref" href="#id12">ResourceGroupsTaggingAPI</a><a class="headerlink" href="#resourcegroupstaggingapi" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#resourcegroupstaggingapi" id="id12">ResourceGroupsTaggingAPI</a></p>
+<ul>
+<li><p><a class="reference internal" href="#client" id="id13">Client</a></p></li>
+<li><p><a class="reference internal" href="#paginators" id="id14">Paginators</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="client">
+<h2><a class="toc-backref" href="#id13">Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="ResourceGroupsTaggingAPI.Client"><a name="//apple_ref/cpp/Class/ResourceGroupsTaggingAPI.Client"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ResourceGroupsTaggingAPI.</span></code><code class="sig-name descname"><span class="pre">Client</span></code><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>A low-level client representing AWS Resource Groups Tagging API</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">'resourcegroupstaggingapi'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These are the available methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.can_paginate" title="ResourceGroupsTaggingAPI.Client.can_paginate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">can_paginate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.describe_report_creation" title="ResourceGroupsTaggingAPI.Client.describe_report_creation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">describe_report_creation()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.generate_presigned_url" title="ResourceGroupsTaggingAPI.Client.generate_presigned_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate_presigned_url()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_compliance_summary" title="ResourceGroupsTaggingAPI.Client.get_compliance_summary"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_compliance_summary()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_paginator" title="ResourceGroupsTaggingAPI.Client.get_paginator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_paginator()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_resources" title="ResourceGroupsTaggingAPI.Client.get_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_resources()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_tag_keys" title="ResourceGroupsTaggingAPI.Client.get_tag_keys"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_tag_keys()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_tag_values" title="ResourceGroupsTaggingAPI.Client.get_tag_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_tag_values()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_waiter" title="ResourceGroupsTaggingAPI.Client.get_waiter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_waiter()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.start_report_creation" title="ResourceGroupsTaggingAPI.Client.start_report_creation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start_report_creation()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.tag_resources" title="ResourceGroupsTaggingAPI.Client.tag_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tag_resources()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.untag_resources" title="ResourceGroupsTaggingAPI.Client.untag_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">untag_resources()</span></code></a></p></li>
+</ul>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.can_paginate"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.can_paginate"></a>
+<code class="sig-name descname"><span class="pre">can_paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.can_paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an operation can be paginated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the operation can be paginated,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.describe_report_creation"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.describe_report_creation"></a>
+<code class="sig-name descname"><span class="pre">describe_report_creation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.describe_report_creation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes the status of the <code class="docutils literal notranslate"><span class="pre">StartReportCreation</span></code> operation.</p>
+<p>You can call this operation only from the organization’s management account and from the us-east-1 Region.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DescribeReportCreation">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_report_creation</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'Status'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'S3Location'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'ErrorMessage'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>Status</strong> <em>(string) –</em></p>
+<p>Reports the status of the operation.</p>
+<p>The operation status can be one of the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> - Report creation is in progress.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUCCEEDED</span></code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code class="docutils literal notranslate"><span class="pre">StartReportCreation</span></code> .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAILED</span></code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NO</span> <span class="pre">REPORT</span></code> - No report was generated in the last 90 days.</p></li>
+</ul>
+</li>
+<li><p><strong>S3Location</strong> <em>(string) –</em></p>
+<p>The path to the Amazon S3 bucket where the report was stored on creation.</p>
+</li>
+<li><p><strong>ErrorMessage</strong> <em>(string) –</em></p>
+<p>Details of the common errors that all operations return.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ConstraintViolationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InvalidParameterException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ThrottledException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.generate_presigned_url"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.generate_presigned_url"></a>
+<code class="sig-name descname"><span class="pre">generate_presigned_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExpiresIn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HttpMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.generate_presigned_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a presigned url given a client, its method, and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ClientMethod</strong> (<em>string</em>) – The client method to presign for</p></li>
+<li><p><strong>Params</strong> (<em>dict</em>) – The parameters normally passed to
+<code class="docutils literal notranslate"><span class="pre">ClientMethod</span></code>.</p></li>
+<li><p><strong>ExpiresIn</strong> (<em>int</em>) – The number of seconds the presigned url is valid
+for. By default it expires in an hour (3600 seconds)</p></li>
+<li><p><strong>HttpMethod</strong> (<em>string</em>) – The http method to use on the generated url. By
+default, the http method is whatever is used in the method’s model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The presigned url</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.get_compliance_summary"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.get_compliance_summary"></a>
+<code class="sig-name descname"><span class="pre">get_compliance_summary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.get_compliance_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a table that shows counts of resources that are noncompliant with their tag policies.</p>
+<p>For more information on tag policies, see <a class="reference external" href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag Policies</a> in the <em>AWS Organizations User Guide.</em></p>
+<p>You can call this operation only from the organization’s management account and from the us-east-1 Region.</p>
+<p>This operation supports pagination, where the response can be sent in multiple pages. You should check the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response parameter to determine if there are additional results available to return. Repeat the query, passing the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response parameter value as an input to the next request until you recieve a <code class="docutils literal notranslate"><span class="pre">null</span></code> value. A null value for <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> indicates that there are no more results waiting to be returned.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetComplianceSummary">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_compliance_summary</span><span class="p">(</span>
+    <span class="n">TargetIdFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">RegionFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">ResourceTypeFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">TagKeyFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">GroupBy</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'TARGET_ID'</span><span class="o">|</span><span class="s1">'REGION'</span><span class="o">|</span><span class="s1">'RESOURCE_TYPE'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">MaxResults</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">PaginationToken</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TargetIdFilters</strong> (<em>list</em>) – <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>RegionFilters</strong> (<em>list</em>) – <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>ResourceTypeFilters</strong> (<em>list</em>) – <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code class="docutils literal notranslate"><span class="pre">service[:resourceType]</span></code> . For example, specifying a resource type of <code class="docutils literal notranslate"><span class="pre">ec2</span></code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code class="docutils literal notranslate"><span class="pre">ec2:instance</span></code> returns only EC2 instances.</p>
+<p>The string for each service name and resource type is the same as that embedded in a resource’s Amazon Resource Name (ARN). Consult the <em>AWS General Reference</em> for the following:</p>
+<ul>
+<li><p>For a list of service name strings, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> .</p></li>
+<li><p>For resource type strings, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a> .</p></li>
+<li><p>For more information about ARNs, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> .</p></li>
+</ul>
+<p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>TagKeyFilters</strong> (<em>list</em>) – <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>GroupBy</strong> (<em>list</em>) – <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>MaxResults</strong> (<em>integer</em>) – Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p></li>
+<li><p><strong>PaginationToken</strong> (<em>string</em>) – Specifies a <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'SummaryList'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'LastUpdated'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'TargetId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'TargetIdType'</span><span class="p">:</span> <span class="s1">'ACCOUNT'</span><span class="o">|</span><span class="s1">'OU'</span><span class="o">|</span><span class="s1">'ROOT'</span><span class="p">,</span>
+            <span class="s1">'Region'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'ResourceType'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'NonCompliantResources'</span><span class="p">:</span> <span class="mi">123</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'PaginationToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>SummaryList</strong> <em>(list) –</em></p>
+<p>A table that shows counts of noncompliant resources.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A count of noncompliant resources.</p>
+<ul>
+<li><p><strong>LastUpdated</strong> <em>(string) –</em></p>
+<p>The timestamp that shows when this summary was generated in this Region.</p>
+</li>
+<li><p><strong>TargetId</strong> <em>(string) –</em></p>
+<p>The account identifier or the root identifier of the organization. If you don’t know the root ID, you can call the AWS Organizations <a class="reference external" href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+</li>
+<li><p><strong>TargetIdType</strong> <em>(string) –</em></p>
+<p>Whether the target is an account, an OU, or the organization root.</p>
+</li>
+<li><p><strong>Region</strong> <em>(string) –</em></p>
+<p>The AWS Region that the summary applies to.</p>
+</li>
+<li><p><strong>ResourceType</strong> <em>(string) –</em></p>
+<p>The AWS resource type.</p>
+</li>
+<li><p><strong>NonCompliantResources</strong> <em>(integer) –</em></p>
+<p>The count of noncompliant resources.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>PaginationToken</strong> <em>(string) –</em></p>
+<p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> value in the request for the next page.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ConstraintViolationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InvalidParameterException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ThrottledException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.get_paginator"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.get_paginator"></a>
+<code class="sig-name descname"><span class="pre">get_paginator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.get_paginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a paginator for an operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation_name</strong> (<em>string</em>) – The operation name.  This is the same name
+as the method name on the client.  For example, if the
+method name is <code class="docutils literal notranslate"><span class="pre">create_foo</span></code>, and you’d normally invoke the
+operation as <code class="docutils literal notranslate"><span class="pre">client.create_foo(**kwargs)</span></code>, if the
+<code class="docutils literal notranslate"><span class="pre">create_foo</span></code> operation can be paginated, you can use the
+call <code class="docutils literal notranslate"><span class="pre">client.get_paginator("create_foo")</span></code>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>OperationNotPageableError</strong> – Raised if the operation is not
+pageable.  You can use the <code class="docutils literal notranslate"><span class="pre">client.can_paginate</span></code> method to
+check if an operation is pageable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>L{botocore.paginate.Paginator}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A paginator object.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.get_resources"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.get_resources"></a>
+<code class="sig-name descname"><span class="pre">get_resources</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.get_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the tagged or previously tagged resources that are located in the specified Region for the AWS account.</p>
+<p>Depending on what information you want returned, you can also specify the following:</p>
+<ul class="simple">
+<li><p><em>Filters</em> that specify what tags and resource types you want returned. The response includes all tags that are associated with the requested resources.</p></li>
+<li><p>Information about compliance with the account’s effective tag policy. For more information on tag policies, see <a class="reference external" href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag Policies</a> in the <em>AWS Organizations User Guide.</em></p></li>
+</ul>
+<p>This operation supports pagination, where the response can be sent in multiple pages. You should check the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response parameter to determine if there are additional results available to return. Repeat the query, passing the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response parameter value as an input to the next request until you recieve a <code class="docutils literal notranslate"><span class="pre">null</span></code> value. A null value for <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> indicates that there are no more results waiting to be returned.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_resources</span><span class="p">(</span>
+    <span class="n">PaginationToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">TagFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'Key'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'Values'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">ResourcesPerPage</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">TagsPerPage</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">ResourceTypeFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">IncludeComplianceDetails</span><span class="o">=</span><span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">ExcludeCompliantResources</span><span class="o">=</span><span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">ResourceARNList</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>PaginationToken</strong> (<em>string</em>) – Specifies a <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p></li>
+<li><p><strong>TagFilters</strong> (<em>list</em>) – <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have the specified tag and, if included, the specified value. Each <code class="docutils literal notranslate"><span class="pre">TagFilter</span></code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
+<p>Note the following when deciding how to use TagFilters:</p>
+<ul>
+<li><p>If you <em>don’t</em> specify a <code class="docutils literal notranslate"><span class="pre">TagFilter</span></code> , the response includes all resources that are currently tagged or ever had a tag. Resources that currently don’t have tags are shown with an empty tag set, like this: <code class="docutils literal notranslate"><span class="pre">"Tags":</span> <span class="pre">[]</span></code> .</p></li>
+<li><p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
+<li><p>If you specify a filter that contains more than one value for a key, the response returns resources that match any of the specified values for that key.</p></li>
+<li><p>If you don’t specify any values for a key, the response returns resources that are tagged with that key and any or no value. For example, for the following filters: <code class="docutils literal notranslate"><span class="pre">filter1=</span> <span class="pre">{keyA,{value1}}</span></code> , <code class="docutils literal notranslate"><span class="pre">filter2={keyB,{value2,value3,value4}}</span></code> , <code class="docutils literal notranslate"><span class="pre">filter3=</span> <span class="pre">{keyC}</span></code> :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetResources({filter1})</span></code> returns resources tagged with <code class="docutils literal notranslate"><span class="pre">key1=value1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetResources({filter2})</span></code> returns resources tagged with <code class="docutils literal notranslate"><span class="pre">key2=value2</span></code> or <code class="docutils literal notranslate"><span class="pre">key2=value3</span></code> or <code class="docutils literal notranslate"><span class="pre">key2=value4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetResources({filter3})</span></code> returns resources tagged with any tag with the key <code class="docutils literal notranslate"><span class="pre">key3</span></code> , and with any or no value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetResources({filter1,filter2,filter3})</span></code> returns resources tagged with <code class="docutils literal notranslate"><span class="pre">(key1=value1)</span> <span class="pre">and</span> <span class="pre">(key2=value2</span> <span class="pre">or</span> <span class="pre">key2=value3</span> <span class="pre">or</span> <span class="pre">key2=value4)</span> <span class="pre">and</span> <span class="pre">(key3,</span> <span class="pre">any</span> <span class="pre">or</span> <span class="pre">no</span> <span class="pre">value)</span></code></p></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A list of tags (keys and values) that are used to specify the associated resources.</p>
+<ul>
+<li><p><strong>Key</strong> <em>(string) –</em></p>
+<p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+</li>
+<li><p><strong>Values</strong> <em>(list) –</em></p>
+<p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>ResourcesPerPage</strong> (<em>integer</em>) – Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p></li>
+<li><p><strong>TagsPerPage</strong> (<em>integer</em>) – <p>AWS recommends using <code class="docutils literal notranslate"><span class="pre">ResourcesPerPage</span></code> instead of this parameter.</p>
+<p>A limit that restricts the number of tags (key and value pairs) returned by <code class="docutils literal notranslate"><span class="pre">GetResources</span></code> in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">GetResources</span></code> does not split a resource and its associated tags across pages. If the specified <code class="docutils literal notranslate"><span class="pre">TagsPerPage</span></code> would cause such a break, a <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code class="docutils literal notranslate"><span class="pre">TagsPerPage</span></code> of <code class="docutils literal notranslate"><span class="pre">100</span></code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.</p>
+</div></blockquote>
+<p>You can set <code class="docutils literal notranslate"><span class="pre">TagsPerPage</span></code> to a minimum of 100 items up to a maximum of 500 items.</p>
+</p></li>
+<li><p><strong>ResourceTypeFilters</strong> (<em>list</em>) – <p>Specifies the resource types that you want included in the response. The format of each resource type is <code class="docutils literal notranslate"><span class="pre">service[:resourceType]</span></code> . For example, specifying a resource type of <code class="docutils literal notranslate"><span class="pre">ec2</span></code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code class="docutils literal notranslate"><span class="pre">ec2:instance</span></code> returns only EC2 instances.</p>
+<p>The string for each service name and resource type is the same as that embedded in a resource’s Amazon Resource Name (ARN). Consult the <em>AWS General Reference</em> for the following:</p>
+<p>For more information about ARNs, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> .</p>
+<p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>IncludeComplianceDetails</strong> (<em>boolean</em>) – Specifies whether to include details regarding the compliance with the effective tag policy. Set this to <code class="docutils literal notranslate"><span class="pre">true</span></code> to determine whether resources are compliant with the tag policy and to get details.</p></li>
+<li><p><strong>ExcludeCompliantResources</strong> (<em>boolean</em>) – <p>Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code class="docutils literal notranslate"><span class="pre">true</span></code> if you are interested in retrieving information on noncompliant resources only.</p>
+<p>You can use this parameter only if the <code class="docutils literal notranslate"><span class="pre">IncludeComplianceDetails</span></code> parameter is also set to <code class="docutils literal notranslate"><span class="pre">true</span></code> .</p>
+</p></li>
+<li><p><strong>ResourceARNList</strong> (<em>list</em>) – <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can’t specify both this parameter and any of the pagination parameters (<code class="docutils literal notranslate"><span class="pre">ResourcesPerPage</span></code> , <code class="docutils literal notranslate"><span class="pre">TagsPerPage</span></code> , <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> ) in the same request. If you specify both, you get an <code class="docutils literal notranslate"><span class="pre">Invalid</span> <span class="pre">Parameter</span></code> exception.</p>
+<p>If a resource specified by this parameter doesn’t exist, it doesn’t generate an error; it simply isn’t included in the response.</p>
+<p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'PaginationToken'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'ResourceTagMappingList'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'ResourceARN'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'Tags'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">'Key'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                    <span class="s1">'Value'</span><span class="p">:</span> <span class="s1">'string'</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s1">'ComplianceDetails'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'NoncompliantKeys'</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">'string'</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="s1">'KeysWithNoncompliantValues'</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">'string'</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="s1">'ComplianceStatus'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>PaginationToken</strong> <em>(string) –</em></p>
+<p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> value in the request for the next page.</p>
+</li>
+<li><p><strong>ResourceTagMappingList</strong> <em>(list) –</em></p>
+<p>A list of resource ARNs and the tags (keys and values) associated with those ARNs.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A list of resource ARNs and the tags (keys and values) that are associated with each.</p>
+<ul>
+<li><p><strong>ResourceARN</strong> <em>(string) –</em></p>
+<p>The ARN of the resource.</p>
+</li>
+<li><p><strong>Tags</strong> <em>(list) –</em></p>
+<p>The tags that have been applied to one or more AWS resources.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <em>AWS General Reference</em> .</p>
+<ul>
+<li><p><strong>Key</strong> <em>(string) –</em></p>
+<p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+</li>
+<li><p><strong>Value</strong> <em>(string) –</em></p>
+<p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>ComplianceDetails</strong> <em>(dict) –</em></p>
+<p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
+<ul>
+<li><p><strong>NoncompliantKeys</strong> <em>(list) –</em></p>
+<p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>KeysWithNoncompliantValues</strong> <em>(list) –</em></p>
+<p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>ComplianceStatus</strong> <em>(boolean) –</em></p>
+<p>Whether a resource is compliant with the effective tag policy.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InvalidParameterException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ThrottledException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.PaginationTokenExpiredException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.get_tag_keys"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.get_tag_keys"></a>
+<code class="sig-name descname"><span class="pre">get_tag_keys</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.get_tag_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all tag keys currently in use in the specified Region for the calling AWS account.</p>
+<p>This operation supports pagination, where the response can be sent in multiple pages. You should check the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response parameter to determine if there are additional results available to return. Repeat the query, passing the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response parameter value as an input to the next request until you recieve a <code class="docutils literal notranslate"><span class="pre">null</span></code> value. A null value for <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> indicates that there are no more results waiting to be returned.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_tag_keys</span><span class="p">(</span>
+    <span class="n">PaginationToken</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>PaginationToken</strong> (<em>string</em>) – Specifies a <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'PaginationToken'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'TagKeys'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>PaginationToken</strong> <em>(string) –</em></p>
+<p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> value in the request for the next page.</p>
+</li>
+<li><p><strong>TagKeys</strong> <em>(list) –</em></p>
+<p>A list of all tag keys in the AWS account.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InvalidParameterException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ThrottledException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.PaginationTokenExpiredException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.get_tag_values"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.get_tag_values"></a>
+<code class="sig-name descname"><span class="pre">get_tag_values</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.get_tag_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all tag values for the specified key that are used in the specified AWS Region for the calling AWS account.</p>
+<p>This operation supports pagination, where the response can be sent in multiple pages. You should check the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response parameter to determine if there are additional results available to return. Repeat the query, passing the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response parameter value as an input to the next request until you recieve a <code class="docutils literal notranslate"><span class="pre">null</span></code> value. A null value for <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> indicates that there are no more results waiting to be returned.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_tag_values</span><span class="p">(</span>
+    <span class="n">PaginationToken</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">Key</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>PaginationToken</strong> (<em>string</em>) – Specifies a <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p></li>
+<li><p><strong>Key</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Specifies the tag key for which you want to list all existing values that are currently used in the specified AWS Region for the calling AWS account.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'PaginationToken'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'TagValues'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>PaginationToken</strong> <em>(string) –</em></p>
+<p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> value in the request for the next page.</p>
+</li>
+<li><p><strong>TagValues</strong> <em>(list) –</em></p>
+<p>A list of all tag values for the specified key currently used in the specified AWS Region for the calling AWS account.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InvalidParameterException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ThrottledException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.PaginationTokenExpiredException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.get_waiter"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.get_waiter"></a>
+<code class="sig-name descname"><span class="pre">get_waiter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waiter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.get_waiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object that can wait for some condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waiter_name</strong> (<em>str</em>) – The name of the waiter to get. See the waiters
+section of the service docs for a list of available waiters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified waiter object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>botocore.waiter.Waiter</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.start_report_creation"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.start_report_creation"></a>
+<code class="sig-name descname"><span class="pre">start_report_creation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.start_report_creation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a report that lists all tagged resources in the accounts across your organization and tells whether each resource is compliant with the effective tag policy. Compliance data is refreshed daily. The report is generated asynchronously.</p>
+<p>The generated report is saved to the following location:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</span></code></p>
+</div></blockquote>
+<p>You can call this operation only from the organization’s management account and from the us-east-1 Region.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/StartReportCreation">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">start_report_creation</span><span class="p">(</span>
+    <span class="n">S3Bucket</span><span class="o">=</span><span class="s1">'string'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>S3Bucket</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">awsexamplebucket</span></code></p>
+</div></blockquote>
+<p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul class="simple">
+<li><p><em>(dict) –</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ConcurrentModificationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ConstraintViolationException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InternalServiceException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InvalidParameterException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ThrottledException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.tag_resources"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.tag_resources"></a>
+<code class="sig-name descname"><span class="pre">tag_resources</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.tag_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies one or more tags to the specified resources. Note the following:</p>
+<ul class="simple">
+<li><p>Not all resources can have tags. For a list of services with resources that support tagging using this operation, see <a class="reference external" href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a> .</p></li>
+<li><p>Each resource can have up to 50 tags. For other limits, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <em>AWS General Reference.</em></p></li>
+<li><p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p></li>
+<li><p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tag_resources</span><span class="p">(</span>
+    <span class="n">ResourceARNList</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">Tags</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ResourceARNList</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
+<p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>Tags</strong> (<em>dict</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'FailedResourcesMap'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'StatusCode'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+            <span class="s1">'ErrorCode'</span><span class="p">:</span> <span class="s1">'InternalServiceException'</span><span class="o">|</span><span class="s1">'InvalidParameterException'</span><span class="p">,</span>
+            <span class="s1">'ErrorMessage'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>FailedResourcesMap</strong> <em>(dict) –</em></p>
+<p>A map containing a key-value pair for each failed item that couldn’t be tagged. The key is the ARN of the failed resource. The value is a <code class="docutils literal notranslate"><span class="pre">FailureInfo</span></code> object that contains an error code, a status code, and an error message. If there are no errors, the <code class="docutils literal notranslate"><span class="pre">FailedResourcesMap</span></code> is empty.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Information about the errors that are returned for each failed resource. This information can include <code class="docutils literal notranslate"><span class="pre">InternalServiceException</span></code> and <code class="docutils literal notranslate"><span class="pre">InvalidParameterException</span></code> errors. It can also include any valid error code returned by the AWS service that hosts the resource that the ARN key represents.</p>
+<p>The following are common error codes that you might receive from other AWS services:</p>
+<ul class="simple">
+<li><p><strong>InternalServiceException</strong> – This can mean that the Resource Groups Tagging API didn’t receive a response from another AWS service. It can also mean the the resource type in the request is not supported by the Resource Groups Tagging API. In these cases, it’s safe to retry the request and then call <a class="reference external" href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> to verify the changes.</p></li>
+<li><p><strong>AccessDeniedException</strong> – This can mean that you need permission to calling tagging operations in the AWS service that contains the resource. For example, to use the Resource Groups Tagging API to tag a CloudWatch alarm resource, you need permission to call ` <code class="docutils literal notranslate"><span class="pre">TagResources</span></code> <a class="reference external" href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources">http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources</a>.html`__  <em>and</em>  ` <code class="docutils literal notranslate"><span class="pre">TagResource</span></code> <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource">http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource</a>.html`__ in the CloudWatch API.</p></li>
+</ul>
+<p>For more information on errors that are generated from other AWS services, see the documentation for that service.</p>
+<ul>
+<li><p><strong>StatusCode</strong> <em>(integer) –</em></p>
+<p>The HTTP status code of the common error.</p>
+</li>
+<li><p><strong>ErrorCode</strong> <em>(string) –</em></p>
+<p>The code of the common error. Valid values include <code class="docutils literal notranslate"><span class="pre">InternalServiceException</span></code> , <code class="docutils literal notranslate"><span class="pre">InvalidParameterException</span></code> , and any valid error code returned by the AWS service that hosts the resource that you want to tag.</p>
+</li>
+<li><p><strong>ErrorMessage</strong> <em>(string) –</em></p>
+<p>The message of the common error.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InvalidParameterException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ThrottledException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InternalServiceException</span></code></p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Client.untag_resources"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Client.untag_resources"></a>
+<code class="sig-name descname"><span class="pre">untag_resources</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Client.untag_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were already removed. Note the following:</p>
+<ul class="simple">
+<li><p>To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for removing tags. For more information, see the documentation for the service whose resource you want to untag.</p></li>
+<li><p>You can only tag resources that are located in the specified AWS Region for the calling AWS account.</p></li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">untag_resources</span><span class="p">(</span>
+    <span class="n">ResourceARNList</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">TagKeys</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ResourceARNList</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
+<p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>TagKeys</strong> (<em>list</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Specifies a list of tag keys that you want to remove from the specified resources.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'FailedResourcesMap'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'string'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'StatusCode'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+            <span class="s1">'ErrorCode'</span><span class="p">:</span> <span class="s1">'InternalServiceException'</span><span class="o">|</span><span class="s1">'InvalidParameterException'</span><span class="p">,</span>
+            <span class="s1">'ErrorMessage'</span><span class="p">:</span> <span class="s1">'string'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>FailedResourcesMap</strong> <em>(dict) –</em></p>
+<p>A map containing a key-value pair for each failed item that couldn’t be untagged. The key is the ARN of the failed resource. The value is a <code class="docutils literal notranslate"><span class="pre">FailureInfo</span></code> object that contains an error code, a status code, and an error message. If there are no errors, the <code class="docutils literal notranslate"><span class="pre">FailedResourcesMap</span></code> is empty.</p>
+<ul>
+<li><p><em>(string) –</em></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>Information about the errors that are returned for each failed resource. This information can include <code class="docutils literal notranslate"><span class="pre">InternalServiceException</span></code> and <code class="docutils literal notranslate"><span class="pre">InvalidParameterException</span></code> errors. It can also include any valid error code returned by the AWS service that hosts the resource that the ARN key represents.</p>
+<p>The following are common error codes that you might receive from other AWS services:</p>
+<ul class="simple">
+<li><p><strong>InternalServiceException</strong> – This can mean that the Resource Groups Tagging API didn’t receive a response from another AWS service. It can also mean the the resource type in the request is not supported by the Resource Groups Tagging API. In these cases, it’s safe to retry the request and then call <a class="reference external" href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> to verify the changes.</p></li>
+<li><p><strong>AccessDeniedException</strong> – This can mean that you need permission to calling tagging operations in the AWS service that contains the resource. For example, to use the Resource Groups Tagging API to tag a CloudWatch alarm resource, you need permission to call ` <code class="docutils literal notranslate"><span class="pre">TagResources</span></code> <a class="reference external" href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources">http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources</a>.html`__  <em>and</em>  ` <code class="docutils literal notranslate"><span class="pre">TagResource</span></code> <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource">http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource</a>.html`__ in the CloudWatch API.</p></li>
+</ul>
+<p>For more information on errors that are generated from other AWS services, see the documentation for that service.</p>
+<ul>
+<li><p><strong>StatusCode</strong> <em>(integer) –</em></p>
+<p>The HTTP status code of the common error.</p>
+</li>
+<li><p><strong>ErrorCode</strong> <em>(string) –</em></p>
+<p>The code of the common error. Valid values include <code class="docutils literal notranslate"><span class="pre">InternalServiceException</span></code> , <code class="docutils literal notranslate"><span class="pre">InvalidParameterException</span></code> , and any valid error code returned by the AWS service that hosts the resource that you want to tag.</p>
+</li>
+<li><p><strong>ErrorMessage</strong> <em>(string) –</em></p>
+<p>The message of the common error.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InvalidParameterException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.ThrottledException</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.exceptions.InternalServiceException</span></code></p></li>
+</ul>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="paginators">
+<h2><a class="toc-backref" href="#id14">Paginators</a><a class="headerlink" href="#paginators" title="Permalink to this headline">¶</a></h2>
+<p>The available paginators are:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary" title="ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Paginator.GetResources" title="ResourceGroupsTaggingAPI.Paginator.GetResources"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Paginator.GetResources</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Paginator.GetTagKeys" title="ResourceGroupsTaggingAPI.Paginator.GetTagKeys"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Paginator.GetTagKeys</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ResourceGroupsTaggingAPI.Paginator.GetTagValues" title="ResourceGroupsTaggingAPI.Paginator.GetTagValues"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Paginator.GetTagValues</span></code></a></p></li>
+</ul>
+<dl class="py class">
+<dt id="ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary"><a name="//apple_ref/cpp/Class/ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ResourceGroupsTaggingAPI.Paginator.</span></code><code class="sig-name descname"><span class="pre">GetComplianceSummary</span></code><a class="headerlink" href="#ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'get_compliance_summary'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary.paginate"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Paginator.GetComplianceSummary.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_compliance_summary" title="ResourceGroupsTaggingAPI.Client.get_compliance_summary"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.get_compliance_summary()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetComplianceSummary">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">TargetIdFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">RegionFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">ResourceTypeFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">TagKeyFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">GroupBy</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'TARGET_ID'</span><span class="o">|</span><span class="s1">'REGION'</span><span class="o">|</span><span class="s1">'RESOURCE_TYPE'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TargetIdFilters</strong> (<em>list</em>) – <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>RegionFilters</strong> (<em>list</em>) – <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>ResourceTypeFilters</strong> (<em>list</em>) – <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code class="docutils literal notranslate"><span class="pre">service[:resourceType]</span></code> . For example, specifying a resource type of <code class="docutils literal notranslate"><span class="pre">ec2</span></code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code class="docutils literal notranslate"><span class="pre">ec2:instance</span></code> returns only EC2 instances.</p>
+<p>The string for each service name and resource type is the same as that embedded in a resource’s Amazon Resource Name (ARN). Consult the <em>AWS General Reference</em> for the following:</p>
+<ul>
+<li><p>For a list of service name strings, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> .</p></li>
+<li><p>For resource type strings, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a> .</p></li>
+<li><p>For more information about ARNs, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> .</p></li>
+</ul>
+<p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>TagKeyFilters</strong> (<em>list</em>) – <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>GroupBy</strong> (<em>list</em>) – <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'SummaryList'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'LastUpdated'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'TargetId'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'TargetIdType'</span><span class="p">:</span> <span class="s1">'ACCOUNT'</span><span class="o">|</span><span class="s1">'OU'</span><span class="o">|</span><span class="s1">'ROOT'</span><span class="p">,</span>
+            <span class="s1">'Region'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'ResourceType'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'NonCompliantResources'</span><span class="p">:</span> <span class="mi">123</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>SummaryList</strong> <em>(list) –</em></p>
+<p>A table that shows counts of noncompliant resources.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A count of noncompliant resources.</p>
+<ul>
+<li><p><strong>LastUpdated</strong> <em>(string) –</em></p>
+<p>The timestamp that shows when this summary was generated in this Region.</p>
+</li>
+<li><p><strong>TargetId</strong> <em>(string) –</em></p>
+<p>The account identifier or the root identifier of the organization. If you don’t know the root ID, you can call the AWS Organizations <a class="reference external" href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+</li>
+<li><p><strong>TargetIdType</strong> <em>(string) –</em></p>
+<p>Whether the target is an account, an OU, or the organization root.</p>
+</li>
+<li><p><strong>Region</strong> <em>(string) –</em></p>
+<p>The AWS Region that the summary applies to.</p>
+</li>
+<li><p><strong>ResourceType</strong> <em>(string) –</em></p>
+<p>The AWS resource type.</p>
+</li>
+<li><p><strong>NonCompliantResources</strong> <em>(integer) –</em></p>
+<p>The count of noncompliant resources.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="ResourceGroupsTaggingAPI.Paginator.GetResources"><a name="//apple_ref/cpp/Class/ResourceGroupsTaggingAPI.Paginator.GetResources"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ResourceGroupsTaggingAPI.Paginator.</span></code><code class="sig-name descname"><span class="pre">GetResources</span></code><a class="headerlink" href="#ResourceGroupsTaggingAPI.Paginator.GetResources" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'get_resources'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Paginator.GetResources.paginate"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Paginator.GetResources.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Paginator.GetResources.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_resources" title="ResourceGroupsTaggingAPI.Client.get_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.get_resources()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">TagFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'Key'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'Values'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">'string'</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">TagsPerPage</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+    <span class="n">ResourceTypeFilters</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">IncludeComplianceDetails</span><span class="o">=</span><span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">ExcludeCompliantResources</span><span class="o">=</span><span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">ResourceARNList</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'PageSize'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TagFilters</strong> (<em>list</em>) – <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have the specified tag and, if included, the specified value. Each <code class="docutils literal notranslate"><span class="pre">TagFilter</span></code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
+<p>Note the following when deciding how to use TagFilters:</p>
+<ul>
+<li><p>If you <em>don’t</em> specify a <code class="docutils literal notranslate"><span class="pre">TagFilter</span></code> , the response includes all resources that are currently tagged or ever had a tag. Resources that currently don’t have tags are shown with an empty tag set, like this: <code class="docutils literal notranslate"><span class="pre">"Tags":</span> <span class="pre">[]</span></code> .</p></li>
+<li><p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
+<li><p>If you specify a filter that contains more than one value for a key, the response returns resources that match any of the specified values for that key.</p></li>
+<li><p>If you don’t specify any values for a key, the response returns resources that are tagged with that key and any or no value. For example, for the following filters: <code class="docutils literal notranslate"><span class="pre">filter1=</span> <span class="pre">{keyA,{value1}}</span></code> , <code class="docutils literal notranslate"><span class="pre">filter2={keyB,{value2,value3,value4}}</span></code> , <code class="docutils literal notranslate"><span class="pre">filter3=</span> <span class="pre">{keyC}</span></code> :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetResources({filter1})</span></code> returns resources tagged with <code class="docutils literal notranslate"><span class="pre">key1=value1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetResources({filter2})</span></code> returns resources tagged with <code class="docutils literal notranslate"><span class="pre">key2=value2</span></code> or <code class="docutils literal notranslate"><span class="pre">key2=value3</span></code> or <code class="docutils literal notranslate"><span class="pre">key2=value4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetResources({filter3})</span></code> returns resources tagged with any tag with the key <code class="docutils literal notranslate"><span class="pre">key3</span></code> , and with any or no value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetResources({filter1,filter2,filter3})</span></code> returns resources tagged with <code class="docutils literal notranslate"><span class="pre">(key1=value1)</span> <span class="pre">and</span> <span class="pre">(key2=value2</span> <span class="pre">or</span> <span class="pre">key2=value3</span> <span class="pre">or</span> <span class="pre">key2=value4)</span> <span class="pre">and</span> <span class="pre">(key3,</span> <span class="pre">any</span> <span class="pre">or</span> <span class="pre">no</span> <span class="pre">value)</span></code></p></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A list of tags (keys and values) that are used to specify the associated resources.</p>
+<ul>
+<li><p><strong>Key</strong> <em>(string) –</em></p>
+<p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+</li>
+<li><p><strong>Values</strong> <em>(list) –</em></p>
+<p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p></li>
+<li><p><strong>TagsPerPage</strong> (<em>integer</em>) – <p>AWS recommends using <code class="docutils literal notranslate"><span class="pre">ResourcesPerPage</span></code> instead of this parameter.</p>
+<p>A limit that restricts the number of tags (key and value pairs) returned by <code class="docutils literal notranslate"><span class="pre">GetResources</span></code> in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">GetResources</span></code> does not split a resource and its associated tags across pages. If the specified <code class="docutils literal notranslate"><span class="pre">TagsPerPage</span></code> would cause such a break, a <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code class="docutils literal notranslate"><span class="pre">TagsPerPage</span></code> of <code class="docutils literal notranslate"><span class="pre">100</span></code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.</p>
+</div></blockquote>
+<p>You can set <code class="docutils literal notranslate"><span class="pre">TagsPerPage</span></code> to a minimum of 100 items up to a maximum of 500 items.</p>
+</p></li>
+<li><p><strong>ResourceTypeFilters</strong> (<em>list</em>) – <p>Specifies the resource types that you want included in the response. The format of each resource type is <code class="docutils literal notranslate"><span class="pre">service[:resourceType]</span></code> . For example, specifying a resource type of <code class="docutils literal notranslate"><span class="pre">ec2</span></code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code class="docutils literal notranslate"><span class="pre">ec2:instance</span></code> returns only EC2 instances.</p>
+<p>The string for each service name and resource type is the same as that embedded in a resource’s Amazon Resource Name (ARN). Consult the <em>AWS General Reference</em> for the following:</p>
+<p>For more information about ARNs, see <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> .</p>
+<p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter.</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>IncludeComplianceDetails</strong> (<em>boolean</em>) – Specifies whether to include details regarding the compliance with the effective tag policy. Set this to <code class="docutils literal notranslate"><span class="pre">true</span></code> to determine whether resources are compliant with the tag policy and to get details.</p></li>
+<li><p><strong>ExcludeCompliantResources</strong> (<em>boolean</em>) – <p>Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code class="docutils literal notranslate"><span class="pre">true</span></code> if you are interested in retrieving information on noncompliant resources only.</p>
+<p>You can use this parameter only if the <code class="docutils literal notranslate"><span class="pre">IncludeComplianceDetails</span></code> parameter is also set to <code class="docutils literal notranslate"><span class="pre">true</span></code> .</p>
+</p></li>
+<li><p><strong>ResourceARNList</strong> (<em>list</em>) – <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can’t specify both this parameter and any of the pagination parameters (<code class="docutils literal notranslate"><span class="pre">ResourcesPerPage</span></code> , <code class="docutils literal notranslate"><span class="pre">TagsPerPage</span></code> , <code class="docutils literal notranslate"><span class="pre">PaginationToken</span></code> ) in the same request. If you specify both, you get an <code class="docutils literal notranslate"><span class="pre">Invalid</span> <span class="pre">Parameter</span></code> exception.</p>
+<p>If a resource specified by this parameter doesn’t exist, it doesn’t generate an error; it simply isn’t included in the response.</p>
+<p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+<ul>
+<li><p><em>(string) –</em></p></li>
+</ul>
+</p></li>
+<li><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>PageSize</strong> <em>(integer) –</em></p>
+<p>The size of each page.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'ResourceTagMappingList'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">'ResourceARN'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+            <span class="s1">'Tags'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">'Key'</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span>
+                    <span class="s1">'Value'</span><span class="p">:</span> <span class="s1">'string'</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s1">'ComplianceDetails'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'NoncompliantKeys'</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">'string'</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="s1">'KeysWithNoncompliantValues'</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">'string'</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="s1">'ComplianceStatus'</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>ResourceTagMappingList</strong> <em>(list) –</em></p>
+<p>A list of resource ARNs and the tags (keys and values) associated with those ARNs.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>A list of resource ARNs and the tags (keys and values) that are associated with each.</p>
+<ul>
+<li><p><strong>ResourceARN</strong> <em>(string) –</em></p>
+<p>The ARN of the resource.</p>
+</li>
+<li><p><strong>Tags</strong> <em>(list) –</em></p>
+<p>The tags that have been applied to one or more AWS resources.</p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<p>The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <em>AWS General Reference</em> .</p>
+<ul>
+<li><p><strong>Key</strong> <em>(string) –</em></p>
+<p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+</li>
+<li><p><strong>Value</strong> <em>(string) –</em></p>
+<p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>ComplianceDetails</strong> <em>(dict) –</em></p>
+<p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
+<ul>
+<li><p><strong>NoncompliantKeys</strong> <em>(list) –</em></p>
+<p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>KeysWithNoncompliantValues</strong> <em>(list) –</em></p>
+<p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>ComplianceStatus</strong> <em>(boolean) –</em></p>
+<p>Whether a resource is compliant with the effective tag policy.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="ResourceGroupsTaggingAPI.Paginator.GetTagKeys"><a name="//apple_ref/cpp/Class/ResourceGroupsTaggingAPI.Paginator.GetTagKeys"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ResourceGroupsTaggingAPI.Paginator.</span></code><code class="sig-name descname"><span class="pre">GetTagKeys</span></code><a class="headerlink" href="#ResourceGroupsTaggingAPI.Paginator.GetTagKeys" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'get_tag_keys'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Paginator.GetTagKeys.paginate"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Paginator.GetTagKeys.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Paginator.GetTagKeys.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_tag_keys" title="ResourceGroupsTaggingAPI.Client.get_tag_keys"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.get_tag_keys()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'TagKeys'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>TagKeys</strong> <em>(list) –</em></p>
+<p>A list of all tag keys in the AWS account.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt id="ResourceGroupsTaggingAPI.Paginator.GetTagValues"><a name="//apple_ref/cpp/Class/ResourceGroupsTaggingAPI.Paginator.GetTagValues"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ResourceGroupsTaggingAPI.Paginator.</span></code><code class="sig-name descname"><span class="pre">GetTagValues</span></code><a class="headerlink" href="#ResourceGroupsTaggingAPI.Paginator.GetTagValues" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s1">'get_tag_values'</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ResourceGroupsTaggingAPI.Paginator.GetTagValues.paginate"><a name="//apple_ref/cpp/Method/ResourceGroupsTaggingAPI.Paginator.GetTagValues.paginate"></a>
+<code class="sig-name descname"><span class="pre">paginate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ResourceGroupsTaggingAPI.Paginator.GetTagValues.paginate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an iterator that will paginate through responses from <a class="reference internal" href="#ResourceGroupsTaggingAPI.Client.get_tag_values" title="ResourceGroupsTaggingAPI.Client.get_tag_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ResourceGroupsTaggingAPI.Client.get_tag_values()</span></code></a>.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">AWS API Documentation</a></p>
+<p><strong>Request Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response_iterator</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span>
+    <span class="n">Key</span><span class="o">=</span><span class="s1">'string'</span><span class="p">,</span>
+    <span class="n">PaginationConfig</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">'MaxItems'</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s1">'StartingToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Key</strong> (<em>string</em>) – <p><strong>[REQUIRED]</strong></p>
+<p>Specifies the tag key for which you want to list all existing values that are currently used in the specified AWS Region for the calling AWS account.</p>
+</p></li>
+<li><p><strong>PaginationConfig</strong> (<em>dict</em>) – <p>A dictionary that provides parameters to control pagination.</p>
+<ul>
+<li><p><strong>MaxItems</strong> <em>(integer) –</em></p>
+<p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> will be provided in the output that you can use to resume pagination.</p>
+</li>
+<li><p><strong>StartingToken</strong> <em>(string) –</em></p>
+<p>A token to specify where to start paginating. This is the <code class="docutils literal notranslate"><span class="pre">NextToken</span></code> from a previous response.</p>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>Response Syntax</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'TagValues'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'string'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'NextToken'</span><span class="p">:</span> <span class="s1">'string'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Structure</strong></p>
+<ul>
+<li><p><em>(dict) –</em></p>
+<ul>
+<li><p><strong>TagValues</strong> <em>(list) –</em></p>
+<p>A list of all tag values for the specified key currently used in the specified AWS Region for the calling AWS account.</p>
+<ul class="simple">
+<li><p><em>(string) –</em></p></li>
+</ul>
+</li>
+<li><p><strong>NextToken</strong> <em>(string) –</em></p>
+<p>A token to resume pagination.</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="resource-groups.html" title="previous chapter (use the left arrow)">ResourceGroups</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="robomaker.html" title="next chapter (use the right arrow)">RoboMaker</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="robomaker.html" title="RoboMaker">next</a> |</li>
+<li class="right">
+<a href="resource-groups.html" title="ResourceGroups">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Available services</a> »</li>
+<li class="nav-item nav-item-this"><a href="">ResourceGroupsTaggingAPI</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Upgrading notes &#8212; Boto3 Docs 1.17.70 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Security" href="security.html" />
+    <link rel="prev" title="Migrating to Python 3" href="migrationpy3.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="security.html" title="Security"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="migrationpy3.html" title="Migrating to Python 3"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Boto3 Docs 1.17.70 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Developer guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Upgrading notes</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar"><a href="
+    ../index.html" class="text-logo">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Code examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#sdk-features">SDK features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#tools">Tools</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#migrations">Migrations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="new.html">What’s new</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migration.html">Migrating from Boto 2.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrationpy3.html">Migrating to Python 3</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Upgrading notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/services/index.html">Available services</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/core/index.html">Core references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/customizations/index.html">Customization references</a></li>
+</ul>
+
+    
+  </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+                <li><a href="index.html">Developer guide</a></li>
+              
+              <li>Upgrading notes</li>
+            </ol>
+          </div>
+          
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+          <div class="document clearer body">
+            
+  <div class="section" id="upgrading-notes">
+<h1>Upgrading notes<a class="headerlink" href="#upgrading-notes" title="Permalink to this headline">¶</a></h1>
+<p>Notes to refer to when upgrading <code class="docutils literal notranslate"><span class="pre">boto3</span></code> versions.</p>
+<div class="section" id="id1">
+<h2>1.9.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-changed">
+<h3>What changed<a class="headerlink" href="#what-changed" title="Permalink to this headline">¶</a></h3>
+<p>The boto3 event system was changed to emit events based on the service id
+rather than the endpoint prefix or service name.</p>
+</div>
+<div class="section" id="why-was-the-change-made">
+<h3>Why was the change made<a class="headerlink" href="#why-was-the-change-made" title="Permalink to this headline">¶</a></h3>
+<p>This was done to handle several issues that were becoming increasingly
+problematic:</p>
+<ul class="simple">
+<li><p>Services changing their endpoint prefix would cause some registered events to
+no longer fire (but not all).</p></li>
+<li><p>New services that launch using an endpoint that another service is using
+won’t be able to be uniquely selected. There are a number of cases of this
+already.</p></li>
+<li><p>Services whose client name and endpoint prefix differed would require two
+different strings if you want to register against all events.</p></li>
+</ul>
+</div>
+<div class="section" id="how-do-i-know-if-i-m-impacted">
+<h3>How do I know if I’m impacted<a class="headerlink" href="#how-do-i-know-if-i-m-impacted" title="Permalink to this headline">¶</a></h3>
+<p>Any users relying on registering an event against one service impacting other
+services are impacted. You can consult the following table to see if you are
+impacted. If you are registering an event using one of the event parts in the
+leftmost column with the intention of impacting an unintended target service
+in the rightmost column, then you are impacted and will need to update.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 52%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Event Part</p></td>
+<td><p>Intended Target Service</p></td>
+<td><p>Unintended Target Services</p></td>
+</tr>
+<tr class="row-even"><td><p>rds</p></td>
+<td><p>rds</p></td>
+<td><p>neptune</p></td>
+</tr>
+<tr class="row-odd"><td><p>autoscaling</p></td>
+<td><p>autoscaling</p></td>
+<td><p>application-autoscaling, autoscaling-plans</p></td>
+</tr>
+<tr class="row-even"><td><p>kinesisvideo</p></td>
+<td><p>kinesisvideo</p></td>
+<td><p>kinesis-video-media, kinesis-video-archived-media</p></td>
+</tr>
+<tr class="row-odd"><td><p>elasticloadbalancing</p></td>
+<td><p>elb</p></td>
+<td><p>elbv2</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example, if you are registering an event against
+<code class="docutils literal notranslate"><span class="pre">before-call.elasticloadbalancing</span></code> expecting it to run when making calls with
+an <code class="docutils literal notranslate"><span class="pre">elbv2</span></code> client, you will be impacted.</p>
+<p>If you are registering an event against one of the services in the Unintended
+Targets column, you may be impacted if you were relying on those events not
+firing.</p>
+<p>If you are registering events using <code class="docutils literal notranslate"><span class="pre">*</span></code> in the service place, or are
+registering against any service not in this table, you will not need a code
+change. In many cases the actual event name will have changed, but for services
+without shared endpoints we do the work of translating the event name at
+registration and emission time. In future versions of boto3 we will remove
+this translation, so you may wish to update your code anyway.</p>
+</div>
+<div class="section" id="how-do-i-update-my-code">
+<h3>How do I update my code<a class="headerlink" href="#how-do-i-update-my-code" title="Permalink to this headline">¶</a></h3>
+<p>You will need to look at the events you are registering against and determine
+which services you wish to impact with your handler. If you only wish to
+impact the intended target service (as defined in the above table), then you
+don’t need to change the event. If you wish to impact another service in
+addition to the intended target service, you will need to register a new event
+using that service’s event name. Similarly, if you wish to impact another
+service instead you will simply need to change the event you are registered
+against.</p>
+<p>To get the new event name, consult this table:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 27%" />
+<col style="width: 37%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Service</p></td>
+<td><p>Old Event Name</p></td>
+<td><p>New Event Name</p></td>
+</tr>
+<tr class="row-even"><td><p>application-autoscaling</p></td>
+<td><p>autoscaling</p></td>
+<td><p>application-auto-scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p>autoscaling-plans</p></td>
+<td><p>autoscaling</p></td>
+<td><p>auto-scaling-plans</p></td>
+</tr>
+<tr class="row-even"><td><p>elbv2</p></td>
+<td><p>elasticloadbalancing</p></td>
+<td><p>elastic-load-balancing</p></td>
+</tr>
+<tr class="row-odd"><td><p>kinesis-video-archived-media</p></td>
+<td><p>kinesisvideo</p></td>
+<td><p>kinesis-video-archived-media</p></td>
+</tr>
+<tr class="row-even"><td><p>kinesis-video-media</p></td>
+<td><p>kinesisvideo</p></td>
+<td><p>kinesis-video-media</p></td>
+</tr>
+<tr class="row-odd"><td><p>neptune</p></td>
+<td><p>rds</p></td>
+<td><p>neptune</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, you can get the new event name in code like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;elbv2&#39;</span><span class="p">)</span>
+<span class="n">service_event_name</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">service_model</span><span class="o">.</span><span class="n">service_id</span><span class="o">.</span><span class="n">hyphenize</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Armed with the service event name, simply replace the old service name in the
+handler with the new service event name. If you were registering an event
+against <code class="docutils literal notranslate"><span class="pre">before-call.autoscaling</span></code> intending to impact <code class="docutils literal notranslate"><span class="pre">autoscaling-plans</span></code>
+for example, you would instead register against
+<code class="docutils literal notranslate"><span class="pre">before-call.auto-scaling-plans</span></code>.</p>
+<p>If you are registering an event against one of the services in the Unintended
+Targets column, you will now see those events getting fired where previously
+they were not. While this is enabling that expected behavior, this still
+represents a change in actual behavior. You should not need to update your
+code, but you should test to ensure that you are seeing the behavior you want.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>1.4.2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">use_threads</span></code> option was added to
+<a class="reference internal" href="../reference/customizations/s3.html#boto3.s3.transfer.TransferConfig" title="boto3.s3.transfer.TransferConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">boto3.s3.transfer.TransferConfig</span></code></a>.
+Starting in version <code class="docutils literal notranslate"><span class="pre">1.4.0</span></code>, all managed S3 transfer methods became
+threaded instead of possibly being threaded. If it is not desired to use
+threads for managed S3 transfers, set <code class="docutils literal notranslate"><span class="pre">use_threads</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>1.4.0<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Logic from the <a class="reference external" href="https://github.com/boto/s3transfer">s3transfer</a> package
+was ported into the <code class="docutils literal notranslate"><span class="pre">boto3.s3.transfer</span></code> module. In upgrading to this
+new version of <code class="docutils literal notranslate"><span class="pre">boto3</span></code>, code that relies on the public classes and
+interfaces of <code class="docutils literal notranslate"><span class="pre">boto3.s3.transfer</span></code>, such as
+<a class="reference internal" href="../reference/customizations/s3.html#boto3.s3.transfer.S3Transfer" title="boto3.s3.transfer.S3Transfer"><code class="xref py py-class docutils literal notranslate"><span class="pre">boto3.s3.transfer.S3Transfer</span></code></a> and
+<a class="reference internal" href="../reference/customizations/s3.html#boto3.s3.transfer.TransferConfig" title="boto3.s3.transfer.TransferConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">boto3.s3.transfer.TransferConfig</span></code></a>, should not be affected.
+However, code that relies on the internal classes and functionality of the
+<code class="docutils literal notranslate"><span class="pre">boto3.s3.transfer</span></code> module may be affected in upgrading:</p>
+<ul>
+<li><p>Removed internal classes such as <code class="docutils literal notranslate"><span class="pre">MultipartUploader</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MultipartDownloader</span></code>, <code class="docutils literal notranslate"><span class="pre">ReadFileChunk</span></code>, etc. All of the managed
+transfer logic now lives inside of <code class="docutils literal notranslate"><span class="pre">s3transfer</span></code> and as a result these
+internal classes are no longer used and is essentially dead code.</p></li>
+<li><p>Custom implementations of <code class="docutils literal notranslate"><span class="pre">OSUtils</span></code> may see the
+<code class="docutils literal notranslate"><span class="pre">open_file_chunk_reader</span></code> method no longer being called when uploads
+occur. If this was for the purpose of being able to provide file-like
+objects for transfers, use the newly added <code class="docutils literal notranslate"><span class="pre">upload_fileobj</span></code>
+and <code class="docutils literal notranslate"><span class="pre">download_fileobj</span></code> methods that support both nonmultipart and
+multipart transfers.</p></li>
+<li><p>By default, all managed transfer methods are now threaded. In prior
+versions, threads were only created if a non multipart upload or download
+was initiated. To run the managed transfer methods with no threads
+(i.e. all of the transfer logic happens in the main thread), set
+<code class="docutils literal notranslate"><span class="pre">use_threads</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code> when providing a <code class="docutils literal notranslate"><span class="pre">TransferConfig</span></code> object.
+The <code class="docutils literal notranslate"><span class="pre">use_threads</span></code> option is only available in <code class="docutils literal notranslate"><span class="pre">boto3</span></code> versions higher
+than <code class="docutils literal notranslate"><span class="pre">1.4.1</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="migrationpy3.html" title="previous chapter (use the left arrow)">Migrating to Python 3</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="security.html" title="next chapter (use the right arrow)">Security</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="security.html" title="Security"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="migrationpy3.html" title="Migrating to Python 3"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Boto3 Docs 1.17.70 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Developer guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Upgrading notes</a></li> 
+      </ul>
+    </div>
+<div class="footer">
+    <script type="text/javascript" src="../_static/shortbreadv1.js"></script>
+    <script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+    <a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a
+        href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    &copy; Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+  </body>
+</html>

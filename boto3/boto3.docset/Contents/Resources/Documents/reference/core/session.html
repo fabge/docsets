@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Licensed under the Apache 2.0 License -->
+<link href="../../_static/fonts/open-sans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<!-- Licensed under the SIL Open Font License -->
+<link href="../../_static/fonts/source-serif-pro/source-serif-pro.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Session reference — Boto3 Docs 1.17.70 documentation</title>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/guzzle.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="../customizations/index.html" rel="next" title="Customization references"/>
+<link href="resources.html" rel="prev" title="Resources reference"/>
+</head><body>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a accesskey="N" href="../customizations/index.html" title="Customization references">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="resources.html" title="Resources reference">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a accesskey="U" href="index.html">Core references</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Session reference</a></li>
+</ul>
+</div>
+<div class="container-wrapper">
+<div id="mobile-toggle">
+<a href="#"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a>
+</div>
+<div id="left-column">
+<div class="sphinxsidebar"><a class="text-logo" href="
+    ../../index.html">Boto3 Docs 1.17.70 documentation</a><div class="sidebar-block">
+<div class="sidebar-wrapper">
+<h2>Table Of Contents</h2>
+</div>
+<div class="sidebar-toc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/sqs.html">A sample tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/examples.html">Code examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">Developer guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/security.html">Security</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../services/index.html">Available services</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Core references</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boto3.html">Boto3 reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html">Collections reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session reference</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.html">Customization references</a></li>
+</ul>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-wrapper">
+<div id="main-search">
+<form action="../../search.html" class="form-inline" method="GET" role="form">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search..." type="text"/>
+</div>
+<input name="check_keywords" type="hidden" value="yes">
+<input name="area" type="hidden" value="default"/>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="right-column">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ol class="breadcrumb">
+<li><a href="../../index.html">Docs</a></li>
+<li><a href="index.html">Core references</a></li>
+<li>Session reference</li>
+</ol>
+</div>
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<div class="document clearer body">
+<div class="section" id="module-boto3.session">
+<span id="session-reference"></span><span id="ref-core-session"></span><h1><a name="//apple_ref/cpp/Module/boto3.session"></a>Session reference<a class="headerlink" href="#module-boto3.session" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="boto3.session.Session"><a name="//apple_ref/cpp/Class/boto3.session.Session"></a>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">boto3.session.</span></code><code class="sig-name descname"><span class="pre">Session</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aws_access_key_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_secret_access_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_session_token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">botocore_session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/session.html#Session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.session.Session" title="Permalink to this definition">¶</a></dt>
+<dd><p>A session stores configuration state and allows you to create service
+clients and resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aws_access_key_id</strong> (<em>string</em>) – AWS access key ID</p></li>
+<li><p><strong>aws_secret_access_key</strong> (<em>string</em>) – AWS secret access key</p></li>
+<li><p><strong>aws_session_token</strong> (<em>string</em>) – AWS temporary session token</p></li>
+<li><p><strong>region_name</strong> (<em>string</em>) – Default region when creating new connections</p></li>
+<li><p><strong>botocore_session</strong> (<em>botocore.session.Session</em>) – Use this Botocore session instead of creating
+a new default one.</p></li>
+<li><p><strong>profile_name</strong> (<em>string</em>) – The name of a profile to use. If not given, then
+the default profile is used.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="boto3.session.Session.available_profiles"><a name="//apple_ref/cpp/Method/boto3.session.Session.available_profiles"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">available_profiles</span></code><a class="headerlink" href="#boto3.session.Session.available_profiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>The profiles available to the session credentials</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.client"><a name="//apple_ref/cpp/Method/boto3.session.Session.client"></a>
+<code class="sig-name descname"><span class="pre">client</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_ssl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_access_key_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_secret_access_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_session_token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/session.html#Session.client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.session.Session.client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a low-level service client by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service_name</strong> (<em>string</em>) – The name of a service, e.g. ‘s3’ or ‘ec2’. You
+can get a list of available services via
+<a class="reference internal" href="#boto3.session.Session.get_available_services" title="boto3.session.Session.get_available_services"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_available_services()</span></code></a>.</p></li>
+<li><p><strong>region_name</strong> (<em>string</em>) – The name of the region associated with the client.
+A client is associated with a single region.</p></li>
+<li><p><strong>api_version</strong> (<em>string</em>) – The API version to use.  By default, botocore will
+use the latest API version when creating a client.  You only need
+to specify this parameter if you want to use a previous API version
+of the client.</p></li>
+<li><p><strong>use_ssl</strong> (<em>boolean</em>) – Whether or not to use SSL.  By default, SSL is used.
+Note that not all services support non-ssl connections.</p></li>
+<li><p><strong>verify</strong> (<em>boolean/string</em>) – <p>Whether or not to verify SSL certificates.  By default
+SSL certificates are verified.  You can provide the following
+values:</p>
+<ul>
+<li><p>False - do not validate SSL certificates.  SSL will still be
+used (unless use_ssl is False), but SSL certificates
+will not be verified.</p></li>
+<li><p>path/to/cert/bundle.pem - A filename of the CA cert bundle to
+uses.  You can specify this argument if you want to use a
+different CA cert bundle than the one used by botocore.</p></li>
+</ul>
+</p></li>
+<li><p><strong>endpoint_url</strong> (<em>string</em>) – The complete URL to use for the constructed
+client. Normally, botocore will automatically construct the
+appropriate URL to use when communicating with a service.  You
+can specify a complete URL (including the “http/https” scheme)
+to override this behavior.  If this value is provided,
+then <code class="docutils literal notranslate"><span class="pre">use_ssl</span></code> is ignored.</p></li>
+<li><p><strong>aws_access_key_id</strong> (<em>string</em>) – The access key to use when creating
+the client.  This is entirely optional, and if not provided,
+the credentials configured for the session will automatically
+be used.  You only need to provide this argument if you want
+to override the credentials used for this specific client.</p></li>
+<li><p><strong>aws_secret_access_key</strong> (<em>string</em>) – The secret key to use when creating
+the client.  Same semantics as aws_access_key_id above.</p></li>
+<li><p><strong>aws_session_token</strong> (<em>string</em>) – The session token to use when creating
+the client.  Same semantics as aws_access_key_id above.</p></li>
+<li><p><strong>config</strong> (<em>botocore.client.Config</em>) – Advanced client configuration options. If region_name
+is specified in the client config, its value will take precedence
+over environment variables and configuration values, but not over
+a region_name value passed explicitly to the method. See
+<a class="reference external" href="https://botocore.amazonaws.com/v1/documentation/api/latest/reference/config.html">botocore config documentation</a>
+for more details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Service client instance</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.events"><a name="//apple_ref/cpp/Method/boto3.session.Session.events"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">events</span></code><a class="headerlink" href="#boto3.session.Session.events" title="Permalink to this definition">¶</a></dt>
+<dd><p>The event emitter for a session</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.get_available_partitions"><a name="//apple_ref/cpp/Method/boto3.session.Session.get_available_partitions"></a>
+<code class="sig-name descname"><span class="pre">get_available_partitions</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/session.html#Session.get_available_partitions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.session.Session.get_available_partitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the available partitions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a list of partition names (e.g., [“aws”, “aws-cn”])</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.get_available_regions"><a name="//apple_ref/cpp/Method/boto3.session.Session.get_available_regions"></a>
+<code class="sig-name descname"><span class="pre">get_available_regions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'aws'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_non_regional</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/session.html#Session.get_available_regions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.session.Session.get_available_regions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the region and endpoint names of a particular partition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service_name</strong> (<em>string</em>) – Name of a service to list endpoint for (e.g., s3).</p></li>
+<li><p><strong>partition_name</strong> (<em>string</em>) – Name of the partition to limit endpoints to.
+(e.g., aws for the public AWS endpoints, aws-cn for AWS China
+endpoints, aws-us-gov for AWS GovCloud (US) Endpoints, etc.)</p></li>
+<li><p><strong>allow_non_regional</strong> (<em>bool</em>) – Set to True to include endpoints that are
+not regional endpoints (e.g., s3-external-1,
+fips-us-gov-west-1, etc).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a list of endpoint names (e.g., [“us-east-1”]).</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.get_available_resources"><a name="//apple_ref/cpp/Method/boto3.session.Session.get_available_resources"></a>
+<code class="sig-name descname"><span class="pre">get_available_resources</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/session.html#Session.get_available_resources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.session.Session.get_available_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of available services that can be loaded as resource
+clients via <a class="reference internal" href="#boto3.session.Session.resource" title="boto3.session.Session.resource"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Session.resource()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of service names</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.get_available_services"><a name="//apple_ref/cpp/Method/boto3.session.Session.get_available_services"></a>
+<code class="sig-name descname"><span class="pre">get_available_services</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/session.html#Session.get_available_services"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.session.Session.get_available_services" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of available services that can be loaded as low-level
+clients via <a class="reference internal" href="#boto3.session.Session.client" title="boto3.session.Session.client"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Session.client()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of service names</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.get_credentials"><a name="//apple_ref/cpp/Method/boto3.session.Session.get_credentials"></a>
+<code class="sig-name descname"><span class="pre">get_credentials</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/session.html#Session.get_credentials"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.session.Session.get_credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">botocore.credential.Credential</span></code> object
+associated with this session.  If the credentials have not
+yet been loaded, this will attempt to load them.  If they
+have already been loaded, this will return the cached
+credentials.</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.profile_name"><a name="//apple_ref/cpp/Method/boto3.session.Session.profile_name"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">profile_name</span></code><a class="headerlink" href="#boto3.session.Session.profile_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <strong>read-only</strong> profile name.</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.region_name"><a name="//apple_ref/cpp/Method/boto3.session.Session.region_name"></a>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">region_name</span></code><a class="headerlink" href="#boto3.session.Session.region_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <strong>read-only</strong> region name.</p>
+</dd></dl>
+<dl class="py method">
+<dt id="boto3.session.Session.resource"><a name="//apple_ref/cpp/Method/boto3.session.Session.resource"></a>
+<code class="sig-name descname"><span class="pre">resource</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_ssl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_access_key_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_secret_access_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_session_token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/boto3/session.html#Session.resource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boto3.session.Session.resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a resource service client by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service_name</strong> (<em>string</em>) – The name of a service, e.g. ‘s3’ or ‘ec2’. You
+can get a list of available services via
+<a class="reference internal" href="#boto3.session.Session.get_available_resources" title="boto3.session.Session.get_available_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_available_resources()</span></code></a>.</p></li>
+<li><p><strong>region_name</strong> (<em>string</em>) – The name of the region associated with the client.
+A client is associated with a single region.</p></li>
+<li><p><strong>api_version</strong> (<em>string</em>) – The API version to use.  By default, botocore will
+use the latest API version when creating a client.  You only need
+to specify this parameter if you want to use a previous API version
+of the client.</p></li>
+<li><p><strong>use_ssl</strong> (<em>boolean</em>) – Whether or not to use SSL.  By default, SSL is used.
+Note that not all services support non-ssl connections.</p></li>
+<li><p><strong>verify</strong> (<em>boolean/string</em>) – <p>Whether or not to verify SSL certificates.  By default
+SSL certificates are verified.  You can provide the following
+values:</p>
+<ul>
+<li><p>False - do not validate SSL certificates.  SSL will still be
+used (unless use_ssl is False), but SSL certificates
+will not be verified.</p></li>
+<li><p>path/to/cert/bundle.pem - A filename of the CA cert bundle to
+uses.  You can specify this argument if you want to use a
+different CA cert bundle than the one used by botocore.</p></li>
+</ul>
+</p></li>
+<li><p><strong>endpoint_url</strong> (<em>string</em>) – The complete URL to use for the constructed
+client. Normally, botocore will automatically construct the
+appropriate URL to use when communicating with a service.  You
+can specify a complete URL (including the “http/https” scheme)
+to override this behavior.  If this value is provided,
+then <code class="docutils literal notranslate"><span class="pre">use_ssl</span></code> is ignored.</p></li>
+<li><p><strong>aws_access_key_id</strong> (<em>string</em>) – The access key to use when creating
+the client.  This is entirely optional, and if not provided,
+the credentials configured for the session will automatically
+be used.  You only need to provide this argument if you want
+to override the credentials used for this specific client.</p></li>
+<li><p><strong>aws_secret_access_key</strong> (<em>string</em>) – The secret key to use when creating
+the client.  Same semantics as aws_access_key_id above.</p></li>
+<li><p><strong>aws_session_token</strong> (<em>string</em>) – The session token to use when creating
+the client.  Same semantics as aws_access_key_id above.</p></li>
+<li><p><strong>config</strong> (<em>botocore.client.Config</em>) – <p>Advanced client configuration options. If region_name
+is specified in the client config, its value will take precedence
+over environment variables and configuration values, but not over
+a region_name value passed explicitly to the method.  If
+user_agent_extra is specified in the client config, it overrides
+the default user_agent_extra provided by the resource API. See
+<a class="reference external" href="https://botocore.amazonaws.com/v1/documentation/api/latest/reference/config.html">botocore config documentation</a>
+for more details.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Subclass of <a class="reference internal" href="resources.html#boto3.resources.base.ServiceResource" title="boto3.resources.base.ServiceResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">ServiceResource</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+</div>
+<div class="footer-relations">
+<div class="pull-left">
+<a class="btn btn-default" href="resources.html" title="previous chapter (use the left arrow)">Resources reference</a>
+</div>
+<div class="pull-right">
+<a class="btn btn-default" href="../customizations/index.html" title="next chapter (use the right arrow)">Customization references</a>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div aria-label="related navigation" class="related" role="navigation">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../../py-modindex.html" title="Python Module Index">modules</a> |</li>
+<li class="right">
+<a href="../customizations/index.html" title="Customization references">next</a> |</li>
+<li class="right">
+<a href="resources.html" title="Resources reference">previous</a> |</li>
+<li class="nav-item nav-item-0"><a href="../../index.html">Boto3 Docs 1.17.70 documentation</a> »</li>
+<li class="nav-item nav-item-1"><a href="index.html">Core references</a> »</li>
+<li class="nav-item nav-item-this"><a href="">Session reference</a></li>
+</ul>
+</div>
+<div class="footer">
+<script src="../../_static/shortbreadv1.js" type="text/javascript"></script>
+<script type="text/javascript">
+            const shortbread = AWSCShortbread({
+                domain: ".amazonaws.com",
+});
+            shortbread.checkForCookieConsent();
+    </script>
+<a href="http://aws.amazon.com/privacy">Privacy</a> | <a href="http://aws.amazon.com/terms">Site Terms</a> | <a href="#" onclick="shortbread.customizeCookies();">Cookie preferences</a> |
+    © Copyright 2021, Amazon Web Services, Inc. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</div>
+</body>
+</html>
