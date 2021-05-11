@@ -3,6 +3,8 @@ name: Generate docsets
 on:
   push:
     branches: ["master"]
+    paths-ignore:
+      - 'README.md'
   workflow_dispatch:
     inputs:
       debug_enabled:
@@ -13,7 +15,6 @@ on:
 jobs:
   docsets:
     runs-on: "ubuntu-latest"
-
     steps:
       - uses: "actions/checkout@v2"
       - uses: "actions/setup-python@v2"
