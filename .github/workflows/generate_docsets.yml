@@ -45,5 +45,5 @@ jobs:
         run: |
           git config --global user.email "docsets-bot@example.com"
           git config --global user.name "docsets-bot"
-          git add requests/docs/requests.docset && git commit -m "Updated docset")
+          git add requests/docs/requests.docset && git commit -m "Updated docset"
           git push
