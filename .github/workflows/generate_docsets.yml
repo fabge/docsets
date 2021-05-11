@@ -43,6 +43,8 @@ jobs:
         run: cd requests/docs && doc2dash _build/html/ --name requests --destination .
       - name: "Commit docsets"
         run: |
+          ls
+          ls requests/docs/
           git config --global user.email "docsets-bot@example.com"
           git config --global user.name "docsets-bot"
           git add requests/docs/requests.docset && git commit -m "Updated docset"
