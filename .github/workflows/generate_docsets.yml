@@ -25,5 +25,7 @@ jobs:
           pip install --upgrade boto3
           pip install doc2dash
           pip list
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - name: "Build docs"
         run: ./boto3.sh
