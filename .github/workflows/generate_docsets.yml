@@ -28,11 +28,11 @@ jobs:
             ${{ runner.os }}-pip-
       - name: "Clone Repo"
         run: |
-          git clone https://github.com/boto/boto3.git
+          git clone https://github.com/psf/requests.git
       - uses: ammaraskar/sphinx-action@master
         with:
-          docs-folder: "boto3/docs/"
-          pre-build-command: "pip install boto3 guzzle_sphinx_theme"
+          docs-folder: "requests/docs/"
+          pre-build-command: "pip install requests guzzle_sphinx_theme"
       - name: "Install dependencies"
         run: |
           pip install Sphinx==3.5.4 guzzle_sphinx_theme doc2dash
@@ -40,4 +40,4 @@ jobs:
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
       - name: "Build docs"
-        run: cd boto3/docs && doc2dash docs/_build/html/ --name boto3 --destination ./boto3-docs
+        run: cd requests/docs && doc2dash docs/_build/html/ --name requests --destination ./requests-docs
