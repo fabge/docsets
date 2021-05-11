@@ -14,16 +14,9 @@ jobs:
 
     steps:
       - uses: "actions/checkout@v2"
-      - name: "Clone Repo"
-        run: |
-          git clone https://github.com/boto/boto3.git
-      - uses: ammaraskar/sphinx-action@master
-        with:
-          docs-folder: "boto3/docs/"
-          pre-build-command: "pip install boto3 guzzle_sphinx_theme"
       - uses: "actions/setup-python@v2"
         with:
-          python-version: "3.9"
+          python-version: "3.8"
       - uses: actions/cache@v2
         name: Configure pip caching
         with:
@@ -31,6 +24,13 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
+      - name: "Clone Repo"
+        run: |
+          git clone https://github.com/boto/boto3.git
+      - uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "boto3/docs/"
+          pre-build-command: "pip install boto3 guzzle_sphinx_theme"
       - name: "Install dependencies"
         run: |
           pip install doc2dash
