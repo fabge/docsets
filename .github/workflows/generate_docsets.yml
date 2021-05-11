@@ -35,15 +35,9 @@ jobs:
           pre-build-command: "pip install requests guzzle_sphinx_theme"
       - name: "Install dependencies"
         run: |
-          pip install Sphinx==3.5.4 guzzle_sphinx_theme doc2dash
+          pip install -r requirements.txt
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
       - name: "Build docs"
-        run: doc2dash requests/docs/_build/html/ --name requests --destination .
-      - name: "Commit docsets"
-        run: |
-          git config --global user.email "docsets-bot@example.com"
-          git config --global user.name "docsets-bot"
-          git add requests.docset && git commit -m "Updated docsets"
-          git push
+        run: ./requests.sh
