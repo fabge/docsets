@@ -33,12 +33,9 @@ jobs:
             ${{ runner.os }}-pip-
       - name: "Install dependencies"
         run: |
-          pip install -r boto3/requirements-docs.txt
-          pip install --upgrade boto3
           pip install doc2dash
-          pip list
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
       - name: "Build docs"
-        run: ./boto3.sh
+        run: cd boto3/docs && doc2dash docs/_build/html/ --name boto3 --destination ./boto3-docs
