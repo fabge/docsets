@@ -31,6 +31,9 @@ jobs:
           pip install --upgrade boto3
           pip install doc2dash
           pip list
+      - uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "boto3/docs/"
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
