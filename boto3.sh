@@ -4,4 +4,6 @@ pip install --upgrade boto3
 pip install doc2dash
 cd boto3/docs
 make html
-doc2dash -A build/html --name boto3
+doc2dash build/html --name boto3 --destination ./boto3-docs
+ls
+ls boto3-docs
