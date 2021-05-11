@@ -24,5 +24,6 @@ jobs:
           pip install -r boto3/requirements-docs.txt
           pip install --upgrade boto3
           pip install doc2dash
+          pip list
       - name: "Build docs"
         run: ./boto3.sh
