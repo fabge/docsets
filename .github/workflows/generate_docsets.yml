@@ -35,7 +35,7 @@ jobs:
           pre-build-command: "pip install boto3 guzzle_sphinx_theme"
       - name: "Install dependencies"
         run: |
-          pip install Sphinx guzzle_sphinx_theme doc2dash
+          pip install Sphinx==3.5.4 guzzle_sphinx_theme doc2dash
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
