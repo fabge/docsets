@@ -26,13 +26,6 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-      - name: "Clone Repo"
-        run: |
-          git clone https://github.com/psf/requests.git
-      - uses: ammaraskar/sphinx-action@master
-        with:
-          docs-folder: "requests/docs/"
-          pre-build-command: "pip install requests guzzle_sphinx_theme"
       - name: "Install dependencies"
         run: |
           pip install -r requirements.txt
@@ -40,4 +33,4 @@ jobs:
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
       - name: "Build docs"
-        run: ./requests.sh
+        run: ./requests/requests.sh
