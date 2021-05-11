@@ -17,10 +17,10 @@ jobs:
       - name: "Clone Repo"
         run: |
           git clone https://github.com/boto/boto3.git
-          pip3 install boto3
       - uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "boto3/docs/"
+          pre-build-command: "pip install boto3"
       - uses: "actions/setup-python@v2"
         with:
           python-version: "3.9"
