@@ -32,5 +32,7 @@ jobs:
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
-      - name: "Build docs"
+      - name: "Build requests docs"
         run: requests/requests.sh
+      - name: "Build boto3 docs"
+        run: boto3/boto3.sh
